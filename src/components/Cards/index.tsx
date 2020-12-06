@@ -1,9 +1,9 @@
-import { Card } from 'react-bootstrap'
+import { Card } from "react-bootstrap";
 import { RedButton, CardButton } from "../../imports";
 
 export const HireInfoCard = () => {
   return (
-    <Card className="bg-white w-75 p-3 mx-auto" body>
+    <Card className="bg-white w-75 p-3 mx-auto pt-5" body>
       <span className="d-flex mx-auto">
         <p>
           👉 Hiring remotely? Reach <u>1,000,000+ remote workers</u> on the 🏆
