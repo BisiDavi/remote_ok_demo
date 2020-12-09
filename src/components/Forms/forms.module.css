@@ -1,0 +1,19 @@
+.Searchform {
+  width: 30% !important;
+  height: 70px;
+  display: flex;
+  margin: auto;
+  background: white;
+  position: relative;
+}
+
+.Searchform input {
+  height: 70px;
+  border: none;
+  border-radius: 20px;
+}
+
+.SearchIcon span {
+  background-color: white;
+  border: none;
+}
