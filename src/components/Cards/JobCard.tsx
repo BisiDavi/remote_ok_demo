@@ -1,14 +1,14 @@
 import { Card } from "react-bootstrap";
-import { RedButton } from "../../imports";
-import { JobCardProps } from "../../types";
-import { LazyloadImg,LazyloadCard } from "../Lazyload";
+import { RedButton,FallBackImage } from "../../imports";
+import { IJobCardProps } from "../../types";
+import { LazyloadImg, LazyloadCard } from "../Lazyload";
 import styles from "./card.module.css";
 
 let keyId = 1102;
 const generateKeyID = () => {
-    keyId += 1;
-    return keyId;
-}
+  keyId += 1;
+  return keyId;
+};
 
 const JobCard = ({
   slug,
@@ -19,7 +19,21 @@ const JobCard = ({
   location,
   tags,
   duration
-}: JobCardProps) => {
+}: IJobCardProps) => {
+  const DisplayCompanyLogo = () => {
+    return (
+      <LazyloadImg>
+        <img 
+          src={cardImg} 
+          className={`${styles.companyLogo} col-lg-1`}
+          alt={imgAlt} 
+        />        
+      </LazyloadImg>
+    );
+  };
+
+  const CompanyLogo = cardImg ? DisplayCompanyLogo() : FallBackImage(companyName);
+
   const displayFourTags = () => {
     if (tags !== undefined && tags.length > 0) {
       const fourTags = tags.slice(0, 4);
@@ -39,13 +53,7 @@ const JobCard = ({
       <Card key={slug} className={`${styles.card} my-2 container py-0 px-0`}>
         <Card.Body className="py-1 d-flex align-items-center">
           <div className="row d-flex align-items-center py-1 px-2 w-100">
-            <LazyloadImg>
-              <img
-                src={cardImg}
-                className="companyLogo col-lg-1"
-                alt={imgAlt}
-              />
-            </LazyloadImg>
+            {CompanyLogo}
             <div className="card-text col-lg-4">
               <h4 className="font-weight-300">{companyName}</h4>
               <h3>{jobRole}</h3>
@@ -63,18 +71,7 @@ const JobCard = ({
               <RedButton text="Apply" />
             </div>
           </div>
-        </Card.Body>
-        <style jsx>
-          {`
-            .companyLogo {
-              border-radius: 5px !important;
-              height: 60px;
-              width: 60px !important;
-              padding: 0px;
-              max-width: 60px;
-            }
-          `}
-        </style>
+        </Card.Body>        
       </Card>
     </LazyloadCard>
   );

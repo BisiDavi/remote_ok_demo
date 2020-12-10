@@ -30,3 +30,26 @@ export const SponsoredCard = ({ cardImg, imgAlt }) => {
     </Card>
   );
 };
+
+export const FallBackImage = (companyName) => {
+  const companyNameArr = companyName.split("");
+  const firstLetter = companyNameArr[0];
+  return (
+    <>
+      <div className="company-logo-letter">
+        <h4>{firstLetter}</h4>
+      </div>
+      <style jsx>{`
+      .company-logo-letter {
+        padding: 15px 20px;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin: 0px 4px;
+      }
+      .company-logo-letter h4{
+        font-weight: 600
+      }
+      `}</style>
+    </>
+  )
+}

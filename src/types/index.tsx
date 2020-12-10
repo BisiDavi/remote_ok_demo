@@ -1,4 +1,4 @@
-export interface JobCardProps {
+export interface IJobCardProps {
   slug: string;
   cardImg: string;
   imgAlt: string;

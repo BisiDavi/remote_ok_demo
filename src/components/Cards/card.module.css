@@ -26,3 +26,11 @@
   font-size: 18px;
   font-weight: 600;
 }
+
+.companyLogo {
+              border-radius: 5px !important;
+              height: 60px;
+              width: 60px !important;
+              padding: 0px;
+              max-width: 60px;
+            }

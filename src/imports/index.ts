@@ -15,6 +15,7 @@ export { SearchForm } from "../components/Forms";
 export { WorldwideJobForm } from "../components/Forms";
 
 export { HireInfoCard } from "../components/Cards";
+export { FallBackImage } from "../components/Cards";
 
 
 
