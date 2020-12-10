@@ -1,10 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  WhiteButton,
-  GreenButton,
-  RedButton,
-  SearchForm
-} from "../../imports";
+import { WhiteButton, GreenButton, RedButton, SearchForm } from "../../imports";
 
 const Header: React.FC = (): JSX.Element => {
   return (
@@ -50,9 +45,9 @@ const Header: React.FC = (): JSX.Element => {
       </Container>
       <style jsx>
         {`
-          .redbutton button {
+          .redbutton {
             right: 20px;
-            z-index: 100;
+            z-index: 1000 !important;
           }
           .header-content {
             background-image: url("/mainbanner.webp");

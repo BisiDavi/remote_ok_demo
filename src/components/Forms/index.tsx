@@ -4,7 +4,7 @@ import styles from "./forms.module.css";
 
 export const SearchForm = () => {
   return (
-    <>
+    <div className="search">
       <Form className={`${styles.Searchform} search-form`}>
         <InputGroup className="mb-3">
           <InputGroup.Prepend className={styles.SearchIcon}>
@@ -24,14 +24,24 @@ export const SearchForm = () => {
       </Form>
       <style jsx>
         {`
+          .search input:focus ~ .SearchformPlaceholder {
+            display: none;
+          }
+          .search input:focus {
+            outline: none !important;
+            border: 0px;
+          }
           .SearchformPlaceholder {
             position: absolute;
-            left: 40px;
-            top: 20px;
+            left: 60px;
+            top: 10px;
+            font-size: 30px;
+            font-weight: 600;
+            font-family: "sans-serif", Arial;
           }
         `}
       </style>
-    </>
+    </div>
   );
 };
 

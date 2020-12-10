@@ -1,22 +1,30 @@
+import { useState, useEffect } from "react";
 import { NextPage, GetStaticProps } from "next";
-import {
-  Layout,
-  NavMenu,
-  HireInfoCard,
-  WorldwideJobForm,
-  JobCard
-} from "../imports";
+import { Layout, NavMenu, HireInfoCard, WorldwideJobForm } from "../imports";
+import JobCard from "../components/Cards/JobCard";
+import { LazyloadCard } from "../components/Lazyload";
 
 interface Props {
   data: [];
 }
 
 const Home: NextPage<Props> = ({ data }): JSX.Element => {
-  const tenJobArray = data.slice(1, 11);
-  
-  const displayAvailableJobs = (): any => {
-    return tenJobArray.map((job: any) => (
+  useEffect(() => {
+    passData();
+  }, []);
+  const [jobData, setJobData] = useState([]);
+
+  const passData = () => {
+    const jobs = data.slice(1, 100);
+    setJobData([...jobs]);
+    return jobData;
+  };
+
+  const displayJobCards = () => {
+    return jobData.map((job: any) => (
       <JobCard
+        key={job.slug}
+        slug={job.slug}
         cardImg={job.logo}
         imgAlt={job.company}
         companyName={job.company}
@@ -36,11 +44,13 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
           <HireInfoCard />
         </div>
 
-        <div className="justify-content-between mx-auto d-flex w-75">
+        <div className="justify-content-between mx-auto d-flex w-100">
           <h4>Today's remote jobs</h4>
           <WorldwideJobForm />
         </div>
-        <div className="available-jobs">{displayAvailableJobs()}</div>
+        <div className="available-jobs">
+          {displayJobCards()}
+        </div>
       </main>
       <style jsx>
         {`

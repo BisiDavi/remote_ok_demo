@@ -15,7 +15,7 @@ export { SearchForm } from "../components/Forms";
 export { WorldwideJobForm } from "../components/Forms";
 
 export { HireInfoCard } from "../components/Cards";
-export { JobCard } from "../components/Cards";
+
 
 
 
