@@ -32,7 +32,7 @@ const JobCard = ({
     );
   };
 
-  const CompanyLogo = cardImg ? DisplayCompanyLogo() : FallBackImage(companyName);
+  const CompanyLogo = cardImg ? DisplayCompanyLogo() : (companyName ? FallBackImage(companyName) :FallBackImage(jobRole) ) ;
 
   const displayFourTags = () => {
     if (tags !== undefined && tags.length > 0) {

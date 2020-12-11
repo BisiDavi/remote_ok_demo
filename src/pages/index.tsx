@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { NextPage, GetStaticProps } from "next";
 import { Layout, NavMenu, HireInfoCard, WorldwideJobForm } from "../imports";
 import JobCard from "../components/Cards/JobCard";
-import { LazyloadCard } from "../components/Lazyload";
 
 interface Props {
   data: [];
