@@ -18,7 +18,7 @@ export const SearchForm = () => {
             aria-describedby="basic-addon1"
           />
         </InputGroup>
-        <div className="SearchformPlaceholder">
+        <div className={`${styles.SearchformPlaceholder}  SearchformPlaceholder`}>
           <FormTypewriterEffect />
         </div>
       </Form>

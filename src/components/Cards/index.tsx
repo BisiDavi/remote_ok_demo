@@ -4,13 +4,17 @@ import styles from "./card.module.css";
 
 export const HireInfoCard = () => {
   return (
-    <Card className="bg-white w-75 mx-auto pt-5" body>
-      <span className="d-flex pt-3">
-        <p className="ml-5 text-center">
-          👉 Hiring remotely? Reach <u>1,000,000+ remote workers</u> on the 🏆
-          #1 remote jobs board
+    <Card className={`${styles.hireInfoCard} bg-white w-75 mx-auto pt-5`} body>
+      <span className={`${styles.hiretext} d-flex pt-3`}>
+        <p className={`${styles.textMobile} ml-5 text-center`}>
+          <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{" "}
+          <span className={`${styles.textDesktop}`}>
+            {" "}
+            Reach <u>1,000,000+ remote workers</u> on the 🏆 #1 remote jobs
+            board{" "}
+          </span>
         </p>
-        <span className="ml-4 d-flex h-25 w-25 justify-content-around">
+        <span className={`${styles.hireButton} ml-4 d-flex h-25 w-25 justify-content-around`}>
           <RedButton text="Post a job" />
           <RedButton text="Hide this" />
         </span>
@@ -31,7 +35,7 @@ export const SponsoredCard = ({ cardImg, imgAlt }) => {
   );
 };
 
-export const FallBackImage = (companyName) => {
+export const FallBackImage = companyName => {
   const companyNameArr = companyName.split("");
   const firstLetter = companyNameArr[0];
   return (
@@ -40,16 +44,16 @@ export const FallBackImage = (companyName) => {
         <h4>{firstLetter}</h4>
       </div>
       <style jsx>{`
-      .company-logo-letter {
-        padding: 15px 20px;
-        border: 2px solid black;
-        border-radius: 5px;
-        margin: 0px 4px;
-      }
-      .company-logo-letter h4{
-        font-weight: 600
-      }
+        .company-logo-letter {
+          padding: 15px 20px;
+          border: 2px solid black;
+          border-radius: 5px;
+          margin: 0px 4px;
+        }
+        .company-logo-letter h4 {
+          font-weight: 600;
+        }
       `}</style>
     </>
-  )
-}
+  );
+};

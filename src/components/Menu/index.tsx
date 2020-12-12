@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from './menu.module.css';
 
 export const NavMenu: React.FC = (): JSX.Element => {
   const menu = [
@@ -36,8 +37,8 @@ export const NavMenu: React.FC = (): JSX.Element => {
       <div className="container-fluid">
         <div className="row position-relative">
           <div className="col-lg-12 app-nav">
-            <nav className="nav">
-              <ul className="d-flex list-unstyled mx-auto">
+            <nav className={`${styles.navbar} nav`}>
+              <ul className={`${styles.navlist} d-flex list-unstyled mx-auto`}>
                 {menu.map(menuLink => (
                   <li className="mx-1" key={menuLink.linkName}>
                     <Link href="/#">
@@ -53,7 +54,7 @@ export const NavMenu: React.FC = (): JSX.Element => {
               </ul>
             </nav>
           </div>
-          <div className="col-lg-12 wave p-0 m-0">
+          <div className={`${styles.wave} col-lg-12 wave p-0 m-0`}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
               <path
                 fill="#f9f9f9"

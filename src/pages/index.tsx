@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NextPage, GetStaticProps } from "next";
 import { Layout, NavMenu, HireInfoCard, WorldwideJobForm } from "../imports";
 import JobCard from "../components/Cards/JobCard";
+import styles from '../styles/indexpage.module.css';
 
 interface Props {
   data: [];
@@ -43,9 +44,11 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
           <HireInfoCard />
         </div>
 
-        <div className="justify-content-between mx-auto d-flex w-100">
+        <div className={`${styles.worldwideText}justify-content-between mx-auto d-flex w-75`}>
           <h4>Today's remote jobs</h4>
+          <span className={styles.worldwideform}>
           <WorldwideJobForm />
+          </span>
         </div>
         <div className="available-jobs">
           {displayJobCards()}

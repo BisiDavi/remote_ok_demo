@@ -1,17 +1,18 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { WhiteButton, GreenButton, RedButton, SearchForm } from "../../imports";
+import styles from './header.module.css'
 
 const Header: React.FC = (): JSX.Element => {
   return (
-    <header className="header-content">
+    <header className={`${styles.header} header-content`}>
       <Container fluid>
-        <Row className="row">
-          <Col lg={4} xs={2} className="mt-2 d-flex h-25">
+        <Row className={styles.row1}>
+          <Col lg={4} xs={2} className={`${styles.feed} mt-2 d-flex h-25`}>
             <WhiteButton btnClassName="mx-1" text="RSS" />
             <WhiteButton btnClassName="mx-1" text="API" />
           </Col>
-          <Col lg={4}>
-            <div className="logo mt-5 mb-5 flex-column d-flex mx-auto justify-content-center">
+          <Col lg={4} className={styles.logo}>
+            <div className={`${styles.logoText} logo mt-5 mb-5 flex-column d-flex mx-auto justify-content-center`}>
               <span className="d-flex  mx-auto">
                 <h3 className="text-white">remote</h3>
                 <span className="divider bg-white  text-white mx-2"> | </span>
@@ -22,22 +23,23 @@ const Header: React.FC = (): JSX.Element => {
               </p>
             </div>
           </Col>
-          <Col lg={4} className="mt-5 d-flex justify-content-center h-25">
+          <Col lg={4} className={`${styles.headerButton} mt-5 d-flex justify-content-center h-25`}>
             <GreenButton
               btnClassName="mx-2 mr-3 text-white"
               text="Remote Health"
             />
-            <span className="redbutton">
+            <span className={`${styles.Redbutton} redbutton`}>
               <RedButton
                 btnClassName="redbutton mx-2 position-fixed"
                 text="Post a job"
               />
             </span>
           </Col>
-        </Row>
+        <Col className={styles.overlay}></Col>
+        </Row>        
         <Row>
-          <Col lg={12}>
-            <div className="Searchform">
+          <Col lg={12} className={styles.form}>
+            <div className={`${styles.Searchform} Searchform`}>
               <SearchForm />
             </div>
           </Col>
@@ -51,7 +53,7 @@ const Header: React.FC = (): JSX.Element => {
           }
           .header-content {
             background-image: url("/mainbanner.webp");
-            height: 400px !important;
+            height: 400px;
             background-position: center;
             background-size: 100%;
           }

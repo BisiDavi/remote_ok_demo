@@ -30,3 +30,11 @@
 .SearchIcon i {
   color: black;
 }
+
+
+@media (max-width:480px){
+  .SearchformPlaceholder{
+    font-size: 16px !important;
+    top: 15px !important;
+  }
+}
