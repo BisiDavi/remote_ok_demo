@@ -14,7 +14,9 @@ export const HireInfoCard = () => {
             board{" "}
           </span>
         </p>
-        <span className={`${styles.hireButton} ml-4 d-flex h-25 w-25 justify-content-around`}>
+        <span
+          className={`${styles.hireButton} ml-4 d-flex h-25 w-25 justify-content-around`}
+        >
           <RedButton text="Post a job" />
           <RedButton text="Hide this" />
         </span>
@@ -48,10 +50,12 @@ export const FallBackImage = companyName => {
           padding: 15px 20px;
           border: 2px solid black;
           border-radius: 5px;
-          margin: 0px 4px;
+          margin: 10px 16px;
         }
         .company-logo-letter h4 {
-          font-weight: 600;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-size: 18px;
         }
       `}</style>
     </>

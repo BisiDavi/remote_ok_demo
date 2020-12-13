@@ -1,6 +1,10 @@
 .card {
   min-height: 90px;
   max-height: 120p;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.03);
+  cursor: pointer;
+  background-color: #efefef;
+  border:none;
 }
 .groupTag {
   flex-wrap: wrap;
@@ -32,12 +36,25 @@
   height: 60px;
   width: 60px !important;
   padding: 0px;
+  margin: 10px;
   max-width: 60px;
+}
+
+.companyprofile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardText,
+.cardTags {
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
 /* media query */
 /* HireInfoCard */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .hireInfoCard {
     margin-top: 50px;
     border: none;
@@ -75,7 +92,7 @@
     align-items: center;
     height: 100px !important;
     width: 100% !important;
-    padding: 0px !important;    
+    padding: 0px !important;
   }
   .hireButton button {
     width: 85px;
@@ -84,5 +101,33 @@
     height: 50px;
     font-weight: bold;
     margin: 5px;
+  }
+
+  /* job card */
+  .skilltag {
+    font-size: 10px;
+    padding: 2px;
+    margin: 3px !important;
+  }
+  .Logo {
+    width: auto !important;
+  }
+  .mobileRow {
+    display: flex;
+  }
+  .mobileRow h3 {
+    margin-right: 2px;
+    order: 1;
+  }
+  .companyprofile {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .cardText {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .cardText h4 {
+    order: 2;
   }
 }
