@@ -4,9 +4,6 @@ export const JobPostedAt = date => {
   const currentDate: any = moment();
   const postDate: any = moment(date);
 
-  console.log(currentDate, "currentDate");
-  console.log(postDate, "postDate");
-
   const getYearsPosted = currentDate.diff(postDate, "years");
   const getMonthPosted = currentDate.diff(postDate, "months");
   const getWeeksPosted = currentDate.diff(postDate, "weeks");
