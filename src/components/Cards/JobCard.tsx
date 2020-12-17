@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Card } from "react-bootstrap";
-import { RedButton, FallBackImage } from "../../imports";
-import { IJobCardProps } from "../../types";
-import { JobPostedAt } from "../../utils/date";
-import { LazyloadImg, LazyloadCard } from "../Lazyload";
-import styles from "./card.module.css";
+import { useState } from 'react';
+import { Card } from 'react-bootstrap';
+import { RedButton, FallBackImage } from '../../imports';
+import { IJobCardProps } from '../../types';
+import { JobPostedAt } from '../../utils/date';
+import { LazyloadImg, LazyloadCard } from '../Lazyload';
+import styles from './card.module.css';
 
 let keyId = 1102;
 const generateKeyID = () => {
@@ -54,6 +54,14 @@ const JobCard = ({
     }
   };
 
+  const Checkworldwide = location => {
+    if (location === 'Worldwide') {
+      return `🌍 ${location}`;
+    } else {
+      return location;
+    }
+  };
+
   return (
     <LazyloadCard>
       <Card
@@ -62,15 +70,21 @@ const JobCard = ({
         onMouseLeave={() => setShowApplyButton(false)}
         className={`${styles.card} my-2 container py-0 px-0`}
       >
-        <Card.Body className="py-1 d-flex align-items-center">
-          <div className="row d-flex align-items-center py-1 px-2 w-100">
+        <Card.Body
+          className={`${styles.cardbody} py-1 d-flex align-items-center`}
+        >
+          <div
+            className={`${styles.row} row d-flex align-items-center py-1 px-2 w-100`}
+          >
             {CompanyLogo}
             <div className={`${styles.companyprofile} col-lg-9`}>
               <div className={`${styles.cardText} col-lg-4`}>
-                <h4 className="font-weight-300">{companyName}</h4>
+                <h3>{jobRole}</h3>
                 <span className={styles.mobileRow}>
-                  <h3>{jobRole}</h3>
-                  <div className="location">{location}</div>
+                  <h4 className="font-weight-300">{companyName}</h4>
+                  <div className={styles.location}>
+                    {Checkworldwide(location)}
+                  </div>
                 </span>
               </div>
               <div
@@ -83,7 +97,7 @@ const JobCard = ({
                 </ul>
               </div>
             </div>
-            <div className="duration col-lg-1">{JobPostedAt(duration)}</div>
+            <div className={`${styles.duration} col-lg-1`}>{JobPostedAt(duration)}</div>
             <div className="col-1 d-none d-sm-block">
               {showApplyButton ? <RedButton text="Apply" /> : null}
             </div>

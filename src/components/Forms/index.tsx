@@ -1,10 +1,11 @@
-import { Form, FormControl, InputGroup } from "react-bootstrap";
-import { FormTypewriterEffect, RedButton } from "../../imports";
-import styles from "./forms.module.css";
+import { useState } from 'react';
+import { Form, FormControl, InputGroup } from 'react-bootstrap';
+import { FormTypewriterEffect, RedButton } from '../../imports';
+import styles from './forms.module.css';
 
 enum EmailPeriods {
-  daily = "DAILY",
-  weekly = "WEEKLY"
+  daily = 'DAILY',
+  weekly = 'WEEKLY'
 }
 
 export const SearchForm = () => {
@@ -44,7 +45,7 @@ export const SearchForm = () => {
             top: 10px;
             font-size: 30px;
             font-weight: 600;
-            font-family: "sans-serif", Arial;
+            font-family: 'sans-serif', Arial;
           }
         `}
       </style>
@@ -60,9 +61,10 @@ export const WorldwideJobForm = () => {
   );
 };
 
-export const EmailForm = () => {
-  const periods: string[] = ["daily", "weekly"];
-  return (
+export const EmailForm = ({ showEmail, cancelEmail }): JSX.Element => {
+  const periods: string[] = ['daily', 'weekly'];
+
+  return showEmail ? (
     <Form className={styles.EmailForm}>
       <p>Join 83,752+ people and get a </p>
       <Form.Control as="select">
@@ -70,11 +72,14 @@ export const EmailForm = () => {
           <option key={period} value={period}>
             {period}
           </option>
-  ))}
+        ))}
       </Form.Control>
       <p> email of all new remote jobs </p>
       <Form.Control type="email" placeholder="Email" />
       <RedButton text="Subscribe" type="submit" />
+      <span onClick={cancelEmail} className={styles.cancelEmailForm}>
+        X
+      </span>
     </Form>
-  );
+  ) : null;
 };

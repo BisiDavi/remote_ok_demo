@@ -1,13 +1,39 @@
 .card {
   min-height: 90px;
   max-height: 120p;
-  box-shadow: 1px 2px 4px rgba(0,0,0,.03);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.03);
   cursor: pointer;
   background-color: #efefef;
-  border:none;
+  border: none;
 }
 .groupTag {
   flex-wrap: wrap;
+}
+
+.location {
+  /* background-color: rgba(0, 0, 0, 0.18); */
+  text-transform: uppercase;
+  font-family: 'nunito';
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 12em;
+  display: inline-block;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  background: #ddd;
+  font-size: 10px;
+  padding-right: 1.5px;
+  padding-left: 1.5px;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-weight: 800;
+  color: #0f1115;
+}
+
+.location p {
+  width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .groupTag li {
@@ -55,6 +81,31 @@
 /* media query */
 /* HireInfoCard */
 @media screen and (max-width: 480px) {
+  .cardbody {
+    padding: 0px !important;
+  }
+  .row {
+    display: grid !important;
+    padding: 0px !important;
+    grid-template-columns: 1fr 7fr 1fr;
+  }
+  .cardText h3 {
+    font-size: 14px;
+  }
+  .mobileRow h4 {
+    font-size: 12px;
+  }
+  .companyLogo {
+    padding-right: 0px !important;
+  }
+  .duration {
+    padding: 0px !important;
+  }
+  .groupTag li {
+    border: 1px solid black !important;
+    font-size: 9px;
+  }
+
   .hireInfoCard {
     margin-top: 50px;
     border: none;
@@ -120,8 +171,9 @@
     order: 1;
   }
   .companyprofile {
+    padding: 0px !important;
     display: flex;
-    flex-direction: column !important;
+    flex-direction: column;
   }
   .cardText {
     display: flex !important;

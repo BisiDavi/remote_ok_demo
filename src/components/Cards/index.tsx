@@ -41,7 +41,7 @@ export const FallBackImage = companyName => {
   const companyNameArr = companyName.split("");
   const firstLetter = companyNameArr[0];
   return (
-    <>
+    <div className="fallbackImage col-lg-1">
       <div className="company-logo-letter">
         <h4>{firstLetter}</h4>
       </div>
@@ -58,6 +58,6 @@ export const FallBackImage = companyName => {
           font-size: 18px;
         }
       `}</style>
-    </>
+    </div>
   );
 };

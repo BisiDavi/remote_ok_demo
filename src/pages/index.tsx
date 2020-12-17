@@ -19,12 +19,15 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
     passData();
   }, []);
   const [jobData, setJobData] = useState([]);
+  const [showEmail, setEmail] = useState<boolean>(true);
   console.log("jobData", jobData);
   const passData = () => {
     const jobs = data.slice(1, 100);
     setJobData([...jobs]);
     return jobData;
   };
+
+  const hideEmail = () => setEmail(false);
 
   const displayJobCards = () => {
     return jobData.map((job: any) => (
@@ -61,7 +64,10 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
         <div className="available-jobs">{displayJobCards()}</div>
       </main>
       <footer className="footer">
-        <EmailForm />
+        <EmailForm  
+        showEmail={showEmail} 
+        cancelEmail={hideEmail}
+        />
       </footer>
       <style jsx>
         {`
