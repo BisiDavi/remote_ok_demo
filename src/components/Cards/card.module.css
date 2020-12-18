@@ -100,10 +100,16 @@
   }
   .duration {
     padding: 0px !important;
+    font-size: 12px;
   }
   .groupTag li {
     border: 1px solid black !important;
     font-size: 9px;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
   }
 
   .hireInfoCard {

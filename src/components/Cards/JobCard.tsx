@@ -80,11 +80,12 @@ const JobCard = ({
             <div className={`${styles.companyprofile} col-lg-9`}>
               <div className={`${styles.cardText} col-lg-4`}>
                 <h3>{jobRole}</h3>
-                <span className={styles.mobileRow}>
-                  <h4 className="font-weight-300">{companyName}</h4>
+                <span className={`${styles.mobileRow} d-flex align-items-center`}>
+                  <h4 className="font-weight-300 mr-1">{companyName}</h4>
+                  {(location.length > 2) ?
                   <div className={styles.location}>
                     {Checkworldwide(location)}
-                  </div>
+                  </div> : null}
                 </span>
               </div>
               <div
