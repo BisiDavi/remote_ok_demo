@@ -66,17 +66,21 @@ export const EmailForm = ({ showEmail, cancelEmail }): JSX.Element => {
 
   return showEmail ? (
     <Form className={styles.EmailForm}>
-      <p>Join 83,752+ people and get a </p>
-      <Form.Control as="select">
-        {periods.map(period => (
-          <option key={period} value={period}>
-            {period}
-          </option>
-        ))}
-      </Form.Control>
+      <span className={styles.Newsletter}>
+        <p>Join 83,752+ people and get a </p>
+        <Form.Control  className={styles.formSelect} as="select">
+          {periods.map(period => (
+            <option key={period} value={period}>
+              {period}
+            </option>
+          ))}
+        </Form.Control>
+      </span>
       <p> email of all new remote jobs </p>
-      <Form.Control type="email" placeholder="Email" />
-      <RedButton text="Subscribe" type="submit" />
+      <span className={styles.formSubscribe} >
+        <Form.Control className={styles.formInput} type="email" placeholder="Email" />
+        <RedButton text="Subscribe" type="submit" />
+      </span>
       <span onClick={cancelEmail} className={styles.cancelEmailForm}>
         X
       </span>

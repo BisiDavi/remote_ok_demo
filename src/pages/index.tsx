@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import { NextPage, GetStaticProps } from "next";
+import { useState, useEffect } from 'react';
+import { NextPage, GetStaticProps } from 'next';
 import {
   Layout,
   NavMenu,
   HireInfoCard,
   WorldwideJobForm,
   EmailForm
-} from "../imports";
-import JobCard from "../components/Cards/JobCard";
-import styles from "../styles/indexpage.module.css";
+} from '../imports';
+import JobCard from '../components/Cards/JobCard';
+import styles from '../styles/indexpage.module.css';
 
 interface Props {
   data: [];
@@ -18,14 +18,18 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
   useEffect(() => {
     passData();
   }, []);
+
   const [jobData, setJobData] = useState([]);
   const [showEmail, setEmail] = useState<boolean>(true);
-  console.log("jobData", jobData);
+  const [hidePostJobCard, setHideCard] = useState<boolean>(true);
+  console.log('jobData', jobData);
   const passData = () => {
     const jobs = data.slice(1, 100);
     setJobData([...jobs]);
     return jobData;
   };
+
+  const hideCard = () => setHideCard(false);
 
   const hideEmail = () => setEmail(false);
 
@@ -50,7 +54,7 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
       <NavMenu />
       <main className="main mt-5">
         <div className="hire-remote mt-2 mb-3">
-          <HireInfoCard />
+          <HireInfoCard hidePostJobCard={hidePostJobCard} hideCard={hideCard} />
         </div>
 
         <div
@@ -64,10 +68,7 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
         <div className="available-jobs">{displayJobCards()}</div>
       </main>
       <footer className="footer">
-        <EmailForm  
-        showEmail={showEmail} 
-        cancelEmail={hideEmail}
-        />
+        <EmailForm showEmail={showEmail} cancelEmail={hideEmail} />
       </footer>
       <style jsx>
         {`
@@ -77,6 +78,11 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
           .footer {
             position: relative;
           }
+          @media (max-width: 480px) {
+            .footer {
+              position: inherit !important;
+            }
+          }
         `}
       </style>
     </Layout>
@@ -84,7 +90,7 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async (ctx): Promise<any> => {
-  const response = await fetch("https://remoteok.io/api");
+  const response = await fetch('https://remoteok.io/api');
   let data = await response.json();
   return {
     props: { data }

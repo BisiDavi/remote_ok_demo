@@ -2,27 +2,28 @@ import { Card } from "react-bootstrap";
 import { RedButton, CardButton } from "../../imports";
 import styles from "./card.module.css";
 
-export const HireInfoCard = () => {
-  return (
-    <Card className={`${styles.hireInfoCard} bg-white w-75 mx-auto pt-5`} body>
+export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
+  return hidePostJobCard
+  ? <Card className={`${styles.hireInfoCard} bg-white w-75 mx-auto pt-5`} body>
       <span className={`${styles.hiretext} d-flex pt-3`}>
         <p className={`${styles.textMobile} ml-5 text-center`}>
-          <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{" "}
+          <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{' '}
           <span className={`${styles.textDesktop}`}>
-            {" "}
+            {' '}
             Reach <u>1,000,000+ remote workers</u> on the 🏆 #1 remote jobs
-            board{" "}
+            board{' '}
           </span>
         </p>
         <span
           className={`${styles.hireButton} ml-4 d-flex h-25 w-25 justify-content-around`}
         >
           <RedButton text="Post a job" />
-          <RedButton text="Hide this" />
+          <span onClick={hideCard}>
+            <RedButton text="Hide this" />
+          </span>
         </span>
       </span>
-    </Card>
-  );
+    </Card> : null
 };
 
 export const SponsoredCard = ({ cardImg, imgAlt }) => {

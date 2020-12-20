@@ -74,4 +74,43 @@
     font-size: 16px !important;
     top: 15px !important;
   }
+  .EmailForm button {
+    width: 20% !important;
+  }
+  .EmailForm p {
+    font-size: 13px !important;
+    margin-bottom: 0px;
+  }
+  .EmailForm {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    top: -10px !important;
+    position: absolute !important;
+    z-index: 20000;
+    height: 120px;
+  }
+  .formSelect,
+  .formInput {
+    width: 25% !important;
+    height: 35px;
+  }
+  .Newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    margin-top: 10px;
+  }
+  .formSubscribe {
+    display: flex;
+    justify-content: center;
+    margin-top: -10px !important;
+  }
+  .formSubscribe button {
+    width: 30% !important;
+  }
+  .cancelEmailForm {
+    top: 50px;
+    right: 15px;
+  }
 }
