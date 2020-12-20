@@ -69,6 +69,12 @@
   cursor: pointer;
 }
 
+.Newsletter,
+.formSubscribe {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 480px) {
   .SearchformPlaceholder {
     font-size: 16px !important;
