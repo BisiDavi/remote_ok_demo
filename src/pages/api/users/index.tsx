@@ -2,7 +2,7 @@ import { NextApiResponse } from "next";
 import nc from "next-connect";
 import middleware from "../../../middleware/all";
 import onError from "../../../middleware/error";
-import { User } from "../../../db";
+import { user } from "../../../db";
 import { Request } from "../../../../types";
 
 const handler = nc<Request, NextApiResponse>({
