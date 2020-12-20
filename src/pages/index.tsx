@@ -79,6 +79,9 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
             position: relative;
           }
           @media (max-width: 480px) {
+            .main {
+              padding-top: 20px !important;
+            }
             .footer {
               position: inherit !important;
             }
