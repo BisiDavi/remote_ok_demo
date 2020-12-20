@@ -80,7 +80,7 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
           }
           @media (max-width: 480px) {
             .main {
-              padding-top: 20px !important;
+              padding-top: 10px !important;
             }
             .footer {
               position: inherit !important;
