@@ -98,12 +98,12 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
     );
 };
 
-export const getStaticProps: GetStaticProps = async (ctx): Promise<any> => {
+export async function getServerSideProps(ctx): Promise<any> {
     const response = await fetch('https://remoteok.io/api');
     let data = await response.json();
     return {
         props: { data },
     };
-};
+}
 
 export default Home;
