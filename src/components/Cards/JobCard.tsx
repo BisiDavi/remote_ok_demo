@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { RedButton, FallBackImage } from '../../imports';

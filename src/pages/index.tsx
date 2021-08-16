@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import {
@@ -13,24 +14,28 @@ import { showWorldWideJobs } from '../utils/filterJobs';
 
 interface Props {
     data: [];
+    availableJobs:[]
 }
 
-const Home: NextPage<Props> = ({ data }): JSX.Element => {
+const Home: NextPage<Props> = ({ data ,availableJobs }): JSX.Element => {
     console.log('Data', data);
+    console.log('availableJobs', availableJobs);
+
 
     const [jobData, setJobData] = useState([]);
     const [showEmail, setEmail] = useState<boolean>(true);
     const [hidePostJobCard, setHideCard] = useState<boolean>(true);
     console.log('jobData', jobData);
 
-    const passData = () => {
-        const jobs = data.slice(1, 100);
-        setJobData([...jobs]);
-        return jobData
-    };
-
-       useEffect(() => {
+    
+    useEffect(() => {
+        const passData = () => {
+            const jobs = data.slice(1, 100);
+            setJobData([...jobs]);
+            return jobData
+        };
         passData();
+        
     }, []);
 
     showWorldWideJobs(data)
@@ -69,7 +74,7 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
                 <div
                     className={`${styles.worldwideText}   justify-content-between mx-auto d-flex w-75`}
                 >
-                    <h4>Today's remote jobs</h4>
+                    <h4>Today&#39;s remote jobs</h4>
                     <span className={styles.worldwideform}>
                         <WorldwideJobForm />
                     </span>
@@ -107,8 +112,10 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
 export async function getServerSideProps(ctx): Promise<any> {
     const response = await fetch('https://remoteok.io/api');
     let data = await response.json();
+    console.log('Data', data);
+    const availableJobs = data.filter(job => job.slug);
     return {
-        props: { data },
+        props: { data,availableJobs },
     };
 }
 

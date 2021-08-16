@@ -9,7 +9,11 @@ module.exports = withPWA({
     GITHUB_ID: 'c33967d1412be8f14e44',
     GITHUB_SECRET: 'ef78fba8c196a5446c02cab6c9da25595a2af088',
   },
+  images: {
+    domains: ['remoteok.io'],
+  },
   pwa: {
     dest: "public"
   }
 });
+

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
@@ -14,35 +15,35 @@
     "algoliasearch": "^4.8.3",
     "bootstrap": "^4.5.3",
     "cypress": "^8.2.0",
-    "graphql": "^15.4.0",
     "isomorphic-unfetch": "^3.1.0",
     "jest": "^26.6.3",
     "moment": "^2.29.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.7",
     "nanoid": "^3.1.20",
-    "next": "10.0.3",
+    "next": "^11.1.0",
     "next-auth": "^3.1.0",
     "next-connect": "^0.9.1",
     "next-pwa": "^5.0.0",
-    "react": "17.0.1",
+    "react": "^17.0.2",
     "react-bootstrap": "^1.4.0",
-    "react-dom": "17.0.1",
+    "react-content-loader": "^6.0.3",
+    "react-dom": "^17.0.2",
     "react-infinite-scroll-component": "^5.1.0",
     "react-instantsearch-dom": "^6.8.2",
     "react-lazyload": "^3.1.0",
     "react-redux": "^7.2.2",
-    "react-search-box": "^2.0.2",
     "redux": "^4.0.5",
     "styled-components": "^5.2.1",
-    "type-graphql": "^1.1.1",
     "typewriter-effect": "^2.17.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.10",
     "@types/react": "^17.0.0",
-    "@types/react-bootstrap": "^0.32.24",
+    "@types/react-bootstrap": "^0.3yr2.24",
     "@types/styled-components": "^5.1.4",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
     "typescript": "^4.1.2"
   }
 }

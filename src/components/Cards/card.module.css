@@ -171,7 +171,9 @@
         margin: 3px;
     }
     .Logo {
-        width: auto;
+        height: 100%;
+        width: 100px;
+        margin: 5px 10px;
     }
     .mobileRow {
         display: flex;
