@@ -40,10 +40,10 @@
   "devDependencies": {
     "@types/node": "^14.14.10",
     "@types/react": "^17.0.0",
-    "@types/react-bootstrap": "^0.3yr2.24",
+    "@types/react-bootstrap": "^0.32.24",
     "@types/styled-components": "^5.1.4",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
-    "typescript": "^4.1.2"
+    "typescript": "4.3.2"
   }
 }

@@ -1,3 +1,11 @@
+.headerButton {
+  position: absolute;
+    right: 10px;
+    margin-bottom: 0;
+    height: 200px;
+    width: 400px;
+}
+
 /* media queries */
 @media (max-width: 480px) {
   .row1{
@@ -16,23 +24,23 @@
     padding: 0px;     
   }
   .logoText{
-    margin-top: 15px !important;
+    margin-top: 15px;
 
   }
   .header {
-    background-size: cover !important;
-    height: 300px !important;
+    background-size: cover;
+    height: 300px;
   }
   .headerButton button {
-    display: none !important;
+    display: none;
   }
   .feed button {
-    display: none !important;
+    display: none;
   }
   .Redbutton button {
     top: 20px;
     right: 20px;
-    display: flex !important;
+    display: flex;
     width: 80px;
     font-size: 12px;
   }
@@ -41,19 +49,19 @@
   top: 100px;
 }
   .Searchform {
-    height: 50px !important;
-    width:90% !important;
+    height: 50px;
+    width:90%;
     position: absolute;
     top: 30px;
     z-index: 500; 
   }
 
   .Searchform form {
-    margin-top: -50px !important;
+    margin-top: -50px;
     height: 50px;
-    width:90% !important;
+    width:90%;
   }
   .Searchform input {
-    height: 50px !important;
+    height: 50px;
   }
 }

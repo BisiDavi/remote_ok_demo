@@ -3,20 +3,42 @@ import ContentLoader from "react-content-loader"
 const Loader = (props) => (
   <ContentLoader 
     speed={2}
-    width={300}
-    height={150}
+    width="100%"    
+    className="container m-auto d-flex px-0"
     viewBox="0 0 300 150"
-    backgroundColor="#d2b6b6"
+    backgroundColor="lightgray"
     foregroundColor="#ecebeb"
     {...props}
   >
-    <rect x="48" y="8" rx="3" ry="3" width="88" height="6" /> 
-    <rect x="48" y="26" rx="3" ry="3" width="52" height="6" /> 
-    <rect x="0" y="56" rx="3" ry="3" width="410" height="6" /> 
-    <rect x="0" y="72" rx="3" ry="3" width="380" height="6" /> 
-    <rect x="0" y="88" rx="3" ry="3" width="178" height="6" /> 
-    <circle cx="20" cy="20" r="20" />
+    <rect x="0" y="0" rx="0" ry="0"  width="400px" height="30px" />     
   </ContentLoader>
 )
 
-export default Loader
+
+export default function Loaders(){
+  const array = new Array(20);
+
+  return (
+    <>
+    <div className="loading">
+      {array.fill(20).map((_,index) => (
+        <div key={index} className="loader">
+          <Loader />
+        </div>
+      ))}
+    </div>
+    <style jsx>
+      {`
+        .loading:{
+          display:flex;
+          flex-direction:column;
+        }
+        .loader{
+          height:100px;
+          margin:20px 0px;
+        }
+      `}
+    </style>
+    </>
+  )
+}

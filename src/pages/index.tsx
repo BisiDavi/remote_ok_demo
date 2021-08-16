@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import {
     Layout,
@@ -7,9 +7,10 @@ import {
     HireInfoCard,
     WorldwideJobForm,
     EmailForm,
-} from '../imports';
+} from '../imports/.';
+
 import JobCard from '../components/Cards/JobCard';
-import styles from '../styles/indexpage.module.css';
+import styles from 'styles/indexpage.module.css';
 import { showWorldWideJobs } from '../utils/filterJobs';
 
 interface Props {
@@ -17,35 +18,20 @@ interface Props {
     availableJobs:[]
 }
 
-const Home: NextPage<Props> = ({ data ,availableJobs }): JSX.Element => {
-    console.log('Data', data);
+const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
     console.log('availableJobs', availableJobs);
 
-
-    const [jobData, setJobData] = useState([]);
     const [showEmail, setEmail] = useState<boolean>(true);
     const [hidePostJobCard, setHideCard] = useState<boolean>(true);
-    console.log('jobData', jobData);
 
-    
-    useEffect(() => {
-        const passData = () => {
-            const jobs = data.slice(1, 100);
-            setJobData([...jobs]);
-            return jobData
-        };
-        passData();
-        
-    }, []);
-
-    showWorldWideJobs(data)
+    showWorldWideJobs(availableJobs)
 
     const hideCard = () => setHideCard(false);
 
     const hideEmail = () => setEmail(false);
 
     const displayJobCards = () => {
-        return jobData.map((job: any) => (
+        return availableJobs.map((job: any) => (
             <JobCard
                 key={job.slug}
                 slug={job.slug}
@@ -70,7 +56,6 @@ const Home: NextPage<Props> = ({ data ,availableJobs }): JSX.Element => {
                         hideCard={hideCard}
                     />
                 </div>
-
                 <div
                     className={`${styles.worldwideText}   justify-content-between mx-auto d-flex w-75`}
                 >
@@ -112,10 +97,9 @@ const Home: NextPage<Props> = ({ data ,availableJobs }): JSX.Element => {
 export async function getServerSideProps(ctx): Promise<any> {
     const response = await fetch('https://remoteok.io/api');
     let data = await response.json();
-    console.log('Data', data);
     const availableJobs = data.filter(job => job.slug);
     return {
-        props: { data,availableJobs },
+        props: { availableJobs },
     };
 }
 

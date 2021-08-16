@@ -8,29 +8,25 @@ const Header: React.FC = (): JSX.Element => {
       <Container fluid>
         <Row className={styles.row1}>
           <Col lg={4} xs={2} className={`${styles.feed} mt-2 d-flex h-25`}>
-            <WhiteButton btnClassName="mx-1" text="RSS" />
-            <WhiteButton btnClassName="mx-1" text="API" />
+            {/* <WhiteButton btnClassName="mx-1" text="RSS" />
+            <WhiteButton btnClassName="mx-1" text="API" /> */}
           </Col>
           <Col lg={4} className={styles.logo}>
             <div className={`${styles.logoText} logo mt-5 mb-5 flex-column d-flex mx-auto justify-content-center`}>
               <span className="d-flex  mx-auto">
-                <h3 className="text-white">remote</h3>
+                <h3 className="text-white  font-weight-bold">remote</h3>
                 <span className="divider bg-white  text-white mx-2"> | </span>
-                <h3 className="text-white">demo®</h3>
+                <h3 className="text-white font-weight-bold">demo®</h3>
               </span>
-              <p className="motto text-white text-center">
+              <p className="motto text-white text-center font-weight-bold">
                 work anywhere, live everywhere
               </p>
             </div>
           </Col>
-          <Col lg={4} className={`${styles.headerButton} mt-5 d-flex justify-content-center h-25`}>
-            <GreenButton
-              btnClassName="mx-2 mr-3 text-white"
-              text="Remote Health"
-            />
+          <Col lg={2} className={`${styles.headerButton} mt-5 d-flex justify-content-center`}>          
             <span className={`${styles.Redbutton} redbutton`}>
               <RedButton
-                btnClassName="redbutton mx-2 position-fixed"
+                btnClassName="redbutton mx-2 text-white position-fixed btn-danger font-weight-bold"
                 text="Post a job"
               />
             </span>
@@ -49,7 +45,8 @@ const Header: React.FC = (): JSX.Element => {
         {`
           .redbutton {
             right: 20px;
-            z-index: 1000 !important;
+            z-index: 10000;
+            font-size:20px;
           }
           .header-content {
             background-image: url("/mainbanner.webp");
@@ -59,6 +56,12 @@ const Header: React.FC = (): JSX.Element => {
           }
           .logo h3 {
             font-family: "Pacifico", san-serif, helevetica;
+            font-size:30px;
+            line-height:35px;
+            letter-spacing:5px;
+          }
+          .logo p{
+            font-size:20px;
           }
         `}
       </style>
