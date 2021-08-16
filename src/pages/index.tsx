@@ -15,19 +15,22 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ data }): JSX.Element => {
-    useEffect(() => {
-        passData();
-    }, []);
+    console.log('Data', data);
 
     const [jobData, setJobData] = useState([]);
     const [showEmail, setEmail] = useState<boolean>(true);
     const [hidePostJobCard, setHideCard] = useState<boolean>(true);
     console.log('jobData', jobData);
+
     const passData = () => {
         const jobs = data.slice(1, 100);
         setJobData([...jobs]);
-        return jobData;
+        return jobData
     };
+
+       useEffect(() => {
+        passData();
+    }, []);
 
     const hideCard = () => setHideCard(false);
 
@@ -86,10 +89,10 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
                     }
                     @media (max-width: 480px) {
                         .main {
-                            padding-top: 10px !important;
+                            padding-top: 10px;
                         }
                         .footer {
-                            position: inherit !important;
+                            position: inherit;
                         }
                     }
                 `}
