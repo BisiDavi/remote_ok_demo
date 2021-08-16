@@ -64,7 +64,6 @@ const JobCard = ({
   };
 
   return (
-    <LazyloadCard>
       <Card
         key={slug}
         onMouseEnter={() => setShowApplyButton(true)}
@@ -102,7 +101,6 @@ const JobCard = ({
             </div>
           </Card.Body>
       </Card>
-    </LazyloadCard>
   );
 };
 
