@@ -69,10 +69,7 @@ const JobCard = ({
         onMouseEnter={() => setShowApplyButton(true)}
         onMouseLeave={() => setShowApplyButton(false)}
         className={`${styles.card} my-2 container py-0 px-0`}
-      >
-        {/* <Card.Body
-          className={`${styles.cardbody} py-1 d-flex align-items-center`}
-        > */}
+      >       
           <Card.Body
             className={`${styles.row} row d-flex align-items-center py-1`}
           >
@@ -100,10 +97,9 @@ const JobCard = ({
             </div>
             <div className={`${styles.duration} col-lg-1`}>{JobPostedAt(duration)}</div>
             <div className="d-none d-sm-block">
-              {true ? <RedButton btnClassName={styles.applyBtn} text="Apply" /> : null}
+              {showApplyButton ? <RedButton btnClassName={styles.applyBtn} text="Apply" /> : null}
             </div>
           </Card.Body>
-        {/* </Card.Body> */}
       </Card>
     </LazyloadCard>
   );
