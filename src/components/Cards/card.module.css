@@ -60,7 +60,7 @@
 .companyLogo {
     border-radius: 5px;
     height: 100%;
-    width: 100%;
+    width: 100px;
     padding: 0px;
     margin: 10px;
 }
@@ -75,6 +75,11 @@
 .cardTags {
     padding: 0px;
     margin: 0px;
+}
+
+.applyBtn{
+    width:150px;
+    height:50px;
 }
 
 /* media query */
