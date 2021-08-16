@@ -9,6 +9,7 @@ import {
 } from '../imports';
 import JobCard from '../components/Cards/JobCard';
 import styles from '../styles/indexpage.module.css';
+import { showWorldWideJobs } from '../utils/filterJobs';
 
 interface Props {
     data: [];
@@ -31,6 +32,8 @@ const Home: NextPage<Props> = ({ data }): JSX.Element => {
        useEffect(() => {
         passData();
     }, []);
+
+    showWorldWideJobs(data)
 
     const hideCard = () => setHideCard(false);
 

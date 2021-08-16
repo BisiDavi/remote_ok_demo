@@ -4,14 +4,14 @@ import styles from "./card.module.css";
 
 export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
   return hidePostJobCard
-  ? <Card className={`${styles.hireInfoCard} bg-white w-75 mx-auto pt-5`} body>
-      <span className={`${styles.hiretext} d-flex pt-3`}>
-        <p className={`${styles.textMobile} ml-5 text-center`}>
+  ? <Card className={`${styles.hireInfoCard} bg-white container mx-auto`} body>
+      <span className={`${styles.hiretext} d-flex pt-3 align-items-center`}>
+        <p className={`${styles.textMobile} ml-5 mb-0 text-center`}>
           <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{' '}
-          <span className={`${styles.textDesktop}`}>
+          <span className={`${styles.textDesktop} font-weight-bold`}>
             {' '}
-            Reach <u>1,000,000+ remote workers</u> on the 🏆 #1 remote jobs
-            board{' '}
+            Visit <a target="_blank" rel="" href="https://remoteok.io/">Remote OK </a> 🏆 #1 remote jobs
+            board{' '} PS: <u>This is a demo project.</u>
           </span>
         </p>
         <span
