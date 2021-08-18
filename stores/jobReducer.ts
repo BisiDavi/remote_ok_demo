@@ -24,7 +24,7 @@ export default function JobReducer(
       return {
         ...state,
         loading: false,
-        worldwide: true,
+        worldwide: !state.worldwide,
       };
     }
     case FETCH_WORLDWIDE_JOBS_FAILED: {

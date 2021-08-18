@@ -1,11 +1,13 @@
-import { useState } from 'react';
-import { Form, FormControl, InputGroup } from 'react-bootstrap';
-import { FormTypewriterEffect, RedButton } from '../../imports';
-import styles from './forms.module.css';
+import { useState } from "react";
+import { Form, FormControl, InputGroup } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { FormTypewriterEffect, RedButton } from "@imports/.";
+import { JobAction } from "@stores/jobAction";
+import styles from "./forms.module.css";
 
 enum EmailPeriods {
-  daily = 'DAILY',
-  weekly = 'WEEKLY'
+  daily = "DAILY",
+  weekly = "WEEKLY",
 }
 
 export const SearchForm = () => {
@@ -45,7 +47,7 @@ export const SearchForm = () => {
             top: 10px;
             font-size: 30px;
             font-weight: 600;
-            font-family: 'sans-serif', Arial;
+            font-family: "sans-serif", Arial;
           }
         `}
       </style>
@@ -53,23 +55,34 @@ export const SearchForm = () => {
   );
 };
 
-export const WorldwideJobForm = () => {
+export function WorldwideJobForm() {
+  const dispatch = useDispatch();
+
+  function displayWorldWideJobs() {
+    dispatch(JobAction());
+  }
+
   return (
     <Form>
-      <Form.Check type="checkbox" label="Only show worldwide jobs" />
+      <Form.Check
+        onClick={displayWorldWideJobs}
+        type="checkbox"
+        className="font-weight-bold"
+        label="Only show worldwide jobs"
+      />
     </Form>
   );
-};
+}
 
 export const EmailForm = ({ showEmail, cancelEmail }): JSX.Element => {
-  const periods: string[] = ['daily', 'weekly'];
+  const periods: string[] = ["daily", "weekly"];
 
   return showEmail ? (
     <Form className={styles.EmailForm}>
       <span className={styles.Newsletter}>
         <p>Join 83,752+ people and get a </p>
-        <Form.Control  className={styles.formSelect} as="select">
-          {periods.map(period => (
+        <Form.Control className={styles.formSelect} as="select">
+          {periods.map((period) => (
             <option key={period} value={period}>
               {period}
             </option>
@@ -77,8 +90,12 @@ export const EmailForm = ({ showEmail, cancelEmail }): JSX.Element => {
         </Form.Control>
       </span>
       <p> email of all new remote jobs </p>
-      <span className={styles.formSubscribe} >
-        <Form.Control className={styles.formInput} type="email" placeholder="Email" />
+      <span className={styles.formSubscribe}>
+        <Form.Control
+          className={styles.formInput}
+          type="email"
+          placeholder="Email"
+        />
         <RedButton text="Subscribe" type="submit" />
       </span>
       <span onClick={cancelEmail} className={styles.cancelEmailForm}>
