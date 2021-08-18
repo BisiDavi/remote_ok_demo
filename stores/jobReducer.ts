@@ -35,5 +35,7 @@ export default function JobReducer(
         error: payload,
       };
     }
+    default:
+      return state;
   }
 }
