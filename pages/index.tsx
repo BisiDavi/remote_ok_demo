@@ -88,7 +88,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
   );
 };
 
-export async function getServerSideProps(ctx): Promise<any> {
+export async function getServerSideProps(): Promise<any> {
   let result;
   await axios.get("https://remoteok.io/api").then((response) => {
     result = response.data;
