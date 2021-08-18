@@ -44,7 +44,10 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
   }
 
   return (
-    <Layout pageTitle="Remote Jobs in Programming, Design, Sales and More">
+    <Layout
+      className="position-relative"
+      pageTitle="Remote Jobs in Programming, Design, Sales and More"
+    >
       <NavMenu />
       <main className="main mt-5">
         <div className="hire-remote mt-2 mb-3">
@@ -71,8 +74,12 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
             position: relative;
             top: 80px;
           }
-          .footer {
-            position: relative;
+          footer.footer {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            height: 70px;
+            width: 100%;
           }
           @media (max-width: 480px) {
             .main {
