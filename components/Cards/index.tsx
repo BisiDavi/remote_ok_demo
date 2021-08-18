@@ -1,18 +1,31 @@
-import Image from 'next/image'
+import Image from "next/image";
 import { Card } from "react-bootstrap";
-import { RedButton, CardButton } from "../../imports";
+import { RedButton, CardButton } from "@imports/.";
 import styles from "./card.module.css";
 
 export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
-  return hidePostJobCard
-  ? <Card className={`${styles.hireInfoCard} bg-white container mx-auto`} body>
+  return hidePostJobCard ? (
+    <Card className={`${styles.hireInfoCard} bg-white container mx-auto`} body>
       <span className={`${styles.hiretext} d-flex pt-3 align-items-center`}>
-        <p className={`${styles.textMobile} ml-5 mb-0 text-center`}>
-          <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{' '}
+        <p
+          className={`${styles.textMobile} ml-5 mb-0 text-center font-weight-bold`}
+        >
+          <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{" "}
           <span className={`${styles.textDesktop} font-weight-bold`}>
-            {' '}
-            Visit <a target="_blank" rel="noreferrer" href="https://remoteok.io/">Remote OK </a> 🏆 #1 remote jobs
-            board{' '} PS: <u>This is a demo project.</u>
+            {" "}
+            Visit{" "}
+            <a target="_blank" rel="noreferrer" href="https://remoteok.io/">
+              Remote OK{" "}
+            </a>{" "}
+            🏆 #1 remote jobs board PS:{" "}
+            <u>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://olubisi-david.vercel.app/"
+              ></a>
+              This is a demo project.
+            </u>
           </span>
         </p>
         <span
@@ -24,13 +37,20 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
           </span>
         </span>
       </span>
-    </Card> : null
+    </Card>
+  ) : null;
 };
 
 export const SponsoredCard = ({ cardImg, imgAlt }) => {
   return (
     <Card className="my-2 d-flex" body>
-      <Image height="100px" width="100px" src={cardImg} className="rounded" alt={imgAlt} />
+      <Image
+        height="100px"
+        width="100px"
+        src={cardImg}
+        className="rounded"
+        alt={imgAlt}
+      />
       <span className="card-text">
         <h4></h4>
       </span>
@@ -39,7 +59,7 @@ export const SponsoredCard = ({ cardImg, imgAlt }) => {
   );
 };
 
-export const FallBackImage = companyName => {
+export const FallBackImage = (companyName) => {
   const companyNameArr = companyName.split("");
   const firstLetter = companyNameArr[0];
   return (
@@ -52,18 +72,18 @@ export const FallBackImage = companyName => {
           padding: 15px 20px;
           border: 2px solid black;
           border-radius: 5px;
-          height:100%;
-          width:100px;
-          display:flex;
-          align-items:center;
-          justify-content:center;
+          height: 100%;
+          width: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           margin: 10px;
         }
         .company-logo-letter h4 {
           font-weight: 700;
           text-transform: uppercase;
           font-size: 30px;
-          margin-bottom:0px;
+          margin-bottom: 0px;
         }
       `}</style>
     </div>

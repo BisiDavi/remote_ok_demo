@@ -7,11 +7,11 @@ import {
     HireInfoCard,
     WorldwideJobForm,
     EmailForm,
-} from '../imports/.';
+} from '@imports/.';
 
-import JobCard from '../components/Cards/JobCard';
-import styles from 'styles/indexpage.module.css';
-import { showWorldWideJobs } from '../utils/filterJobs';
+import JobCard from '@components/Cards/JobCard';
+import styles from '@styles/indexpage.module.css';
+import { showWorldWideJobs } from '@utils/filterJobs';
 
 interface Props {
     data: [];

@@ -21,7 +21,8 @@
       "@middleware/*": ["middleware/*"],
       "@types/*": ["types/*"],
       "@utils/*": ["utils/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@stores/*": ["stores/*"]
     }
   },
   "include": [
