@@ -68,7 +68,7 @@ const JobCard = ({
         key={slug}
         onMouseEnter={() => setShowApplyButton(true)}
         onMouseLeave={() => setShowApplyButton(false)}
-        className={`${styles.card} my-3 container py-0 px-0`}
+        className={`${styles.card} my-2 container py-0 px-0`}
       >       
           <Card.Body
             className={`${styles.row} row d-flex align-items-center py-1`}
