@@ -2,7 +2,9 @@
 import { useState } from "react";
 import { Card } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { RedButton, FallBackImage } from "@imports/.";
+import emojiStrip from "emoji-strip";
 import { JobPostedAt } from "@utils/date";
 import { LazyloadImg } from "@components/Lazyload/.";
 import styles from "./card.module.css";
@@ -19,7 +21,7 @@ const JobCard = ({ data }: IJobCardProps) => {
 
   const { slug, logo, company, position, description, location, tags, date } =
     data;
-
+  console.log("datat", data);
   const DisplayCompanyLogo = () => {
     return (
       <div className={`${styles.Logo}`}>
@@ -114,17 +116,14 @@ const JobCard = ({ data }: IJobCardProps) => {
           <h4 className="text-left font-weight-bold my-3">
             Hire a Remote {position} at {company}{" "}
           </h4>
-          <ReactMarkdown>{description}</ReactMarkdown>
+          <ReactMarkdown
+            className={styles.reactmarkdown}
+            remarkPlugins={[remarkGfm]}
+          >
+            {emojiStrip(description.replaceAll("â", "'"))}
+          </ReactMarkdown>
         </div>
       )}
-      <style jsx>
-        {`
-          .description p {
-            white-space: pre-line;
-            vertical-align: bottom;
-          }
-        `}
-      </style>
     </>
   );
 };
