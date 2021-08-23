@@ -1,19 +1,19 @@
-import { useRef } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import hireRemoteForm from "@json/hire-remote-form.json";
 import FormElement from "@components/Forms/formType";
+import { PostJobAction } from "@stores/postJobAction";
 
 export default function HireRemotelyForm() {
-  const ref = useRef(null);
-
-  function displayFormikValues() {
-    console.log("ref", ref.current?.values);
+  const dispatch = useDispatch();
+  const [formValues, setFormValues] = useState(null);
+  function formikUpdateState(values) {
+    setFormValues(values);
   }
-  displayFormikValues();
   return (
     <div className="hire-remotely-form">
       <Formik
-        innerRef={ref}
         initialValues={{
           companyName: "",
           position: "",
@@ -49,75 +49,77 @@ export default function HireRemotelyForm() {
           errors,
           touched,
           isValid,
-        }) => (
-          <form onSubmit={handleSubmit}>
-            {console.log("formik, values", values)}
-            <div className="card">
-              <h3> {hireRemoteForm.start.title}</h3>
-              {hireRemoteForm.start.contents.map((content, index) => (
-                <div key={index} className="input">
-                  {
-                    <FormElement
-                      content={content}
-                      handleChange={handleChange}
-                      handleBlur={handleBlur}
-                      values={values}
-                      errors={errors}
-                      touched={touched}
-                    />
-                  }
-                  <p className="note">{content.note}</p>
-                </div>
-              ))}
-            </div>
-            <div className="card">
-              <h3>{hireRemoteForm.designJobPost.title}</h3>
-              {hireRemoteForm.designJobPost.contents.map((content, index) => (
-                <div className="input checkbox-group" key={index}>
-                  <input type="checkbox" />
-                  <p>{content.text}</p>
-                  {content?.tag.map((tag, index) => (
-                    <div className={`tag tag-${index}`} key={index}>
-                      {tag}
-                    </div>
-                  ))}
-                </div>
-              ))}
-              <p className="note">{hireRemoteForm.designJobPost.note}</p>
-            </div>
-            <div className="card">
-              <h3>{hireRemoteForm.jobDetails.title}</h3>
-              {hireRemoteForm.jobDetails.contents.map((content, index) => (
-                <div className="input checkbox-group" key={index}>
-                  <input type="checkbox" />
-                  <h5>{content.title}</h5>
-                  <p>{content?.note}</p>
-                </div>
-              ))}
-            </div>
-            <div className="card">
-              <h3>{hireRemoteForm.company.title}</h3>
-              {hireRemoteForm.company.contents.map((content, index) => (
-                <div className="input checkbox-group" key={index}>
-                  <input type="checkbox" />
-                  <h5>{content.title}</h5>
-                  <p className="note">{content?.note}</p>
-                </div>
-              ))}
-            </div>
-            <div className="card">
-              <h3>{hireRemoteForm.feedback.title}</h3>
+        }) => {
+          dispatch(PostJobAction(values));
+          return (
+            <form onSubmit={handleSubmit}>
+              <div className="card">
+                <h3> {hireRemoteForm.start.title}</h3>
+                {hireRemoteForm.start.contents.map((content, index) => (
+                  <div key={index} className="input">
+                    {
+                      <FormElement
+                        content={content}
+                        handleChange={handleChange}
+                        handleBlur={handleBlur}
+                        values={values}
+                        errors={errors}
+                        touched={touched}
+                      />
+                    }
+                    <p className="note">{content.note}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="card">
+                <h3>{hireRemoteForm.designJobPost.title}</h3>
+                {hireRemoteForm.designJobPost.contents.map((content, index) => (
+                  <div className="input checkbox-group" key={index}>
+                    <input type="checkbox" />
+                    <p>{content.text}</p>
+                    {content?.tag.map((tag, index) => (
+                      <div className={`tag tag-${index}`} key={index}>
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+                <p className="note">{hireRemoteForm.designJobPost.note}</p>
+              </div>
+              <div className="card">
+                <h3>{hireRemoteForm.jobDetails.title}</h3>
+                {hireRemoteForm.jobDetails.contents.map((content, index) => (
+                  <div className="input checkbox-group" key={index}>
+                    <input type="checkbox" />
+                    <h5>{content.title}</h5>
+                    <p>{content?.note}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="card">
+                <h3>{hireRemoteForm.company.title}</h3>
+                {hireRemoteForm.company.contents.map((content, index) => (
+                  <div className="input checkbox-group" key={index}>
+                    <input type="checkbox" />
+                    <h5>{content.title}</h5>
+                    <p className="note">{content?.note}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="card">
+                <h3>{hireRemoteForm.feedback.title}</h3>
 
-              {hireRemoteForm.feedback.contents.map((content, index) => (
-                <div className="input" key={index}>
-                  <h5>{content.title}</h5>
-                  <input placeholder={content.placeholder} />
-                </div>
-              ))}
-            </div>
-            <button type="submit">Submit</button>
-          </form>
-        )}
+                {hireRemoteForm.feedback.contents.map((content, index) => (
+                  <div className="input" key={index}>
+                    <h5>{content.title}</h5>
+                    <input placeholder={content.placeholder} />
+                  </div>
+                ))}
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+          );
+        }}
       </Formik>
       <style jsx>
         {`
