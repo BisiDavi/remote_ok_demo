@@ -74,11 +74,19 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           }
           main.main {
             display: flex;
+            width: 100%;
+            position: relative;
+            top: 70px;
           }
           .aside {
             display: flex;
             flex-direction: column;
             border-left: 1px solid #ddd;
+            position: fixed;
+            right: 0;
+            top: 70px;
+            background-color: white;
+            z-index: 1;
           }
           .aside h3 {
             font-size: 20px;
@@ -93,6 +101,10 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             padding: 0px 50px;
             border-bottom: 1px solid #ddd;
             width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 3;
+            background-color: white;
           }
           .header h1 {
             font-family: "Nunito", sans-serif;
@@ -145,6 +157,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           }
           footer {
             border-top: 1px solid #ddd;
+            position: fixed;
+            bottom: 0;
+            background-color: white;
           }
         `}
       </style>
