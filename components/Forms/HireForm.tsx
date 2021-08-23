@@ -1,11 +1,19 @@
+import { useRef } from "react";
 import { Formik } from "formik";
 import hireRemoteForm from "@json/hire-remote-form.json";
 import FormElement from "@components/Forms/formType";
 
 export default function HireRemotelyForm() {
+  const ref = useRef(null);
+
+  function displayFormikValues() {
+    console.log("ref", ref.current?.values);
+  }
+  displayFormikValues();
   return (
     <div className="hire-remotely-form">
       <Formik
+        innerRef={ref}
         initialValues={{
           companyName: "",
           position: "",
@@ -42,7 +50,8 @@ export default function HireRemotelyForm() {
           touched,
           isValid,
         }) => (
-          <form>
+          <form onSubmit={handleSubmit}>
+            {console.log("formik, values", values)}
             <div className="card">
               <h3> {hireRemoteForm.start.title}</h3>
               {hireRemoteForm.start.contents.map((content, index) => (
@@ -52,7 +61,6 @@ export default function HireRemotelyForm() {
                       content={content}
                       handleChange={handleChange}
                       handleBlur={handleBlur}
-                      handleSubmit={handleSubmit}
                       values={values}
                       errors={errors}
                       touched={touched}
@@ -107,6 +115,7 @@ export default function HireRemotelyForm() {
                 </div>
               ))}
             </div>
+            <button type="submit">Submit</button>
           </form>
         )}
       </Formik>
