@@ -1,5 +1,6 @@
 import { Formik } from "formik";
 import hireRemoteForm from "@json/hire-remote-form.json";
+import FormType from "@components/Forms/formType";
 
 export default function HireRemotelyForm() {
   return (
@@ -9,9 +10,10 @@ export default function HireRemotelyForm() {
         <form>
           {hireRemoteForm.start.contents.map((content, index) => (
             <div key={index} className="input">
+              {<FormType input={content.input} content={content} />}
               <div className="label">{content.label}</div>
               <input className="w-100" placeholder={content.placeholder} />
-              <p>{content.note}</p>
+              <p className="note">{content.note}</p>
             </div>
           ))}
         </form>
@@ -24,14 +26,14 @@ export default function HireRemotelyForm() {
               <input type="checkbox" />
               <p>{content.text}</p>
               {content?.tag.map((tag, index) => (
-                <div className="tag" key={index}>
+                <div className={`tag tag-${index}`} key={index}>
                   {tag}
                 </div>
               ))}
             </div>
           ))}
         </form>
-        <p>{hireRemoteForm.designJobPost.note}</p>
+        <p className="note">{hireRemoteForm.designJobPost.note}</p>
       </div>
       <div className="card job-details">
         <h3>{hireRemoteForm.jobDetails.title}</h3>
@@ -39,7 +41,7 @@ export default function HireRemotelyForm() {
           {hireRemoteForm.jobDetails.contents.map((content, index) => (
             <div className="input checkbox-group" key={index}>
               <input type="checkbox" />
-              <p>{content.title}</p>
+              <h5>{content.title}</h5>
               <p>{content?.note}</p>
             </div>
           ))}
@@ -51,8 +53,8 @@ export default function HireRemotelyForm() {
           {hireRemoteForm.company.contents.map((content, index) => (
             <div className="input checkbox-group" key={index}>
               <input type="checkbox" />
-              <p>{content.title}</p>
-              <p>{content?.note}</p>
+              <h5>{content.title}</h5>
+              <p className="note">{content?.note}</p>
             </div>
           ))}
         </form>
@@ -62,7 +64,7 @@ export default function HireRemotelyForm() {
         <form>
           {hireRemoteForm.feedback.contents.map((content, index) => (
             <div className="input" key={index}>
-              <p>{content.title}</p>
+              <h5>{content.title}</h5>
               <input placeholder={content.placeholder} />
             </div>
           ))}
@@ -124,16 +126,26 @@ export default function HireRemotelyForm() {
             color: red;
             font-family: "Nunito";
           }
-          .checkbox-group .tag:first-child {
+          .checkbox-group .tag-0 {
             border: 1px solid red;
             color: red;
           }
-          .checkbox-group .tag:last-child {
+          .checkbox-group .tag-1 {
             background-color: red;
             color: white;
           }
           .checkbox-group p {
             margin: 0px 10px;
+          }
+          .card p.note {
+            font-size: 12px;
+            color: #888;
+          }
+          .card .label,
+          .card h5 {
+            font-size: 14px;
+            font-weight: 800;
+            font-family: "Nunito";
           }
         `}
       </style>

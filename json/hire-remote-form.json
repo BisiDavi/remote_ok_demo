@@ -3,27 +3,32 @@
     "title": "LET'S START",
     "contents": [
       {
+        "input": "input",
         "label": "COMPANY NAME*",
         "placeholder": "Company name",
         "note": "Your company's brand/trade name: without Inc., Ltd., B.V., Pte., etc."
       },
       {
+        "input": "input",
         "label": "POSITION*",
         "placeholder": "Position",
         "note": "Please specify as single job position like \"Marketing Manager\" or \"Node JS Developer\", not a sentence like \"Looking for PM / Biz Dev / Manager\". We know your job is important but please DO NOT WRITE IN FULL CAPS. If posting multiple roles, please create multiple job posts. A job post is limited to a single job. We only allow real jobs, absolutely no MLM-type courses \"learn how to work online\" please."
       },
       {
+        "input": "input",
         "label": "PRIMARY TAG",
         "placeholder": "Select a primary tag",
         "note": "This primary tag shows first and increases visibility in the main sections. Your job is shown on every page that is tagged with though. E.g. if you tag it as PHP, it shows for Remote PHP Jobs etc.",
         "options": ""
       },
       {
+        "input": "input",
         "label": "TAGS SEPARATED BY COMMA (LIKE TECH STACK OR INDUSTRY)",
         "placeholder": "Tags separated by comma",
         "note": "Short tags are preferred. Use tags like industry and tech stack, and separate multiple tags by comma. The first 3 or 4 tags are shown on the site, the other tags aren't but the job will be shown on each tag specific page (like /remote-react-jobs). We also generate tags automatically after you post/edit to supplement."
       },
       {
+        "input": "input",
         "label": "JOB IS RESTRICTED TO LOCATION?",
         "placeholder": "Worldwide",
         "options": ["Worldwide", "Europe", "United States", "Nigeria"],
