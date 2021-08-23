@@ -1,4 +1,5 @@
-import  Link  from "next/link";
+import Link from "next/link";
+import Logo from "@components/Logo";
 import { Container, Row, Col } from "react-bootstrap";
 import { RedButton, SearchForm } from "../../imports";
 import styles from "./header.module.css";
@@ -13,18 +14,7 @@ const Header: React.FC = (): JSX.Element => {
             <WhiteButton btnClassName="mx-1" text="API" /> */}
           </Col>
           <Col lg={4} className={styles.logo}>
-            <div
-              className={`${styles.logoText} logo mt-5 mb-5 flex-column d-flex mx-auto justify-content-center`}
-            >
-              <span className="d-flex  mx-auto">
-                <h3 className="text-white  font-weight-bold">remote</h3>
-                <span className="divider bg-white  text-white mx-2"> | </span>
-                <h3 className="text-white font-weight-bold">demo®</h3>
-              </span>
-              <p className="motto text-white text-center font-weight-bold">
-                work anywhere, live everywhere
-              </p>
-            </div>
+            <Logo />
           </Col>
           <Col
             lg={2}

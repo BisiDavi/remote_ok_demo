@@ -1,31 +1,30 @@
 .headerButton {
   position: absolute;
-    right: 10px;
-    margin-bottom: 0;
-    height: 200px;
-    width: 400px;
+  right: 10px;
+  margin-bottom: 0;
+  height: 200px;
+  width: 400px;
 }
 
 /* media queries */
 @media (max-width: 480px) {
-  .row1{
+  .row1 {
     position: relative;
   }
-  .logo{
-    position:absolute;  
-        z-index: 400;  
+  .logo {
+    position: absolute;
+    z-index: 400;
   }
-  .overlay{
+  .overlay {
     position: absolute;
     height: 295px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 300;
     left: 0;
-    padding: 0px;     
+    padding: 0px;
   }
-  .logoText{
+  .logoText {
     margin-top: 15px;
-
   }
   .header {
     background-size: cover;
@@ -44,22 +43,22 @@
     width: 80px;
     font-size: 12px;
   }
-.form{
-  position: relative;
-  top: 100px;
-}
+  .form {
+    position: relative;
+    top: 100px;
+  }
   .Searchform {
     height: 50px;
-    width:90%;
+    width: 90%;
     position: absolute;
     top: 30px;
-    z-index: 500; 
+    z-index: 500;
   }
 
   .Searchform form {
     margin-top: -50px;
     height: 50px;
-    width:90%;
+    width: 90%;
   }
   .Searchform input {
     height: 50px;
