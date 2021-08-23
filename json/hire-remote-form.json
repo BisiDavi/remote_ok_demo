@@ -3,34 +3,39 @@
     "title": "LET'S START",
     "contents": [
       {
-        "input": "input",
+        "form": "input",
+        "name": "compayName",
         "label": "COMPANY NAME*",
         "placeholder": "Company name",
         "note": "Your company's brand/trade name: without Inc., Ltd., B.V., Pte., etc."
       },
       {
-        "input": "input",
+        "form": "input",
         "label": "POSITION*",
+        "name": "position",
         "placeholder": "Position",
         "note": "Please specify as single job position like \"Marketing Manager\" or \"Node JS Developer\", not a sentence like \"Looking for PM / Biz Dev / Manager\". We know your job is important but please DO NOT WRITE IN FULL CAPS. If posting multiple roles, please create multiple job posts. A job post is limited to a single job. We only allow real jobs, absolutely no MLM-type courses \"learn how to work online\" please."
       },
       {
-        "input": "input",
+        "form": "input",
         "label": "PRIMARY TAG",
+        "name": "primaryTag",
         "placeholder": "Select a primary tag",
         "note": "This primary tag shows first and increases visibility in the main sections. Your job is shown on every page that is tagged with though. E.g. if you tag it as PHP, it shows for Remote PHP Jobs etc.",
         "options": ""
       },
       {
-        "input": "input",
+        "form": "input",
+        "name": "tags",
         "label": "TAGS SEPARATED BY COMMA (LIKE TECH STACK OR INDUSTRY)",
         "placeholder": "Tags separated by comma",
         "note": "Short tags are preferred. Use tags like industry and tech stack, and separate multiple tags by comma. The first 3 or 4 tags are shown on the site, the other tags aren't but the job will be shown on each tag specific page (like /remote-react-jobs). We also generate tags automatically after you post/edit to supplement."
       },
       {
-        "input": "input",
+        "form": "input",
         "label": "JOB IS RESTRICTED TO LOCATION?",
         "placeholder": "Worldwide",
+        "name": "location",
         "options": ["Worldwide", "Europe", "United States", "Nigeria"],
         "note": "If you'd only like to hire people from a specific location or timezone this remote job is restricted To promote fairness in remote work positions, worldwide jobs are ranked higher."
       }
@@ -40,34 +45,38 @@
     "title": "DESIGN YOUR JOB POST",
     "contents": [
       {
+        "name": "showLogo",
         "text": "Show my :fire company logo besides my post",
         "tag": ["2X MORE VIEWS", "HIGHLY RECOMMENDED"]
       },
       {
+        "name": "sendEmail",
         "text": "Email blast my job post to 108,726 remote candidates",
         "tag": ["3X MORE VIEWS", "HIGHLY RECOMMENDED"]
       },
       {
+        "name": "matchApplicant",
         "text": "Get matched with suitable applicants",
         "tag": []
       },
       {
+        "name": "highlightPost",
         "text": "Highlight your post in yellow",
         "tag": ["2X MORE VIEWS"]
       },
+
       {
-        "text": "Highlight with your company's brand color",
-        "tag": ["3X MORE VIEWS"]
-      },
-      {
+        "name": "stickPost1Hr",
         "text": "Sticky your post so it stays on :pin of the frontpage for :time 24 hours",
         "tag": ["2X MORE VIEWS"]
       },
       {
+        "name": "stickPost1Week",
         "text": "Sticky your post so it stays on :pin of the frontpage for :calender 1 entire week",
         "tag": ["6X MORE VIEW"]
       },
       {
+        "name": "stickPost1Month",
         "text": "Sticky your post so it stays on :pin of the frontpage for :calender 1 entire month",
         "tag": ["9X MORE VIEW"]
       }
@@ -77,24 +86,27 @@
   "jobDetails": {
     "title": "JOB DETAILS",
     "contents": [
-      { "title": "COMPANY LOGO (.JPG OR .PNG)", "input": "image" },
+      {
+        "title": "COMPANY LOGO (.JPG OR .PNG)",
+        "form": "image",
+        "name": "companyLogo"
+      },
       {
         "title": "ANNUAL SALARY OR COMPENSATION IN USD (OR ANNUALIZED, IN USD EQUIVALENT)*",
-        "input": "salary",
-        "note": "It's illegal to not share salary range on job posts since 2021"
+        "form": "salary",
+        "note": "It's illegal to not share salary range on job posts since 2021",
+        "name": "annualSalary"
       },
       {
         "title": "JOB DESCRIPTION*",
         "link": "https://simplemde.com/markdown-guide",
-        "input": "markdown"
-      },
-      {
-        "title": "HOW TO APPLY?",
-        "input": "markdown"
+        "form": "markdown",
+        "name": "jobDescription"
       },
       {
         "title": "APPLY URL*",
-        "type": "applyURL",
+        "name": "applyURL",
+        "form": "input",
         "note": "Apply URLs with a form an applicant can fill out generally receive a lot more applicants than having people apply by email (below)."
       }
     ]
@@ -105,23 +117,27 @@
       {
         "title": "COMPANY TWITTER",
         "form": "input",
+        "name": "companyTwitter",
         "placholder": "username",
         "note": "Twitter username without @. Not required, but used to tag your company when we tweet out your job post."
       },
       {
         "title": "COMPANY EMAIL* (STAYS PRIVATE, FOR INVOICE + EDIT LINK)",
         "form": "input",
+        "name": "companyEmail",
         "placholder": "company's email",
         "note": "Make sure this email is accessible by you! We use this to send the invoice and edit link. We can not and do not manually resend it!"
       },
       {
         "title": "INVOICE ADDRESS*",
         "form": "textarea",
+        "name": "invoiceAddress",
         "placholder": "e.g. your company's full name and full invoice address, including building, street, city, and country; also things like your VAT number, this is shown on the invoice.",
         "note": "Specify your company address here and we'll put it on your invoice for your bookkeeping."
       },
       {
         "title": "INVOICE NOTES / PO NUMBER",
+        "name": "invoiceNotes",
         "placholder": "e,g. PO number 1234",
         "note": "Not required. Add notes here that you'd like to see on the invoice/receipt such as a Purchase Order number or any other internal notes you need for reference. You can add or edit this later."
       }
@@ -132,7 +148,8 @@
     "contents": [
       {
         "title": "FEEDBACK BOX",
-        "type": "input",
+        "form": "input",
+        "name": "feedbackBox",
         "placeholder": "feedback box"
       }
     ]

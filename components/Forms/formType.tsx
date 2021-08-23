@@ -1,7 +1,7 @@
 import styles from "./formType.module.css";
 
 export default function displayFormElement(content) {
-  switch (content.input) {
+  switch (content.form) {
     case "input": {
       return <Input content={content} />;
     }
