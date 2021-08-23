@@ -93,6 +93,10 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             width: 100%;
             position: relative;
             top: 70px;
+            background-color: #f9f9f9;
+          }
+          .main .col-9 {
+            margin-bottom: 140px;
           }
           .aside {
             display: flex;
