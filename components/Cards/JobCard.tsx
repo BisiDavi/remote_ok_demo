@@ -18,8 +18,17 @@ const JobCard = ({ data }: IJobCardProps) => {
   const [showApplyButton, setShowApplyButton] = useState(false);
   const [showJobDescription, setJobDescription] = useState(false);
 
-  const { slug, logo, company, position, description, location, tags, date } =
-    data;
+  const {
+    slug,
+    logo,
+    company,
+    position,
+    description,
+    location,
+    tags,
+    date,
+    apply_url,
+  } = data;
   console.log("datat", data);
   const DisplayCompanyLogo = () => {
     return (
@@ -107,7 +116,9 @@ const JobCard = ({ data }: IJobCardProps) => {
           </div>
           <div className="d-none d-sm-block">
             {showApplyButton ? (
-              <RedButton btnClassName={styles.applyBtn} text="Apply" />
+              <a target="_blank" rel="noreferrer" href={apply_url}>
+                <RedButton btnClassName={styles.applyBtn} text="Apply" />
+              </a>
             ) : null}
           </div>
         </Card.Body>
@@ -155,5 +166,6 @@ export interface IJobCardProps {
     location: string;
     tags: string[];
     date: string;
+    apply_url: string;
   };
 }

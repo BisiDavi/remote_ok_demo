@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from "react";
 import axios from "axios";
-import { NextPage, GetStaticProps } from "next";
+import { NextPage } from "next";
 import { useSelector } from "react-redux";
 import {
   Layout,
@@ -14,7 +14,6 @@ import {
 import JobCard from "@components/Cards/JobCard";
 import styles from "@styles/indexpage.module.css";
 import { showWorldWideJobs } from "@utils/filterJobs";
-import LogoContentLoader from "@components/Lazyload/logoContentLoader";
 
 interface Props {
   data: [];
