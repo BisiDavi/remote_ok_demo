@@ -114,6 +114,27 @@ export default function HireRemotelyForm() {
             display: flex;
             align-items: center;
           }
+          .checkbox-group .tag {
+            margin: 0px 10px;
+            border: 1px solid red;
+            padding: 5px 7px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 800;
+            color: red;
+            font-family: "Nunito";
+          }
+          .checkbox-group .tag:first-child {
+            border: 1px solid red;
+            color: red;
+          }
+          .checkbox-group .tag:last-child {
+            background-color: red;
+            color: white;
+          }
+          .checkbox-group p {
+            margin: 0px 10px;
+          }
         `}
       </style>
     </div>
