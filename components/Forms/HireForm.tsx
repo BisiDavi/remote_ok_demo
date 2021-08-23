@@ -20,7 +20,7 @@ export default function HireRemotelyForm() {
         <h3>{hireRemoteForm.designJobPost.title}</h3>
         <form>
           {hireRemoteForm.designJobPost.contents.map((content, index) => (
-            <div className="input" key={index}>
+            <div className="input checkbox-group" key={index}>
               <input type="checkbox" />
               <p>{content.text}</p>
               {content?.tag.map((tag, index) => (
@@ -33,11 +33,11 @@ export default function HireRemotelyForm() {
         </form>
         <p>{hireRemoteForm.designJobPost.note}</p>
       </div>
-      <div className="card job-details my-3">
+      <div className="card job-details">
         <h3>{hireRemoteForm.jobDetails.title}</h3>
         <form>
           {hireRemoteForm.jobDetails.contents.map((content, index) => (
-            <div className="input" key={index}>
+            <div className="input checkbox-group" key={index}>
               <input type="checkbox" />
               <p>{content.title}</p>
               <p>{content?.note}</p>
@@ -45,11 +45,11 @@ export default function HireRemotelyForm() {
           ))}
         </form>
       </div>
-      <div className="card company my-3">
+      <div className="card company">
         <h3>{hireRemoteForm.company.title}</h3>
         <form>
           {hireRemoteForm.company.contents.map((content, index) => (
-            <div className="input" key={index}>
+            <div className="input checkbox-group" key={index}>
               <input type="checkbox" />
               <p>{content.title}</p>
               <p>{content?.note}</p>
@@ -57,7 +57,7 @@ export default function HireRemotelyForm() {
           ))}
         </form>
       </div>
-      <div className="card feedback my-3">
+      <div className="card feedback">
         <h3>{hireRemoteForm.feedback.title}</h3>
         <form>
           {hireRemoteForm.feedback.contents.map((content, index) => (
@@ -71,8 +71,10 @@ export default function HireRemotelyForm() {
       <style jsx>
         {`
           .card {
-            margin: 20px;
+            margin: 30px 20px;
             padding: 20px;
+            box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%),
+              0 1px 1.5px 0 rgb(0 0 0 / 5%);
           }
           .card h3 {
             text-align: center;
@@ -95,6 +97,22 @@ export default function HireRemotelyForm() {
             border-right: 1px solid #ddd;
             border-top-right-radius: 6px;
             border-top-left-radius: 6px;
+          }
+          .card input {
+            appearance: none;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin: 10px 0px;
+            font-size: 16px;
+            background: #fbfbfb;
+            border: none;
+            box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%),
+              0 1px 1.5px 0 rgb(0 0 0 / 5%);
+          }
+          .card .checkbox-group {
+            display: flex;
+            align-items: center;
           }
         `}
       </style>
