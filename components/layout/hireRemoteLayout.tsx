@@ -16,19 +16,21 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           </header>
           <main className="main row px-0 mx-0 w-100">
             <div className="col-9">{children}</div>
-            <aside className="aside col-3">
+            <aside className="aside col-3 p-4">
               <h3>
                 This is a demo project inspired by{" "}
-                <a href="https://remoteok.io">Remote OK </a>, Thank you{" "}
-                <b>Remote OK</b> for making your api opensource. You guys are{" "}
-                <b>awesome</b>
+                <a rel="noreferrer" target="_blank" href="https://remoteok.io">
+                  Remote OK{" "}
+                </a>
+                , Thank you <b>Remote OK</b> for making your api opensource. You
+                guys are <b>awesome</b>
               </h3>
-              <h5>
+              <h3>
                 Remote OK is{" "}
                 <b>the most popular remote jobs board in the world</b> trusted
                 by millions of remote workers and leading remote companies like
-              </h5>
-              <div className="companyLogos">
+              </h3>
+              <div className="companyLogos mt-5">
                 {companyLogos.map((logo, index) => (
                   <img src={`${logo}.webp`} alt={logo} key={index} />
                 ))}
@@ -43,21 +45,24 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
                 </div>
               </div>
               <div className="post-job">
-                <button>Post your job - Free</button>
+                <button>Post your demo job - Free</button>
                 <p>Any posted job, shows only on this platform.</p>
               </div>
             </aside>
           </main>
           <footer className="col-12">
-            <Logo />
-            <div className="company">
-              <h3>Company: </h3>
-              <h3 className="font-weight-bold">Position</h3>
-              <h4 className="location">
-                <span>Location</span>
-              </h4>
+            <div className="content d-flex col-6 align-items-center">
+              <div className="col-3">
+                <Logo color="black" />
+              </div>
+              <div className="company col-3">
+                <h3>Company: </h3>
+                <h3 className="font-weight-bold">Position:</h3>
+                <h4 className="location">
+                  <span>Location:</span>
+                </h4>
+              </div>
             </div>
-            <p></p>
           </footer>
         </div>
       </div>
@@ -77,7 +82,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           }
           .aside h3 {
             font-size: 20px;
-            font-family: "Lato";
+            font-family: "Nunito";
+            letter-spacing: 1px;
+            line-height: 25px;
           }
           header.header {
             display: flex;
@@ -88,7 +95,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             width: 100%;
           }
           .header h1 {
-            font-family: "nunito", sans-serif;
+            font-family: "Nunito", sans-serif;
             font-weight: bold;
             font-style: normal;
           }
@@ -110,6 +117,31 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           }
           .links a {
             margin: 0px 10px;
+          }
+          .company h3 {
+            font-size: 20px;
+          }
+          .company h4 {
+            font-size: 20px;
+          }
+          .company .location span {
+            background-color: #ddd;
+            border-radius: 5px;
+            color: white;
+            padding: 5px;
+            font-size: 16px;
+            font-weight: 600;
+          }
+          .post-job button {
+            width: 100%;
+            background-color: #ff4742;
+            border: none;
+            color: white;
+            height: 60px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 20px 0px;
           }
         `}
       </style>
