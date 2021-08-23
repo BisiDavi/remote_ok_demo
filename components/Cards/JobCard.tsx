@@ -120,7 +120,19 @@ const JobCard = ({ data }: IJobCardProps) => {
             className={styles.reactmarkdown}
             remarkPlugins={[remarkGfm]}
           >
-            {emojiStrip(description.replaceAll("â", "'"))}
+            {description
+              .replaceAll("â", "'")
+              .replaceAll("Â", " ")
+              .replaceAll("â¯", " ")
+              .replaceAll("â¢", " ")
+              .replaceAll("â ", " ")
+              .replaceAll("â", " ")
+              .replaceAll("â", " ")
+              .replaceAll("ð", " ")
+              .replaceAll("â¤ï¸", " ")
+              .replaceAll("âï¸", " ")
+              .replaceAll("ð", " ")
+              .replaceAll("â", " ")}
           </ReactMarkdown>
         </div>
       )}

@@ -1,5 +1,5 @@
 .Searchform {
-  width: 30% !important;
+  width: 30%;
   height: 70px;
   display: flex;
   margin: auto;
@@ -10,16 +10,16 @@
 .Searchform input {
   height: 70px;
   border: none;
-  border-radius: 20px !important;
+  border-radius: 20px;
   font-size: 30px;
   color: black;
   font-family: "sans-serif", Arial;
 }
 
 .Searchform input:focus {
-  outline: none !important;
+  outline: none;
   border: 0px;
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 .SearchIcon span {
@@ -78,42 +78,42 @@
 
 @media (max-width: 480px) {
   .SearchformPlaceholder {
-    font-size: 16px !important;
-    top: 15px !important;
+    font-size: 16px;
+    top: 15px;
   }
   .EmailForm button {
-    width: 20% !important;
+    width: 20%;
   }
   .EmailForm p {
-    font-size: 13px !important;
+    font-size: 13px;
   }
   .EmailForm {
     display: flex;
     flex-flow: wrap;
     width: 100%;
-    top: 0px !important;
-    position: absolute !important;
+    top: 0px;
+    position: absolute;
     z-index: 20000;
     height: 120px;
   }
   .formSelect,
   .formInput {
-    width: 25% !important;
+    width: 25%;
     height: 35px;
   }
   .Newsletter {
     display: flex;
     justify-content: center;
-    align-items: center !important;
+    align-items: center;
     margin-bottom: -20px;
   }
   .formSubscribe {
     display: flex;
     justify-content: center;
-    margin-top: -10px !important;
+    margin-top: -10px;
   }
   .formSubscribe button {
-    width: 30% !important;
+    width: 30%;
   }
   .cancelEmailForm {
     top: 50px;
