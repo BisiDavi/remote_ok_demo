@@ -1,5 +1,7 @@
-export default function FormType(input, content) {
-  switch (input) {
+import styles from "./formType.module.css";
+
+export default function displayFormElement(content) {
+  switch (content.input) {
     case "input": {
       return <Input content={content} />;
     }
@@ -19,8 +21,8 @@ export default function FormType(input, content) {
 
 function Input({ content }) {
   return (
-    <div className="input">
-      <label>{content.label}</label>
+    <div className={styles.inputGroup}>
+      <label htmlFor={content.name}>{content.label}</label>
       <input
         name={content.name}
         onBlur={content.blur}

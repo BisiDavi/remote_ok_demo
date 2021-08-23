@@ -1,0 +1,50 @@
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+.inputGroup input {
+  appearance: none;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin: 10px 0px;
+  font-size: 16px;
+  background: #fbfbfb;
+  border: none;
+  box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%),
+    0 1px 1.5px 0 rgb(0 0 0 / 5%);
+}
+.inputGroup label {
+  font-size: 14px;
+  font-weight: 800;
+  font-family: "Nunito";
+}
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+.checkbox-group .tag {
+  margin: 0px 10px;
+  border: 1px solid red;
+  padding: 5px 7px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 800;
+  color: red;
+  font-family: "Nunito";
+}
+.checkbox-group .tag-0 {
+  border: 1px solid red;
+  color: red;
+}
+.checkbox-group .tag-1 {
+  background-color: red;
+  color: white;
+}
+.checkbox-group p {
+  margin: 0px 10px;
+}
+.card p.note {
+  font-size: 12px;
+  color: #888;
+}

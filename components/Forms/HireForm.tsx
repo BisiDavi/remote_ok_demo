@@ -1,6 +1,6 @@
 import { Formik } from "formik";
 import hireRemoteForm from "@json/hire-remote-form.json";
-import FormType from "@components/Forms/formType";
+import displayFormElement from "@components/Forms/formType";
 
 export default function HireRemotelyForm() {
   return (
@@ -10,9 +10,10 @@ export default function HireRemotelyForm() {
         <form>
           {hireRemoteForm.start.contents.map((content, index) => (
             <div key={index} className="input">
-              {<FormType input={content.input} content={content} />}
-              <div className="label">{content.label}</div>
-              <input className="w-100" placeholder={content.placeholder} />
+              {console.log(content.input)}
+              {displayFormElement(content)}
+              {/* <div className="label">{content.label}</div>
+              <input className="w-100" placeholder={content.placeholder} /> */}
               <p className="note">{content.note}</p>
             </div>
           ))}
