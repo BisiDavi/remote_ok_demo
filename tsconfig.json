@@ -22,7 +22,8 @@
       "@types/*": ["types/*"],
       "@utils/*": ["utils/*"],
       "@styles/*": ["styles/*"],
-      "@stores/*": ["stores/*"]
+      "@stores/*": ["stores/*"],
+      "@json/*": ["json/*"]
     }
   },
   "include": [
