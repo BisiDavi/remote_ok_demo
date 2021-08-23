@@ -2,7 +2,7 @@
 import { RedButton } from "@components/Buttons";
 import Logo from "@components/Logo";
 import { PropsWithChildren } from "react";
-import companyLogos from "@json/remote-companies-logo.json";
+import companyLogos from "@json/remote-companies.json";
 
 export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
   return (
@@ -29,6 +29,19 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           {companyLogos.map((logo, index) => (
             <img src={`${logo}.webp`} alt={logo} key={index} />
           ))}
+        </div>
+        <div className="reach-me">
+          <h6>Reach me via:</h6>
+          <div className="links">
+            <a>Porfolio</a>
+            <a href="#github">Github</a>
+            <a href="#linkedin">Linked in</a>
+            <a href="#instagram"            >Instagram</a>
+          </div>
+        </div>
+        <div className="post-job">
+            <button>Post your job - Free</button>
+            <p>Any posted job, shows only on this platform.</p>
         </div>
       </aside>
       <footer></footer>
