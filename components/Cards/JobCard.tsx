@@ -5,8 +5,8 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { RedButton, FallBackImage } from "@imports/.";
 import { JobPostedAt } from "@utils/date";
-import { LazyloadImg } from "@components/Lazyload/.";
 import styles from "./card.module.css";
+import LogoContentLoader from "@components/Lazyload/logoContentLoader";
 
 let keyId = 1102;
 const generateKeyID = () => {
@@ -24,9 +24,11 @@ const JobCard = ({ data }: IJobCardProps) => {
   const DisplayCompanyLogo = () => {
     return (
       <div className={`${styles.Logo}`}>
-        <LazyloadImg>
+        {logo ? (
           <img src={logo} className={`${styles.companyLogo}`} alt={company} />
-        </LazyloadImg>
+        ) : (
+          <LogoContentLoader />
+        )}
       </div>
     );
   };
