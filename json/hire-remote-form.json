@@ -4,7 +4,7 @@
     "contents": [
       {
         "form": "input",
-        "name": "compayName",
+        "name": "companyName",
         "label": "COMPANY NAME*",
         "placeholder": "Company name",
         "note": "Your company's brand/trade name: without Inc., Ltd., B.V., Pte., etc."
