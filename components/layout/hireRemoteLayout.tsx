@@ -19,12 +19,28 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             <aside className="aside col-3 p-4">
               <h3>
                 This is a demo project inspired by{" "}
-                <a rel="noreferrer" target="_blank" href="https://remoteok.io">
+                <a
+                  rel="noreferrer"
+                  className="font-weight-bold"
+                  target="_blank"
+                  href="https://remoteok.io"
+                >
                   Remote OK{" "}
                 </a>
                 , Thank you <b>Remote OK</b> for making your api opensource. You
                 guys are <b>awesome</b>
               </h3>
+              <b className="mb-2">
+                If you want to post a job, visit,{" "}
+                <a
+                  rel="noreferrer"
+                  className="font-weight-bold"
+                  target="_blank"
+                  href="https://remoteok.io"
+                >
+                  Remote OK{" "}
+                </a>
+              </b>
               <h3>
                 Remote OK is{" "}
                 <b>the most popular remote jobs board in the world</b> trusted
