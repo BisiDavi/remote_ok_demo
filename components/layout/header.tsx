@@ -1,6 +1,7 @@
+import  Link  from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
-import { WhiteButton, GreenButton, RedButton, SearchForm } from "../../imports";
-import styles from './header.module.css'
+import { RedButton, SearchForm } from "../../imports";
+import styles from "./header.module.css";
 
 const Header: React.FC = (): JSX.Element => {
   return (
@@ -12,7 +13,9 @@ const Header: React.FC = (): JSX.Element => {
             <WhiteButton btnClassName="mx-1" text="API" /> */}
           </Col>
           <Col lg={4} className={styles.logo}>
-            <div className={`${styles.logoText} logo mt-5 mb-5 flex-column d-flex mx-auto justify-content-center`}>
+            <div
+              className={`${styles.logoText} logo mt-5 mb-5 flex-column d-flex mx-auto justify-content-center`}
+            >
               <span className="d-flex  mx-auto">
                 <h3 className="text-white  font-weight-bold">remote</h3>
                 <span className="divider bg-white  text-white mx-2"> | </span>
@@ -23,16 +26,23 @@ const Header: React.FC = (): JSX.Element => {
               </p>
             </div>
           </Col>
-          <Col lg={2} className={`${styles.headerButton} mt-5 d-flex justify-content-center`}>          
+          <Col
+            lg={2}
+            className={`${styles.headerButton} mt-5 d-flex justify-content-center`}
+          >
             <span className={`${styles.Redbutton} redbutton`}>
-              <RedButton
-                btnClassName="redbutton mx-2 text-white position-fixed btn-danger font-weight-bold"
-                text="Post a job"
-              />
+              <Link href="/hire-remotely" passHref>
+                <a>
+                  <RedButton
+                    btnClassName="redbutton mx-2 text-white position-fixed btn-danger font-weight-bold"
+                    text="Post a job"
+                  />
+                </a>
+              </Link>
             </span>
           </Col>
-        <Col className={styles.overlay}></Col>
-        </Row>        
+          <Col className={styles.overlay}></Col>
+        </Row>
         <Row>
           <Col lg={12} className={styles.form}>
             <div className={`${styles.Searchform} Searchform`}>
@@ -46,7 +56,7 @@ const Header: React.FC = (): JSX.Element => {
           .redbutton {
             right: 20px;
             z-index: 10000;
-            font-size:20px;
+            font-size: 20px;
           }
           .header-content {
             background-image: url("/mainbanner.webp");
@@ -56,12 +66,12 @@ const Header: React.FC = (): JSX.Element => {
           }
           .logo h3 {
             font-family: "Pacifico", san-serif, helevetica;
-            font-size:30px;
-            line-height:35px;
-            letter-spacing:5px;
+            font-size: 30px;
+            line-height: 35px;
+            letter-spacing: 5px;
           }
-          .logo p{
-            font-size:20px;
+          .logo p {
+            font-size: 20px;
           }
         `}
       </style>
