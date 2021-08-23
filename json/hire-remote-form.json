@@ -67,5 +67,68 @@
       }
     ],
     "note": "Pricing of job posts and extra features is dynamic and may change based on how many jobs are posted every week, for example to avoid too many sticky jobs at one time. Job posts are a) published for 30 days, b) cannot be refunded, and c) renew automatically after 30 days unless you 1) disable auto renew after posting on the edit page, or 2) close your job post on the edit page. We send a reminder 7 days by email before renewing. Renewing is the same price as the original job post for 30 days. If you buy a bundle, the discounted single job post price is used to renew. Automatic renewals can be self-refunded within 7 days after renewing with the link in the email."
+  },
+  "jobDetails": {
+    "title": "JOB DETAILS",
+    "content": [
+      { "title": "COMPANY LOGO (.JPG OR .PNG)", "input": "image" },
+      {
+        "title": "ANNUAL SALARY OR COMPENSATION IN USD (OR ANNUALIZED, IN USD EQUIVALENT)*",
+        "input": "salary",
+        "note": "It's illegal to not share salary range on job posts since 2021"
+      },
+      {
+        "title": "JOB DESCRIPTION*",
+        "link": "https://simplemde.com/markdown-guide",
+        "input": "markdown"
+      },
+      {
+        "title": "HOW TO APPLY?",
+        "input": "markdown"
+      },
+      {
+        "title": "APPLY URL*",
+        "type": "applyURL",
+        "note": "Apply URLs with a form an applicant can fill out generally receive a lot more applicants than having people apply by email (below)."
+      }
+    ],
+    "company": {
+      "title": "COMPANY",
+      "content": [
+        {
+          "title": "COMPANY TWITTER",
+          "form": "input",
+          "placholder": "username",
+          "note": "Twitter username without @. Not required, but used to tag your company when we tweet out your job post."
+        },
+        {
+          "title": "COMPANY EMAIL* (STAYS PRIVATE, FOR INVOICE + EDIT LINK)",
+          "form": "input",
+          "placholder": "company's email",
+          "note": "Make sure this email is accessible by you! We use this to send the invoice and edit link. We can not and do not manually resend it!"
+        },
+        {
+          "title": "INVOICE ADDRESS*",
+          "form": "textarea",
+          "placholder": "e.g. your company's full name and full invoice address, including building, street, city, and country; also things like your VAT number, this is shown on the invoice.",
+          "note": "Specify your company address here and we'll put it on your invoice for your bookkeeping."
+        },
+        {
+          "title": "INVOICE NOTES / PO NUMBER",
+          "placholder": "e,g. PO number 1234",
+          "note": "Not required. Add notes here that you'd like to see on the invoice/receipt such as a Purchase Order number or any other internal notes you need for reference. You can add or edit this later."
+        }
+      ]
+    },
+    "feedback": {
+      "title": "FEEDBACK ABOUT THIS PROJECT REMOTEOK-DEMO",
+      "content": [
+        {
+          "title": "FEEDBACK BOX",
+          "type": "input",
+          "placeholder": "feedback box"
+        }
+      ]
+    }
   }
 }

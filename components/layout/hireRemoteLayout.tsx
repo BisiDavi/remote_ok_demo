@@ -10,7 +10,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
       <header>
         <Logo color="black" />
         <h1>Hire Remotely</h1>
-        <RedButton text="Welcome" />
+        <RedButton text="Welcome :fire" />
       </header>
       {children}
       <aside>
@@ -27,7 +27,14 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
         </h5>
         <div className="company-logos">
           {companyLogos.map((logo, index) => (
-            <img src={`${logo}.webp`} alt={logo} key={index} />
+            <img
+              src={`${logo}.webp`}
+              alt={logo}
+              key={index}
+              className="logo"
+              height="100px"
+              width="100px"
+            />
           ))}
         </div>
         <div className="reach-me">
@@ -55,6 +62,14 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
         </div>
         <p></p>
       </footer>
+      <style jsx>
+        {`
+          .logo {
+            height: 100px;
+            width: 100px;
+          }
+        `}
+      </style>
     </div>
   );
 }
