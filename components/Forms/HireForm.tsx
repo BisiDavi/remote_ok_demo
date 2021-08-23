@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import hireRemoteForm from "@json/hire-remote-form.json";
@@ -7,10 +6,7 @@ import { PostJobAction } from "@stores/postJobAction";
 
 export default function HireRemotelyForm() {
   const dispatch = useDispatch();
-  const [formValues, setFormValues] = useState(null);
-  function formikUpdateState(values) {
-    setFormValues(values);
-  }
+
   return (
     <div className="hire-remotely-form">
       <Formik

@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
+import { PropsWithChildren } from "react";
+import { useSelector } from "react-redux";
 import { RedButton } from "@components/Buttons";
 import Logo from "@components/Logo";
-import { PropsWithChildren } from "react";
 import companyLogos from "@json/remote-companies.json";
 
 export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
+  const { jobDetails } = useSelector((state) => state.postJob);
   return (
     <>
       <div className="hireRemotely container-fluid">
@@ -67,15 +69,19 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             </aside>
           </main>
           <footer className="col-12 p-3">
-            <div className="content d-flex col-6 align-items-center">
-              <div className="col-3">
+            <div className="content d-flex col-12 align-items-center">
+              <div className="col-2">
                 <Logo color="black" />
               </div>
-              <div className="company col-3">
-                <h3>Company: </h3>
-                <h3 className="font-weight-bold">Position:</h3>
+              <div className="company col-10">
+                <h3>
+                  {jobDetails?.companyName.length > 0
+                    ? jobDetails?.companyName
+                    : "Company"}
+                </h3>
+                <h3 className="font-weight-bold">Position</h3>
                 <h4 className="location">
-                  <span>Location:</span>
+                  <span>Location</span>
                 </h4>
               </div>
             </div>
