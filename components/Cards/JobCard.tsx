@@ -4,7 +4,6 @@ import { Card } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { RedButton, FallBackImage } from "@imports/.";
-import emojiStrip from "emoji-strip";
 import { JobPostedAt } from "@utils/date";
 import { LazyloadImg } from "@components/Lazyload/.";
 import styles from "./card.module.css";
@@ -132,7 +131,9 @@ const JobCard = ({ data }: IJobCardProps) => {
               .replaceAll("â¤ï¸", " ")
               .replaceAll("âï¸", " ")
               .replaceAll("ð", " ")
-              .replaceAll("â", " ")}
+              .replaceAll("â", " ")
+              .replaceAll("âï¸", " ")
+              .replaceAll("âï¸", " ")}
           </ReactMarkdown>
         </div>
       )}
