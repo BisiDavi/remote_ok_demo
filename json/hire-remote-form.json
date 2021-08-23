@@ -1,0 +1,71 @@
+{
+  "start": {
+    "title": "LET'S START",
+    "content": [
+      {
+        "label": "COMPANY NAME*",
+        "placeholder": "Company name",
+        "note": "Your company's brand/trade name: without Inc., Ltd., B.V., Pte., etc."
+      },
+      {
+        "label": "POSITION*",
+        "placeholder": "Position",
+        "note": "Please specify as single job position like \"Marketing Manager\" or \"Node JS Developer\", not a sentence like \"Looking for PM / Biz Dev / Manager\". We know your job is important but please DO NOT WRITE IN FULL CAPS. If posting multiple roles, please create multiple job posts. A job post is limited to a single job. We only allow real jobs, absolutely no MLM-type courses \"learn how to work online\" please."
+      },
+      {
+        "label": "PRIMARY TAG",
+        "placeholder": "Select a primary tag",
+        "note": "This primary tag shows first and increases visibility in the main sections. Your job is shown on every page that is tagged with though. E.g. if you tag it as PHP, it shows for Remote PHP Jobs etc.",
+        "options": ""
+      },
+      {
+        "label": "TAGS SEPARATED BY COMMA (LIKE TECH STACK OR INDUSTRY)",
+        "placeholder": "Tags separated by comma",
+        "note": "Short tags are preferred. Use tags like industry and tech stack, and separate multiple tags by comma. The first 3 or 4 tags are shown on the site, the other tags aren't but the job will be shown on each tag specific page (like /remote-react-jobs). We also generate tags automatically after you post/edit to supplement."
+      },
+      {
+        "label": "JOB IS RESTRICTED TO LOCATION?",
+        "placeholder": "Worldwide",
+        "options": ["Worldwide", "Europe", "United States", "Nigeria"],
+        "note": "If you'd only like to hire people from a specific location or timezone this remote job is restricted To promote fairness in remote work positions, worldwide jobs are ranked higher."
+      }
+    ]
+  },
+  "designJobPost": {
+    "title": "DESIGN YOUR JOB POST",
+    "content": [
+      {
+        "text": "Show my :fire company logo besides my post",
+        "tag": ["2X MORE VIEWS", "HIGHLY RECOMMENDED"]
+      },
+      {
+        "text": "Email blast my job post to 108,726 remote candidates",
+        "tag": ["3X MORE VIEWS", "HIGHLY RECOMMENDED"]
+      },
+      {
+        "text": "Get matched with suitable applicants"
+      },
+      {
+        "text": "Highlight your post in yellow",
+        "tag": ["2X MORE VIEWS"]
+      },
+      {
+        "text": "Highlight with your company's brand color",
+        "tag": ["3X MORE VIEWS"]
+      },
+      {
+        "text": "Sticky your post so it stays on :pin of the frontpage for :time 24 hours",
+        "tag": ["2X MORE VIEWS"]
+      },
+      {
+        "text": "Sticky your post so it stays on :pin of the frontpage for :calender 1 entire week",
+        "tag": ["6X MORE VIEW"]
+      },
+      {
+        "text": "Sticky your post so it stays on :pin of the frontpage for :calender 1 entire month",
+        "tag": ["9X MORE VIEW"]
+      }
+    ],
+    "note": "Pricing of job posts and extra features is dynamic and may change based on how many jobs are posted every week, for example to avoid too many sticky jobs at one time. Job posts are a) published for 30 days, b) cannot be refunded, and c) renew automatically after 30 days unless you 1) disable auto renew after posting on the edit page, or 2) close your job post on the edit page. We send a reminder 7 days by email before renewing. Renewing is the same price as the original job post for 30 days. If you buy a bundle, the discounted single job post price is used to renew. Automatic renewals can be self-refunded within 7 days after renewing with the link in the email."
+  }
+}
