@@ -3,9 +3,9 @@ export default function Logo({ color = "white" }: LogoProps) {
     <>
       <div className="logo mt-3 mb-3 flex-column d-flex">
         <span className="d-flex align-items-center">
-          <h3 className="font-weight-bold mb-0">remote</h3>
+          <h3 className="mb-0">remote</h3>
           <span className="divider mx-2"> | </span>
-          <h3 className="font-weight-bold mb-0">demo®</h3>
+          <h3 className="mb-0">demo®</h3>
         </span>
         {color === "white" && (
           <p className="motto text-white text-center font-weight-bold">
@@ -19,6 +19,7 @@ export default function Logo({ color = "white" }: LogoProps) {
           .divider {
             font-family: "Pacifico", san-serif, helevetica;
             color: ${color};
+            font-weight: 500;
           }
           .divider {
             color: ${color};

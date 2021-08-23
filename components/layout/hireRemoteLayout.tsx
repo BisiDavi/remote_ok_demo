@@ -30,12 +30,12 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
                 <b>the most popular remote jobs board in the world</b> trusted
                 by millions of remote workers and leading remote companies like
               </h3>
-              <div className="companyLogos mt-5">
+              <div className="companyLogos my-3">
                 {companyLogos.map((logo, index) => (
                   <img src={`${logo}.webp`} alt={logo} key={index} />
                 ))}
               </div>
-              <div className="reach-me">
+              <div className="reach-me my-3">
                 <h6>Reach me via:</h6>
                 <div className="links">
                   <a>🌍 Porfolio</a>
@@ -50,7 +50,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               </div>
             </aside>
           </main>
-          <footer className="col-12">
+          <footer className="col-12 p-3">
             <div className="content d-flex col-6 align-items-center">
               <div className="col-3">
                 <Logo color="black" />
@@ -142,6 +142,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             font-weight: bold;
             border-radius: 5px;
             margin: 20px 0px;
+          }
+          footer {
+            border-top: 1px solid #ddd;
           }
         `}
       </style>
