@@ -1,9 +1,9 @@
 import styles from "./formType.module.css";
 
-export default function displayFormElement(content) {
+export default function FormElement({ content, ...props }) {
   switch (content.form) {
     case "input": {
-      return <Input content={content} />;
+      return <Input content={content} {...props} />;
     }
     case "checkbox": {
       return <Checkbox content={content} />;
@@ -18,17 +18,20 @@ export default function displayFormElement(content) {
       return null;
   }
 }
-
-function Input({ content }) {
+function Input({ content, ...props }) {
   return (
     <div className={styles.inputGroup}>
       <label htmlFor={content.name}>{content.label}</label>
       <input
         name={content.name}
-        onBlur={content.blur}
-        onChange={content.handleChange}
+        value={props.values[content.name]}
+        onBlur={props.handleBlur(content.name)}
+        onChange={props.handleChange(content.name)}
         placeholder={content.placeholder}
       />
+      {props.errors[content.name] && props.touched[content.name] && (
+        <p>{props.errors[content.name]}</p>
+      )}
     </div>
   );
 }
