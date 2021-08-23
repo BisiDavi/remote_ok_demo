@@ -36,15 +36,25 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             <a>Porfolio</a>
             <a href="#github">Github</a>
             <a href="#linkedin">Linked in</a>
-            <a href="#instagram"            >Instagram</a>
+            <a href="#instagram">Instagram</a>
           </div>
         </div>
         <div className="post-job">
-            <button>Post your job - Free</button>
-            <p>Any posted job, shows only on this platform.</p>
+          <button>Post your job - Free</button>
+          <p>Any posted job, shows only on this platform.</p>
         </div>
       </aside>
-      <footer></footer>
+      <footer>
+        <Logo />
+        <div className="company">
+          <h3>Company: </h3>
+          <h3 className="font-weight-bold">Position</h3>
+          <h4 className="location">
+            <span>Location</span>
+          </h4>
+        </div>
+        <p></p>
+      </footer>
     </div>
   );
 }
