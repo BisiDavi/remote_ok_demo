@@ -116,6 +116,11 @@ export const NavMenu: React.FC = (): JSX.Element => {
               top: -120px;
             }
           }
+          @media (max-width: 768px) {
+            .wave {
+              top: -80px;
+            }
+          }
         `}
       </style>
     </div>

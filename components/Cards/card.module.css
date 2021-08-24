@@ -10,6 +10,10 @@
   flex-wrap: wrap;
 }
 
+.mobileRow h4 {
+  margin-bottom: 0;
+}
+
 .reactmarkdown {
   font-family: "Nunito", helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -93,6 +97,38 @@
   .applyBtn {
     width: 100px;
   }
+}
+@media screen and (max-width: 768px) {
+  .hiretext {
+    flex-direction: column;
+  }
+  .textMobile {
+    text-align: center;
+  }
+  .hireButton {
+    margin: auto;
+  }
+  .cardText h3 {
+    font-size: 14px;
+  }
+  .companyLogo {
+    height: 100%;
+    width: 70px;
+  }
+  .mobileRow h4 {
+    font-size: 12px;
+  }
+  .applyBtn {
+    width: 70px;
+    height: 40px;
+  }
+  .groupTag li {
+    font-size: 10px;
+  }
+  .duration {
+    font-size: 14px;
+  }
+  
 }
 @media screen and (max-width: 480px) {
   .cardbody {

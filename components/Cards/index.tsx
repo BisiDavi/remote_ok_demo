@@ -8,9 +8,11 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
   return hidePostJobCard ? (
     <Card className={`${styles.hireInfoCard} bg-white container mx-auto`} body>
       <span
-        className={`${styles.hiretext} d-flex align-items-center justify-content-between p-2`}
+        className={`${styles.hiretext} row align-items-center justify-content-between p-2`}
       >
-        <p className={`${styles.textMobile} mb-0 text-center font-weight-bold`}>
+        <p
+          className={`${styles.textMobile} mb-0 font-weight-bold col-9 col-md-12`}
+        >
           <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{" "}
           <span className={`${styles.textDesktop} font-weight-bold`}>
             {" "}
@@ -30,7 +32,7 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
           </span>
         </p>
         <span
-          className={`${styles.hireButton} ml-4 d-flex h-25 w-25 justify-content-around`}
+          className={`${styles.hireButton} col-3 col-md-8  d-flex justify-content-around`}
         >
           <Link href="/hire-remotely" passHref>
             <a>
@@ -89,6 +91,16 @@ export const FallBackImage = (companyName) => {
           text-transform: uppercase;
           font-size: 30px;
           margin-bottom: 0px;
+        }
+
+        @media (max-width: 768px) {
+          .company-logo-letter {
+            width: 70px;
+            height: 60px;
+          }
+          .company-logo-letter h4 {
+            font-size: 25px;
+          }
         }
       `}</style>
     </div>
