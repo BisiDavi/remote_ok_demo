@@ -9,11 +9,7 @@ const Header: React.FC = (): JSX.Element => {
     <header className={`${styles.header} header-content`}>
       <Container fluid>
         <Row className={styles.row1}>
-          <Col lg={4} xs={2} className={`${styles.feed} mt-2 d-flex h-25`}>
-            {/* <WhiteButton btnClassName="mx-1" text="RSS" />
-            <WhiteButton btnClassName="mx-1" text="API" /> */}
-          </Col>
-          <Col lg={4} className={styles.logo}>
+          <Col className={styles.logo}>
             <Logo />
           </Col>
           <Col

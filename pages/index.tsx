@@ -50,7 +50,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
     >
       <NavMenu />
       <main className="main mt-5">
-        <div className="hire-remote mt-2 mb-3">
+        <div className="hire-remote  mb-3">
           <HireInfoCard hidePostJobCard={hidePostJobCard} hideCard={hideCard} />
         </div>
         <div
@@ -81,12 +81,20 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
             height: 70px;
             width: 100%;
           }
+          .hire-remote {
+            margin-top: 16px;
+          }
           @media (max-width: 480px) {
             .main {
               padding-top: 10px;
             }
             .footer {
               position: inherit;
+            }
+          }
+          @media (max-width: 1440px) {
+            .hire-remote {
+              margin-top: -30px;
             }
           }
         `}

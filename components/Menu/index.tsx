@@ -102,6 +102,11 @@ export const NavMenu: React.FC = (): JSX.Element => {
               top: -270px;
             }
           }
+          @media (max-width: 1440px) {
+            .wave {
+              top: -180px;
+            }
+          }
           @media (max-width: 1024px) {
             .nav {
               overflow: scroll;
