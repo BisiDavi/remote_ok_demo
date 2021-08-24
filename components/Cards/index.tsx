@@ -7,10 +7,10 @@ import styles from "./card.module.css";
 export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
   return hidePostJobCard ? (
     <Card className={`${styles.hireInfoCard} bg-white container mx-auto`} body>
-      <span className={`${styles.hiretext} d-flex pt-3 align-items-center`}>
-        <p
-          className={`${styles.textMobile} mb-0 text-center font-weight-bold`}
-        >
+      <span
+        className={`${styles.hiretext} d-flex align-items-center justify-content-between p-2`}
+      >
+        <p className={`${styles.textMobile} mb-0 text-center font-weight-bold`}>
           <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{" "}
           <span className={`${styles.textDesktop} font-weight-bold`}>
             {" "}
