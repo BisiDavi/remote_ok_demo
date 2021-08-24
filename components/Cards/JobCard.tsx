@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
+import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -7,6 +7,7 @@ import { RedButton, FallBackImage } from "@imports/.";
 import { JobPostedAt } from "@utils/date";
 import styles from "./card.module.css";
 import LogoContentLoader from "@components/Lazyload/logoContentLoader";
+import JobdescriptionCard from "./JobdescriptionCard";
 
 let keyId = 1102;
 const generateKeyID = () => {
@@ -123,33 +124,7 @@ const JobCard = ({ data }: IJobCardProps) => {
           </div>
         </Card.Body>
       </Card>
-      {showJobDescription && (
-        <div className="description container px-5 py-3 bg-white">
-          <h4 className="text-left font-weight-bold my-3">
-            Hire a Remote {position} at {company}{" "}
-          </h4>
-          <ReactMarkdown
-            className={styles.reactmarkdown}
-            remarkPlugins={[remarkGfm]}
-          >
-            {description
-              .replaceAll("â", "'")
-              .replaceAll("Â", " ")
-              .replaceAll("â¯", " ")
-              .replaceAll("â¢", " ")
-              .replaceAll("â ", " ")
-              .replaceAll("â", " ")
-              .replaceAll("â", " ")
-              .replaceAll("ð", " ")
-              .replaceAll("â¤ï¸", " ")
-              .replaceAll("âï¸", " ")
-              .replaceAll("ð", " ")
-              .replaceAll("â", " ")
-              .replaceAll("âï¸", " ")
-              .replaceAll("âï¸", " ")}
-          </ReactMarkdown>
-        </div>
-      )}
+      {showJobDescription && <JobdescriptionCard content={data} />}
     </>
   );
 };
