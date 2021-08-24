@@ -1,4 +1,4 @@
-import styles from "./formType.module.css";
+import styles from "./formElements.module.css";
 
 export default function FormElement({ content, ...props }) {
   switch (content.form) {
@@ -38,9 +38,9 @@ function Input({ content, ...props }) {
 
 function Checkbox({ content }) {
   return (
-    <div className="checkbox">
-      <label htmlFor={content.name}>{content.label}</label>
+    <div className={styles.checkboxGroup}>
       <input type="checkbox" name={content.name} />
+      <label htmlFor={content.name}>{content.label}</label>
     </div>
   );
 }

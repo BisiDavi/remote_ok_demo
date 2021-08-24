@@ -46,38 +46,45 @@
     "contents": [
       {
         "name": "showLogo",
-        "text": "Show my :fire company logo besides my post",
+        "form": "checkbox",
+        "label": "Show my :fire company logo besides my post",
         "tag": ["2X MORE VIEWS", "HIGHLY RECOMMENDED"]
       },
       {
         "name": "sendEmail",
-        "text": "Email blast my job post to 108,726 remote candidates",
+        "form": "checkbox",
+        "label": "Email blast my job post to 108,726 remote candidates",
         "tag": ["3X MORE VIEWS", "HIGHLY RECOMMENDED"]
       },
       {
         "name": "matchApplicant",
-        "text": "Get matched with suitable applicants",
+        "form": "checkbox",
+        "label": "Get matched with suitable applicants",
         "tag": []
       },
       {
         "name": "highlightPost",
-        "text": "Highlight your post in yellow",
+        "form": "checkbox",
+        "label": "Highlight your post in yellow",
         "tag": ["2X MORE VIEWS"]
       },
 
       {
-        "name": "stickPost1Hr",
-        "text": "Sticky your post so it stays on :pin of the frontpage for :time 24 hours",
+        "name": "stickPost",
+        "form": "checkbox",
+        "label": "Stick your post so it stays on :pin of the frontpage for :time 24 hours",
         "tag": ["2X MORE VIEWS"]
       },
       {
-        "name": "stickPost1Week",
-        "text": "Sticky your post so it stays on :pin of the frontpage for :calender 1 entire week",
+        "name": "stickPost",
+        "form": "checkbox",
+        "label": "Stick your post so it stays on :pin of the frontpage for :calender 1 entire week",
         "tag": ["6X MORE VIEW"]
       },
       {
-        "name": "stickPost1Month",
-        "text": "Sticky your post so it stays on :pin of the frontpage for :calender 1 entire month",
+        "name": "stickPost",
+        "form": "checkbox",
+        "label": "Stick your post so it stays on :pin of the frontpage for :calender 1 entire month",
         "tag": ["9X MORE VIEW"]
       }
     ],
@@ -87,24 +94,24 @@
     "title": "JOB DETAILS",
     "contents": [
       {
-        "title": "COMPANY LOGO (.JPG OR .PNG)",
+        "label": "COMPANY LOGO (.JPG OR .PNG)",
         "form": "image",
         "name": "companyLogo"
       },
       {
-        "title": "ANNUAL SALARY OR COMPENSATION IN USD (OR ANNUALIZED, IN USD EQUIVALENT)*",
+        "label": "ANNUAL SALARY OR COMPENSATION IN USD (OR ANNUALIZED, IN USD EQUIVALENT)*",
         "form": "salary",
         "note": "It's illegal to not share salary range on job posts since 2021",
         "name": "annualSalary"
       },
       {
-        "title": "JOB DESCRIPTION*",
+        "label": "JOB DESCRIPTION*",
         "link": "https://simplemde.com/markdown-guide",
         "form": "markdown",
         "name": "jobDescription"
       },
       {
-        "title": "APPLY URL*",
+        "label": "APPLY URL*",
         "name": "applyURL",
         "form": "input",
         "note": "Apply URLs with a form an applicant can fill out generally receive a lot more applicants than having people apply by email (below)."
@@ -115,28 +122,28 @@
     "title": "COMPANY",
     "contents": [
       {
-        "title": "COMPANY TWITTER",
+        "label": "COMPANY TWITTER",
         "form": "input",
         "name": "companyTwitter",
         "placholder": "username",
         "note": "Twitter username without @. Not required, but used to tag your company when we tweet out your job post."
       },
       {
-        "title": "COMPANY EMAIL* (STAYS PRIVATE, FOR INVOICE + EDIT LINK)",
+        "label": "COMPANY EMAIL* (STAYS PRIVATE, FOR INVOICE + EDIT LINK)",
         "form": "input",
         "name": "companyEmail",
         "placholder": "company's email",
         "note": "Make sure this email is accessible by you! We use this to send the invoice and edit link. We can not and do not manually resend it!"
       },
       {
-        "title": "INVOICE ADDRESS*",
+        "label": "INVOICE ADDRESS*",
         "form": "textarea",
         "name": "invoiceAddress",
         "placholder": "e.g. your company's full name and full invoice address, including building, street, city, and country; also things like your VAT number, this is shown on the invoice.",
         "note": "Specify your company address here and we'll put it on your invoice for your bookkeeping."
       },
       {
-        "title": "INVOICE NOTES / PO NUMBER",
+        "label": "INVOICE NOTES / PO NUMBER",
         "name": "invoiceNotes",
         "placholder": "e,g. PO number 1234",
         "note": "Not required. Add notes here that you'd like to see on the invoice/receipt such as a Purchase Order number or any other internal notes you need for reference. You can add or edit this later."
@@ -147,7 +154,7 @@
     "title": "FEEDBACK ABOUT THIS PROJECT REMOTEOK-DEMO",
     "contents": [
       {
-        "title": "FEEDBACK BOX",
+        "label": "FEEDBACK BOX",
         "form": "input",
         "name": "feedbackBox",
         "placeholder": "feedback box"

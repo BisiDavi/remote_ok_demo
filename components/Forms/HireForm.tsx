@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import hireRemoteForm from "@json/hire-remote-form.json";
-import FormElement from "@components/Forms/formType";
+import FormElement from "@components/Forms/formElements";
 import { PostJobAction } from "@stores/postJobAction";
 
 export default function HireRemotelyForm() {
@@ -20,9 +20,7 @@ export default function HireRemotelyForm() {
           sendEmail: "",
           matchApplicant: "",
           highlistPost: "",
-          stickPost1hr: "",
-          stickPost1Week: "",
-          stickPost1Month: "",
+          stickPost: "",
           companyLogo: "",
           annualSalary: "",
           jobDescription: "",
@@ -48,7 +46,7 @@ export default function HireRemotelyForm() {
         }) => {
           dispatch(PostJobAction(values));
           return (
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="card">
                 <h3> {hireRemoteForm.start.title}</h3>
                 {hireRemoteForm.start.contents.map((content, index) => (
@@ -70,9 +68,15 @@ export default function HireRemotelyForm() {
               <div className="card">
                 <h3>{hireRemoteForm.designJobPost.title}</h3>
                 {hireRemoteForm.designJobPost.contents.map((content, index) => (
-                  <div className="input checkbox-group" key={index}>
-                    <input type="checkbox" />
-                    <p>{content.text}</p>
+                  <div className="checkbox-group" key={index}>
+                    <FormElement
+                      content={content}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                      values={values}
+                      errors={errors}
+                      touched={touched}
+                    />
                     {content?.tag.map((tag, index) => (
                       <div className={`tag tag-${index}`} key={index}>
                         {tag}
@@ -85,9 +89,15 @@ export default function HireRemotelyForm() {
               <div className="card">
                 <h3>{hireRemoteForm.jobDetails.title}</h3>
                 {hireRemoteForm.jobDetails.contents.map((content, index) => (
-                  <div className="input checkbox-group" key={index}>
-                    <input type="checkbox" />
-                    <h5>{content.title}</h5>
+                  <div className="checkbox-group" key={index}>
+                    <FormElement
+                      content={content}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                      values={values}
+                      errors={errors}
+                      touched={touched}
+                    />
                     <p>{content?.note}</p>
                   </div>
                 ))}
@@ -112,7 +122,6 @@ export default function HireRemotelyForm() {
                   </div>
                 ))}
               </div>
-              <button type="submit">Submit</button>
             </form>
           );
         }}
