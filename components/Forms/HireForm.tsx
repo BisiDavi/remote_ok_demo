@@ -12,7 +12,7 @@ export default function HireRemotelyForm() {
     <div className="hire-remotely-form">
       <Formik
         initialValues={{
-          companyName: "",
+          company: "",
           position: "",
           primaryTag: "",
           tags: "",
@@ -22,14 +22,11 @@ export default function HireRemotelyForm() {
           matchApplicant: true,
           highlistPost: false,
           stickPost: "",
-          companyLogo: false,
           annualSalary: "",
-          jobDescription: "",
-          applyURL: "",
+          description: "",
+          apply_url: "",
           companyTwitter: "",
           companyEmail: "",
-          invoiceAddress: "",
-          invoiceNotes: "",
           feedbackBox: "",
         }}
         onSubmit={(values) => {

@@ -75,8 +75,8 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               </div>
               <div className="company col-10">
                 <h3>
-                  {jobDetails?.companyName.length > 0
-                    ? jobDetails?.companyName
+                  {jobDetails?.company.length > 0
+                    ? jobDetails?.company
                     : "Company"}
                 </h3>
                 <h3 className="font-weight-bold">

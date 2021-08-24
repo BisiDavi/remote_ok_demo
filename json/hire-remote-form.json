@@ -4,7 +4,7 @@
     "contents": [
       {
         "form": "input",
-        "name": "companyName",
+        "name": "company",
         "label": "COMPANY NAME*",
         "placeholder": "Company name",
         "note": "Your company's brand/trade name: without Inc., Ltd., B.V., Pte., etc."
@@ -149,11 +149,11 @@
       {
         "label": "JOB DESCRIPTION*",
         "form": "markdown",
-        "name": "jobDescription"
+        "name": "description"
       },
       {
         "label": "APPLY URL*",
-        "name": "applyURL",
+        "name": "apply_url",
         "form": "input",
         "placeholder": "https://",
         "note": "Apply URLs with a form an applicant can fill out generally receive a lot more applicants than having people apply by email (below)."
