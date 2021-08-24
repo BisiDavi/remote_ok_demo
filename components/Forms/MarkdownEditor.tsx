@@ -1,7 +1,29 @@
-import { useState } from "react";
 import Yamde from "yamde";
 
-export default function MarkdownEditor() {
-  const [text, setText] = useState("");
-  return <Yamde value={text} handler={setText} theme="light" />;
+export default function MarkdownEditor({ content, ...props }) {
+  return (
+    <>
+      <div className="markdownEditor">
+        <h3>{content.label}</h3>
+        <Yamde
+          value={props.values[content.name]}
+          handler={props.handleChange(content.name)}
+          theme="light"
+        />
+      </div>
+      <style jsx>
+        {`
+          .markdownEditor {
+            display: flex;
+            flex-direction: column;
+          }
+          .markdownEditor h3 {
+            font-size: 16px;
+            font-weight: 800;
+            font-family: "Nunito";
+          }
+        `}
+      </style>
+    </>
+  );
 }

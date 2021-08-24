@@ -1,4 +1,5 @@
 import styles from "./formElements.module.css";
+import MarkdownEditor from "./MarkdownEditor";
 
 export default function FormElement({ content, ...props }) {
   switch (content.form) {
@@ -12,7 +13,7 @@ export default function FormElement({ content, ...props }) {
       return <Radio content={content} {...props} />;
     }
     case "markdown": {
-      return <p>markdown</p>;
+      return <MarkdownEditor content={content} {...props} />;
     }
     case "textarea": {
       return <Textarea content={content} {...props} />;
