@@ -15,13 +15,13 @@ export default function FormElement({ content, ...props }) {
       return <p>markdown</p>;
     }
     case "textarea": {
-      return <Textarea content={content} />;
+      return <Textarea content={content} {...props} />;
     }
     case "image": {
-      return <FileImage content={content} />;
+      return <FileImage content={content} {...props} />;
     }
     case "select": {
-      return <SelectInput content={content} />;
+      return <SelectInput content={content} {...props} />;
     }
     default:
       return null;
@@ -78,11 +78,17 @@ function Radio({ content, ...props }) {
   );
 }
 
-function Textarea({ content }) {
+function Textarea({ content, ...props }) {
   return (
-    <div className="textarea">
+    <div className={styles.textarea}>
       <label htmlFor={content.name}>{content.label}</label>
-      <textarea name={content.name}>{content.placeholder}</textarea>
+      <textarea
+        value={props.values[content.name]}
+        onChange={props.handleChange(content.name)}
+        name={content.name}
+      >
+        {content.placeholder}
+      </textarea>
     </div>
   );
 }
@@ -99,11 +105,14 @@ function FileImage({ content }) {
   );
 }
 
-function SelectInput({ content }) {
+function SelectInput({ content, ...props }) {
   return (
-    <div className="select">
+    <div className={styles.select}>
       <label htmlFor={content.name}>{content.label}</label>
-      <select>
+      <select
+        value={props.values[content.name]}
+        onChange={props.handleChange(content.name)}
+      >
         {content.options.map((option, index) => (
           <option value={option} key={index}>
             {option}

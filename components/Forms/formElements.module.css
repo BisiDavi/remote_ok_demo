@@ -9,7 +9,9 @@
 .inputGroup input {
   height: 40px;
 }
+
 .inputGroup input,
+.select select,
 .checkboxGroup input,
 .radio input {
   appearance: none;
@@ -33,6 +35,11 @@
   left: -5px;
   outline: none;
 }
+.select select {
+  height: 40px;
+  padding: 10px;
+  margin: 0px 10px;
+}
 .checkboxGroup,
 .checkboxGroup label,
 .radio label {
@@ -46,6 +53,7 @@
 
 .inputGroup label,
 .checkboxGroup label,
+.select label,
 .radio label {
   font-size: 16px;
   font-weight: 800;
