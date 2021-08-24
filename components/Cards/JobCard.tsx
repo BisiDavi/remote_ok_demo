@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { RedButton, FallBackImage } from "@imports/.";
 import { JobPostedAt } from "@utils/date";
 import styles from "./card.module.css";
@@ -19,16 +17,8 @@ const JobCard = ({ data }: IJobCardProps) => {
   const [showApplyButton, setShowApplyButton] = useState(false);
   const [showJobDescription, setJobDescription] = useState(false);
 
-  const {
-    slug,
-    logo,
-    company,
-    position,
-    location,
-    tags,
-    date,
-    apply_url,
-  } = data;
+  const { slug, logo, company, position, location, tags, date, apply_url } =
+    data;
   console.log("datat", data);
   const DisplayCompanyLogo = () => {
     return (
@@ -87,8 +77,8 @@ const JobCard = ({ data }: IJobCardProps) => {
           className={`${styles.row} row d-flex align-items-center py-1`}
         >
           {CompanyLogo}
-          <div className={`${styles.companyprofile} col-lg-8`}>
-            <div className={`${styles.cardText} col-lg-4`}>
+          <div className={`${styles.companyprofile} col-8 col-md-9`}>
+            <div className={`${styles.cardText} col-4 col-md-4`}>
               <h3>{position}</h3>
               <span className={`${styles.mobileRow} d-flex align-items-center`}>
                 <h4 className="font-weight-300 mr-1">{company}</h4>
@@ -100,7 +90,7 @@ const JobCard = ({ data }: IJobCardProps) => {
               </span>
             </div>
             <div
-              className={`${styles.cardTags} col-lg-5 tags d-flex align-items-center px-0`}
+              className={`${styles.cardTags} col-5 col-md-6 col-lg-5 tags d-flex align-items-center px-0`}
             >
               <ul
                 className={`${styles.groupTag} d-flex group-tags align-items-center m-0 p-0`}
@@ -109,7 +99,7 @@ const JobCard = ({ data }: IJobCardProps) => {
               </ul>
             </div>
           </div>
-          <div className={`${styles.duration} col-lg-1`}>
+          <div className={`${styles.duration} col-1 col-lg-1`}>
             {JobPostedAt(date)}
           </div>
           <div className="d-none d-sm-block">

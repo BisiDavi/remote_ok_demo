@@ -49,6 +49,11 @@ export const SearchForm = () => {
             font-weight: 600;
             font-family: "sans-serif", Arial;
           }
+          @media (max-width: 1024px) {
+            .SearchformPlaceholder {
+              font-size: 20px;
+            }
+          }
         `}
       </style>
     </div>

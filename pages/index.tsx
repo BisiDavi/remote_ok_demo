@@ -54,7 +54,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
           <HireInfoCard hidePostJobCard={hidePostJobCard} hideCard={hideCard} />
         </div>
         <div
-          className={`${styles.worldwideText} justify-content-between mx-auto d-flex w-75`}
+          className={`${styles.worldwideText} justify-content-between container mx-auto d-flex w-75`}
         >
           <h6 className="font-weight-bold">Remote jobs</h6>
           <span className={styles.worldwideform}>
@@ -90,6 +90,12 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
             }
             .footer {
               position: inherit;
+            }
+          }
+          @media (max-width: 1024px) {
+            .hire-remote {
+              margin-top: -60px;
+              padding-top: 30px;
             }
           }
           @media (max-width: 1440px) {

@@ -9,7 +9,7 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
     <Card className={`${styles.hireInfoCard} bg-white container mx-auto`} body>
       <span className={`${styles.hiretext} d-flex pt-3 align-items-center`}>
         <p
-          className={`${styles.textMobile} ml-5 mb-0 text-center font-weight-bold`}
+          className={`${styles.textMobile} mb-0 text-center font-weight-bold`}
         >
           <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{" "}
           <span className={`${styles.textDesktop} font-weight-bold`}>

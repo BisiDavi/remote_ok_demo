@@ -97,7 +97,7 @@ export const NavMenu: React.FC = (): JSX.Element => {
             margin: auto;
             justify-content: center;
           }
-          @media (min-width: 1440px) {
+          @media (min-width: 1900px) {
             .wave {
               top: -270px;
             }
