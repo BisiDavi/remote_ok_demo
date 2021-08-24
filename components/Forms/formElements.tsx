@@ -41,6 +41,7 @@ function Input({ content, ...props }) {
       {props.errors[content.name] && props.touched[content.name] && (
         <p>{props.errors[content.name]}</p>
       )}
+      <p className={styles.note}>{content?.note}</p>
     </div>
   );
 }

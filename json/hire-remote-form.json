@@ -116,6 +116,7 @@
         "label": "APPLY URL*",
         "name": "applyURL",
         "form": "input",
+        "placeholder": "https://",
         "note": "Apply URLs with a form an applicant can fill out generally receive a lot more applicants than having people apply by email (below)."
       }
     ]
