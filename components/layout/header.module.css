@@ -1,3 +1,14 @@
+.logo span span {
+  font-size: 50px;
+}
+
+.logo span h3 {
+  font-size: 50px;
+}
+.logo div span {
+  margin: auto;
+}
+
 .headerButton {
   position: absolute;
   right: 10px;
