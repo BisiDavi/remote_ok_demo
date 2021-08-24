@@ -15,12 +15,6 @@ export default function FormElement({ content, ...props }) {
     case "markdown": {
       return <MarkdownEditor content={content} {...props} />;
     }
-    case "textarea": {
-      return <Textarea content={content} {...props} />;
-    }
-    case "image": {
-      return <FileImage content={content} {...props} />;
-    }
     case "select": {
       return <SelectInput content={content} {...props} />;
     }
@@ -79,38 +73,12 @@ function Radio({ content, ...props }) {
   );
 }
 
-function Textarea({ content, ...props }) {
-  return (
-    <div className={styles.textarea}>
-      <label htmlFor={content.name}>{content.label}</label>
-      <textarea
-        value={props.values[content.name]}
-        onChange={props.handleChange(content.name)}
-        name={content.name}
-      >
-        {content.placeholder}
-      </textarea>
-    </div>
-  );
-}
-
-function FileImage({ content }) {
-  return (
-    <div className="imageField">
-      <h4>{content.title}</h4>
-      <label htmlFor={content.name}>
-        💾 Upload
-        <input name={content.name} type="file" />
-      </label>
-    </div>
-  );
-}
-
 function SelectInput({ content, ...props }) {
   return (
     <div className={styles.select}>
       <label htmlFor={content.name}>{content.label}</label>
       <select
+        className="w-25"
         value={props.values[content.name]}
         onChange={props.handleChange(content.name)}
       >

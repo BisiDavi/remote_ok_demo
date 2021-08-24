@@ -34,6 +34,7 @@ export default function FormCard({ title, children }) {
             border-right: 1px solid #ddd;
             border-top-right-radius: 6px;
             border-top-left-radius: 6px;
+            margin-bottom: 20px;
           }
         `}
       </style>
