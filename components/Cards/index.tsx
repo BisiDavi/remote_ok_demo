@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Card } from "react-bootstrap";
 import { RedButton, CardButton } from "@imports/.";
@@ -31,7 +32,11 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
         <span
           className={`${styles.hireButton} ml-4 d-flex h-25 w-25 justify-content-around`}
         >
-          <RedButton text="Post a job" />
+          <Link href="/hire-remotely" passHref>
+            <a>
+              <RedButton text="Post a job" />
+            </a>
+          </Link>
           <span onClick={hideCard}>
             <RedButton text="Hide this" />
           </span>

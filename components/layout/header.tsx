@@ -63,6 +63,11 @@ const Header: React.FC = (): JSX.Element => {
           .logo p {
             font-size: 20px;
           }
+          @media (min-width: 1440px) {
+            .header-content {
+              height: 500px;
+            }
+          }
         `}
       </style>
     </header>

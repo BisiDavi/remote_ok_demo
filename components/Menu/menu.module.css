@@ -1,7 +1,7 @@
 @media (max-width: 480px) {
   .navbar {
     width: 100%;
-    z-index: 700  !important;
+    z-index: 700;
     height: 70px;
     background-color: #f9f9f9;
   }
@@ -9,7 +9,7 @@
     overflow-x: scroll;
   }
   .wave {
-    top: -40px !important;
-    z-index: 600  !important;
+    top: -40px;
+    z-index: 600;
   }
 }
