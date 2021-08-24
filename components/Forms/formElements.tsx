@@ -17,6 +17,12 @@ export default function FormElement({ content, ...props }) {
     case "textarea": {
       return <Textarea content={content} />;
     }
+    case "image": {
+      return <FileImage content={content} />;
+    }
+    case "select": {
+      return <SelectInput content={content} />;
+    }
     default:
       return null;
   }
@@ -76,6 +82,33 @@ function Textarea({ content }) {
     <div className="textarea">
       <label htmlFor={content.name}>{content.label}</label>
       <textarea name={content.name}>{content.placeholder}</textarea>
+    </div>
+  );
+}
+
+function FileImage({ content }) {
+  return (
+    <div className="imageField">
+      <h4>{content.title}</h4>
+      <label htmlFor={content.name}>
+        💾 Upload
+        <input name={content.name} type="file" />
+      </label>
+    </div>
+  );
+}
+
+function SelectInput({ content }) {
+  return (
+    <div className="select">
+      <label htmlFor={content.name}>{content.label}</label>
+      <select>
+        {content.options.map((option, index) => (
+          <option value={option} key={index}>
+            {option}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }
