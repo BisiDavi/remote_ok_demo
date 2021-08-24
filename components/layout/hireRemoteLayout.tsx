@@ -79,9 +79,18 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
                     ? jobDetails?.companyName
                     : "Company"}
                 </h3>
-                <h3 className="font-weight-bold">Position</h3>
+                <h3 className="font-weight-bold">
+                  {jobDetails?.position.length > 0
+                    ? jobDetails?.position
+                    : "Position"}
+                </h3>
                 <h4 className="location">
-                  <span>Location</span>
+                  <span>
+                    {" "}
+                    {jobDetails?.location.length > 0
+                      ? jobDetails?.location
+                      : "Location"}
+                  </span>
                 </h4>
               </div>
             </div>
