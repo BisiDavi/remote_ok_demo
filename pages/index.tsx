@@ -49,7 +49,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
       pageTitle="Remote Jobs in Programming, Design, Sales and More"
     >
       <NavMenu />
-      <main className="main mt-5">
+      <main className="main mt-lg-5">
         <div className="hire-remote  mb-3">
           <HireInfoCard hidePostJobCard={hidePostJobCard} hideCard={hideCard} />
         </div>

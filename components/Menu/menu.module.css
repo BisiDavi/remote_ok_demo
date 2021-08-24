@@ -9,7 +9,7 @@
     overflow-x: scroll;
   }
   .wave {
-    top: -40px;
-    z-index: 600;
+    top: -50px;
+    z-index: 400;
   }
 }

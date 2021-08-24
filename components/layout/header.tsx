@@ -64,6 +64,11 @@ const Header: React.FC = (): JSX.Element => {
               height: 500px;
             }
           }
+          @media (max-width: 480px) {
+            .header-content {
+              background-size: cover;
+            }
+          }
         `}
       </style>
     </header>

@@ -128,7 +128,6 @@
   .duration {
     font-size: 14px;
   }
-  
 }
 @media screen and (max-width: 480px) {
   .cardbody {
@@ -138,6 +137,9 @@
     display: grid;
     padding: 0px;
     grid-template-columns: 1fr 7fr 1fr;
+  }
+  .cardTags {
+    display: none;
   }
   .cardText h3 {
     font-size: 14px;

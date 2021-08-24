@@ -11,7 +11,7 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
         className={`${styles.hiretext} row align-items-center justify-content-between p-2`}
       >
         <p
-          className={`${styles.textMobile} mb-0 font-weight-bold col-9 col-md-12`}
+          className={`${styles.textMobile} mb-0 font-weight-bold col-9 col-lg-9 col-md-12`}
         >
           <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{" "}
           <span className={`${styles.textDesktop} font-weight-bold`}>
@@ -32,7 +32,7 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
           </span>
         </p>
         <span
-          className={`${styles.hireButton} col-3 col-md-8  d-flex justify-content-around`}
+          className={`${styles.hireButton} col-3 col-lg-3 col-md-8 d-flex justify-content-around`}
         >
           <Link href="/hire-remotely" passHref>
             <a>

@@ -99,6 +99,12 @@
 }
 
 @media (max-width: 480px) {
+  .SearchIcon span {
+    border-radius: 0px;
+  }
+  .Searchform input {
+    border-radius: 0px;
+  }
   .SearchformPlaceholder {
     font-size: 16px;
     top: 15px;
