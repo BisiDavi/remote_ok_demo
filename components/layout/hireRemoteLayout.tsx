@@ -13,7 +13,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
         <div className="row">
           <header className="header col-12">
             <Logo color="black" />
-            <h1>🏢 🚀  Hire Remotely</h1>
+            <h1>🏢 🚀 Hire Remotely</h1>
             <RedButton text="Welcome" />
           </header>
           <main className="main row px-0 mx-0 w-100">
@@ -145,6 +145,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             font-family: "Nunito", sans-serif;
             font-weight: bold;
             font-style: normal;
+            font-size: 28px;
           }
           .companyLogos {
             display: grid;

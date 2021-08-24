@@ -71,19 +71,22 @@
 
       {
         "name": "stickPost",
-        "form": "checkbox",
+        "form": "radio",
+        "value": "stickyPost1hr",
         "label": "Stick your post so it stays on :pin of the frontpage for :time 24 hours",
         "tag": ["2X MORE VIEWS"]
       },
       {
         "name": "stickPost",
-        "form": "checkbox",
+        "form": "radio",
+        "value": "stickyPost1Wk",
         "label": "Stick your post so it stays on :pin of the frontpage for :calender 1 entire week",
         "tag": ["6X MORE VIEW"]
       },
       {
         "name": "stickPost",
-        "form": "checkbox",
+        "form": "radio",
+        "value": "stickyPost1Month",
         "label": "Stick your post so it stays on :pin of the frontpage for :calender 1 entire month",
         "tag": ["9X MORE VIEW"]
       }

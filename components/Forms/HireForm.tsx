@@ -16,12 +16,12 @@ export default function HireRemotelyForm() {
           primaryTag: "",
           tags: "",
           location: "",
-          showLogo: "",
-          sendEmail: "",
-          matchApplicant: "",
-          highlistPost: "",
+          showLogo: true,
+          sendEmail: true,
+          matchApplicant: true,
+          highlistPost: false,
           stickPost: "",
-          companyLogo: "",
+          companyLogo: false,
           annualSalary: "",
           jobDescription: "",
           applyURL: "",
@@ -71,10 +71,9 @@ export default function HireRemotelyForm() {
                   <div className="checkbox-group" key={index}>
                     <FormElement
                       content={content}
-                      handleChange={handleChange}
-                      handleBlur={handleBlur}
                       values={values}
                       errors={errors}
+                      handleChange={handleChange}
                       touched={touched}
                     />
                     {content?.tag.map((tag, index) => (
@@ -88,19 +87,21 @@ export default function HireRemotelyForm() {
               </div>
               <div className="card">
                 <h3>{hireRemoteForm.jobDetails.title}</h3>
-                {hireRemoteForm.jobDetails.contents.map((content, index) => (
-                  <div className="checkbox-group" key={index}>
-                    <FormElement
-                      content={content}
-                      handleChange={handleChange}
-                      handleBlur={handleBlur}
-                      values={values}
-                      errors={errors}
-                      touched={touched}
-                    />
-                    <p>{content?.note}</p>
-                  </div>
-                ))}
+                <div role="group" id="radio-group" className="radio-group d-flex flex-column">
+                  {hireRemoteForm.jobDetails.contents.map((content, index) => (
+                    <div className="checkbox-group" key={index}>
+                      <FormElement
+                        content={content}
+                        handleChange={handleChange}
+                        handleBlur={handleBlur}
+                        values={values}
+                        errors={errors}
+                        touched={touched}
+                      />
+                      <p>{content?.note}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="card">
                 <h3>{hireRemoteForm.company.title}</h3>

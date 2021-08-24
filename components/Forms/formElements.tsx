@@ -6,7 +6,10 @@ export default function FormElement({ content, ...props }) {
       return <Input content={content} {...props} />;
     }
     case "checkbox": {
-      return <Checkbox content={content} />;
+      return <Checkbox content={content} {...props} />;
+    }
+    case "radio": {
+      return <Radio content={content} {...props} />;
     }
     case "markdown": {
       return <p>markdown</p>;
@@ -36,11 +39,34 @@ function Input({ content, ...props }) {
   );
 }
 
-function Checkbox({ content }) {
+function Checkbox({ content, ...props }) {
   return (
     <div className={styles.checkboxGroup}>
-      <input type="checkbox" name={content.name} />
-      <label htmlFor={content.name}>{content.label}</label>
+      <label htmlFor={content.name}>
+        <input
+          name={content.name}
+          type="checkbox"
+          onChange={props.handleChange(content.name)}
+          checked={props.values[content.name]}
+        />
+        {content.label}
+      </label>
+    </div>
+  );
+}
+
+function Radio({ content, ...props }) {
+  return (
+    <div className={styles.radio}>
+      <label htmlFor={content.name}>
+        <input
+          name={content.name}
+          type="radio"
+          value={content.value}
+          onChange={props.handleChange(content.name)}
+        />
+        {content.label}
+      </label>
     </div>
   );
 }
