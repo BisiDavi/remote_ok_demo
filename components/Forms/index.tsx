@@ -80,7 +80,7 @@ export const EmailForm = ({ showEmail, cancelEmail }): JSX.Element => {
   return showEmail ? (
     <Form className={styles.EmailForm}>
       <span className={styles.Newsletter}>
-        <p>Join 83,752+ people and get a </p>
+        <p>Get a </p>
         <Form.Control className={styles.formSelect} as="select">
           {periods.map((period) => (
             <option key={period} value={period}>
@@ -89,12 +89,12 @@ export const EmailForm = ({ showEmail, cancelEmail }): JSX.Element => {
           ))}
         </Form.Control>
       </span>
-      <p> email of all new remote jobs </p>
+      <p> email of all new Remote Jobs </p>
       <span className={styles.formSubscribe}>
         <Form.Control
           className={styles.formInput}
           type="email"
-          placeholder="Email"
+          placeholder="Type your email..."
         />
         <RedButton text="Subscribe" type="submit" />
       </span>
