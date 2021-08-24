@@ -52,6 +52,7 @@ export const SearchForm = () => {
           @media (max-width: 1024px) {
             .SearchformPlaceholder {
               font-size: 20px;
+              margin-top: 10px;
             }
           }
         `}

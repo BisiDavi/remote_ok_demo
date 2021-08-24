@@ -89,6 +89,11 @@
 
 /* media query */
 /* HireInfoCard */
+@media screen and (max-width: 1024px) {
+  .applyBtn {
+    width: 100px;
+  }
+}
 @media screen and (max-width: 480px) {
   .cardbody {
     padding: 0px;
