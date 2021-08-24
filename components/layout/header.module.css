@@ -17,11 +17,22 @@
   position: absolute;
   right: 10px;
   margin-bottom: 0;
-  height: 200px;
+  height: auto;
   width: 400px;
 }
 
+.headerButton button {
+  width: auto;
+  right: 0;
+}
+
 /* media queries */
+@media (min-width: 768px) {
+  .overlay {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
   .row1 {
     position: relative;

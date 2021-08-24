@@ -82,7 +82,7 @@ export const EmailForm = ({ showEmail, cancelEmail }): JSX.Element => {
       <span className={styles.Newsletter}>
         <p>Get a </p>
         <Form.Control className={styles.formSelect} as="select">
-          {periods.map((period) => (
+          {periods.map((period: EmailPeriods) => (
             <option key={period} value={period}>
               {period}
             </option>

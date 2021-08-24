@@ -54,7 +54,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
           <HireInfoCard hidePostJobCard={hidePostJobCard} hideCard={hideCard} />
         </div>
         <div
-          className={`${styles.worldwideText} justify-content-around mx-auto d-flex w-75`}
+          className={`${styles.worldwideText} justify-content-between mx-auto d-flex w-75`}
         >
           <h6 className="font-weight-bold">Remote jobs</h6>
           <span className={styles.worldwideform}>

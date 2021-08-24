@@ -112,6 +112,9 @@ export const NavMenu: React.FC = (): JSX.Element => {
               overflow: scroll;
               width: 100%;
             }
+            .wave {
+              top: -120px;
+            }
           }
         `}
       </style>
