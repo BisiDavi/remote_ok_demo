@@ -21,6 +21,10 @@ const theme = {
       border: `2px solid ${colors.white}`,
     },
   },
+  wave: {
+    light: colors.white,
+    dark: colors.lightGray,
+  },
 };
 
 export default theme;
