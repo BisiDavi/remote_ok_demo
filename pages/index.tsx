@@ -54,7 +54,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
     >
       <NavMenu />
       <main className={`main ${themeClass} mt-lg-5`}>
-        <div className="hire-remote  mb-3">
+        <div className="hire-remote  mb-3 pt-3">
           <HireInfoCard hidePostJobCard={hidePostJobCard} hideCard={hideCard} />
         </div>
         <div className="justify-content-between container mx-auto d-flex">
