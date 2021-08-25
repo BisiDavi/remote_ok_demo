@@ -9,6 +9,12 @@
 .groupTag {
   flex-wrap: wrap;
 }
+.description a {
+  text-decoration: none;
+}
+.description button {
+  font-size: 25px;
+}
 
 .mobileRow h4 {
   margin-bottom: 0;

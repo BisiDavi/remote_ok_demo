@@ -18,7 +18,6 @@ const Layout = ({ pageTitle, children }: any): JSX.Element => {
       </Head>
       <Header />
       {children}
-      <Footer />
     </div>
   );
 };
