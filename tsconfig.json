@@ -23,7 +23,8 @@
       "@utils/*": ["utils/*"],
       "@styles/*": ["styles/*"],
       "@stores/*": ["stores/*"],
-      "@json/*": ["json/*"]
+      "@json/*": ["json/*"],
+      "@hooks/*": ["hooks/*"]
     }
   },
   "include": [

@@ -4,8 +4,11 @@ import { Card } from "react-bootstrap";
 import { RedButton, FallBackImage } from "@imports/.";
 import { JobPostedAt } from "@utils/date";
 import styles from "./card.module.css";
+import colors from "@utils/colors";
 import LogoContentLoader from "@components/Lazyload/LogoContentLoader";
 import JobdescriptionCard from "./JobdescriptionCard";
+import useTheme from "@hooks/useTheme";
+import theme from "@styles/theme";
 
 let keyId = 1102;
 const generateKeyID = () => {
@@ -16,6 +19,7 @@ const generateKeyID = () => {
 const JobCard = ({ data }: IJobCardProps) => {
   const [showApplyButton, setShowApplyButton] = useState(false);
   const [showJobDescription, setJobDescription] = useState(false);
+  const { dark, themeStyle } = useTheme();
 
   const { slug, logo, company, position, location, tags, date, apply_url } =
     data;
@@ -49,6 +53,7 @@ const JobCard = ({ data }: IJobCardProps) => {
       const fourTags = tags.slice(0, 4);
       return fourTags.map((tag) => (
         <li
+          style={themeStyle("tags")}
           className={`${styles.skilltag} list-unstyled m-2 btn btn-outline-dark h-25`}
           key={`${tag}-${slug}-${generateKeyID()}`}
         >
@@ -73,7 +78,8 @@ const JobCard = ({ data }: IJobCardProps) => {
         onClick={displayJobDescription}
         onMouseEnter={() => setShowApplyButton(true)}
         onMouseLeave={() => setShowApplyButton(false)}
-        className={`${styles.card} my-2 container py-0 px-0`}
+        style={themeStyle("card")}
+        className={`${styles.card} card my-3 container py-0 px-0`}
       >
         <Card.Body
           className={`${styles.row} row d-flex align-items-center py-1`}

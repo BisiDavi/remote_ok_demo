@@ -10,9 +10,10 @@ import {
   WorldwideJobForm,
   EmailSubscriberForm,
 } from "@imports/.";
-
+import useTheme from "@hooks/useTheme";
 import JobCard from "@components/Cards/JobCard";
 import { showWorldWideJobs } from "@utils/filterJobs";
+import colors from "@utils/colors";
 
 interface Props {
   data: [];
@@ -20,6 +21,8 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
+  const { dark } = useTheme();
+
   console.log("availableJobs", availableJobs);
 
   const [showEmail, setEmail] = useState<boolean>(true);
@@ -42,13 +45,15 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
       : displayJobCards(availableJobs);
   }
 
+  const themeClass = dark ? "dark" : "light";
+
   return (
     <Layout
       className="position-relative"
       pageTitle="Remote Jobs in Programming, Design, Sales and More"
     >
       <NavMenu />
-      <main className="main mt-lg-5">
+      <main className={`main ${themeClass} mt-lg-5`}>
         <div className="hire-remote  mb-3">
           <HireInfoCard hidePostJobCard={hidePostJobCard} hideCard={hideCard} />
         </div>
@@ -64,10 +69,15 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
       <style jsx>
         {`
           .main {
-            background-color: #f9f9f9;
             z-index: 1000;
             position: relative;
             top: 80px;
+          }
+          .light {
+            background-color: #f9f9f9;
+          }
+          .dark {
+            background-color: ${colors.grayish};
           }
           footer.footer {
             position: absolute;
