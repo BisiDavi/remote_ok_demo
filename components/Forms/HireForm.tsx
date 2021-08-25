@@ -25,6 +25,7 @@ export default function HireRemotelyForm() {
           stickPost: "",
           annualSalary: "",
           description: "",
+          howToApply: "",
           apply_url: "",
           companyTwitter: "",
           companyEmail: "",
@@ -124,7 +125,7 @@ export default function HireRemotelyForm() {
         }}
       </Formik>
 
-      <FormCard title={hireRemoteForm.preview.title}>
+      <FormCard title={hireRemoteForm?.preview.title}>
         <PreviewPost />
       </FormCard>
 
