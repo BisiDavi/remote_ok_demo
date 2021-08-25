@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { RedButton } from "@imports/.";
-import emailSubscriberAction from "@stores/emailSubscriberAction";
+import emailSubscriberAction from "@stores/subscriberAction";
 import styles from "./forms.module.css";
 
 enum EmailPeriods {
@@ -20,6 +20,7 @@ const EmailForm = ({ showEmail, cancelEmail }): JSX.Element => {
   const periods: string[] = ["daily", "weekly"];
 
   function inputHandler(e) {
+    console.log("inputHandler", e);
     setEmailForm({ ...emailForm, [e.target.name]: e.target.value });
   }
 

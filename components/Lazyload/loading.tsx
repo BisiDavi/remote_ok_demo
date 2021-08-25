@@ -1,8 +1,12 @@
+import Head from "next/head";
 import Logo from "@components/Logo";
 
 export default function Loading() {
   return (
     <>
+      <Head>
+        <title>Loading ...</title>
+      </Head>
       <div className="loading">
         <Logo />
         <h3>

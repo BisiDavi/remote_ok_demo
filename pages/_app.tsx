@@ -18,6 +18,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const handleRouteChange = (url) => {
       let title = window.document.title;
+      console.log("url", url);
     };
     Router.events.on("routeChangeComplete", handleRouteChange);
 
