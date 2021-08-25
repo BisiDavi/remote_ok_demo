@@ -17,9 +17,24 @@
         "note": "Please specify as single job position like \"Marketing Manager\" or \"Node JS Developer\", not a sentence like \"Looking for PM / Biz Dev / Manager\". We know your job is important but please DO NOT WRITE IN FULL CAPS. If posting multiple roles, please create multiple job posts. A job post is limited to a single job. We only allow real jobs, absolutely no MLM-type courses \"learn how to work online\" please."
       },
       {
-        "form": "input",
+        "form": "select",
         "label": "PRIMARY TAG",
         "name": "primaryTag",
+        "options": [
+          "Select a primary tag",
+          "Software Dev",
+          "customer support",
+          "sales",
+          "marketing",
+          "design",
+          "front end",
+          "backend",
+          "legal",
+          "testing",
+          "quality assurance",
+          "non tech",
+          "other"
+        ],
         "placeholder": "Select a primary tag",
         "note": "This primary tag shows first and increases visibility in the main sections. Your job is shown on every page that is tagged with though. E.g. if you tag it as PHP, it shows for Remote PHP Jobs etc."
       },

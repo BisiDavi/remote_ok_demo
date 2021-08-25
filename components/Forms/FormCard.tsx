@@ -36,6 +36,11 @@ export default function FormCard({ title, children }) {
             border-top-left-radius: 6px;
             margin-bottom: 20px;
           }
+          @media (max-width: 768px) {
+            .card {
+              margin: 30px 5px;
+            }
+          }
         `}
       </style>
     </>
