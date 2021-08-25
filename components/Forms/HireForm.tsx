@@ -4,7 +4,7 @@ import hireRemoteForm from "@json/hire-remote-form.json";
 import FormElement from "@components/Forms/formElements";
 import { PostJobAction } from "@stores/postJobAction";
 import FormCard from "./FormCard";
-import PreviewPost from "@components/post/PreviewPost";
+import PreviewPost from "@components/Post/PreviewPost";
 
 export default function HireRemotelyForm() {
   const dispatch = useDispatch();
