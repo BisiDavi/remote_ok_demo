@@ -14,11 +14,15 @@ export default function PreviewPost() {
           <h1>
             {jobDetails?.company} is hiring a Remote {jobDetails?.position}{" "}
           </h1>
-          <MarkdownFormatter content={jobDetails?.description} />
+          {jobDetails?.howToApply && (
+            <MarkdownFormatter content={jobDetails?.description} />
+          )}
           <div className="toApply">
             <h3>How do you apply?</h3>
-            <MarkdownFormatter content={jobDetails?.howToApply} />
-            <a href={jobDetails?.apply_url}>
+            {jobDetails?.howToApply && (
+              <MarkdownFormatter content={jobDetails?.howToApply} />
+            )}
+            <a target="_blank" rel="noreferrer" href={jobDetails?.apply_url}>
               <GreenButton text="Apply for this job" />
             </a>
           </div>

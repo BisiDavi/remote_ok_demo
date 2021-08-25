@@ -10,125 +10,128 @@ export default function HireForm() {
   const dispatch = useDispatch();
 
   return (
-    <div className="hire-remotely-form">
-      <Formik
-        initialValues={{
-          company: "",
-          position: "",
-          primaryTag: "",
-          tags: "",
-          location: "",
-          showLogo: true,
-          sendEmail: true,
-          matchApplicant: true,
-          highlistPost: false,
-          stickPost: "",
-          annualSalary: "",
-          description: "",
-          howToApply: "",
-          apply_url: "",
-          companyTwitter: "",
-          companyEmail: "",
-          feedbackBox: "",
-        }}
-        onSubmit={(values) => {
-          console.log("values", values);
-        }}
-      >
-      {({
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          values,
-          errors,
-          touched,
-          isValid,
-        }) => {
-          dispatch(PostJobAction(values));
-          return (
-            <form className="remote-form">
-              <FormCard title={hireRemoteForm.start.title}>
-                {hireRemoteForm.start.contents.map((content, index) => (
-                  <FormElement
-                    key={index}
-                    content={content}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    values={values}
-                    errors={errors}
-                    touched={touched}
-                  />
-                ))}
-              </FormCard>
-              <FormCard title={hireRemoteForm.designJobPost.title}>
-                {hireRemoteForm.designJobPost.contents.map((content, index) => (
-                  <div className="checkbox-group" key={index}>
+    <>
+      <div className="hire-remotely-form">
+        <Formik
+          initialValues={{
+            company: "",
+            position: "",
+            primaryTag: "",
+            tags: "",
+            location: "",
+            showLogo: true,
+            sendEmail: true,
+            matchApplicant: true,
+            highlistPost: false,
+            stickPost: "",
+            annualSalary: "",
+            description: "",
+            howToApply: "",
+            apply_url: "",
+            companyTwitter: "",
+            companyEmail: "",
+            feedbackBox: "",
+          }}
+          onSubmit={(values) => {
+            console.log("values", values);
+          }}
+        >
+          {({
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            values,
+            errors,
+            touched,
+            isValid,
+          }) => {
+            dispatch(PostJobAction(values));
+            return (
+              <form className="remote-form">
+                <FormCard title={hireRemoteForm.start.title}>
+                  {hireRemoteForm.start.contents.map((content, index) => (
                     <FormElement
+                      key={index}
                       content={content}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
                       values={values}
                       errors={errors}
-                      handleChange={handleChange}
                       touched={touched}
                     />
-                    <div className="tags">
-                      {content?.tag.map((tag, index) => (
-                        <div className={`tag tag-${index}`} key={index}>
-                          {tag}
+                  ))}
+                </FormCard>
+                <FormCard title={hireRemoteForm.designJobPost.title}>
+                  {hireRemoteForm.designJobPost.contents.map(
+                    (content, index) => (
+                      <div className="checkbox-group" key={index}>
+                        <FormElement
+                          content={content}
+                          values={values}
+                          errors={errors}
+                          handleChange={handleChange}
+                          touched={touched}
+                        />
+                        <div className="tags">
+                          {content?.tag.map((tag, index) => (
+                            <div className={`tag tag-${index}`} key={index}>
+                              {tag}
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-                <p className="note">{hireRemoteForm.designJobPost.note}</p>
-              </FormCard>
-              <FormCard title={hireRemoteForm.jobDetails.title}>
-                {hireRemoteForm.jobDetails.contents.map((content, index) => (
-                  <FormElement
-                    key={index}
-                    content={content}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    values={values}
-                    errors={errors}
-                    touched={touched}
-                  />
-                ))}
-              </FormCard>
-              <FormCard title={hireRemoteForm.company.title}>
-                {hireRemoteForm.company.contents.map((content, index) => (
-                  <FormElement
-                    key={index}
-                    content={content}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    values={values}
-                    errors={errors}
-                    touched={touched}
-                  />
-                ))}
-              </FormCard>
-              <FormCard title={hireRemoteForm.feedback.title}>
-                {hireRemoteForm.feedback.contents.map((content, index) => (
-                  <FormElement
-                    key={index}
-                    content={content}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    values={values}
-                    errors={errors}
-                    touched={touched}
-                  />
-                ))}
-              </FormCard>
-            </form>
-          );
-        }}
-      </Formik>
+                      </div>
+                    )
+                  )}
+                  <p className="note">{hireRemoteForm.designJobPost.note}</p>
+                </FormCard>
+                <FormCard title={hireRemoteForm.jobDetails.title}>
+                  {hireRemoteForm.jobDetails.contents.map((content, index) => (
+                    <FormElement
+                      key={index}
+                      content={content}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                      values={values}
+                      errors={errors}
+                      touched={touched}
+                    />
+                  ))}
+                </FormCard>
+                <FormCard title={hireRemoteForm.company.title}>
+                  {hireRemoteForm.company.contents.map((content, index) => (
+                    <FormElement
+                      key={index}
+                      content={content}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                      values={values}
+                      errors={errors}
+                      touched={touched}
+                    />
+                  ))}
+                </FormCard>
+                <FormCard title={hireRemoteForm.feedback.title}>
+                  {hireRemoteForm.feedback.contents.map((content, index) => (
+                    <FormElement
+                      key={index}
+                      content={content}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                      values={values}
+                      errors={errors}
+                      touched={touched}
+                    />
+                  ))}
+                </FormCard>
+              </form>
+            );
+          }}
+        </Formik>
 
-      <FormCard title={hireRemoteForm?.preview.title}>
-        <PreviewPost />
-      </FormCard>
-
+        <FormCard title={hireRemoteForm.preview.title}>
+          <PreviewPost />
+        </FormCard>
+      </div>
       <style jsx>
         {`
           .checkbox-group {
@@ -199,6 +202,6 @@ export default function HireForm() {
           }
         `}
       </style>
-    </div>
+    </>
   );
 }

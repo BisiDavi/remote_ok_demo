@@ -1,7 +1,7 @@
 import { FallBackImage } from "@imports/.";
 import Logo from "@components/Logo";
 
-export default function emailSubscriberSchema({ data }) {
+export default function PreviewCard({ data }) {
   const highlightPost = data?.highlightPost ? "yellow" : "";
 
   return (
