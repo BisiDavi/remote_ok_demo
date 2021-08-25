@@ -44,7 +44,7 @@ export default function HireRemotelyForm() {
         }) => {
           dispatch(PostJobAction(values));
           return (
-            <form>
+            <form className="remote-form">
               <FormCard title={hireRemoteForm.start.title}>
                 {hireRemoteForm.start.contents.map((content, index) => (
                   <FormElement
@@ -128,6 +128,9 @@ export default function HireRemotelyForm() {
             display: flex;
             align-items: center;
           }
+          form.remote-form {
+            margin-bottom: 140px;
+          }
           .checkbox-group .tag {
             margin: 0px 10px;
             border: 1px solid red;
@@ -157,10 +160,12 @@ export default function HireRemotelyForm() {
             display: flex;
             align-items: center;
           }
+
           @media (max-width: 768px) {
             .companyLogos {
               width: 100%;
               grid-gap: 5px;
+              margin: auto;
             }
             .companyLogos img {
               max-height: 50px;
@@ -173,6 +178,16 @@ export default function HireRemotelyForm() {
               flex-direction: column;
               align-items: flex-start;
               margin: 5px 0;
+            }
+          }
+
+          @media (max-width: 768px) and (min-width: 480px) {
+            .checkbox-group .tag {
+              font-size: 11px;
+            }
+            .checkbox-group {
+              flex-direction: row;
+              align-items: center;
             }
           }
         `}

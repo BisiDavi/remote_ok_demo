@@ -21,6 +21,7 @@ export default function MarkdownEditor({ content, ...props }) {
             font-size: 16px;
             font-weight: 800;
             font-family: "Nunito";
+            margin-top: 20px;
           }
           @media (max-width: 768px) {
             .markdownEditor h3 {

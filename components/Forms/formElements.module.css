@@ -113,3 +113,18 @@
     font-size: 13px;
   }
 }
+
+@media (max-width: 768px) and (min-width: 480px) {
+  .note,
+  .checkbox-group label {
+    font-size: 14px;
+  }
+  .inputGroup label,
+  .checkboxGroup label,
+  .select label,
+  .radio label {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}

@@ -19,7 +19,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           </header>
           <main className="main row px-0 mx-0 w-100">
             <div className="col-lg-9 col-12">{children}</div>
-            <aside className="aside col-lg-3 col-12 p-4">
+            <aside className="aside col-lg-3 col-12 p-lg-2 p-md-1 p-4">
               <h3>
                 This is a demo project inspired by{" "}
                 <a
@@ -69,7 +69,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               </div>
             </aside>
           </main>
-          <footer className="col-12 p-3">
+          <footer className="col-9 p-3">
             <div className="post-job mobile-only">
               <button>Post your demo job - Free</button>
               <p>Any posted job, shows only on this platform.</p>
@@ -78,26 +78,43 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               <div className="col-2">
                 <Logo color="black" />
               </div>
-              <div className="company col-10">
-                <h3>
-                  {jobDetails?.company.length > 0
-                    ? jobDetails?.company
-                    : "Company"}
-                </h3>
-                <h3 className="font-weight-bold">
-                  {jobDetails?.position.length > 0
-                    ? jobDetails?.position
-                    : "Position"}
-                </h3>
-                <h4 className="location">
-                  <span>
-                    {" "}
-                    {jobDetails?.location.length > 0
-                      ? jobDetails?.location
-                      : "Location"}
-                  </span>
-                </h4>
+              <div className="company col-8 d-flex align-items-center justify-content-between">
+                <div className="col-4">
+                  <h3>
+                    {jobDetails?.company.length > 0
+                      ? jobDetails?.company
+                      : "Company"}
+                  </h3>
+                  <h3 className="font-weight-bold">
+                    {jobDetails?.position.length > 0
+                      ? jobDetails?.position
+                      : "Position"}
+                  </h3>
+                  <h4 className="location">
+                    <span>
+                      {" "}
+                      {jobDetails?.location.length > 0
+                        ? jobDetails?.location
+                        : "Location"}
+                    </span>
+                  </h4>
+                </div>
+                <div className="col-8 d-flex">
+                  {jobDetails?.primaryTag && (
+                    <div className="role-tag">{jobDetails?.primaryTag}</div>
+                  )}
+                  {jobDetails?.tags &&
+                    jobDetails?.tags
+                      .split(",")
+                      .slice(0, 3)
+                      .map((item, index) => (
+                        <div key={index} className="role-tag">
+                          {item}
+                        </div>
+                      ))}
+                </div>
               </div>
+              <div className="col-2"></div>
             </div>
           </footer>
         </div>
@@ -128,6 +145,13 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             background-color: white;
             z-index: 1;
           }
+          .role-tag {
+            border: 2px solid #0f1115;
+            color: #0f1115;
+            margin: 0px 5px;
+            padding: 0.33em;
+            border-radius: 6px;
+          }
           .aside h3 {
             font-size: 20px;
             font-family: "Nunito";
@@ -154,11 +178,11 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           }
           .companyLogos {
             display: grid;
-            grid-template-columns: repeat(3, 120px);
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             grid-gap: 20px;
           }
           .companyLogos img {
-            width: 120px;
+            width: 100%;
             max-height: 50px;
             object-fit: contain;
             image-rendering: -webkit-optimize-contrast;
@@ -205,6 +229,19 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           footer .post-job {
             display: none;
           }
+          @media (max-width: 1024px) {
+            .companyLogos {
+              grid-gap: 5px;
+            }
+            .aside h3 {
+              font-size: 15px;
+              letter-spacing: normal;
+              line-height: 18px;
+            }
+            aside.aside button {
+              font-size: 14px;
+            }
+          }
           @media (max-width: 768px) {
             .row.hire-now {
               flex-direction: column;
@@ -237,9 +274,6 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             }
             .companyLogos {
               grid-gap: 5px;
-            }
-            .companyLogos img {
-              width: 100px;
             }
             footer .content {
               display: none;
