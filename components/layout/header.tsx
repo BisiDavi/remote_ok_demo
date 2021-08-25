@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { RedButton, SearchForm } from "../../imports";
 import styles from "./header.module.css";
 
-const Header: React.FC = (): JSX.Element => {
+export default function Header() {
   return (
     <header className={`${styles.header} header-content`}>
       <Container fluid>
@@ -73,6 +73,4 @@ const Header: React.FC = (): JSX.Element => {
       </style>
     </header>
   );
-};
-
-export default Header;
+}

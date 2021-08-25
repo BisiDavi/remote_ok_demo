@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
 import { Formik } from "formik";
-import hireRemoteForm from "@json/hire-remote-form.json";
 import FormElement from "@components/Forms/formElements";
 import { PostJobAction } from "@stores/postJobAction";
 import FormCard from "./FormCard";
 import PreviewPost from "@components/Post/PreviewPost";
+import hireRemoteForm from "@json/hire-remote-form.json";
 
-export default function HireRemotelyForm() {
+export default function HireForm() {
   const dispatch = useDispatch();
 
   return (

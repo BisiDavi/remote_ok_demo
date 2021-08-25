@@ -2,26 +2,26 @@ import { Formik } from "formik";
 import { Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { RedButton } from "@imports/.";
-import emailSubscriberAction from "@stores/subscriberAction";
+import { subscriberAction } from "../../stores/subscriberAction";
 import styles from "./forms.module.css";
-import emailSubscriberSchema from "./subscriberSchema";
+import subscriberSchema from "./subscriberSchema";
 
 enum EmailPeriods {
   daily = "DAILY",
   weekly = "WEEKLY",
 }
 
-const EmailSubscriberForm = ({ showEmail, cancelEmail }): JSX.Element => {
+export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
   const dispatch = useDispatch();
   const periods: string[] = ["daily", "weekly"];
 
   return showEmail ? (
     <Formik
       initialValues={{ duration: "", email: "" }}
-      validationSchema={emailSubscriberSchema}
+      validationSchema={subscriberSchema}
       onSubmit={(values) => {
         console.log(values);
-        dispatch(emailSubscriberAction(values));
+        dispatch(subscriberAction(values));
       }}
     >
       {({
@@ -74,9 +74,7 @@ const EmailSubscriberForm = ({ showEmail, cancelEmail }): JSX.Element => {
             </span>
           </Form>
         );
-      }}{" "}
+      }}
     </Formik>
   ) : null;
-};
-
-export default EmailSubscriberForm;
+}

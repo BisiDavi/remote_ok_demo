@@ -7,14 +7,15 @@ export { default as EmailSubscriberForm } from "../components/Forms/EmailSubscri
 export { default as FormTypewriterEffect } from "../components/typewriter";
 
 /* destructured export */
-export { WhiteButton } from "../components/Buttons";
-export { GreenButton } from "../components/Buttons";
-export { RedButton } from "../components/Buttons";
-export { CardButton } from "../components/Buttons";
+export {
+  WhiteButton,
+  GreenButton,
+  RedButton,
+  CardButton,
+} from "../components/Buttons";
 
-
-export { HireInfoCard } from "../components/Cards";
-export { FallBackImage } from "../components/Cards";
+export { HireInfoCard } from "../components/Cards/HireInfoCard";
+export { default as FallBackImage } from "../components/Cards/FallbackImage";
 
 /* menu */
 export { NavMenu } from "../components/Menu";

@@ -1,6 +1,6 @@
 import { EMAIL_SUBSCRIBER } from "./constants";
 
-export function SubscriberReducer(
+export default function SubscriberReducer(
   state = { method: "", email: "" },
   action
 ) {

@@ -1,7 +1,7 @@
-import { FallBackImage } from "@components/Cards";
+import { FallBackImage } from "@imports/.";
 import Logo from "@components/Logo";
 
-export default function PreviewCard({ data }) {
+export default function emailSubscriberSchema({ data }) {
   const highlightPost = data?.highlightPost ? "yellow" : "";
 
   return (
@@ -11,7 +11,9 @@ export default function PreviewCard({ data }) {
       >
         <div className="col-2">
           {data?.company ? (
-            <div className="letter-logo">{FallBackImage(data?.company)}</div>
+            <div className="letter-logo">
+              <FallBackImage companyName={data?.company} />
+            </div>
           ) : (
             <Logo color="black" />
           )}

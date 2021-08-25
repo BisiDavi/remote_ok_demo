@@ -1,6 +1,6 @@
 import { TOGGLE_THEME } from "./constants";
 
-export function ThemeReducer(
+export default function ThemeReducer(
   state = {
     dark: false,
   },

@@ -36,11 +36,13 @@ const JobCard = ({ data }: IJobCardProps) => {
     setJobDescription(!showJobDescription);
   }
 
-  const CompanyLogo = logo
-    ? DisplayCompanyLogo()
-    : company
-    ? FallBackImage(company)
-    : FallBackImage(company);
+  const CompanyLogo = logo ? (
+    DisplayCompanyLogo()
+  ) : company ? (
+    <FallBackImage companyName={company} />
+  ) : (
+    <FallBackImage companyName={company} />
+  );
 
   const displayFourTags = () => {
     if (tags !== undefined && tags.length > 0) {
