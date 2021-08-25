@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 import toggleThemeAction from "@stores/toggleThemeAction";
 import Logo from "@components/Logo";
-import { RedButton, SearchForm } from "@imports/.";
+import { RedButton, FormTypewriterEffect } from "@imports/.";
 import styles from "./header.module.css";
 
 export default function Header() {
@@ -48,7 +48,8 @@ export default function Header() {
         <Row>
           <Col lg={12} className={styles.form}>
             <div className={`${styles.Searchform} Searchform`}>
-              <SearchForm />
+              <h1>Hire a 🔥 skilled Remote</h1>
+              <FormTypewriterEffect /> <h1>Expert</h1>
             </div>
           </Col>
         </Row>
@@ -74,6 +75,23 @@ export default function Header() {
           }
           .logo p {
             font-size: 20px;
+          }
+          .Searchform {
+            display: flex;
+            align-items: center;
+            font-family: "sans-serif", Arial;
+            font-size: 20px;
+            margin: auto;
+            font-weight: 600;
+            justify-content: center;
+            background-color: white;
+            width: fit-content;
+            padding: 10px;
+            width: 600px;
+          }
+          .Searchform h1 {
+            font-size: 20px;
+            margin: 0px 10px;
           }
           @media (min-width: 1440px) {
             .header-content {

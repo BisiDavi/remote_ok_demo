@@ -17,7 +17,7 @@ const FormTypewriterEffect = (): any => {
             "ecommerce",
             "machine learning",
             "ruby on rails",
-            "serverles",
+            "serverless",
             "vue",
             "angular",
             "redux",
@@ -31,15 +31,14 @@ const FormTypewriterEffect = (): any => {
             "recruit",
             "mysql",
             "orm",
-            "product management",
             "graphql",
             "algorithms",
             "figma",
             "phpunit",
-            "django"
+            "django",
           ],
           autoStart: true,
-          loop: true
+          loop: true,
         }}
       />
     </div>
