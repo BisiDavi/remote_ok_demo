@@ -46,7 +46,40 @@ export default function PreviewCard({ data }) {
         </div>
         {data?.stickPost && <div className="col-2">📌 {data?.stickPost}</div>}
       </div>
-      <style jsx>{``}</style>
+      <style jsx>{`
+        .yellow.content {
+          background-color: #fff9c9;
+        }
+        footer .content {
+          border-radius: 10px;
+        }
+        .role-tag {
+          border: 2px solid #0f1115;
+          color: #0f1115;
+          margin: 0px 5px;
+          padding: 0.33em;
+          border-radius: 6px;
+        }
+        .company h3 {
+          font-size: 20px;
+        }
+        .company h4 {
+          font-size: 20px;
+        }
+        .company .location span {
+          background-color: #ddd;
+          border-radius: 5px;
+          color: white;
+          padding: 5px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        @media (max-width: 768px) {
+          .content {
+            display: none;
+          }
+        }
+      `}</style>
     </>
   );
 }

@@ -5,11 +5,10 @@ import { RedButton } from "@components/Buttons";
 import Logo from "@components/Logo";
 import companyLogos from "@json/remote-companies.json";
 import styles from "./hireRemotelayout.module.css";
-import { FallBackImage } from "@components/Cards";
+import PreviewCard from "@components/Cards/PreviewCard";
 
 export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
   const { jobDetails } = useSelector((state) => state.postJob);
-  const highlightPost = jobDetails?.highlightPost ? "yellow" : "";
   return (
     <>
       <div className="hireRemotely container-fluid">
@@ -76,59 +75,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               <button>Post your demo job - Free</button>
               <p>Any posted job, shows only on this platform.</p>
             </div>
-            <div
-              className={`${highlightPost} content row align-items-center mx-3 py-2`}
-            >
-              <div className="col-2">
-                {jobDetails?.company ? (
-                  <div className="letter-logo">
-                    {FallBackImage(jobDetails?.company)}
-                  </div>
-                ) : (
-                  <Logo color="black" />
-                )}
-              </div>
-              <div className="company col-8 d-flex align-items-center justify-content-between">
-                <div className="col-4">
-                  <h3>
-                    {jobDetails?.company.length > 0
-                      ? jobDetails?.company
-                      : "Company"}
-                  </h3>
-                  <h3 className="font-weight-bold">
-                    {jobDetails?.position.length > 0
-                      ? jobDetails?.position
-                      : "Position"}
-                  </h3>
-                  <h4 className="location">
-                    <span>
-                      {" "}
-                      {jobDetails?.location.length > 0
-                        ? jobDetails?.location
-                        : "Location"}
-                    </span>
-                  </h4>
-                </div>
-                <div className="col-8 d-flex">
-                  {jobDetails?.primaryTag && (
-                    <div className="role-tag">{jobDetails?.primaryTag}</div>
-                  )}
-                  {jobDetails?.tags &&
-                    jobDetails?.tags
-                      .split(",")
-                      .slice(0, 3)
-                      .map((item, index) => (
-                        <div key={index} className="role-tag">
-                          {item}
-                        </div>
-                      ))}
-                </div>
-              </div>
-              {jobDetails?.stickPost && (
-                <div className="col-2">📌 {jobDetails?.stickPost}</div>
-              )}
-            </div>
-        
+            <PreviewCard data={jobDetails} />
           </footer>
         </div>
       </div>
@@ -158,13 +105,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             background-color: white;
             z-index: 1;
           }
-          .role-tag {
-            border: 2px solid #0f1115;
-            color: #0f1115;
-            margin: 0px 5px;
-            padding: 0.33em;
-            border-radius: 6px;
-          }
+         
           .aside h3 {
             font-size: 20px;
             font-family: "Nunito";
@@ -196,10 +137,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             grid-gap: 20px;
-          }
-          footer .content {
-            border-radius: 10px;
-          }
+          }         
           .companyLogos img {
             width: 100%;
             max-height: 50px;
@@ -213,21 +151,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           }
           .links a {
             margin: 0px 10px;
-          }
-          .company h3 {
-            font-size: 20px;
-          }
-          .company h4 {
-            font-size: 20px;
-          }
-          .company .location span {
-            background-color: #ddd;
-            border-radius: 5px;
-            color: white;
-            padding: 5px;
-            font-size: 16px;
-            font-weight: 600;
-          }
+          }         
           .post-job button {
             width: 100%;
             background-color: #ff4742;
@@ -293,10 +217,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             }
             .companyLogos {
               grid-gap: 5px;
-            }
-            footer .content {
-              display: none;
-            }
+            }           
             footer .post-job {
               display: flex;
               flex-direction: column;
