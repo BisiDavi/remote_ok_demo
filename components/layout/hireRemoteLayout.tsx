@@ -3,6 +3,7 @@ import { PropsWithChildren } from "react";
 import { useSelector } from "react-redux";
 import { RedButton } from "@components/Buttons";
 import Logo from "@components/Logo";
+import ThemeButton from "@components/Buttons/ThemeButton";
 import companyLogos from "@json/remote-companies.json";
 import styles from "./hireRemotelayout.module.css";
 import PreviewCard from "@components/Cards/PreviewCard";
@@ -17,10 +18,13 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             <Logo color="black" />
             <h1>🏢 🚀 Hire Remotely</h1>
             <RedButton text="Welcome" />
+            <div className="theme-button">
+              <ThemeButton />
+            </div>
           </header>
           <main className="main row px-0 mx-0 w-100">
             <div className="col-lg-9 col-12">{children}</div>
-            <aside className="aside col-lg-3 col-12 p-lg-2 p-md-1 p-4">
+            <aside className="aside col-lg-3 col-12 p-lg-4 p-md-1 p-4">
               <h3>
                 This is a demo project inspired by{" "}
                 <a
@@ -105,7 +109,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             background-color: white;
             z-index: 1;
           }
-         
+
           .aside h3 {
             font-size: 20px;
             font-family: "Nunito";
@@ -137,7 +141,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             grid-gap: 20px;
-          }         
+          }
           .companyLogos img {
             width: 100%;
             max-height: 50px;
@@ -151,7 +155,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           }
           .links a {
             margin: 0px 10px;
-          }         
+          }
           .post-job button {
             width: 100%;
             background-color: #ff4742;
@@ -217,7 +221,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             }
             .companyLogos {
               grid-gap: 5px;
-            }           
+            }
             footer .post-job {
               display: flex;
               flex-direction: column;
