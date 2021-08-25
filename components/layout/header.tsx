@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} header-content`}>
-      <Container className="flex-column" fluid>
+      <Container className="flex-column p-0" fluid>
         <Row className={styles.row1}>
           <Col lg={1} className={styles.theme}>
             <ThemeButton />
