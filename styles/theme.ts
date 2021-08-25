@@ -22,8 +22,26 @@ const theme = {
     },
   },
   wave: {
-    light: colors.white,
-    dark: colors.lightGray,
+    light: colors.light,
+    dark: colors.grayish,
+  },
+  hire: {
+    light: {
+      backgroundColor: colors.white,
+      color: colors.black,
+    },
+    dark: {
+      color: colors.white,
+      backgroundColor: colors.brownish,
+    },
+  },
+  menu: {
+    light: {
+      color: colors.black,
+    },
+    dark: {
+      color: colors.white,
+    },
   },
 };
 

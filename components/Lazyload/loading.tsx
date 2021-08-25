@@ -5,7 +5,7 @@ export default function Loading() {
   return (
     <>
       <Head>
-        <title>Loading ...</title>
+        <title>Loading ... | Remote demo </title>
       </Head>
       <div className="loading">
         <Logo />

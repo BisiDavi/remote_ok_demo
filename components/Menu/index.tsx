@@ -48,7 +48,10 @@ export const NavMenu: React.FC = (): JSX.Element => {
                 {menu.map((menuLink) => (
                   <li className="mx-1" key={menuLink.linkName}>
                     <Link href="/#">
-                      <a className="menulink text-decoration-none d-flex flex-column text-center text-dark">
+                      <a
+                        style={themeStyle("menu")}
+                        className="menulink text-decoration-none d-flex flex-column text-center font-weight-bold"
+                      >
                         <span className="menu-icon mx-auto">
                           {menuLink.icon}
                         </span>

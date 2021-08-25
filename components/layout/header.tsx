@@ -4,11 +4,13 @@ import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 import toggleThemeAction from "@stores/toggleThemeAction";
 import Logo from "@components/Logo";
+import useTheme from "@hooks/useTheme";
 import { RedButton, FormTypewriterEffect } from "@imports/.";
 import styles from "./header.module.css";
 
 export default function Header() {
-  const { dark } = useSelector((state) => state.theme);
+  const { dark, themeStyle } = useTheme();
+
   const dispatch = useDispatch();
 
   const themeState = dark ? "/moon.png" : "/sun.svg";
@@ -47,7 +49,10 @@ export default function Header() {
         </Row>
         <Row>
           <Col lg={12} className={styles.form}>
-            <div className={`${styles.Searchform} Searchform`}>
+            <div
+              style={themeStyle("card")}
+              className={`${styles.Searchform} Searchform`}
+            >
               <h1>Hire a 🔥 skilled Remote</h1>
               <FormTypewriterEffect /> <h1>Expert</h1>
             </div>

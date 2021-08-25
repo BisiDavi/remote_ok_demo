@@ -5,5 +5,6 @@ const colors = {
   lighterGray: "#8e8e8e",
   white: "white",
   black: "black",
+  light: "#f9f9f9",
 };
 export default colors;

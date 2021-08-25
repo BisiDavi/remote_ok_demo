@@ -2,11 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { Card } from "react-bootstrap";
 import { RedButton, CardButton } from "@imports/.";
+import useTheme from "@hooks/useTheme";
 import styles from "./card.module.css";
 
 export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
+  const { themeStyle } = useTheme();
   return hidePostJobCard ? (
-    <Card className={`${styles.hireInfoCard} bg-white container mx-auto`} body>
+    <Card
+      style={themeStyle("hire")}
+      className={`${styles.hireInfoCard} container mx-auto`}
+      body
+    >
       <span
         className={`${styles.hiretext} row align-items-center justify-content-between p-2`}
       >
