@@ -70,7 +70,11 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             </aside>
           </main>
           <footer className="col-12 p-3">
-            <div className="content d-flex col-12 align-items-center">
+            <div className="post-job mobile-only">
+              <button>Post your demo job - Free</button>
+              <p>Any posted job, shows only on this platform.</p>
+            </div>
+            <div className="content row align-items-center">
               <div className="col-2">
                 <Logo color="black" />
               </div>
@@ -198,6 +202,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             bottom: 0;
             background-color: white;
           }
+          footer .post-job {
+            display: none;
+          }
           @media (max-width: 768px) {
             .row.hire-now {
               flex-direction: column;
@@ -233,6 +240,14 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             }
             .companyLogos img {
               width: 100px;
+            }
+            footer .content {
+              display: none;
+            }
+            footer .post-job {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
             }
           }
         `}

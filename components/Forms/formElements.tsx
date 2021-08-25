@@ -78,7 +78,6 @@ function SelectInput({ content, ...props }) {
     <div className={styles.select}>
       <label htmlFor={content.name}>{content.label}</label>
       <select
-        className="w-25"
         value={props.values[content.name]}
         onChange={props.handleChange(content.name)}
       >

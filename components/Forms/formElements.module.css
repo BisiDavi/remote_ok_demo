@@ -39,6 +39,7 @@
   height: 40px;
   padding: 10px;
   margin: 0px 10px;
+  width: 50%;
 }
 .checkboxGroup,
 .checkboxGroup label,
@@ -101,5 +102,8 @@
   .radio label {
     margin-bottom: 0px;
     font-size: 13px;
+  }
+  .select select {
+    width: 100%;
   }
 }
