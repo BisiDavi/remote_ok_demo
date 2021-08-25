@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Logo from "@components/Logo";
+import styles from "./loading.module.css";
 
 export default function Loading() {
   return (
@@ -7,7 +8,7 @@ export default function Loading() {
       <Head>
         <title>Loading ... | Remote demo </title>
       </Head>
-      <div className="loading">
+      <div className={`${styles.loading} loading`}>
         <Logo />
         <h3>
           Your Platform to get <b>Remote Jobs </b> | Loading ...
@@ -31,6 +32,14 @@ export default function Loading() {
           }
           .loading h3 {
             color: white;
+          }
+
+          @media (max-width: 768px) {
+            .loading h3 {
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+            }
           }
         `}
       </style>
