@@ -204,5 +204,8 @@
         "placeholder": "feedback box"
       }
     ]
+  },
+  "preview":{
+    "title":"Here's a preview of how your job post will look like"    
   }
 }
