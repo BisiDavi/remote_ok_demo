@@ -10,7 +10,7 @@ export default function Loading() {
       <div className="loading">
         <Logo />
         <h3>
-          Your Platform to get <b>Remote | Loading ... </b>
+          Your Platform to get <b>Remote Jobs </b> | Loading ...
         </h3>
       </div>
       <style jsx>

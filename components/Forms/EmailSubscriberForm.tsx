@@ -34,7 +34,7 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
         isValid,
       }) => {
         return (
-          <Form className={styles.EmailForm}>
+          <Form className={styles.EmailForm} onSubmit={handleSubmit}>
             <span className={styles.Newsletter}>
               <p>Get a </p>
               <Form.Control
@@ -63,11 +63,7 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
                 placeholder="Type your email..."
                 isValid={touched.email && !errors.email}
               />
-              <RedButton
-                text="Subscribe"
-                onClick={handleSubmit}
-                type="submit"
-              />
+              <RedButton text="Subscribe" type="submit" disabled={!isValid} />
             </span>
             <span onClick={cancelEmail} className={styles.cancelEmailForm}>
               X
@@ -78,3 +74,4 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
     </Formik>
   ) : null;
 }
+

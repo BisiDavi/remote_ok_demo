@@ -6,6 +6,7 @@ interface AppProps {
   buttonColor?: string;
   type?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 export const WhiteButton = ({ text, btnClassName, ...props }: AppProps) => {

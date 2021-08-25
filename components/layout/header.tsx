@@ -1,14 +1,30 @@
+/* eslint-disable @next/next/no-img-element */
+import { useSelector, useDispatch } from "react-redux";
 import Link from "next/link";
-import Logo from "@components/Logo";
 import { Container, Row, Col } from "react-bootstrap";
-import { RedButton, SearchForm } from "../../imports";
+import toggleThemeAction from "@stores/toggleThemeAction";
+import Logo from "@components/Logo";
+import { RedButton, SearchForm } from "@imports/.";
 import styles from "./header.module.css";
 
 export default function Header() {
+  const { dark } = useSelector((state) => state.theme);
+  const dispatch = useDispatch();
+
+  const themeState = dark ? "/moon.png" : "/sun.svg";
+
+  function themeHandler() {
+    dispatch(toggleThemeAction());
+  }
   return (
     <header className={`${styles.header} header-content`}>
       <Container fluid>
         <Row className={styles.row1}>
+          <Col lg={1} className={styles.theme}>
+            <button onClick={themeHandler} className="themeButton">
+              <img src={themeState} alt="icons" />
+            </button>
+          </Col>
           <Col lg={4} className={styles.logo}>
             <Logo />
           </Col>

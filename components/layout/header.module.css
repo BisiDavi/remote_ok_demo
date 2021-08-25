@@ -1,3 +1,22 @@
+.theme {
+  position: fixed;
+  left: 0x;
+  top: 50px;
+  z-index: 10000;
+}
+
+.theme button {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: none;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
 .logo {
   margin: 40px auto;
 }
