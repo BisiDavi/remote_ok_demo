@@ -133,11 +133,7 @@
   .cardbody {
     padding: 0px;
   }
-  .row {
-    display: grid;
-    padding: 0px;
-    grid-template-columns: 1fr 7fr 1fr;
-  }
+
   .cardTags {
     display: none;
   }
@@ -221,10 +217,16 @@
     padding: 2px;
     margin: 3px;
   }
+  .card .row {
+    margin: 0px;
+  }
   .Logo {
     height: 100%;
-    width: 100px;
+    width: 60px;
     margin: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .mobileRow {
     display: flex;

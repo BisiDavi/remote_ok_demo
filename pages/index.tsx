@@ -63,9 +63,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
         </div>
         <div className="available-jobs">{displayJobs()}</div>
       </main>
-      <footer className="footer">
-        <EmailForm showEmail={showEmail} cancelEmail={hideEmail} />
-      </footer>
+      <EmailForm showEmail={showEmail} cancelEmail={hideEmail} />
       <style jsx>
         {`
           .main {

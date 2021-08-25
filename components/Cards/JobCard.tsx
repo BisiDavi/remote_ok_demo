@@ -78,7 +78,7 @@ const JobCard = ({ data }: IJobCardProps) => {
         >
           {CompanyLogo}
           <div className={`${styles.companyprofile} col-8 col-md-8`}>
-            <div className={`${styles.cardText} col-lg-4`}>
+            <div className={`${styles.cardText} col-lg-4 col-10`}>
               <h3>{position}</h3>
               <span className={`${styles.mobileRow} d-flex align-items-center`}>
                 <h4 className="font-weight-300 mr-1">{company}</h4>

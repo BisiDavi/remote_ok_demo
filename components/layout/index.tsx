@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Header, Footer } from "../../imports";
+import { Header, Footer } from "@imports/.";
 
 const Layout = ({ pageTitle, children }: any): JSX.Element => {
   return (
@@ -18,6 +18,7 @@ const Layout = ({ pageTitle, children }: any): JSX.Element => {
       </Head>
       <Header />
       {children}
+      <Footer />
     </div>
   );
 };
