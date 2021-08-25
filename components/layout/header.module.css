@@ -1,6 +1,6 @@
 .theme {
   position: fixed;
-  left: 0x;
+  left: 0;
   top: 50px;
   z-index: 10000;
 }
@@ -9,6 +9,10 @@
   position: relative;
   height: 400px;
   justify-content: center;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
 }
 
 .logo {
@@ -32,6 +36,7 @@
   margin-bottom: 0;
   height: auto;
   width: 400px;
+  top: 0px;
 }
 
 .headerButton button {
@@ -107,6 +112,4 @@
   .Searchform input {
     height: 50px;
   }
-
-  
 }

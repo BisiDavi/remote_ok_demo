@@ -89,9 +89,9 @@ const JobCard = ({ data }: IJobCardProps) => {
             <div className={`${styles.cardText} col-lg-4 col-10`}>
               <h3>{position}</h3>
               <span className={`${styles.mobileRow} d-flex align-items-center`}>
-                <h4 className="font-weight-300 mr-1">{company}</h4>
+                <h4 className="font-weight-300 mx-2">{company}</h4>
                 {location.length > 2 ? (
-                  <div className={styles.location}>
+                  <div className={`${styles.location} mx-2`}>
                     {Checkworldwide(location)}
                   </div>
                 ) : null}

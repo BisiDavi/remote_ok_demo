@@ -252,7 +252,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             footer {
               height: 250px;
               overflow-y: scroll;
-              z-index: 10000;
+              z-index: 100;
             }
             .post-job button {
               height: 40px;
