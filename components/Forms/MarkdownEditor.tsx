@@ -22,6 +22,12 @@ export default function MarkdownEditor({ content, ...props }) {
             font-weight: 800;
             font-family: "Nunito";
           }
+          @media (max-width: 768px) {
+            .markdownEditor h3 {
+              font-size: 14px;
+              margin: 20px 0px;
+            }
+          }
         `}
       </style>
     </>

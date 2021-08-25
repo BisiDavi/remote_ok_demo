@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { RedButton } from "@components/Buttons";
 import Logo from "@components/Logo";
 import companyLogos from "@json/remote-companies.json";
+import styles from "./hireRemotelayout.module.css";
 
 export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
   const { jobDetails } = useSelector((state) => state.postJob);
@@ -11,7 +12,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
     <>
       <div className="hireRemotely container-fluid">
         <div className="row hire-now">
-          <header className="header col-12">
+          <header className={`${styles.header} header col-12`}>
             <Logo color="black" />
             <h1>🏢 🚀 Hire Remotely</h1>
             <RedButton text="Welcome" />
@@ -204,6 +205,10 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             header.header a {
               height: 60px;
             }
+            header.header h1 {
+              font-size: 16px;
+              margin-bottom: 0px;
+            }
             header.header {
               align-items: center;
               height: 70px;
@@ -217,6 +222,17 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             }
             aside.aside {
               position: unset;
+            }
+            aside.aside h3 {
+              font-size: 16px;
+              line-height: 20px;
+              letter-spacing: normal;
+            }
+            .companyLogos {
+              grid-gap: 5px;
+            }
+            .companyLogos img {
+              width: 100px;
             }
           }
         `}

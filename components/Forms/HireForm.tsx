@@ -68,11 +68,13 @@ export default function HireRemotelyForm() {
                       handleChange={handleChange}
                       touched={touched}
                     />
-                    {content?.tag.map((tag, index) => (
-                      <div className={`tag tag-${index}`} key={index}>
-                        {tag}
-                      </div>
-                    ))}
+                    <div className="tags">
+                      {content?.tag.map((tag, index) => (
+                        <div className={`tag tag-${index}`} key={index}>
+                          {tag}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ))}
                 <p className="note">{hireRemoteForm.designJobPost.note}</p>
@@ -150,6 +152,28 @@ export default function HireRemotelyForm() {
           .note {
             font-size: 12px;
             color: #888;
+          }
+          .tags {
+            display: flex;
+            align-items: center;
+          }
+          @media (max-width: 768px) {
+            .companyLogos {
+              width: 100%;
+              grid-gap: 5px;
+            }
+            .companyLogos img {
+              max-height: 50px;
+              width: 80px;
+            }
+            .checkbox-group .tag {
+              font-size: 9px;
+            }
+            .checkbox-group {
+              flex-direction: column;
+              align-items: flex-start;
+              margin: 5px 0;
+            }
           }
         `}
       </style>
