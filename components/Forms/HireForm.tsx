@@ -127,10 +127,11 @@ export default function HireForm() {
             );
           }}
         </Formik>
-
-        <FormCard title={hireRemoteForm.preview.title}>
-          <PreviewPost />
-        </FormCard>
+        <div className="preview-post">
+          <FormCard title={hireRemoteForm.preview.title}>
+            <PreviewPost />
+          </FormCard>
+        </div>
       </div>
       <style jsx>
         {`
@@ -138,8 +139,8 @@ export default function HireForm() {
             display: flex;
             align-items: center;
           }
-          form.remote-form {
-            margin-bottom: 140px;
+          .preview-post {
+            margin-bottom: 20%;
           }
           .checkbox-group .tag {
             margin: 0px 10px;
