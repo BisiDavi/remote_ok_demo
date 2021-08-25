@@ -3,7 +3,7 @@ export { default as Header } from "../components/layout/header";
 export { default as Layout } from "../components/layout";
 export { default as SearchForm } from "../components/Forms/SearchForm";
 export { default as WorldwideJobForm } from "../components/Forms/WorldwideJobForm";
-export { default as EmailForm } from "../components/Forms/EmailForm";
+export { default as EmailSubscriberForm } from "../components/Forms/EmailSubscriberForm";
 export { default as FormTypewriterEffect } from "../components/typewriter";
 
 /* destructured export */

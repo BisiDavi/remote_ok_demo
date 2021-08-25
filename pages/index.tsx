@@ -8,7 +8,7 @@ import {
   NavMenu,
   HireInfoCard,
   WorldwideJobForm,
-  EmailForm,
+  EmailSubscriberForm,
 } from "@imports/.";
 
 import JobCard from "@components/Cards/JobCard";
@@ -60,7 +60,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
         </div>
         <div className="available-jobs">{displayJobs()}</div>
       </main>
-      <EmailForm showEmail={showEmail} cancelEmail={hideEmail} />
+      <EmailSubscriberForm showEmail={showEmail} cancelEmail={hideEmail} />
       <style jsx>
         {`
           .main {
