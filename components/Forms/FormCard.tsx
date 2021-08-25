@@ -1,7 +1,10 @@
+import useTheme from "@hooks/useTheme";
+
 export default function FormCard({ title, children }) {
+  const { themeStyle } = useTheme();
   return (
     <>
-      <div className="card">
+      <div style={themeStyle("card")} className="card">
         <h3>{title}</h3>
         {children}
       </div>

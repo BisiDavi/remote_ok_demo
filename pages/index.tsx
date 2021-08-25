@@ -76,6 +76,9 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
           .light {
             background-color: #f9f9f9;
           }
+          .available-jobs {
+            padding-bottom: 7%;
+          }
           .dark {
             background-color: ${colors.grayish};
           }

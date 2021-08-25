@@ -32,6 +32,10 @@ export default function ThemeButton() {
             align-items: center;
             background-color: transparent;
           }
+
+          .themeButton:focus {
+            outline: none;
+          }
         `}
       </style>
     </>
