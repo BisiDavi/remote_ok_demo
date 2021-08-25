@@ -5,9 +5,11 @@ import { RedButton } from "@components/Buttons";
 import Logo from "@components/Logo";
 import companyLogos from "@json/remote-companies.json";
 import styles from "./hireRemotelayout.module.css";
+import { FallBackImage } from "@components/Cards";
 
 export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
   const { jobDetails } = useSelector((state) => state.postJob);
+  const highlightPost = jobDetails?.highlightPost ? "yellow" : "";
   return (
     <>
       <div className="hireRemotely container-fluid">
@@ -74,9 +76,17 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               <button>Post your demo job - Free</button>
               <p>Any posted job, shows only on this platform.</p>
             </div>
-            <div className="content row align-items-center">
+            <div
+              className={`${highlightPost} content row align-items-center mx-3 py-2`}
+            >
               <div className="col-2">
-                <Logo color="black" />
+                {jobDetails?.company ? (
+                  <div className="letter-logo">
+                    {FallBackImage(jobDetails?.company)}
+                  </div>
+                ) : (
+                  <Logo color="black" />
+                )}
               </div>
               <div className="company col-8 d-flex align-items-center justify-content-between">
                 <div className="col-4">
@@ -114,7 +124,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
                       ))}
                 </div>
               </div>
-              <div className="col-2"></div>
+              {jobDetails?.stickPost && (
+                <div className="col-2">📌 {jobDetails?.stickPost}</div>
+              )}
             </div>
           </footer>
         </div>
@@ -158,6 +170,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             letter-spacing: 1px;
             line-height: 25px;
           }
+          .yellow.content {
+            background-color: #fff9c9;
+          }
           header.header {
             display: flex;
             align-items: center;
@@ -180,6 +195,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             grid-gap: 20px;
+          }
+          footer .content {
+            border-radius: 10px;
           }
           .companyLogos img {
             width: 100%;

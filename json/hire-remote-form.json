@@ -61,7 +61,7 @@
       {
         "name": "showLogo",
         "form": "checkbox",
-        "label": "Show my :fire company logo besides my post",
+        "label": "Show my company logo besides my post",
         "tag": ["2X MORE VIEWS", "HIGHLY RECOMMENDED"]
       },
       {
@@ -86,22 +86,22 @@
       {
         "name": "stickPost",
         "form": "radio",
-        "value": "stickyPost1hr",
-        "label": "Stick your post so it stays on :pin of the frontpage for :time 24 hours",
+        "value": "sticky post 1hr",
+        "label": "Stick your post so it stays on  of the frontpage for  24 hours",
         "tag": ["2X MORE VIEWS"]
       },
       {
         "name": "stickPost",
         "form": "radio",
-        "value": "stickyPost1Wk",
-        "label": "Stick your post so it stays on :pin of the frontpage for :calender 1 entire week",
+        "value": "sticky post 1 week",
+        "label": "Stick your post so it stays on  of the frontpage for 1 entire week",
         "tag": ["6X MORE VIEW"]
       },
       {
         "name": "stickPost",
         "form": "radio",
-        "value": "stickyPost1Month",
-        "label": "Stick your post so it stays on :pin of the frontpage for :calender 1 entire month",
+        "value": "sticky post 1 month",
+        "label": "Stick your post so it stays on  of the frontpage for :calender 1 entire month",
         "tag": ["9X MORE VIEW"]
       }
     ],
