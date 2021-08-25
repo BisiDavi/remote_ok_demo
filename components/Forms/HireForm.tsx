@@ -35,7 +35,7 @@ export default function HireRemotelyForm() {
           console.log("values", values);
         }}
       >
-        {({
+      {({
           handleChange,
           handleBlur,
           handleSubmit,

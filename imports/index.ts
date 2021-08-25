@@ -10,9 +10,9 @@ export { GreenButton } from "../components/Buttons";
 export { RedButton } from "../components/Buttons";
 export { CardButton } from "../components/Buttons";
 
-export { SearchForm } from "../components/Forms";
-export { WorldwideJobForm } from "../components/Forms";
-export { EmailForm } from "../components/Forms";
+export { default as SearchForm } from "../components/Forms/SearchForm";
+export { default as WorldwideJobForm } from "../components/Forms/WorldwideJobForm";
+export { default as EmailForm } from "../components/Forms/EmailForm";
 
 export { HireInfoCard } from "../components/Cards";
 export { FallBackImage } from "../components/Cards";
