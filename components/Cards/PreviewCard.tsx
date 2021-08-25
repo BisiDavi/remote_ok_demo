@@ -11,10 +11,8 @@ export default function PreviewCard({ dark, data }) {
 
   return (
     <>
-      <div
-        className={`${highlightPost} content row align-items-center mx-3 py-2`}
-      >
-        <div className="col-2">
+      <div className={`${highlightPost} content row mx-3 py-2`}>
+        <div className="col-2 logoContainer">
           {data?.company ? (
             <div className="letter-logo">
               <FallBackImage companyName={data?.company} />
@@ -23,8 +21,8 @@ export default function PreviewCard({ dark, data }) {
             <Logo color={themeState} />
           )}
         </div>
-        <div className="company col-lg-8 col-12 d-flex align-items-center justify-content-between">
-          <div className="col-lg-4 col-12">
+        <div className="company col-lg-8 col-12 d-flex  justify-content-between">
+          <div className="col-lg-4 col-12 text">
             <h3>{data?.company.length > 0 ? data?.company : "Company"}</h3>
             <h3 className="font-weight-bold">
               {data?.position.length > 0 ? data?.position : "Position"}
@@ -59,8 +57,9 @@ export default function PreviewCard({ dark, data }) {
         .${highlightPost}.content {
           background-color: ${highlightPost};
         }
-        footer .content {
+        .content {
           border-radius: 10px;
+          align-items-center 
         }
         .role-tag {
           border: 2px solid #0f1115;
@@ -68,6 +67,9 @@ export default function PreviewCard({ dark, data }) {
           margin: 0px 5px;
           padding: 0.33em;
           border-radius: 6px;
+        }
+        .company {
+          align-items: center;
         }
         .company h3 {
           font-size: 20px;
@@ -88,7 +90,15 @@ export default function PreviewCard({ dark, data }) {
           .company {
             flex-direction: column;
             margin-bottom: 10px;
+            align-items: flex-start;
           }
+         .logoContainer{
+           height:60px;
+           margin-bottom:20px;
+         }
+         .text{
+           height:60px;
+         }
         }
       `}</style>
     </>
