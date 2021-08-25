@@ -1,8 +1,13 @@
 import { FallBackImage } from "@imports/.";
 import Logo from "@components/Logo";
+import theme from "@styles/theme";
 
-export default function PreviewCard({ data }) {
-  const highlightPost = data?.highlightPost ? "yellow" : "";
+export default function PreviewCard({ dark, data }) {
+  const highlightPost = data?.highlightPost ? "#c13a3a" : "";
+
+  const themeState = dark ? "#fff" : "black";
+
+  const tagStyle = dark ? theme.tags.dark : theme.tags.light;
 
   return (
     <>
@@ -15,11 +20,11 @@ export default function PreviewCard({ data }) {
               <FallBackImage companyName={data?.company} />
             </div>
           ) : (
-            <Logo color="black" />
+            <Logo color={themeState} />
           )}
         </div>
-        <div className="company col-8 d-flex align-items-center justify-content-between">
-          <div className="col-4">
+        <div className="company col-lg-8 col-12 d-flex align-items-center justify-content-between">
+          <div className="col-lg-4 col-12">
             <h3>{data?.company.length > 0 ? data?.company : "Company"}</h3>
             <h3 className="font-weight-bold">
               {data?.position.length > 0 ? data?.position : "Position"}
@@ -31,7 +36,7 @@ export default function PreviewCard({ data }) {
               </span>
             </h4>
           </div>
-          <div className="col-8 d-flex">
+          <div className="col-lg-8 col-12 d-flex">
             {data?.primaryTag && (
               <div className="role-tag">{data?.primaryTag}</div>
             )}
@@ -40,17 +45,19 @@ export default function PreviewCard({ data }) {
                 .split(",")
                 .slice(0, 3)
                 .map((item, index) => (
-                  <div key={index} className="role-tag">
+                  <div key={index} style={tagStyle} className="role-tag">
                     {item}
                   </div>
                 ))}
           </div>
         </div>
-        {data?.stickPost && <div className="col-2">📌 {data?.stickPost}</div>}
+        {data?.stickPost && (
+          <div className="col-lg-2 col-12">📌 {data?.stickPost}</div>
+        )}
       </div>
       <style jsx>{`
-        .yellow.content {
-          background-color: #fff9c9;
+        .${highlightPost}.content {
+          background-color: ${highlightPost};
         }
         footer .content {
           border-radius: 10px;
@@ -76,9 +83,11 @@ export default function PreviewCard({ data }) {
           font-size: 16px;
           font-weight: 600;
         }
-        @media (max-width: 768px) {
-          .content {
-            display: none;
+
+        @media (max-width: 500px) {
+          .company {
+            flex-direction: column;
+            margin-bottom: 10px;
           }
         }
       `}</style>

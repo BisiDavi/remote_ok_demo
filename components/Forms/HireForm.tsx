@@ -22,7 +22,7 @@ export default function HireForm() {
             showLogo: true,
             sendEmail: true,
             matchApplicant: true,
-            highlistPost: false,
+            highlightPost: false,
             stickPost: "",
             annualSalary: "",
             description: "",

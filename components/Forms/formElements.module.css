@@ -35,6 +35,10 @@
   left: -5px;
   outline: none;
 }
+.select {
+  display: flex;
+  align-items: center;
+}
 .select select {
   height: 40px;
   padding: 10px;

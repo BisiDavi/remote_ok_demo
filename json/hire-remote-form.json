@@ -79,7 +79,7 @@
       {
         "name": "highlightPost",
         "form": "checkbox",
-        "label": "Highlight your post in yellow",
+        "label": "Highlight your post in red",
         "tag": ["2X MORE VIEWS"]
       },
 

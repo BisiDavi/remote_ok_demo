@@ -8,20 +8,26 @@ import ThemeButton from "@components/Buttons/ThemeButton";
 import companyLogos from "@json/remote-companies.json";
 import styles from "./hireRemotelayout.module.css";
 import PreviewCard from "@components/Cards/PreviewCard";
+import Head from "next/head";
 
 export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
   const { jobDetails } = useSelector((state) => state.postJob);
-  const { themeStyle } = useTheme();
+  const { themeStyle, dark } = useTheme();
+
+  const themeState = dark ? "#fff" : "black";
 
   return (
     <>
+      <Head>
+        <title>Post Job | Remote demo®</title>
+      </Head>
       <div className="hireRemotely container-fluid">
         <div className="row hire-now">
           <header
             style={themeStyle("card")}
             className={`${styles.header} header col-12`}
           >
-            <Logo color="black" />
+            <Logo color={themeState} />
             <h1>🏢 🚀 Hire Remotely</h1>
             <RedButton text="Welcome" />
             <div className="theme-button">
@@ -83,12 +89,12 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               </div>
             </aside>
           </main>
-          <footer className="col-9 p-3">
+          <footer style={themeStyle("card")} className="col-12 col-lg-9 p-3">
             <div className="post-job mobile-only">
               <button>Post your demo job - Free</button>
               <p>Any posted job, shows only on this platform.</p>
             </div>
-            <PreviewCard data={jobDetails} />
+            <PreviewCard dark={dark} data={jobDetails} />
           </footer>
         </div>
       </div>
@@ -235,6 +241,11 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               display: flex;
               flex-direction: column;
               text-align: center;
+            }
+          }
+          @media (max-width: 500px) {
+            header h1 {
+              display: none;
             }
           }
         `}
