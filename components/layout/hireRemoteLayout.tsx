@@ -128,6 +128,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
                 <div className="col-2">📌 {jobDetails?.stickPost}</div>
               )}
             </div>
+        
           </footer>
         </div>
       </div>
