@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Form, FormControl, InputGroup } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { FormTypewriterEffect, RedButton } from "@imports/.";
@@ -12,6 +11,7 @@ enum EmailPeriods {
 
 
 const EmailForm = ({ showEmail, cancelEmail }): JSX.Element => {
+  
   const periods: string[] = ["daily", "weekly"];
 
   return showEmail ? (
