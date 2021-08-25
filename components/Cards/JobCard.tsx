@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 import { RedButton, FallBackImage } from "@imports/.";
 import { JobPostedAt } from "@utils/date";
 import styles from "./card.module.css";
-import LogoContentLoader from "@components/Lazyload/logoContentLoader";
+import LogoContentLoader from "@components/Lazyload/LogoContentLoader";
 import JobdescriptionCard from "./JobdescriptionCard";
 
 let keyId = 1102;

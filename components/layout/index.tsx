@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Header, Footer } from "@imports/.";
+import { Header } from "@imports/.";
 
 const Layout = ({ pageTitle, children }: any): JSX.Element => {
   return (
