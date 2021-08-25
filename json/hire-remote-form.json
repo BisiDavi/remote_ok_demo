@@ -184,13 +184,6 @@
     "title": "COMPANY",
     "contents": [
       {
-        "label": "COMPANY TWITTER",
-        "form": "input",
-        "name": "companyTwitter",
-        "placholder": "username",
-        "note": "Twitter username without @. Not required, but used to tag your company when we tweet out your job post."
-      },
-      {
         "label": "COMPANY EMAIL* (STAYS PRIVATE, FOR INVOICE + EDIT LINK)",
         "form": "input",
         "name": "companyEmail",
