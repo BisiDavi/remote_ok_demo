@@ -6,6 +6,7 @@ import store from "@stores/store";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "nprogress/nprogress.css";
+import Loading from "@components/Lazyload/loading";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -44,6 +45,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
+      {loading && <Loading />}
       <Component {...pageProps} />
     </Provider>
   );

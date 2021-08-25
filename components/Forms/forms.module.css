@@ -115,15 +115,15 @@
   .EmailForm p {
     font-size: 13px;
   }
-  /* .EmailForm {
+  .EmailForm {
     display: flex;
     flex-flow: wrap;
     width: 100%;
-    top: 0px;
-    position: absolute;
+    bottom: 0px;
+    position: fixed;
     z-index: 20000;
     height: 120px;
-  } */
+  }
   .formSelect,
   .formInput {
     width: 25%;

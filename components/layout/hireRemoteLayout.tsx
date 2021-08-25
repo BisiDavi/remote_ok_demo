@@ -10,15 +10,15 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
   return (
     <>
       <div className="hireRemotely container-fluid">
-        <div className="row">
+        <div className="row hire-now">
           <header className="header col-12">
             <Logo color="black" />
             <h1>🏢 🚀 Hire Remotely</h1>
             <RedButton text="Welcome" />
           </header>
           <main className="main row px-0 mx-0 w-100">
-            <div className="col-9">{children}</div>
-            <aside className="aside col-3 p-4">
+            <div className="col-lg-9 col-12">{children}</div>
+            <aside className="aside col-lg-3 col-12 p-4">
               <h3>
                 This is a demo project inspired by{" "}
                 <a
@@ -196,6 +196,28 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             position: fixed;
             bottom: 0;
             background-color: white;
+          }
+          @media (max-width: 768px) {
+            .row.hire-now {
+              flex-direction: column;
+            }
+            header.header a {
+              height: 60px;
+            }
+            header.header {
+              align-items: center;
+              height: 70px;
+              padding: 10px 20px;
+            }
+            header button {
+              display: none;
+            }
+            main.main {
+              flex-direction: column;
+            }
+            aside.aside {
+              position: unset;
+            }
           }
         `}
       </style>

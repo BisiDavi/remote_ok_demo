@@ -80,7 +80,7 @@
   }
   .Searchform {
     height: 50px;
-    width: 70%;
+    width: unset;
     position: absolute;
     top: 30px;
     z-index: 500;
