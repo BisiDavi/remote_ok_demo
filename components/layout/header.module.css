@@ -5,6 +5,12 @@
   z-index: 10000;
 }
 
+.row1 {
+  position: relative;
+  height: 400px;
+  justify-content: center;
+}
+
 .logo {
   margin: 40px auto;
 }
@@ -101,4 +107,6 @@
   .Searchform input {
     height: 50px;
   }
+
+  
 }

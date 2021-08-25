@@ -3,7 +3,8 @@ import Logo from "@components/Logo";
 import theme from "@styles/theme";
 
 export default function PreviewCard({ dark, data }) {
-  const highlightPost = data?.highlightPost ? "#c13a3a" : "";
+  const highlightPost = data?.highlightPost ? "highlight" : "";
+  console.log("data", data);
 
   const themeState = dark ? "#fff" : "black";
 
@@ -34,9 +35,11 @@ export default function PreviewCard({ dark, data }) {
               </span>
             </h4>
           </div>
-          <div className="col-lg-8 col-12 d-flex">
+          <div className="col-lg-8 col-12 d-flex tag-group">
             {data?.primaryTag && (
-              <div className="role-tag">{data?.primaryTag}</div>
+              <div style={tagStyle} className="role-tag">
+                {data?.primaryTag}
+              </div>
             )}
             {data?.tags &&
               data?.tags
@@ -54,8 +57,8 @@ export default function PreviewCard({ dark, data }) {
         )}
       </div>
       <style jsx>{`
-        .${highlightPost}.content {
-          background-color: ${highlightPost};
+        .highlight.content {
+          background-color: #c13a3a;
         }
         .content {
           border-radius: 10px;
@@ -91,14 +94,26 @@ export default function PreviewCard({ dark, data }) {
             flex-direction: column;
             margin-bottom: 10px;
             align-items: flex-start;
+            margin: auto;
+            align-items: center;
           }
          .logoContainer{
-           height:60px;
-           margin-bottom:20px;
+            height: 60px;
+            margin-bottom: 20px;
+            margin-top: -15px;
          }
          .text{
            height:60px;
          }
+         .tag-group {
+            flex-flow: inherit;
+            margin-top: 0px;
+          }
+          .role-tag {
+            justify-content: center;
+            margin: 5px;
+            text-align: center;
+          }
         }
       `}</style>
     </>

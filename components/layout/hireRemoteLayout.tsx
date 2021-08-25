@@ -92,7 +92,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           <footer style={themeStyle("card")} className="col-12 col-lg-9 p-3">
             <div className="post-job mobile-only">
               <button>Post your demo job - Free</button>
-              <p>Any posted job, shows only on this platform.</p>
+              <p className="mb-0">
+                Any posted job, shows only on this platform.
+              </p>
             </div>
             <PreviewCard dark={dark} data={jobDetails} />
           </footer>
@@ -246,6 +248,17 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           @media (max-width: 500px) {
             header h1 {
               display: none;
+            }
+            footer {
+              height: 250px;
+              overflow-y: scroll;
+              z-index: 10000;
+            }
+            .post-job button {
+              height: 40px;
+              font-size: 20px;
+              width: 80%;
+              margin: 10px auto 20px auto;
             }
           }
         `}

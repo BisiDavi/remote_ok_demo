@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} header-content`}>
-      <Container fluid>
+      <Container className="flex-column" fluid>
         <Row className={styles.row1}>
           <Col lg={1} className={styles.theme}>
             <ThemeButton />
@@ -35,17 +35,13 @@ export default function Header() {
             </span>
           </Col>
           <Col className={styles.overlay}></Col>
-        </Row>
-        <Row>
-          <Col lg={12} className={styles.form}>
-            <div
-              style={themeStyle("card")}
-              className={`${styles.Searchform} Searchform`}
-            >
-              <h1>Hire a 🔥 skilled Remote</h1>
-              <FormTypewriterEffect /> <h1>Expert</h1>
-            </div>
-          </Col>
+          <div
+            style={themeStyle("card")}
+            className={`${styles.Searchform} Searchform`}
+          >
+            <h1>Hire a 🔥 skilled Remote</h1>
+            <FormTypewriterEffect /> <h1>Expert</h1>
+          </div>
         </Row>
       </Container>
       <style jsx>
@@ -95,6 +91,15 @@ export default function Header() {
           @media (max-width: 480px) {
             .header-content {
               background-size: cover;
+            }
+            .Searchform h1 {
+              font-size: 12px;
+            }
+
+            .Searchform {
+              width: 350px;
+              font-size: 12px;
+              position: unset;
             }
           }
         `}
