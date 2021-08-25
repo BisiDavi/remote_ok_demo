@@ -173,6 +173,7 @@
     padding: 0px;
     box-shadow: 1px 1px 3px #ccc;
   }
+
   .hireInfoCard div:first-child {
     padding: 0px;
     display: flex;
@@ -186,6 +187,7 @@
     align-items: center;
     height: 100px;
     font-size: 14px;
+    flex-direction: row;
   }
   .textMobile {
     font-weight: 700;
@@ -202,6 +204,7 @@
     height: 100px;
     width: 100%;
     padding: 0px;
+    margin: unset;
   }
   .hireButton button {
     width: 85px;
