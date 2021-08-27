@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Card } from "react-bootstrap";
 import dynamic from "next/dynamic";
 import { RedButton, FallBackImage } from "@imports/.";
