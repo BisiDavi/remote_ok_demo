@@ -3,6 +3,8 @@
   "short_name": "remote demo",
   "description": "a demo project inspire by remoteok.io",
   "lang": "en",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
   "start_url": "/",
   "orientation": "portrait",
   "display": "standalone",

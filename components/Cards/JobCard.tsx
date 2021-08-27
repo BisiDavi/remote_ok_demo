@@ -1,25 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
+import dynamic from "next/dynamic";
 import { RedButton, FallBackImage } from "@imports/.";
-import { JobPostedAt } from "@utils/date";
+import { PostJobAt } from "@utils/date";
 import styles from "./card.module.css";
-import colors from "@utils/colors";
 import LogoContentLoader from "@components/Lazyload/LogoContentLoader";
-import JobdescriptionCard from "./JobdescriptionCard";
 import useTheme from "@hooks/useTheme";
-import theme from "@styles/theme";
 
-let keyId = 1102;
-const generateKeyID = () => {
-  keyId += 1;
-  return keyId;
-};
+const DynamicJobDescription = dynamic(() => import("./JobdescriptionCard"));
 
 const JobCard = ({ data }: IJobCardProps) => {
   const [showApplyButton, setShowApplyButton] = useState(false);
   const [showJobDescription, setJobDescription] = useState(false);
-  const { dark, themeStyle } = useTheme();
+  const { themeStyle } = useTheme();
 
   const { slug, logo, company, position, location, tags, date, apply_url } =
     data;
@@ -55,7 +49,7 @@ const JobCard = ({ data }: IJobCardProps) => {
         <li
           style={themeStyle("tags")}
           className={`${styles.skilltag} list-unstyled m-2 btn btn-outline-dark h-25`}
-          key={`${tag}-${slug}-${generateKeyID()}`}
+          key={`${tag}-${slug}}`}
         >
           {tag}
         </li>
@@ -108,7 +102,7 @@ const JobCard = ({ data }: IJobCardProps) => {
             </div>
           </div>
           <div className={`${styles.duration} col-1 col-lg-1`}>
-            {JobPostedAt(date)}
+            {PostJobAt(date)}
           </div>
           <div className="d-none d-sm-block">
             {showApplyButton ? (
@@ -119,7 +113,7 @@ const JobCard = ({ data }: IJobCardProps) => {
           </div>
         </Card.Body>
       </Card>
-      {showJobDescription && <JobdescriptionCard content={data} />}
+      {showJobDescription && <DynamicJobDescription content={data} />}
     </>
   );
 };

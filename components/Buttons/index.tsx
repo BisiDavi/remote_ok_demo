@@ -9,14 +9,6 @@ interface AppProps {
   disabled?: boolean;
 }
 
-export const WhiteButton = ({ text, btnClassName, ...props }: AppProps) => {
-  return (
-    <Button {...props} className={btnClassName} variant="outline-light">
-      {text}
-    </Button>
-  );
-};
-
 export const GreenButton = ({ text, btnClassName, ...props }: AppProps) => {
   return (
     <Button {...props} className={btnClassName} variant="outline-success">
@@ -37,9 +29,3 @@ export const RedButton = ({ type, text, btnClassName, ...props }: AppProps) => {
     </Button>
   );
 };
-
-export const CardButton = ({ buttonColor, text }: AppProps) => {
-  return <Button variant={buttonColor}>{text}</Button>;
-};
-
-// onClick={props.onClick}

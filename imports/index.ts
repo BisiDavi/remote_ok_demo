@@ -6,12 +6,7 @@ export { default as EmailSubscriberForm } from "../components/Forms/EmailSubscri
 export { default as FormTypewriterEffect } from "../components/typewriter";
 
 /* destructured export */
-export {
-  WhiteButton,
-  GreenButton,
-  RedButton,
-  CardButton,
-} from "../components/Buttons";
+export { GreenButton, RedButton } from "../components/Buttons";
 
 export { HireInfoCard } from "../components/Cards/HireInfoCard";
 export { default as FallBackImage } from "../components/Cards/FallbackImage";

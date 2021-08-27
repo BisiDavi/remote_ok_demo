@@ -43,7 +43,7 @@ export const NavMenu: React.FC = (): JSX.Element => {
       <div className="container-fluid">
         <div className="row position-relative">
           <div className="col-lg-12 app-nav">
-            <nav style={themeStyle("card")} className={`${styles.navbar} nav`}>
+            <nav style={themeStyle("wave")} className={`${styles.navbar} nav`}>
               <ul className={`${styles.navlist} d-flex list-unstyled mx-auto`}>
                 {menu.map((menuLink) => (
                   <li className="mx-1" key={menuLink.linkName}>

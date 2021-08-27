@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Card } from "react-bootstrap";
-import { RedButton, CardButton } from "@imports/.";
+import { RedButton } from "@imports/.";
 import useTheme from "@hooks/useTheme";
 import styles from "./card.module.css";
 
@@ -52,22 +52,4 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
       </span>
     </Card>
   ) : null;
-};
-
-export const SponsoredCard = ({ cardImg, imgAlt }) => {
-  return (
-    <Card className="my-2 d-flex" body>
-      <Image
-        height="100px"
-        width="100px"
-        src={cardImg}
-        className="rounded"
-        alt={imgAlt}
-      />
-      <span className="card-text">
-        <h4></h4>
-      </span>
-      <CardButton buttonColor="outline-success" text="Talk with us" />
-    </Card>
-  );
 };

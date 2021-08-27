@@ -1,24 +1,40 @@
-import moment from "moment";
+function diffTimeFn(time, period) {
+  let diff = Math.ceil(time / (1000 * 60 * 60 * period));
+  return diff;
+}
 
-export const JobPostedAt = date => {
-  const currentDate: any = moment();
-  const postDate: any = moment(date);
+export function PostJobAt(date) {
+  let result;
+  const formattedDate: any = new Date(date);
+  const presentDate: any = new Date();
+  const diffTime = Math.abs(presentDate - formattedDate);
+  const diffHours = diffTimeFn(diffTime, 1);
+  const diffDays = diffTimeFn(diffTime, 24);
+  const diffWeeks = diffTimeFn(diffTime, 24 * 7);
+  const diffMonths = diffTimeFn(diffTime, 24 * 30);
+  const diffYears = diffTimeFn(diffTime, 24 * 30 * 12);
 
-  const getYearsPosted = currentDate.diff(postDate, "years");
-  const getMonthPosted = currentDate.diff(postDate, "months");
-  const getWeeksPosted = currentDate.diff(postDate, "weeks");
-  const getDaysPosted = currentDate.diff(postDate, "days");
-  const getHoursPosted = currentDate.diff(postDate, "hours");
+  console.log("diff days", diffDays);
+  console.log("diff weeks", diffWeeks);
+  console.log("diff months", diffMonths);
 
-  if (getHoursPosted > 0 && getHoursPosted < 24) {
-    return `${getHoursPosted} h`;
-  } else if (getHoursPosted > 24 && getHoursPosted < 168) {
-    return `${getDaysPosted} d`;
-  } else if (getHoursPosted > 168 && getHoursPosted < 730) {
-    return `${getWeeksPosted} w`;
-  } else if (getHoursPosted > 730 && getHoursPosted < 8760) {
-    return `${getMonthPosted} mo`;
+  if (diffDays < 2) {
+    result = diffHours;
+    return `${result} h`;
+  } else if (diffDays < 7) {
+    result = diffDays;
+    return `${result} d`;
+  } else if (diffDays > 7) {
+    result = diffWeeks;
+    return `${result} w`;
+  } else if (diffWeeks > 4) {
+    result = diffMonths;
+    return `${result} m`;
+  } else if (diffMonths > 12) {
+    result = diffYears;
+    return `${result} y`;
   } else {
-    return `${getYearsPosted} y`;
+    result = diffYears;
+    return `${result} y`;
   }
-};
+}

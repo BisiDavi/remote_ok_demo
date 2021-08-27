@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from "react";
-import axios from "axios";
 import { NextPage } from "next";
+import dynamic from "next/dynamic"
+import axios from "axios";
 import { useSelector } from "react-redux";
 import {
   Layout,
@@ -20,6 +21,8 @@ interface Props {
   availableJobs: [];
 }
 
+const DynamicJobCard = dynamic(() => import("../components/Cards/JobCard"))
+
 const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
   const { dark } = useTheme();
 
@@ -37,7 +40,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
   const hideEmail = () => setEmail(false);
 
   const displayJobCards = (jobs) => {
-    return jobs.map((job: any) => <JobCard key={job.slug} data={job} />);
+    return jobs.map((job: any) => <DynamicJobCard key={job.slug} data={job} />);
   };
   function displayJobs() {
     return worldwideJobsState.worldwide

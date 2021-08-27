@@ -1,10 +1,9 @@
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import styles from "./card.module.css";
 
 export default function MarkdownFormatter({ content }) {
   return (
-    <ReactMarkdown className={styles.reactmarkdown} remarkPlugins={[remarkGfm]}>
+    <ReactMarkdown className={styles.reactmarkdown}>
       {content
         .replaceAll("â", "'")
         .replaceAll("Â", " ")
