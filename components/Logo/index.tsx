@@ -5,16 +5,14 @@ export default function Logo({ color = "white" }: LogoProps) {
     <>
       <Link href="/" passHref>
         <a>
-          <div className="logo mt-3 mb-3 flex-col flex">
+          <div className="logo">
             <span className="logo-text">
-              <h3 className="mb-0">remote</h3>
-              <span className="divider mx-2"> | </span>
-              <h3 className="mb-0">demo®</h3>
+              <h3>remote</h3>
+              <span className="divider"> | </span>
+              <h3>demo®</h3>
             </span>
             {color === "white" && (
-              <p className="motto text-white text-center font-weight-bold">
-                work anywhere, live everywhere
-              </p>
+              <p className="motto">work anywhere, live everywhere</p>
             )}
           </div>
         </a>
@@ -31,6 +29,10 @@ export default function Logo({ color = "white" }: LogoProps) {
             display: flex;
             align-items: center;
             width: 100px;
+          }
+          .logo-text h3,
+          .logo p {
+            margin: 0px;
           }
           .motto: {
             color: ${color};

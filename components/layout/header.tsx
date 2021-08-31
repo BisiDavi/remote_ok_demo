@@ -11,36 +11,29 @@ export default function Header() {
   const cardStyle = dark ? "dark" : "light";
 
   return (
-    <header className={`${styles.header} header-content`}>
-      <div className="container flex-col p-0">
-        <div className={`${styles.row1} row`}>
-          <div className={`col-1 ${styles.theme}`}>
-            <ThemeButton />
-          </div>
-          <div className={`col-4 ${styles.logo}`}>
+    <>
+      <header className={`${styles.header} header-content`}>
+        <div className={styles.overlay}></div>
+        <div className={`themeButton ${styles.theme}`}>
+          <ThemeButton />
+        </div>
+        <div className={`${styles.Redbutton} redbutton`}>
+          <Link href="/hire-remotely" passHref>
+            <a>
+              <Button text="Post a job" />
+            </a>
+          </Link>
+        </div>
+        <div className="content">
+          <div className={`${styles.logo}`}>
             <Logo />
           </div>
-          <div
-            className={`col-2 ${styles.headerButton} mt-5 flex justify-content-center`}
-          >
-            <span className={`${styles.Redbutton} redbutton`}>
-              <Link href="/hire-remotely" passHref>
-                <a>
-                  <Button
-                    btnClassName="redbutton mx-2 text-white position-fixed btn-danger font-weight-bold"
-                    text="Post a job"
-                  />
-                </a>
-              </Link>
-            </span>
-          </div>
-          <div className={styles.overlay}></div>
           <div className={`${styles.Searchform} ${cardStyle} Searchform`}>
             <h1>Hire a 🔥 skilled Remote</h1>
             <FormTypewriterEffect /> <h1>Expert</h1>
           </div>
         </div>
-      </div>
+      </header>
       <style jsx>
         {`
           .light: {
@@ -51,7 +44,19 @@ export default function Header() {
             color: ${colors.white};
             backgroundcolor: ${colors.brownish};
           }
+          .themeButton {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            z-index: 10000;
+          }
+          .content {
+            display: flex;
+            flex-direction: column;
+          }
           .redbutton {
+            position: fixed;
+            top: 20px;
             right: 20px;
             z-index: 10000;
             font-size: 20px;
@@ -61,6 +66,11 @@ export default function Header() {
             height: 400px;
             background-position: center;
             background-size: 100%;
+            position: relative;
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
           }
           .logo h3 {
             font-family: "Pacifico", san-serif, helevetica;
@@ -109,6 +119,6 @@ export default function Header() {
           }
         `}
       </style>
-    </header>
+    </>
   );
 }
