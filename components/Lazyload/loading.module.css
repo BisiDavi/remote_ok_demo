@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+  .loading a {
+    height: 100px;
+    margin: 10px auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .loading span {
+    margin: auto;
+  }
+}

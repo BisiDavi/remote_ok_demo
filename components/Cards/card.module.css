@@ -1,0 +1,256 @@
+.card {
+  min-height: 90px;
+  max-height: 120p;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  background-color: #dcdcdc;
+  border: none;
+}
+.groupTag {
+  flex-wrap: wrap;
+}
+.description a {
+  text-decoration: none;
+}
+.description button {
+  font-size: 25px;
+}
+
+.mobileRow h4 {
+  margin-bottom: 0;
+}
+
+.reactmarkdown {
+  font-family: "Nunito", helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.location {
+  /* background-color: rgba(0, 0, 0, 0.18); */
+  text-transform: uppercase;
+  font-family: "nunito";
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 12em;
+  display: inline-block;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  background: #ddd;
+  font-size: 10px;
+  padding-right: 1.5px;
+  padding-left: 1.5px;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-weight: 800;
+  color: #0f1115;
+}
+
+.location p {
+  width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.groupTag li {
+  font-weight: 700;
+  border: 2px solid black;
+  color: black;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+
+.groupTag li:hover {
+  color: white;
+}
+
+.card h4 {
+  font-size: 16px;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.companyLogo {
+  border-radius: 5px;
+  height: 100%;
+  width: 100px;
+  padding: 0px;
+  margin: 10px;
+}
+
+.companyprofile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardText,
+.cardTags {
+  padding: 0px;
+  margin: 0px;
+}
+
+.applyBtn {
+  width: 150px;
+  height: 50px;
+}
+
+/* media query */
+/* HireInfoCard */
+@media screen and (max-width: 1024px) {
+  .applyBtn {
+    width: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hiretext {
+    flex-direction: column;
+  }
+  .textMobile {
+    text-align: center;
+  }
+  .hireButton {
+    margin: auto;
+  }
+  .cardText h3 {
+    font-size: 14px;
+  }
+  .companyLogo {
+    height: 100%;
+    width: 70px;
+  }
+  .mobileRow h4 {
+    font-size: 12px;
+  }
+  .applyBtn {
+    width: 70px;
+    height: 40px;
+  }
+  .groupTag li {
+    font-size: 10px;
+  }
+  .duration {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cardbody {
+    padding: 0px;
+  }
+
+  .cardTags {
+    display: none;
+  }
+  .cardText h3 {
+    font-size: 14px;
+  }
+  .mobileRow h4 {
+    font-size: 12px;
+  }
+  .companyLogo {
+    padding-right: 0px;
+  }
+  .duration {
+    padding: 0px;
+    font-size: 12px;
+  }
+  .groupTag li {
+    border: 1px solid black;
+    font-size: 9px;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+  }
+
+  .hireInfoCard {
+    margin-top: 50px;
+    border: none;
+    height: 100px;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 0px;
+    box-shadow: 1px 1px 3px #ccc;
+  }
+
+  .hireInfoCard div:first-child {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    height: 100px;
+  }
+  .hiretext {
+    width: 100%;
+    margin: 0px;
+    align-items: center;
+    height: 100px;
+    font-size: 14px;
+    flex-direction: row;
+  }
+  .textMobile {
+    font-weight: 700;
+    margin-left: 1px;
+    padding: 0px;
+    width: 100%;
+  }
+  .textDesktop {
+    display: none;
+  }
+  .hireButton {
+    margin-left: 0px;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    padding: 0px;
+    margin: unset;
+  }
+  .hireButton button {
+    width: 85px;
+    padding: 0px;
+    font-size: 14px;
+    height: 50px;
+    font-weight: bold;
+    margin: 5px;
+  }
+
+  /* job card */
+  .skilltag {
+    font-size: 10px;
+    padding: 2px;
+    margin: 3px;
+  }
+  .card .row {
+    margin: 0px;
+  }
+  .Logo {
+    height: 100%;
+    width: 60px;
+    margin: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobileRow {
+    display: flex;
+  }
+  .mobileRow h3 {
+    margin-right: 2px;
+    order: 1;
+  }
+  .companyprofile {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  .cardText {
+    display: flex;
+    flex-direction: column;
+  }
+  .cardText h4 {
+    order: 2;
+  }
+}

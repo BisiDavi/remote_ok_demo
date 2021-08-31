@@ -1,0 +1,15 @@
+@media (max-width: 480px) {
+  .navbar {
+    width: 100%;
+    z-index: 700;
+    height: 70px;
+    background-color: #f9f9f9;
+  }
+  .navlist {
+    overflow-x: scroll;
+  }
+  .wave {
+    top: -50px;
+    z-index: 400;
+  }
+}

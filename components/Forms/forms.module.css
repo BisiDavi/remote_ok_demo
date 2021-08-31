@@ -1,0 +1,150 @@
+.Searchform {
+  width: 30%;
+  height: 70px;
+  display: flex;
+  margin: auto;
+  background: white;
+  position: relative;
+  z-index: 10000;
+}
+
+.Searchform input {
+  height: 70px;
+  border: none;
+  border-radius: 20px;
+  font-size: 30px;
+  color: black;
+  font-family: "sans-serif", Arial;
+}
+
+.Searchform input:focus {
+  outline: none;
+  border: 0px;
+  box-shadow: none;
+}
+
+.SearchIcon span {
+  background-color: white;
+  border: none;
+}
+
+.SearchIcon i {
+  color: black;
+}
+
+.EmailForm {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  z-index: 1000;
+  margin: auto;
+}
+
+.EmailForm input {
+  width: 200px;
+  margin-right: 15px;
+}
+
+.EmailForm select {
+  width: 150px;
+}
+
+.EmailForm p {
+  color: white;
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cancelEmailForm {
+  position: absolute;
+  color: white;
+  font-family: "nunito";
+  font-size: 25px;
+  bottom: 30px;
+  right: 50px;
+  cursor: pointer;
+  background-color: red;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.Newsletter,
+.formSubscribe {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1440px) {
+  .Searchform input {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .Searchform {
+    width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .SearchIcon span {
+    border-radius: 0px;
+  }
+  .Searchform input {
+    border-radius: 0px;
+  }
+  .SearchformPlaceholder {
+    font-size: 16px;
+    top: 15px;
+  }
+  .EmailForm button {
+    width: 20%;
+  }
+  .EmailForm p {
+    font-size: 13px;
+  }
+  .EmailForm {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    z-index: 20000;
+    height: 120px;
+  }
+  .formSelect,
+  .formInput {
+    width: 25%;
+    height: 35px;
+  }
+  .Newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -20px;
+  }
+  .formSubscribe {
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+  }
+  .formSubscribe button {
+    width: 30%;
+  }
+  .cancelEmailForm {
+    top: 50px;
+    right: 15px;
+  }
+}
