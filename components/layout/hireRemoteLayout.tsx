@@ -33,32 +33,20 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               <ThemeButton />
             </div>
           </header>
-          <main className="main row px-0 mx-0 w-100">
-            <div className="col-lg-9 col-12">{children}</div>
-            <aside
-              className={`aside col-lg-3 col-12 p-lg-4 p-md-1 p-4 ${cardStyle}`}
-            >
+          <main className="main">
+            <div className="content">{children}</div>
+            <aside className={`aside ${cardStyle}`}>
               <h3>
                 This is a demo project inspired by{" "}
-                <a
-                  rel="noreferrer"
-                  className="font-weight-bold"
-                  target="_blank"
-                  href="https://remoteok.io"
-                >
+                <a rel="noreferrer" target="_blank" href="https://remoteok.io">
                   Remote OK{" "}
                 </a>
                 , Thank you <b>Remote OK</b> for making your api opensource. You
                 guys are <b>awesome</b>
               </h3>
-              <b className="mb-2">
+              <b className="vistLink">
                 If you want to post a job, visit,{" "}
-                <a
-                  rel="noreferrer"
-                  className="font-weight-bold"
-                  target="_blank"
-                  href="https://remoteok.io"
-                >
+                <a rel="noreferrer" target="_blank" href="https://remoteok.io">
                   Remote OK{" "}
                 </a>
               </b>
@@ -67,10 +55,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
                 <b>the most popular remote jobs board in the world</b> trusted
                 by millions of remote workers and leading remote companies like
               </h3>
-              <div className="companyLogos my-3">
-                <Logo color="black" />
-              </div>
-              <div className="reach-me my-3">
+              <div className="reach-me">
                 <h6>Reach me via:</h6>
                 <div className="links">
                   <a>🌍 Porfolio</a>
@@ -85,7 +70,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               </div>
             </aside>
           </main>
-          <footer className={`col-12 col-lg-9 p-3 ${cardStyle}`}>
+          <footer className={`footer ${cardStyle}`}>
             <div className="post-job mobile-only">
               <button>Post your demo job - Free</button>
               <p className="mb-0">
@@ -117,7 +102,8 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             top: 70px;
             background-color: #f9f9f9;
           }
-          .main .col-9 {
+          .main .content {
+            width: 70%;
             margin-bottom: 140px;
           }
           .aside {
@@ -127,6 +113,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             position: fixed;
             right: 0;
             top: 60px;
+            width: 28%;
+            height: 100%;
+            padding: 10px 20px;
             background-color: white;
             z-index: 1;
           }
@@ -136,6 +125,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             font-family: "Nunito";
             letter-spacing: 1px;
             line-height: 25px;
+          }
+          .aside h3 a {
+            font-weight: bold;
           }
           .yellow.content {
             background-color: #fff9c9;
@@ -162,6 +154,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             grid-gap: 20px;
+            margin: 15px 0px;
           }
           .companyLogos img {
             width: 100%;
@@ -173,6 +166,9 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             margin-bottom: 5px;
             opacity: 1;
             vertical-align: middle;
+          }
+          .reach-me {
+            margin: 15px 0px;
           }
           .links a {
             margin: 0px 10px;
@@ -188,11 +184,16 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             border-radius: 5px;
             margin: 20px 0px;
           }
-          footer {
+          .footer {
             border-top: 1px solid #ddd;
             position: fixed;
             bottom: 0;
             background-color: white;
+            width: 75%;
+          }
+
+          .vistLink {
+            margin-bottom: 10px;
           }
           footer .post-job {
             display: none;

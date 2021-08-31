@@ -12,8 +12,8 @@ export default function PreviewCard({ dark, data }) {
 
   return (
     <>
-      <div className={`${highlightPost} content row mx-3 py-2`}>
-        <div className="col-2 logoContainer">
+      <div className={`${highlightPost} content`}>
+        <div className="logoContainer">
           {data?.company ? (
             <div className="letter-logo">
               <FallBackImage companyName={data?.company} />
@@ -22,10 +22,10 @@ export default function PreviewCard({ dark, data }) {
             <Logo color={themeState} />
           )}
         </div>
-        <div className="company col-lg-8 col-12 flex  justify-content-between">
-          <div className="col-lg-4 col-12 text">
+        <div className="company">
+          <div className="text">
             <h3>{data?.company.length > 0 ? data?.company : "Company"}</h3>
-            <h3 className="font-weight-bold">
+            <h3 className="position">
               {data?.position.length > 0 ? data?.position : "Position"}
             </h3>
             <h4 className="location">
@@ -35,7 +35,7 @@ export default function PreviewCard({ dark, data }) {
               </span>
             </h4>
           </div>
-          <div className="col-lg-8 col-12 flex tag-group">
+          <div className="tag-group">
             {data?.primaryTag && (
               <div className={`role-tag ${tagStyle}`}>{data?.primaryTag}</div>
             )}
@@ -51,7 +51,7 @@ export default function PreviewCard({ dark, data }) {
           </div>
         </div>
         {data?.stickPost && (
-          <div className="col-lg-2 col-12">📌 {data?.stickPost}</div>
+          <div className="stickyPost">📌 {data?.stickPost}</div>
         )}
       </div>
       <style jsx>{`
@@ -70,13 +70,28 @@ export default function PreviewCard({ dark, data }) {
             color: ${colors.white};
             border: 2px solid ${colors.white};
           }
+          .company {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 60%;
+            margin-left: 30px;
+          }        
+          .tag-group {
+            display: flex;
+            align-items: center;
+          }
 
         .highlight.content {
           background-color: #c13a3a;
         }
+
         .content {
+          display: flex;
+          align-items: center;
+          padding: 0px 40px;
           border-radius: 10px;
-          align-items-center 
+          align-items-center;
         }
         
         .company {
