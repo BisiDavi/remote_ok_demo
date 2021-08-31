@@ -1,9 +1,9 @@
-// import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
 import styles from "./card.module.css";
 
-export default function JobDescriptionFormatter({ content }) {
+export default function MarkdownFormatter({ content }) {
   return (
-    <div className={styles.reactmarkdown}>
+    <ReactMarkdown className={styles.reactmarkdown}>
       {content
         .replaceAll("â", "'")
         .replaceAll("Â", " ")
@@ -19,6 +19,6 @@ export default function JobDescriptionFormatter({ content }) {
         .replaceAll("â", " ")
         .replaceAll("âï¸", " ")
         .replaceAll("âï¸", " ")}
-    </div>
+    </ReactMarkdown>
   );
 }

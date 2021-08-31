@@ -3,9 +3,9 @@ import Link from "next/link";
 import colors from "@utils/colors";
 import styles from "./menu.module.css";
 
-export const NavMenu: React.FC = (): JSX.Element => {
+export function NavMenu(): JSX.Element {
   const { dark } = useTheme();
-  const waveStyle = dark ?  colors.grayish : colors.light 
+  const waveStyle = dark ? colors.grayish : colors.light;
 
   const menuStyle = dark ? "menu-dark" : "menu-light";
 
@@ -153,4 +153,4 @@ export const NavMenu: React.FC = (): JSX.Element => {
       </style>
     </div>
   );
-};
+}

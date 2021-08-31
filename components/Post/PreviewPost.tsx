@@ -1,12 +1,11 @@
 import { useSelector } from "react-redux";
-import PreviewCard from "@components/Cards/PreviewCard";
 import dynamic from "next/dynamic";
+
+import PreviewCard from "@components/Cards/PreviewCard";
 import useTheme from "@hooks/useTheme";
 import Button from "@components/Buttons";
 
-const DynamicJobDescriptionFormatter = dynamic(
-  () => import("../Cards/MarkdownFormatter")
-);
+const MarkdownFormatter = dynamic(() => import("../Cards/MarkdownFormatter"));
 
 export default function PreviewPost() {
   const { jobDetails } = useSelector((state) => state.postJob);
@@ -24,16 +23,12 @@ export default function PreviewPost() {
               </h1>
             )}
             {jobDetails?.howToApply && (
-              <DynamicJobDescriptionFormatter
-                content={jobDetails?.description}
-              />
+              <MarkdownFormatter content={jobDetails?.description} />
             )}
             <div className="toApply">
               <h3 className="text-center">How do you apply?</h3>
               {jobDetails?.howToApply && (
-                <DynamicJobDescriptionFormatter
-                  content={jobDetails?.howToApply}
-                />
+                <MarkdownFormatter content={jobDetails?.howToApply} />
               )}
               <a
                 target="_blank"

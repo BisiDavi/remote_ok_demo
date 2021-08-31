@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { NextPage } from "next";
-import dynamic from "next/dynamic"
 import axios from "axios";
 import { useSelector } from "react-redux";
+import JobCard from "@components/Cards/JobCard";
 import {
   Layout,
   NavMenu,
@@ -18,8 +18,6 @@ interface Props {
   data: [];
   availableJobs: [];
 }
-
-const DynamicJobCard = dynamic(() => import("../components/Cards/JobCard"))
 
 const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
   const { dark } = useTheme();
@@ -38,7 +36,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
   const hideEmail = () => setEmail(false);
 
   const displayJobCards = (jobs) => {
-    return jobs.map((job: any) => <DynamicJobCard key={job.slug} data={job} />);
+    return jobs.map((job: any) => <JobCard key={job.slug} data={job} />);
   };
   function displayJobs() {
     return worldwideJobsState.worldwide
