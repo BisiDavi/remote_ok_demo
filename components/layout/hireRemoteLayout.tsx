@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { PropsWithChildren } from "react";
 import { useSelector } from "react-redux";
-import { Button } from "@components/Buttons";
+import Button from "@components/Buttons";
 import Logo from "@components/Logo";
 import useTheme from "@hooks/useTheme";
 import ThemeButton from "@components/Buttons/ThemeButton";

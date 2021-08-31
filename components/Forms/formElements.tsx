@@ -1,5 +1,5 @@
 import styles from "./formElements.module.css";
-import MarkdownEditor from "./MarkdownEditor";
+// import MarkdownEditor from "./MarkdownEditor";
 
 export default function FormElement({ content, ...props }) {
   switch (content.form) {
@@ -13,7 +13,7 @@ export default function FormElement({ content, ...props }) {
       return <Radio content={content} {...props} />;
     }
     case "markdown": {
-      return <MarkdownEditor content={content} {...props} />;
+      return <TextArea content={content} {...props} />;
     }
     case "select": {
       return <SelectInput content={content} {...props} />;
@@ -22,10 +22,10 @@ export default function FormElement({ content, ...props }) {
       return null;
   }
 }
-function Input({ content, ...props }) {
+function Input({ content, ...props }: FormFieldProps) {
   return (
     <div className={styles.inputGroup}>
-      <label htmlFor={content.name}>{content.label}</label>
+      {content.label && <label htmlFor={content.name}>{content.label}</label>}
       <input
         name={content.name}
         value={props.values[content.name]}
@@ -36,47 +36,51 @@ function Input({ content, ...props }) {
       {props.errors[content.name] && props.touched[content.name] && (
         <p>{props.errors[content.name]}</p>
       )}
-      <p className={styles.note}>{content?.note}</p>
+      {content.note && <p className={styles.note}>{content?.note}</p>}
     </div>
   );
 }
 
-function Checkbox({ content, ...props }) {
+function Checkbox({ content, ...props }: FormFieldProps) {
   return (
     <div className={styles.checkboxGroup}>
-      <label htmlFor={content.name}>
-        <input
-          name={content.name}
-          type="checkbox"
-          onChange={props.handleChange(content.name)}
-          checked={props.values[content.name]}
-        />
-        {content.label}
-      </label>
+      {content.name && (
+        <label htmlFor={content.name}>
+          <input
+            name={content.name}
+            type="checkbox"
+            onChange={props.handleChange(content.name)}
+            checked={props.values[content.name]}
+          />
+          {content.label}
+        </label>
+      )}
     </div>
   );
 }
 
-function Radio({ content, ...props }) {
+function Radio({ content, ...props }: FormFieldProps) {
   return (
     <div className={styles.radio}>
-      <label htmlFor={content.name}>
-        <input
-          name={content.name}
-          type="radio"
-          value={content.value}
-          onChange={props.handleChange(content.name)}
-        />
-        {content.label}
-      </label>
+      {content.name && (
+        <label htmlFor={content.name}>
+          <input
+            name={content.name}
+            type="radio"
+            value={content.value}
+            onChange={props.handleChange(content.name)}
+          />
+          {content.label}
+        </label>
+      )}
     </div>
   );
 }
 
-function SelectInput({ content, ...props }) {
+function SelectInput({ content, ...props }: FormFieldProps) {
   return (
     <div className={styles.select}>
-      <label htmlFor={content.name}>{content.label}</label>
+      {content.label && <label htmlFor={content.name}>{content.label}</label>}
       <select
         value={props.values[content.name]}
         onChange={props.handleChange(content.name)}
@@ -89,4 +93,33 @@ function SelectInput({ content, ...props }) {
       </select>
     </div>
   );
+}
+
+function TextArea({ content, ...props }: FormFieldProps) {
+  return (
+    <div className="textarea">
+      {content.label && <label htmlFor={content.name}>{content.label}</label>}
+      <textarea
+        onChange={props.handleChange(content.name)}
+        value={props.values[content.name]}
+      ></textarea>
+    </div>
+  );
+}
+
+interface FormFieldProps {
+  content: {
+    label?: string;
+    name: string;
+    type?: "email" | "password" | "checkbox";
+    placeholder?: string;
+    note?: string;
+    value?: string;
+    options?: string[];
+  };
+  values?: any;
+  handleBlur?: any;
+  handleChange?: any;
+  touched?: any;
+  errors?: any;
 }

@@ -1,15 +1,27 @@
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { Button } from "@imports/.";
-import { subscriberAction } from "../../stores/subscriberAction";
+import { subscriberAction } from "@stores/subscriberAction";
 import styles from "./forms.module.css";
 import subscriberSchema from "./subscriberSchema";
-import { InputField, SelectField } from "./FormFields";
-import React from "react";
+import FormElement from "./formElements";
 
 export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
   const dispatch = useDispatch();
-  const periods: string[] = ["daily", "weekly"];
+
+  const formContent = {
+    duration: {
+      form: "select",
+      name: "duration",
+      options: ["daily", "weekly"],
+    },
+    email: {
+      form: "input",
+      name: "email",
+      type: "input",
+      placeholder: "Type your email...",
+    },
+  };
 
   return showEmail ? (
     <Formik
@@ -33,23 +45,23 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
           <form className={styles.EmailForm} onSubmit={handleSubmit}>
             <span className={styles.Newsletter}>
               <p>Get a </p>
-              <SelectField
-                name="duration"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                isValid={touched.duration && !errors.duration}
-                options={periods}
+              <FormElement
+                content={formContent.duration}
+                values={values}
+                errors={errors}
+                handleChange={handleChange}
+                touched={touched}
               />
             </span>
             <p> email of all new Remote Jobs </p>
             <span className={styles.formSubscribe}>
-              <InputField
-                name="email"
-                type="email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Type your email..."
-                isValid={touched.email && !errors.email}
+              <FormElement
+                content={formContent.email}
+                values={values}
+                errors={errors}
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                touched={touched}
               />
               <Button text="Subscribe" type="submit" disabled={!isValid} />
             </span>

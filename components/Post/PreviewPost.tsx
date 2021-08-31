@@ -2,11 +2,11 @@ import { useSelector } from "react-redux";
 import MarkdownFormatter from "@components/Cards/MarkdownFormatter";
 import PreviewCard from "@components/Cards/PreviewCard";
 import useTheme from "@hooks/useTheme";
-import { Button } from "@components/Buttons";
+import Button from "@components/Buttons";
 
 export default function PreviewPost() {
   const { jobDetails } = useSelector((state) => state.postJob);
-  const { themeStyle, dark } = useTheme();
+  const { dark } = useTheme();
 
   return (
     <>

@@ -1,0 +1,13 @@
+{
+  "duration": {
+    "form": "select",
+    "name": "duration",
+    "options": ["daily", "weekly"]
+  },
+  "email": {
+    "form": "input",
+    "name": "email",
+    "type": "input",
+    "placeholder": "Type your email..."
+  }
+}
