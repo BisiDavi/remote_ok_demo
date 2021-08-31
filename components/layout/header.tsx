@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} header-content`}>
-      <div className="container flex-column p-0">
+      <div className="container flex-col p-0">
         <div className={`${styles.row1} row`}>
           <div className={`col-1 ${styles.theme}`}>
             <ThemeButton />
@@ -21,7 +21,7 @@ export default function Header() {
             <Logo />
           </div>
           <div
-            className={`col-2 ${styles.headerButton} mt-5 d-flex justify-content-center`}
+            className={`col-2 ${styles.headerButton} mt-5 flex justify-content-center`}
           >
             <span className={`${styles.Redbutton} redbutton`}>
               <Link href="/hire-remotely" passHref>

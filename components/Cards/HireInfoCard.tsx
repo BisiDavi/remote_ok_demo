@@ -37,7 +37,7 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
             </span>
           </p>
           <span
-            className={`${styles.hireButton} col-6 col-lg-3 col-md-8 d-flex justify-content-around`}
+            className={`${styles.hireButton} col-6 col-lg-3 col-md-8 flex justify-content-around`}
           >
             <Link href="/hire-remotely" passHref>
               <a>

@@ -32,11 +32,11 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
       pageTitle="Remote Jobs in Programming, Design, Sales and More"
     >
       <NavMenu />
-      <main className={`main ${themeClass} mt-lg-5`}>
+      <main className={`main ${themeClass} container-lg mt-lg-5`}>
         <div className="hire-remote  mb-3 pt-3">
           <HireInfoCard hidePostJobCard={hidePostJobCard} hideCard={hideCard} />
         </div>
-        <div className="justify-content-between container mx-auto d-flex">
+        <div className="justify-content-between container mx-auto flex">
           <h6 className="font-weight-bold">Remote jobs</h6>
           <span>
             <WorldwideJobForm />

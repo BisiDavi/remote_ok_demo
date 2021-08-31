@@ -38,7 +38,7 @@ export default function PreviewPost() {
               >
                 <Button
                   disabled
-                  btnClassName="mx-auto my-4 d-flex"
+                  btnClassName="mx-auto my-4 flex"
                   text="Apply for this job"
                 />
               </a>

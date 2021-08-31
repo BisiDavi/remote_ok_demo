@@ -22,7 +22,7 @@ export default function PreviewCard({ dark, data }) {
             <Logo color={themeState} />
           )}
         </div>
-        <div className="company col-lg-8 col-12 d-flex  justify-content-between">
+        <div className="company col-lg-8 col-12 flex  justify-content-between">
           <div className="col-lg-4 col-12 text">
             <h3>{data?.company.length > 0 ? data?.company : "Company"}</h3>
             <h3 className="font-weight-bold">
@@ -35,7 +35,7 @@ export default function PreviewCard({ dark, data }) {
               </span>
             </h4>
           </div>
-          <div className="col-lg-8 col-12 d-flex tag-group">
+          <div className="col-lg-8 col-12 flex tag-group">
             {data?.primaryTag && (
               <div className={`role-tag ${tagStyle}`}>{data?.primaryTag}</div>
             )}

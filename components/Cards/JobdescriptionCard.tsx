@@ -12,7 +12,7 @@ export default function JobdescriptionCard({ content }) {
       <a rel="noreferrer" href={content.apply_url} target="_blank">
         <Button
           text="apply"
-          btnClassName="w-75 mx-auto d-flex justify-content-center btn-danger text-white font-weight-bold"
+          btnClassName="w-75 mx-auto flex justify-content-center btn-danger text-white font-weight-bold"
         />
       </a>
     </div>

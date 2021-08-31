@@ -49,14 +49,12 @@ const JobCard = ({ data }: IJobCardProps) => {
         onMouseLeave={() => setShowApplyButton(false)}
         className={`${styles.card} ${cardStyle} card my-3 container py-0 px-0`}
       >
-        <div
-          className={`${styles.row} row d-flex align-items-center py-1 px-3`}
-        >
+        <div className={`${styles.row} row flex align-items-center py-1 px-3`}>
           {displayCompanyLogo}
           <div className={`${styles.companyprofile} col-8 col-md-8`}>
             <div className={`${styles.cardText} col-lg-4 col-10`}>
               <h3>{position}</h3>
-              <span className={`${styles.mobileRow} d-flex align-items-center`}>
+              <span className={`${styles.mobileRow} flex align-items-center`}>
                 <h4 className="font-weight-300 mx-2">{company}</h4>
                 {location.length > 2 ? (
                   <div className={`${styles.location} mx-2`}>
@@ -69,7 +67,7 @@ const JobCard = ({ data }: IJobCardProps) => {
               className={`${styles.cardTags} col-5 col-md-6 col-lg-5 tags align-items-center px-0`}
             >
               <ul
-                className={`${styles.groupTag} d-flex group-tags align-items-center m-0 p-0`}
+                className={`${styles.groupTag} flex group-tags align-items-center m-0 p-0`}
               >
                 <Tags tags={tags} />
               </ul>

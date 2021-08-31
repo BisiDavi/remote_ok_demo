@@ -49,12 +49,12 @@ export function NavMenu(): JSX.Element {
         <div className="row position-relative">
           <div className="col-lg-12 app-nav">
             <nav className={`${styles.navbar} nav`}>
-              <ul className={`${styles.navlist} d-flex list-unstyled mx-auto`}>
+              <ul className={`${styles.navlist} flex list-unstyled mx-auto`}>
                 {menu.map((menuLink) => (
                   <li className="mx-1" key={menuLink.linkName}>
                     <Link href="/#">
                       <a
-                        className={`menulink text-decoration-none d-flex flex-column text-center font-weight-bold ${menuStyle}`}
+                        className={`menulink text-decoration-none flex flex-col text-center font-weight-bold ${menuStyle}`}
                       >
                         <span className="menu-icon mx-auto">
                           {menuLink.icon}

@@ -5,8 +5,8 @@ export default function Logo({ color = "white" }: LogoProps) {
     <>
       <Link href="/" passHref>
         <a>
-          <div className="logo mt-3 mb-3 flex-column d-flex">
-            <span className="d-flex align-items-center">
+          <div className="logo mt-3 mb-3 flex-col flex">
+            <span className="flex align-items-center">
               <h3 className="mb-0">remote</h3>
               <span className="divider mx-2"> | </span>
               <h3 className="mb-0">demo®</h3>
