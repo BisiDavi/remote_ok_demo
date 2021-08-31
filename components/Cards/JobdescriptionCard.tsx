@@ -1,6 +1,6 @@
 import Button from "@components/Buttons";
 import styles from "./card.module.css";
-import MarkdownFormatter from "./MarkdownFormatter";
+import JobDescriptionFormatter from "./MarkdownFormatter";
 
 export default function JobdescriptionCard({ content }) {
   return (
@@ -8,7 +8,7 @@ export default function JobdescriptionCard({ content }) {
       <h4 className="text-left font-weight-bold my-3">
         Hire a Remote {content.position} at {content.company}{" "}
       </h4>
-      <MarkdownFormatter content={content.description} />
+      <JobDescriptionFormatter content={content.description} />
       <a rel="noreferrer" href={content.apply_url} target="_blank">
         <Button
           text="apply"
