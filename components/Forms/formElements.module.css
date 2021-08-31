@@ -1,0 +1,134 @@
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+.checkboxGroup input,
+.radio input {
+  position: relative;
+}
+.inputGroup input {
+  height: 40px;
+}
+
+.inputGroup input,
+.select select,
+.checkboxGroup input,
+.radio input {
+  appearance: none;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin: 10px 0px;
+  font-size: 16px;
+  background: #fbfbfb;
+  border: none;
+  box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%),
+    0 1px 1.5px 0 rgb(0 0 0 / 5%);
+}
+.checkboxGroup input[type="checkbox"]:checked:after,
+.radio input[type="radio"]:checked:after {
+  content: "✅";
+  position: absolute;
+  top: -6px;
+  outline: none;
+  font-size: 32px;
+  left: -5px;
+  outline: none;
+}
+.select {
+  display: flex;
+  align-items: center;
+}
+.select select {
+  height: 40px;
+  padding: 10px;
+  margin: 0px 10px;
+  width: 50%;
+}
+.checkboxGroup,
+.checkboxGroup label,
+.radio label {
+  display: flex;
+  align-items: center;
+}
+.checkboxGroup label input,
+.radio label input {
+  margin: 10px;
+}
+
+.inputGroup label,
+.checkboxGroup label,
+.select label,
+.radio label {
+  font-size: 16px;
+  font-weight: 800;
+  font-family: "Nunito";
+}
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+.checkbox-group .tag {
+  margin: 0px 10px;
+  border: 1px solid red;
+  padding: 5px 7px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 800;
+  color: red;
+  font-family: "Nunito";
+}
+.checkbox-group .tag-0 {
+  border: 1px solid red;
+  color: red;
+}
+.checkbox-group .tag-1 {
+  background-color: red;
+  color: white;
+}
+.checkbox-group label {
+  margin: 0px 10px;
+}
+.note,
+.checkbox-group label {
+  font-size: 12px;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .note,
+  .checkbox-group label {
+    font-size: 11px;
+  }
+  .inputGroup label,
+  .checkboxGroup label,
+  .select label,
+  .radio label {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .select select {
+    width: 100%;
+    margin: 0px;
+  }
+  .inputGroup label {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 480px) {
+  .note,
+  .checkbox-group label {
+    font-size: 14px;
+  }
+  .inputGroup label,
+  .checkboxGroup label,
+  .select label,
+  .radio label {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}

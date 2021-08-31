@@ -1,0 +1,209 @@
+{
+  "start": {
+    "title": "LET'S START",
+    "contents": [
+      {
+        "form": "input",
+        "name": "company",
+        "label": "COMPANY NAME*",
+        "placeholder": "Company name",
+        "note": "Your company's brand/trade name: without Inc., Ltd., B.V., Pte., etc."
+      },
+      {
+        "form": "input",
+        "label": "POSITION*",
+        "name": "position",
+        "placeholder": "Position",
+        "note": "Please specify as single job position like \"Marketing Manager\" or \"Node JS Developer\", not a sentence like \"Looking for PM / Biz Dev / Manager\". We know your job is important but please DO NOT WRITE IN FULL CAPS. If posting multiple roles, please create multiple job posts. A job post is limited to a single job. We only allow real jobs, absolutely no MLM-type courses \"learn how to work online\" please."
+      },
+      {
+        "form": "select",
+        "label": "PRIMARY TAG",
+        "name": "primaryTag",
+        "options": [
+          "Select a primary tag",
+          "Software Dev",
+          "customer support",
+          "sales",
+          "marketing",
+          "design",
+          "front end",
+          "backend",
+          "legal",
+          "testing",
+          "quality assurance",
+          "non tech",
+          "other"
+        ],
+        "placeholder": "Select a primary tag",
+        "note": "This primary tag shows first and increases visibility in the main sections. Your job is shown on every page that is tagged with though. E.g. if you tag it as PHP, it shows for Remote PHP Jobs etc."
+      },
+      {
+        "form": "input",
+        "name": "tags",
+        "label": "TAGS SEPARATED BY COMMA (LIKE TECH STACK OR INDUSTRY)",
+        "placeholder": "Tags separated by comma",
+        "note": "Short tags are preferred. Use tags like industry and tech stack, and separate multiple tags by comma. The first 3 or 4 tags are shown on the site, the other tags aren't but the job will be shown on each tag specific page (like /remote-react-jobs). We also generate tags automatically after you post/edit to supplement."
+      },
+      {
+        "form": "select",
+        "label": "JOB IS RESTRICTED TO LOCATION?",
+        "placeholder": "Worldwide",
+        "name": "location",
+        "options": ["Worldwide", "Europe", "United States", "Nigeria"],
+        "note": "If you'd only like to hire people from a specific location or timezone this remote job is restricted To promote fairness in remote work positions, worldwide jobs are ranked higher."
+      }
+    ]
+  },
+  "designJobPost": {
+    "title": "DESIGN YOUR JOB POST",
+    "contents": [
+      {
+        "name": "showLogo",
+        "form": "checkbox",
+        "label": "Show my company logo besides my post",
+        "tag": ["2X MORE VIEWS", "HIGHLY RECOMMENDED"]
+      },
+      {
+        "name": "sendEmail",
+        "form": "checkbox",
+        "label": "Email blast my job post to 108,726 remote candidates",
+        "tag": ["3X MORE VIEWS", "HIGHLY RECOMMENDED"]
+      },
+      {
+        "name": "matchApplicant",
+        "form": "checkbox",
+        "label": "Get matched with suitable applicants",
+        "tag": []
+      },
+      {
+        "name": "highlightPost",
+        "form": "checkbox",
+        "label": "Highlight your post in red",
+        "tag": ["2X MORE VIEWS"]
+      },
+
+      {
+        "name": "stickPost",
+        "form": "radio",
+        "value": "sticky post 1hr",
+        "label": "Stick your post so it stays on  of the frontpage for  24 hours",
+        "tag": ["2X MORE VIEWS"]
+      },
+      {
+        "name": "stickPost",
+        "form": "radio",
+        "value": "sticky post 1 week",
+        "label": "Stick your post so it stays on  of the frontpage for 1 entire week",
+        "tag": ["6X MORE VIEW"]
+      },
+      {
+        "name": "stickPost",
+        "form": "radio",
+        "value": "sticky post 1 month",
+        "label": "Stick your post so it stays on  of the frontpage for :calender 1 entire month",
+        "tag": ["9X MORE VIEW"]
+      }
+    ],
+    "note": "Pricing of job posts and extra features is dynamic and may change based on how many jobs are posted every week, for example to avoid too many sticky jobs at one time. Job posts are a) published for 30 days, b) cannot be refunded, and c) renew automatically after 30 days unless you 1) disable auto renew after posting on the edit page, or 2) close your job post on the edit page. We send a reminder 7 days by email before renewing. Renewing is the same price as the original job post for 30 days. If you buy a bundle, the discounted single job post price is used to renew. Automatic renewals can be self-refunded within 7 days after renewing with the link in the email."
+  },
+  "jobDetails": {
+    "title": "JOB DETAILS",
+    "contents": [
+      {
+        "label": "ANNUAL SALARY OR COMPENSATION IN USD (OR ANNUALIZED, IN USD EQUIVALENT)*",
+        "form": "select",
+        "note": "It's illegal to not share salary range on job posts since 2021",
+        "name": "annualSalary",
+        "options": [
+          "Average annual salary",
+          "USD 0 per year",
+          "USD 10,000 per year",
+          "USD 20,000 per year",
+          "USD 30,000 per year",
+          "USD 40,000 per year",
+          "USD 50,000 per year",
+          "USD 60,000 per year",
+          "USD 70,000 per year",
+          "USD 80,000 per year",
+          "USD 90,000 per year",
+          "USD 100,000 per year",
+          "USD 110,000 per year",
+          "USD 120,000 per year",
+          "USD 130,000 per year",
+          "USD 140,000 per year",
+          "USD 150,000 per year",
+          "USD 160,000 per year",
+          "USD 170,000 per year",
+          "USD 180,000 per year",
+          "USD 190,000 per year",
+          "USD 200,000 per year",
+          "USD 210,000 per year",
+          "USD 220,000 per year",
+          "USD 230,000 per year",
+          "USD 240,000 per year",
+          "USD 250,000 per year",
+          "USD 260,000 per year",
+          "USD 270,000 per year",
+          "USD 280,000 per year",
+          "USD 290,000 per year",
+          "USD 300,000 per year",
+          "USD 310,000 per year",
+          "USD 320,000 per year",
+          "USD 330,000 per year",
+          "USD 340,000 per year",
+          "USD 350,000 per year ",
+          "USD 360,000 per year",
+          "USD 370,000 per year",
+          "USD 380,000 per year",
+          "USD 390,000 per year",
+          "USD 400,000 per year"
+        ],
+        "type": "salary"
+      },
+      {
+        "label": "JOB DESCRIPTION*",
+        "form": "markdown",
+        "name": "description"
+      },
+      {
+        "label": "HOW TO APPLY?",
+        "form": "markdown",
+        "name": "howToApply"
+      },
+      {
+        "label": "APPLY URL*",
+        "name": "apply_url",
+        "form": "input",
+        "placeholder": "https://",
+        "note": "Apply URLs with a form an applicant can fill out generally receive a lot more applicants than having people apply by email (below)."
+      }
+    ]
+  },
+  "company": {
+    "title": "COMPANY",
+    "contents": [
+      {
+        "label": "COMPANY EMAIL* (STAYS PRIVATE, FOR INVOICE + EDIT LINK)",
+        "form": "input",
+        "name": "companyEmail",
+        "placholder": "company's email",
+        "note": "Make sure this email is accessible by you! We use this to send the invoice and edit link. We can not and do not manually resend it!"
+      }
+    ]
+  },
+  "feedback": {
+    "title": "FEEDBACK ABOUT THIS PROJECT REMOTEOK-DEMO",
+    "contents": [
+      {
+        "label": "FEEDBACK BOX",
+        "form": "input",
+        "name": "feedbackBox",
+        "placeholder": "feedback box"
+      }
+    ]
+  },
+  "preview": {
+    "title": "Here's a preview of how your job post will look like"
+  }
+}
