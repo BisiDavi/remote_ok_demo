@@ -29,6 +29,7 @@ export default function Button({ type, text, ...props }: AppProps) {
           button:hover {
             background-color: transparent;
             border: 2px solid red;
+            color: red;
           }
         `}
       </style>

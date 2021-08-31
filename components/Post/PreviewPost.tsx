@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import PreviewCard from "@components/Cards/PreviewCard";
 import useTheme from "@hooks/useTheme";
 import Button from "@components/Buttons";
+import styles from "./PreviewPost.module.css";
 
 const MarkdownFormatter = dynamic(() => import("../Cards/MarkdownFormatter"));
 
@@ -13,7 +14,7 @@ export default function PreviewPost() {
 
   return (
     <>
-      <div className="previewpost">
+      <div className={`previewpost ${styles.previewPost}`}>
         <PreviewCard dark={dark} data={jobDetails} />
         <div className="body">
           <div className="content">
@@ -32,15 +33,11 @@ export default function PreviewPost() {
               )}
               <a
                 target="_blank"
-                className="text-decoration-none"
+                className={styles.appyUrl}
                 rel="noreferrer"
                 href={jobDetails?.apply_url}
               >
-                <Button
-                  disabled
-                  btnClassName="mx-auto my-4 flex"
-                  text="Apply for this job"
-                />
+                <Button disabled text="Apply for this job" />
               </a>
             </div>
           </div>

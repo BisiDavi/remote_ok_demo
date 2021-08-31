@@ -97,13 +97,31 @@ function SelectInput({ content, ...props }: FormFieldProps) {
 
 function TextArea({ content, ...props }: FormFieldProps) {
   return (
-    <div className="textarea">
-      {content.label && <label htmlFor={content.name}>{content.label}</label>}
-      <textarea
-        onChange={props.handleChange(content.name)}
-        value={props.values[content.name]}
-      ></textarea>
-    </div>
+    <>
+      <div className="textarea">
+        {content.label && <label htmlFor={content.name}>{content.label}</label>}
+        <textarea
+          onChange={props.handleChange(content.name)}
+          value={props.values[content.name]}
+        ></textarea>
+      </div>
+      <style jsx>
+        {`
+          .textarea textarea {
+            width: 300px;
+            height: 100px;
+          }
+
+          .textarea label {
+            margin: 0px 20p;
+            margin-right: 20px;
+            width: 150px;
+            font-weight: bold;
+            font-size: 16px;
+          }
+        `}
+      </style>
+    </>
   );
 }
 

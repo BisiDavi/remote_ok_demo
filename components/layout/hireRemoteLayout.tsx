@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import { PropsWithChildren } from "react";
 import { useSelector } from "react-redux";
@@ -25,7 +26,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
       </Head>
       <div className="hireRemotely container-fluid">
         <div className="row hire-now">
-          <header className={`${styles.header} header col-12 ${cardStyle}`}>
+          <header className={`${styles.header} header ${cardStyle}`}>
             <Logo color={themeState} />
             <h1>🏢 🚀 Hire Remotely</h1>
             <Button text="Welcome" />
@@ -34,7 +35,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             </div>
           </header>
           <main className="main">
-            <div className="content">{children}</div>
+            <div className={`content ${cardStyle}`}>{children}</div>
             <aside className={`aside ${cardStyle}`}>
               <h3>
                 This is a demo project inspired by{" "}
@@ -58,10 +59,20 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               <div className="reach-me">
                 <h6>Reach me via:</h6>
                 <div className="links">
-                  <a>🌍 Porfolio</a>
-                  <a href="#github">Github</a>
-                  <a href="#linkedin">Linked in</a>
-                  <a href="#instagram">Instagram</a>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://olubisi-david.vercel.app"
+                  >
+                    🌍 Porfolio
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    href="https://github.com/BisiDavi"
+                  >
+                    <img src="/github.svg" alt="github" /> Github
+                  </a>
                 </div>
               </div>
               <div className="post-job">
@@ -87,13 +98,19 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             display: flex;
             flex-direction: column;
           }
-          .light: {
-            backgroundcolor: ${colors.white};
+          .header.light,
+          .aside.light,
+          .footer.light,
+          .content.light {
+            background-color: ${colors.white};
             color: ${colors.black};
           }
-          .dark: {
+          .header.dark,
+          .aside.dark,
+          .footer.dark,
+          .content.dark {
             color: ${colors.white};
-            backgroundcolor: ${colors.brownish};
+            background-color: ${colors.brownish};
           }
           main.main {
             display: flex;
@@ -103,7 +120,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             background-color: #f9f9f9;
           }
           .main .content {
-            width: 70%;
+            width: 72%;
             margin-bottom: 140px;
           }
           .aside {
@@ -119,7 +136,15 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             background-color: white;
             z-index: 1;
           }
-
+          .reach-me {
+            display: flex;
+            align-items: center;
+          }
+          .reach-me h6 {
+            font-size: 20px;
+            font-family: "Nunito";
+            margin: 0px;
+          }
           .aside h3 {
             font-size: 20px;
             font-family: "Nunito";
@@ -132,7 +157,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           .yellow.content {
             background-color: #fff9c9;
           }
-          header.header {
+          .header {
             display: flex;
             align-items: center;
             justify-content: space-between;

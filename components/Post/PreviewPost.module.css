@@ -1,0 +1,17 @@
+.previewPost a.appyUrl button {
+  width: 30%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.previewPost a.appyUrl button:hover {
+  color: black;
+}
+
+.previewPost h1,
+.previewPost h3 {
+  text-align: center;
+  margin: 15px 0px;
+}
