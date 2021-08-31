@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Card } from "react-bootstrap";
 import dynamic from "next/dynamic";
 import { Button, FallBackImage } from "@imports/.";
 import { PostJobAt } from "@utils/date";
@@ -43,14 +42,14 @@ const JobCard = ({ data }: IJobCardProps) => {
 
   return (
     <>
-      <Card
+      <div
         key={slug}
         onClick={displayJobDescription}
         onMouseEnter={() => setShowApplyButton(true)}
         onMouseLeave={() => setShowApplyButton(false)}
         className={`${styles.card} ${cardStyle} card my-3 container py-0 px-0`}
       >
-        <Card.Body
+        <div
           className={`${styles.row} row d-flex align-items-center py-1 px-3`}
         >
           {displayCompanyLogo}
@@ -86,8 +85,8 @@ const JobCard = ({ data }: IJobCardProps) => {
               </a>
             ) : null}
           </div>
-        </Card.Body>
-      </Card>
+        </div>
+      </div>
       {showJobDescription && <DynamicJobDescription content={data} />}
       <style jsx>
         {`

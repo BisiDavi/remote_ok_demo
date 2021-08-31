@@ -1,4 +1,3 @@
-import { Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { JobAction } from "@stores/jobAction";
 
@@ -10,16 +9,15 @@ function WorldwideJobForm() {
   }
 
   return (
-    <Form>
-      <Form.Check
+    <div>
+      <label>Only show worldwide jobs</label>
+      <input
         onClick={displayWorldWideJobs}
         type="checkbox"
         className="font-weight-bold"
-        label="Only show worldwide jobs"
       />
-    </Form>
+    </div>
   );
 }
-
 
 export default WorldwideJobForm;

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Card } from "react-bootstrap";
 import colors from "@utils/colors";
 import { Button } from "@imports/.";
 import useTheme from "@hooks/useTheme";
@@ -10,9 +9,8 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
   const hireCardStyle = dark ? "dark" : "light";
   return hidePostJobCard ? (
     <>
-      <Card
-        className={`${styles.hireInfoCard} ${hireCardStyle} container mx-auto`}
-        body
+      <div
+        className={`${styles.hireInfoCard} ${hireCardStyle} card container mx-auto`}
       >
         <span
           className={`${styles.hiretext} row align-items-center justify-content-between p-2`}
@@ -51,7 +49,7 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
             </span>
           </span>
         </span>
-      </Card>
+      </div>
       <style jsx>{`
         .light {
           backgroundcolor: ${colors.white};

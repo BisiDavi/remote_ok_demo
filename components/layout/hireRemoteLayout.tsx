@@ -2,10 +2,10 @@
 import Head from "next/head";
 import { PropsWithChildren } from "react";
 import { useSelector } from "react-redux";
-import { Button } from "@components/Button";
+import { Button } from "@components/Buttons";
 import Logo from "@components/Logo";
 import useTheme from "@hooks/useTheme";
-import ThemeButton from "@components/Button/ThemeButton";
+import ThemeButton from "@components/Buttons/ThemeButton";
 import companyLogos from "@json/remote-companies.json";
 import styles from "./hireRemotelayout.module.css";
 import PreviewCard from "@components/Cards/PreviewCard";

@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { Container, Row, Col } from "react-bootstrap";
 import Logo from "@components/Logo";
 import colors from "@utils/colors";
 import useTheme from "@hooks/useTheme";
-import ThemeButton from "@components/Button/ThemeButton";
+import ThemeButton from "@components/Buttons/ThemeButton";
 import { Button, FormTypewriterEffect } from "@imports/.";
 import styles from "./header.module.css";
 

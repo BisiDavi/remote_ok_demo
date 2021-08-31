@@ -1,5 +1,4 @@
 import { Formik } from "formik";
-import { Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Button } from "@imports/.";
 import { subscriberAction } from "../../stores/subscriberAction";
@@ -34,10 +33,10 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
         isValid,
       }) => {
         return (
-          <Form className={styles.EmailForm} onSubmit={handleSubmit}>
+          <form className={styles.EmailForm} onSubmit={handleSubmit}>
             <span className={styles.Newsletter}>
               <p>Get a </p>
-              <Form.Control
+              <input
                 className={styles.formSelect}
                 name="duration"
                 onChange={handleChange}
@@ -50,11 +49,11 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
                     {period}
                   </option>
                 ))}
-              </Form.Control>
+              </input>
             </span>
             <p> email of all new Remote Jobs </p>
             <span className={styles.formSubscribe}>
-              <Form.Control
+              <input
                 name="email"
                 className={styles.formInput}
                 type="email"

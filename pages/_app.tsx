@@ -4,7 +4,6 @@ import NProgress from "nprogress";
 import Router from "next/router";
 import store from "@stores/store";
 import "../styles/globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "nprogress/nprogress.css";
 import Loading from "@components/Lazyload/loading";
 

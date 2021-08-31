@@ -1,4 +1,4 @@
-import { Button } from "@components/Button";
+import { Button } from "@components/Buttons";
 import styles from "./card.module.css";
 import MarkdownFormatter from "./MarkdownFormatter";
 
