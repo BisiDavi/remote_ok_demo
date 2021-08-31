@@ -32,32 +32,48 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
       pageTitle="Remote Jobs in Programming, Design, Sales and More"
     >
       <NavMenu />
-      <main className={`main ${themeClass} container-lg mt-lg-5`}>
-        <div className="hire-remote  mb-3 pt-3">
-          <HireInfoCard hidePostJobCard={hidePostJobCard} hideCard={hideCard} />
+      <main className={`main ${themeClass}`}>
+        <div className="content">
+          <div className="hire-remote">
+            <HireInfoCard
+              hidePostJobCard={hidePostJobCard}
+              hideCard={hideCard}
+            />
+          </div>
+          <div className="worldwideJobs">
+            <h6 className="font-weight-bold">Remote jobs</h6>
+            <span>
+              <WorldwideJobForm />
+            </span>
+          </div>
+          <AvailableJobs availableJobs={availableJobs} />
         </div>
-        <div className="justify-content-between container mx-auto flex">
-          <h6 className="font-weight-bold">Remote jobs</h6>
-          <span>
-            <WorldwideJobForm />
-          </span>
-        </div>
-        <AvailableJobs availableJobs={availableJobs} />
       </main>
       <EmailSubscriberForm showEmail={showEmail} cancelEmail={hideEmail} />
       <style jsx>
         {`
-          .main {
-            z-index: 1000;
+          main.main {            
             position: relative;
             top: 80px;
+            width: 100%;
+            display: flex;
+            justify-content:center;
+          }
+          .content {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            width: 65%;
           }
           .light {
             background-color: #f9f9f9;
           }
-
           .dark {
             background-color: ${colors.grayish};
+          }
+          .worldwideJobs {
+            display: flex;
+            align-items: center;
           }
           footer.footer {
             position: absolute;
@@ -68,6 +84,7 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
           }
           .hire-remote {
             margin-top: 16px;
+            padding: 15px;
           }
           @media (max-width: 480px) {
             .main {

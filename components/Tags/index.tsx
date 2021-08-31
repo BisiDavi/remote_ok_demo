@@ -25,9 +25,12 @@ export default function Tags({ tags }) {
             border: 2px solid ${colors.white};
           }
           .skilltag {
-            font-size: 10px;
-            padding: 2px;
-            margin: 3px;
+            margin: 5px 5px;
+            font-size: 12px;
+            padding: 8px;
+            font-family: "Nunito", sans-serif;
+            border-radius: 5px;
+            list-style:none;
           }
         `}</style>
       </>

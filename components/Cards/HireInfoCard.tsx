@@ -9,17 +9,11 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
   const hireCardStyle = dark ? "dark" : "light";
   return hidePostJobCard ? (
     <>
-      <div
-        className={`${styles.hireInfoCard} ${hireCardStyle} card container mx-auto`}
-      >
-        <span
-          className={`${styles.hiretext} row align-items-center justify-content-between p-2`}
-        >
-          <p
-            className={`${styles.textMobile} mb-0 font-weight-bold col-5 col-lg-9 col-md-12`}
-          >
+      <div className={`${styles.hireInfoCard} ${hireCardStyle} card`}>
+        <span className={`${styles.hiretext} hiretext`}>
+          <p className={`${styles.textMobile} textmobile `}>
             <span className={`${styles.textMobile}`}>👉 Hiring remotely? </span>{" "}
-            <span className={`${styles.textDesktop} font-weight-bold`}>
+            <span className={`${styles.textDesktop} visitSite`}>
               {" "}
               Visit{" "}
               <a target="_blank" rel="noreferrer" href="https://remoteok.io/">
@@ -36,9 +30,7 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
               </u>
             </span>
           </p>
-          <span
-            className={`${styles.hireButton} col-6 col-lg-3 col-md-8 flex justify-content-around`}
-          >
+          <span className={`${styles.hireButton} hire-now`}>
             <Link href="/hire-remotely" passHref>
               <a>
                 <Button text="Post a job" />
@@ -54,6 +46,33 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
         .light {
           backgroundcolor: ${colors.white};
           color: ${colors.black};
+        }
+        .card {
+          background-color: white;
+          border: 1px solid gray;
+          border-radius: 5px;
+          margin: auto;
+        }
+
+        .hiretext {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px;
+        }
+
+        .visitSite {
+          font-weight: bold;
+        }
+        .textmobile {
+          margin-bottom: 0px;
+          font-weight: bold;
+        }
+
+        .hire-now {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
         }
 
         .dark: {

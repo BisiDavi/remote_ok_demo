@@ -1,117 +1,96 @@
-import useTheme from "@hooks/useTheme";
 import Link from "next/link";
+import useTheme from "@hooks/useTheme";
 import colors from "@utils/colors";
+import menu from "@json/menu.json";
 import styles from "./menu.module.css";
 
 export function NavMenu(): JSX.Element {
   const { dark } = useTheme();
-  const waveStyle = dark ? colors.grayish : colors.light;
 
+  const waveStyle = dark ? colors.grayish : colors.light;
   const menuStyle = dark ? "menu-dark" : "menu-light";
 
-  const menu = [
-    { linkName: "REMOTE JOBS", icon: "💼", link: "remote-jobs" },
-    {
-      linkName: "SOFTWARE DEVELOPMENT",
-      icon: "💻",
-      link: "software-development",
-    },
-    { linkName: "CUSTOMER SUPPORT", icon: "🎧", link: "customer-support" },
-    { linkName: "MARKETING", icon: "📈", link: "marketing" },
-    { linkName: "DESIGN", icon: "🎨", link: "design" },
-    { linkName: "NON-TECH", icon: "🔌", link: "non-tech" },
-    {
-      linkName: "WORKERS DIRECTORY",
-      icon: "📖",
-      link: "workers-directory",
-    },
-    {
-      linkName: "TOP REMOTE COMPANIES",
-      icon: "🏢",
-      link: "top-remote-companies",
-    },
-    {
-      linkName: "PAYROLL FOR REMOTE TEAMS",
-      icon: "💳",
-      link: "payrol-for-remote-teams",
-    },
-    {
-      linkName: "INSURE YOUR REMOTE TEAMS",
-      icon: "🔒",
-      link: "insure-your-teams",
-    },
-    { linkName: "FIND YOUR PLACE", icon: "🌍", link: "worldwide" },
-  ];
-
   return (
-    <div>
-      <div className="container-fluid">
-        <div className="row position-relative">
-          <div className="col-lg-12 app-nav">
-            <nav className={`${styles.navbar} nav`}>
-              <ul className={`${styles.navlist} flex list-unstyled mx-auto`}>
-                {menu.map((menuLink) => (
-                  <li className="mx-1" key={menuLink.linkName}>
-                    <Link href="/#">
-                      <a
-                        className={`menulink text-decoration-none flex flex-col text-center font-weight-bold ${menuStyle}`}
-                      >
-                        <span className="menu-icon mx-auto">
-                          {menuLink.icon}
-                        </span>
-                        {menuLink.linkName}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-          <div className={`${styles.wave} col-lg-12 wave p-0 m-0`}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
-              <path
-                fill={waveStyle}
-                fillOpacity="1"
-                d="M0,128L80,117.3C160,107,320,85,480,96C640,107,800,149,960,149.3C1120,149,1280,107,1360,85.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-              ></path>
-            </svg>
-          </div>
+    <>
+      <div className="nav-menu">
+        <nav className={styles.navbar}>
+          <ul className={styles.navlist}>
+            {menu.map((menuLink) => (
+              <li key={menuLink.linkName}>
+                <Link href="/#" passHref>
+                  <a className={menuStyle}>
+                    <span className="menu-icon">{menuLink.icon}</span>
+                    {menuLink.linkName}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className={`${styles.wave} wave`}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280">
+            <path
+              fill={waveStyle}
+              fillOpacity="1"
+              d="M0,128L80,117.3C160,107,320,85,480,96C640,107,800,149,960,149.3C1120,149,1280,107,1360,85.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+            ></path>
+          </svg>
         </div>
       </div>
       <style jsx>
         {`
+          .nav-menu {
+            position: relative;
+          }
           .menu-light: {
             color: ${colors.black};
+          }
+
+          nav ul {
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            margin: auto;
+          }
+
+          nav ul li {
+            list-style: none;
+            margin: 0px 10px;
+          }
+
+          nav ul li a {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.75em;
+            font-family: "Nunito", sans-serif;
+            width: 100px;
           }
 
           .menu-dark: {
             color: ${colors.white};
           }
-          .nav {
+          .nav-menu nav {
             margin: auto;
             display: flex;
             position: absolute;
             z-index: 200;
+            justify-content: center;
+            align-items: center;
             top: 0px;
           }
           .wave {
             position: absolute;
             z-index: 100;
+            width: 100%;
             height: 10px;
             top: -200px;
           }
           .menu-icon {
             font-size: 20px;
-          }
-          .menulink {
-            font-size: 0.75em;
-            font-family: "Nunito", sans-serif;
-            width: 100px;
-          }
-          .app-nav {
-            display: flex;
             margin: auto;
-            justify-content: center;
           }
           @media (min-width: 1900px) {
             .wave {
@@ -124,7 +103,7 @@ export function NavMenu(): JSX.Element {
             }
           }
           @media (max-width: 1024px) {
-            .nav {
+            nav {
               overflow: scroll;
               width: 100%;
             }
@@ -138,7 +117,7 @@ export function NavMenu(): JSX.Element {
             }
           }
           @media (max-width: 480px) {
-            .nav {
+            nav {
               overflow: scroll;
               width: 100%;
               z-index: 500;
@@ -151,6 +130,6 @@ export function NavMenu(): JSX.Element {
           }
         `}
       </style>
-    </div>
+    </>
   );
 }

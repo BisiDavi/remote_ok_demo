@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import LogoContentLoader from "@components/Lazyload/LogoContentLoader";
 
 export default function CompanyLogo({ logo }) {
   return (
@@ -8,7 +7,7 @@ export default function CompanyLogo({ logo }) {
         {logo ? (
           <img src={logo} className="companyLogo" alt={logo} />
         ) : (
-          <LogoContentLoader />
+          <div className="loader" />
         )}
       </div>
       <style jsx>
@@ -21,16 +20,21 @@ export default function CompanyLogo({ logo }) {
             justify-content: center;
             align-items: center;
           }
+          .loader {
+            background-color: gray;
+            height: 100px;
+            width: 100px;
+          }
           .companyLogo {
             border-radius: 5px;
-            height: 100%;
+            height: 100px;
             width: 100px;
             padding: 0px;
             margin: 10px;
           }
           @media screen and (max-width: 1024px) {
             .companyLogo {
-              height: 100%;
+              height: 100px;
               width: 70px;
             }
           }

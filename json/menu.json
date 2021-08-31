@@ -1,0 +1,33 @@
+[
+  { "linkName": "REMOTE JOBS", "icon": "💼", "link": "remote-jobs" },
+  {
+    "linkName": "SOFTWARE DEVELOPMENT",
+    "icon": "💻",
+    "link": "software-development"
+  },
+  { "linkName": "CUSTOMER SUPPORT", "icon": "🎧", "link": "customer-support" },
+  { "linkName": "MARKETING", "icon": "📈", "link": "marketing" },
+  { "linkName": "DESIGN", "icon": "🎨", "link": "design" },
+  { "linkName": "NON-TECH", "icon": "🔌", "link": "non-tech" },
+  {
+    "linkName": "WORKERS DIRECTORY",
+    "icon": "📖",
+    "link": "workers-directory"
+  },
+  {
+    "linkName": "TOP REMOTE COMPANIES",
+    "icon": "🏢",
+    "link": "top-remote-companies"
+  },
+  {
+    "linkName": "PAYROLL FOR REMOTE TEAMS",
+    "icon": "💳",
+    "link": "payrol-for-remote-teams"
+  },
+  {
+    "linkName": "INSURE YOUR REMOTE TEAMS",
+    "icon": "🔒",
+    "link": "insure-your-teams"
+  },
+  { "linkName": "FIND YOUR PLACE", "icon": "🌍", "link": "worldwide" }
+]

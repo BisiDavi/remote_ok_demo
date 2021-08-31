@@ -47,15 +47,15 @@ const JobCard = ({ data }: IJobCardProps) => {
         onClick={displayJobDescription}
         onMouseEnter={() => setShowApplyButton(true)}
         onMouseLeave={() => setShowApplyButton(false)}
-        className={`${styles.card} ${cardStyle} card my-3 container py-0 px-0`}
+        className={`${styles.card} ${cardStyle} card`}
       >
-        <div className={`${styles.row} row flex align-items-center py-1 px-3`}>
-          {displayCompanyLogo}
-          <div className={`${styles.companyprofile} col-8 col-md-8`}>
-            <div className={`${styles.cardText} col-lg-4 col-10`}>
+        <div className={`${styles.row} content`}>
+          <div className="logo">{displayCompanyLogo}</div>
+          <div className={`${styles.companyprofile} companyprofile`}>
+            <div className={`${styles.cardText}cardTex`}>
               <h3>{position}</h3>
-              <span className={`${styles.mobileRow} flex align-items-center`}>
-                <h4 className="font-weight-300 mx-2">{company}</h4>
+              <span className={`${styles.mobileRow}`}>
+                <h4 className="company">{company}</h4>
                 {location.length > 2 ? (
                   <div className={`${styles.location} mx-2`}>
                     {Checkworldwide(location)}
@@ -63,31 +63,67 @@ const JobCard = ({ data }: IJobCardProps) => {
                 ) : null}
               </span>
             </div>
-            <div
-              className={`${styles.cardTags} col-5 col-md-6 col-lg-5 tags align-items-center px-0`}
-            >
-              <ul
-                className={`${styles.groupTag} flex group-tags align-items-center m-0 p-0`}
-              >
+            <div className={`${styles.cardTags} tags`}>
+              <ul className={`${styles.groupTag} group-tag`}>
                 <Tags tags={tags} />
               </ul>
             </div>
           </div>
-          <div className={`${styles.duration} col-1 col-lg-1`}>
-            {PostJobAt(date)}
-          </div>
-          <div className="d-none d-sm-block">
-            {showApplyButton ? (
-              <a target="_blank" rel="noreferrer" href={apply_url}>
-                <Button btnClassName={styles.applyBtn} text="Apply" />
-              </a>
-            ) : null}
+          <div className="column-3">
+            <div className={`${styles.duration} date`}>{PostJobAt(date)}</div>
+            <div className="applyButton">
+              {showApplyButton ? (
+                <a target="_blank" rel="noreferrer" href={apply_url}>
+                  <Button btnClassName={styles.applyBtn} text="Apply" />
+                </a>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
       {showJobDescription && <DynamicJobDescription content={data} />}
       <style jsx>
         {`
+          .card {
+            border: 1px solid gray;
+            display: flex;
+            align-items: center;
+            margin: 15px 0px;
+            font-family: "Nunito", sans-serif;
+            background-color: #fff;
+            box-shadow: 1px 2px 4px rgb(0 0 0 / 3%);
+            border: none;
+          }
+          .column-3 {
+            display: flex;
+            align-items: center;
+            width: 20%;
+            justify-content: space-around;
+          }
+          .card .content {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+          }
+          .group-tag {
+            display: flex;
+            align-items: center;
+          }
+          .applyButton {
+            width: 100px;
+            margin: 0px 20px;
+          }
+          .logo {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .companyprofile {
+            width: 50%;
+          }
           .light: {
             backgroundcolor: ${colors.white};
             color: ${colors.black};
@@ -95,6 +131,12 @@ const JobCard = ({ data }: IJobCardProps) => {
           .dark: {
             color: ${colors.white};
             backgroundcolor: ${colors.brownish};
+          }
+
+          @media (max-width: 500px) {
+            .applyButton {
+              display: none;
+            }
           }
         `}
       </style>
