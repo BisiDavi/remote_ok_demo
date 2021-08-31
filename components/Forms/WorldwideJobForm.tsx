@@ -9,14 +9,32 @@ function WorldwideJobForm() {
   }
 
   return (
-    <div>
-      <label>Only show worldwide jobs</label>
-      <input
-        onClick={displayWorldWideJobs}
-        type="checkbox"
-        className="font-weight-bold"
-      />
-    </div>
+    <>
+      <div className="worldwideJobs">
+        <h6 className="font-weight-bold">Remote jobs</h6>
+        <label>Only show worldwide jobs</label>
+        <input
+          onClick={displayWorldWideJobs}
+          type="checkbox"
+          className="font-weight-bold"
+        />
+      </div>
+      <style jsx>
+        {`
+          .worldwideJobs {
+            display: flex;
+            align-items: center;
+            font-family: "Nunito", sans-serif;
+            justify-content: space-between;
+            margin: 10px 0px;
+            font-size: 20px;
+          }
+          .worldwideJobs h6 {
+            font-size: 20px;
+          }
+        `}
+      </style>
+    </>
   );
 }
 

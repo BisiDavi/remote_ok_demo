@@ -53,12 +53,12 @@ const JobCard = ({ data }: IJobCardProps) => {
           <div className="logo">{displayCompanyLogo}</div>
           <div className={`${styles.companyprofile} companyprofile`}>
             <div className={`${styles.cardText}cardTex`}>
-              <h3>{position}</h3>
               <span className={`${styles.mobileRow}`}>
-                <h4 className="company">{company}</h4>
+                <h2 className="company">{company}</h2>
+                <h3>{position}</h3>
                 {location.length > 2 ? (
-                  <div className={`${styles.location} mx-2`}>
-                    {Checkworldwide(location)}
+                  <div className={`${styles.location} location`}>
+                    <h6>{Checkworldwide(location)}</h6>
                   </div>
                 ) : null}
               </span>
@@ -123,6 +123,17 @@ const JobCard = ({ data }: IJobCardProps) => {
           }
           .companyprofile {
             width: 50%;
+          }
+          .location {
+            padding: 10px;
+            border-radius: 5px;
+            width: auto;
+            max-width: auto;
+          }
+          .location h6 {
+            font-weight: 1000;
+            margin: 0;
+            font-size: 12px;
           }
           .light: {
             backgroundcolor: ${colors.white};

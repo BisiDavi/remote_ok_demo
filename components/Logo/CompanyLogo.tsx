@@ -14,7 +14,7 @@ export default function CompanyLogo({ logo }) {
         {`
           .logo {
             height: 100%;
-            width: 60px;
+            width: 100%;
             margin: 5px 10px;
             display: flex;
             justify-content: center;
@@ -27,8 +27,8 @@ export default function CompanyLogo({ logo }) {
           }
           .companyLogo {
             border-radius: 5px;
-            height: 100px;
-            width: 100px;
+            height: 100%;
+            width: 100%;
             padding: 0px;
             margin: 10px;
           }

@@ -40,24 +40,19 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
               hideCard={hideCard}
             />
           </div>
-          <div className="worldwideJobs">
-            <h6 className="font-weight-bold">Remote jobs</h6>
-            <span>
-              <WorldwideJobForm />
-            </span>
-          </div>
+          <WorldwideJobForm />
           <AvailableJobs availableJobs={availableJobs} />
         </div>
       </main>
       <EmailSubscriberForm showEmail={showEmail} cancelEmail={hideEmail} />
       <style jsx>
         {`
-          main.main {            
+          main.main {
             position: relative;
             top: 80px;
             width: 100%;
             display: flex;
-            justify-content:center;
+            justify-content: center;
           }
           .content {
             margin: auto;
@@ -71,10 +66,7 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
           .dark {
             background-color: ${colors.grayish};
           }
-          .worldwideJobs {
-            display: flex;
-            align-items: center;
-          }
+         
           footer.footer {
             position: absolute;
             bottom: 0px;
