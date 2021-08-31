@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Card } from "react-bootstrap";
 import colors from "@utils/colors";
-import { RedButton } from "@imports/.";
+import { Button } from "@imports/.";
 import useTheme from "@hooks/useTheme";
 import styles from "./card.module.css";
 
@@ -43,11 +43,11 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
           >
             <Link href="/hire-remotely" passHref>
               <a>
-                <RedButton text="Post a job" />
+                <Button text="Post a job" />
               </a>
             </Link>
             <span onClick={hideCard}>
-              <RedButton text="Hide this" />
+              <Button text="Hide this" />
             </span>
           </span>
         </span>

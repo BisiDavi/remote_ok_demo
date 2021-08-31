@@ -3,8 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import Logo from "@components/Logo";
 import colors from "@utils/colors";
 import useTheme from "@hooks/useTheme";
-import ThemeButton from "@components/Buttons/ThemeButton";
-import { RedButton, FormTypewriterEffect } from "@imports/.";
+import ThemeButton from "@components/Button/ThemeButton";
+import { Button, FormTypewriterEffect } from "@imports/.";
 import styles from "./header.module.css";
 
 export default function Header() {
@@ -28,7 +28,7 @@ export default function Header() {
             <span className={`${styles.Redbutton} redbutton`}>
               <Link href="/hire-remotely" passHref>
                 <a>
-                  <RedButton
+                  <Button
                     btnClassName="redbutton mx-2 text-white position-fixed btn-danger font-weight-bold"
                     text="Post a job"
                   />

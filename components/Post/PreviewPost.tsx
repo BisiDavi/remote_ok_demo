@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import MarkdownFormatter from "@components/Cards/MarkdownFormatter";
 import PreviewCard from "@components/Cards/PreviewCard";
 import useTheme from "@hooks/useTheme";
-import { GreenButton } from "@components/Buttons";
+import { Button } from "@components/Button";
 
 export default function PreviewPost() {
   const { jobDetails } = useSelector((state) => state.postJob);
@@ -33,7 +33,7 @@ export default function PreviewPost() {
                 rel="noreferrer"
                 href={jobDetails?.apply_url}
               >
-                <GreenButton
+                <Button
                   disabled
                   btnClassName="mx-auto my-4 d-flex"
                   text="Apply for this job"

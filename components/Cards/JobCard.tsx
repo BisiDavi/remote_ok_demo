@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card } from "react-bootstrap";
 import dynamic from "next/dynamic";
-import { RedButton, FallBackImage } from "@imports/.";
+import { Button, FallBackImage } from "@imports/.";
 import { PostJobAt } from "@utils/date";
 import colors from "@utils/colors";
 import CompanyLogo from "@components/Logo/CompanyLogo";
@@ -82,7 +82,7 @@ const JobCard = ({ data }: IJobCardProps) => {
           <div className="d-none d-sm-block">
             {showApplyButton ? (
               <a target="_blank" rel="noreferrer" href={apply_url}>
-                <RedButton btnClassName={styles.applyBtn} text="Apply" />
+                <Button btnClassName={styles.applyBtn} text="Apply" />
               </a>
             ) : null}
           </div>

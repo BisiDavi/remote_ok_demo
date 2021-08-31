@@ -1,4 +1,4 @@
-import { RedButton } from "@components/Buttons";
+import { Button } from "@components/Button";
 import styles from "./card.module.css";
 import MarkdownFormatter from "./MarkdownFormatter";
 
@@ -10,7 +10,7 @@ export default function JobdescriptionCard({ content }) {
       </h4>
       <MarkdownFormatter content={content.description} />
       <a rel="noreferrer" href={content.apply_url} target="_blank">
-        <RedButton
+        <Button
           text="apply"
           btnClassName="w-75 mx-auto d-flex justify-content-center btn-danger text-white font-weight-bold"
         />

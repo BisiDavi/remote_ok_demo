@@ -1,7 +1,7 @@
 import { Formik } from "formik";
 import { Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { RedButton } from "@imports/.";
+import { Button } from "@imports/.";
 import { subscriberAction } from "../../stores/subscriberAction";
 import styles from "./forms.module.css";
 import subscriberSchema from "./subscriberSchema";
@@ -63,7 +63,7 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
                 placeholder="Type your email..."
                 isValid={touched.email && !errors.email}
               />
-              <RedButton text="Subscribe" type="submit" disabled={!isValid} />
+              <Button text="Subscribe" type="submit" disabled={!isValid} />
             </span>
             <span onClick={cancelEmail} className={styles.cancelEmailForm}>
               X
@@ -74,4 +74,3 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
     </Formik>
   ) : null;
 }
-

@@ -2,10 +2,10 @@
 import Head from "next/head";
 import { PropsWithChildren } from "react";
 import { useSelector } from "react-redux";
-import { RedButton } from "@components/Buttons";
+import { Button } from "@components/Button";
 import Logo from "@components/Logo";
 import useTheme from "@hooks/useTheme";
-import ThemeButton from "@components/Buttons/ThemeButton";
+import ThemeButton from "@components/Button/ThemeButton";
 import companyLogos from "@json/remote-companies.json";
 import styles from "./hireRemotelayout.module.css";
 import PreviewCard from "@components/Cards/PreviewCard";
@@ -28,7 +28,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           <header className={`${styles.header} header col-12 ${cardStyle}`}>
             <Logo color={themeState} />
             <h1>🏢 🚀 Hire Remotely</h1>
-            <RedButton text="Welcome" />
+            <Button text="Welcome" />
             <div className="theme-button">
               <ThemeButton />
             </div>
