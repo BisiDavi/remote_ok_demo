@@ -12,17 +12,16 @@ export default function Header() {
 
   return (
     <header className={`${styles.header} header-content`}>
-      <Container className="flex-column p-0" fluid>
-        <Row className={styles.row1}>
-          <Col lg={1} className={styles.theme}>
+      <div className="container flex-column p-0">
+        <div className={`${styles.row1} row`}>
+          <div className={`col-1 ${styles.theme}`}>
             <ThemeButton />
-          </Col>
-          <Col lg={4} className={styles.logo}>
+          </div>
+          <div className={`col-4 ${styles.logo}`}>
             <Logo />
-          </Col>
-          <Col
-            lg={2}
-            className={`${styles.headerButton} mt-5 d-flex justify-content-center`}
+          </div>
+          <div
+            className={`col-2 ${styles.headerButton} mt-5 d-flex justify-content-center`}
           >
             <span className={`${styles.Redbutton} redbutton`}>
               <Link href="/hire-remotely" passHref>
@@ -34,14 +33,14 @@ export default function Header() {
                 </a>
               </Link>
             </span>
-          </Col>
-          <Col className={styles.overlay}></Col>
+          </div>
+          <div className={styles.overlay}></div>
           <div className={`${styles.Searchform} ${cardStyle} Searchform`}>
             <h1>Hire a 🔥 skilled Remote</h1>
             <FormTypewriterEffect /> <h1>Expert</h1>
           </div>
-        </Row>
-      </Container>
+        </div>
+      </div>
       <style jsx>
         {`
           .light: {
