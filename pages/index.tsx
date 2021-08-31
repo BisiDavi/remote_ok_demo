@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { NextPage } from "next";
 import axios from "axios";
-import { useSelector } from "react-redux";
-import JobCard from "@components/Cards/JobCard";
 import {
   Layout,
   NavMenu,
@@ -11,38 +9,20 @@ import {
   EmailSubscriberForm,
 } from "@imports/.";
 import useTheme from "@hooks/useTheme";
-import { showWorldWideJobs } from "@utils/filterJobs";
 import colors from "@utils/colors";
+import AvailableJobs from "@components/Cards/AvailableJobs";
 
 interface Props {
-  data: [];
   availableJobs: [];
 }
 
-const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
+const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
   const { dark } = useTheme();
-
-  console.log("availableJobs", availableJobs);
-
   const [showEmail, setEmail] = useState<boolean>(true);
   const [hidePostJobCard, setHideCard] = useState<boolean>(true);
 
-  const worldwideJobsState = useSelector((state) => state.jobs);
-
-  const worldwideJobs = showWorldWideJobs(availableJobs);
-
   const hideCard = () => setHideCard(false);
-
   const hideEmail = () => setEmail(false);
-
-  const displayJobCards = (jobs) => {
-    return jobs.map((job: any) => <JobCard key={job.slug} data={job} />);
-  };
-  function displayJobs() {
-    return worldwideJobsState.worldwide
-      ? displayJobCards(worldwideJobs)
-      : displayJobCards(availableJobs);
-  }
 
   const themeClass = dark ? "dark" : "light";
 
@@ -62,7 +42,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
             <WorldwideJobForm />
           </span>
         </div>
-        <div className="available-jobs">{displayJobs()}</div>
+        <AvailableJobs availableJobs={availableJobs} />
       </main>
       <EmailSubscriberForm showEmail={showEmail} cancelEmail={hideEmail} />
       <style jsx>
@@ -75,9 +55,7 @@ const Home: NextPage<Props> = ({ availableJobs }): JSX.Element => {
           .light {
             background-color: #f9f9f9;
           }
-          .available-jobs {
-            padding-bottom: 7%;
-          }
+
           .dark {
             background-color: ${colors.grayish};
           }
