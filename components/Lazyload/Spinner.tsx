@@ -20,6 +20,7 @@ export default function Spinner() {
             background-color: #52434357;
             top: 0;
             left: 0;
+            z-index:200000;
             position: fixed;
           }
           @keyframes ldio-rpinwye8j0b {

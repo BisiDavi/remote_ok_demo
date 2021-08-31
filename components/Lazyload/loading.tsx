@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Logo from "@components/Logo";
 import styles from "./loading.module.css";
+import Spinner from "./Spinner";
 
 export default function Loading() {
   return (
@@ -8,6 +9,7 @@ export default function Loading() {
       <Head>
         <title>Loading ... | Remote demo </title>
       </Head>
+      <Spinner />
       <div className={`${styles.loading} loading`}>
         <Logo />
         <h3>
@@ -24,7 +26,8 @@ export default function Loading() {
             align-items: center;
             width: 100%;
             height: 100%;
-            background-color: rgb(158 60 60 / 77%);
+            margin: auto;
+            background-color: rgb(74 70 70 / 77%);
             z-index: 100000;
             position: fixed;
             top: 0;
