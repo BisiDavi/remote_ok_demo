@@ -70,7 +70,7 @@ export default function Header() {
             display: flex;
             margin: auto;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
           }
           .logo h3 {
             font-family: "Pacifico", san-serif, helevetica;
@@ -92,7 +92,7 @@ export default function Header() {
             background-color: white;
             width: fit-content;
             padding: 10px;
-            width: 600px;
+            width: 700px;
           }
           .Searchform h1 {
             font-size: 20px;

@@ -18,6 +18,9 @@ export default function FallBackImage({ companyName }) {
           justify-content: center;
           margin: 10px;
         }
+        .fallbackImage h4{
+          margin: 0px;
+        } 
         .company-logo-letter h4 {
           font-family: "Nunito", sans-serif;
           font-weight: 700;

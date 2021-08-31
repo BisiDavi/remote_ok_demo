@@ -42,8 +42,9 @@ export default function Logo({ color = "white" }: LogoProps) {
             justify-content: center;
             font-family: "Pacifico", san-serif, helevetica;
           }
-          .motto: {
+          .motto {
             color: white;
+            font-size: 30px;
           }
           .divider {
             color: ${color};

@@ -30,16 +30,18 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
               </u>
             </span>
           </p>
-          <span className={`${styles.hireButton} hire-now`}>
-            <Link href="/hire-remotely" passHref>
-              <a>
-                <Button text="Post a job" />
-              </a>
-            </Link>
+          <div className={`${styles.hireButton} hire-now`}>
+            <span>
+              <Link href="/hire-remotely" passHref>
+                <a>
+                  <Button text="Post a job" />
+                </a>
+              </Link>
+            </span>
             <span onClick={hideCard}>
               <Button text="Hide this" />
             </span>
-          </span>
+          </div>
         </span>
       </div>
       <style jsx>{`
@@ -49,11 +51,22 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
         }
         .card {
           background-color: white;
-          border: 1px solid gray;
           border-radius: 5px;
           margin: auto;
+          z-index: 20;
+          position: relative;
+          box-shadow: 1px 2px 4px rgb(0 0 0 / 3%);
+          border: none;
+          box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0/7%),
+            0 1px 1.5px 0 rgb(0 0 0/5%);
+          font-family: "Nunito", sans-serif;
         }
-
+        .card:hover {
+          background-color: #efefef;
+        }
+        .hire-now span {
+          margin: 0px 20px;
+        }
         .hiretext {
           display: flex;
           align-items: center;

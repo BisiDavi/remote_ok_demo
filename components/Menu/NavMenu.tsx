@@ -44,8 +44,12 @@ export function NavMenu(): JSX.Element {
             display: flex;
             align-items: center;
             margin: auto;
+            justify-content: center;
           }
-          .menu-light: {
+          .nav-menu nav {
+            width: 65%;
+          }
+          .menu-light {
             color: ${colors.black};
           }
 
@@ -72,7 +76,7 @@ export function NavMenu(): JSX.Element {
             width: 100px;
           }
 
-          .menu-dark: {
+          .menu-dark {
             color: ${colors.white};
           }
           .nav-menu nav {
@@ -86,7 +90,7 @@ export function NavMenu(): JSX.Element {
           }
           .wave {
             position: absolute;
-            z-index: 100;
+            z-index: 10;
             width: 100%;
             height: 10px;
             top: -200px;

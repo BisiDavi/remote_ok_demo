@@ -52,7 +52,7 @@ const JobCard = ({ data }: IJobCardProps) => {
         <div className={`${styles.row} content`}>
           <div className="logo">{displayCompanyLogo}</div>
           <div className={`${styles.companyprofile} companyprofile`}>
-            <div className={`${styles.cardText}cardTex`}>
+            <div className={`${styles.cardText} cardText`}>
               <span className={`${styles.mobileRow}`}>
                 <h2 className="company">{company}</h2>
                 <h3>{position}</h3>
@@ -91,14 +91,19 @@ const JobCard = ({ data }: IJobCardProps) => {
             margin: 15px 0px;
             font-family: "Nunito", sans-serif;
             background-color: #fff;
-            box-shadow: 1px 2px 4px rgb(0 0 0 / 3%);
             border: none;
+            box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0/7%),
+              0 1px 1.5px 0 rgb(0 0 0/5%);
           }
           .column-3 {
             display: flex;
             align-items: center;
             width: 20%;
             justify-content: space-around;
+          }
+          .cardText h2,
+          .cardText h3 {
+            margin: 1px 0px;
           }
           .card .content {
             padding: 10px 20px;
