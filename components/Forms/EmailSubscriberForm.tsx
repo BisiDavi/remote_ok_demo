@@ -4,11 +4,8 @@ import { Button } from "@imports/.";
 import { subscriberAction } from "../../stores/subscriberAction";
 import styles from "./forms.module.css";
 import subscriberSchema from "./subscriberSchema";
-
-enum EmailPeriods {
-  daily = "DAILY",
-  weekly = "WEEKLY",
-}
+import { InputField, SelectField } from "./FormFields";
+import React from "react";
 
 export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
   const dispatch = useDispatch();
@@ -36,26 +33,18 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
           <form className={styles.EmailForm} onSubmit={handleSubmit}>
             <span className={styles.Newsletter}>
               <p>Get a </p>
-              <input
-                className={styles.formSelect}
+              <SelectField
                 name="duration"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 isValid={touched.duration && !errors.duration}
-                as="select"
-              >
-                {periods.map((period: EmailPeriods) => (
-                  <option key={period} value={period}>
-                    {period}
-                  </option>
-                ))}
-              </input>
+                options={periods}
+              />
             </span>
             <p> email of all new Remote Jobs </p>
             <span className={styles.formSubscribe}>
-              <input
+              <InputField
                 name="email"
-                className={styles.formInput}
                 type="email"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -67,7 +56,7 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
             <span onClick={cancelEmail} className={styles.cancelEmailForm}>
               X
             </span>
-          </Form>
+          </form>
         );
       }}
     </Formik>
