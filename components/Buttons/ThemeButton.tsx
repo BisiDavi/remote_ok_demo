@@ -29,6 +29,7 @@ export default function ThemeButton() {
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
             background-color: transparent;
           }
 

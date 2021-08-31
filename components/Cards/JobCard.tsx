@@ -101,6 +101,12 @@ const JobCard = ({ data }: IJobCardProps) => {
             width: 20%;
             justify-content: space-around;
           }
+          .cardText {
+            width: 60%;
+          }
+          .tags {
+            width: 40%;
+          }
           .cardText h2,
           .cardText h3 {
             margin: 1px 0px;
@@ -127,7 +133,8 @@ const JobCard = ({ data }: IJobCardProps) => {
             align-items: center;
           }
           .companyprofile {
-            width: 50%;
+            width: 60%;
+            justify-content: flex-start;
           }
           .location {
             padding: 10px;

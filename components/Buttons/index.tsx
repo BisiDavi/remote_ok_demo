@@ -26,7 +26,7 @@ export default function Button({ type, text, ...props }: AppProps) {
             font-size: 20px;
             cursor: pointer;
           }
-          button.button:hover {
+          button:hover {
             background-color: transparent;
             border: 2px solid red;
           }

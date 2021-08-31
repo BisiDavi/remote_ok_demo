@@ -6,8 +6,11 @@
   background-color: #dcdcdc;
   border: none;
 }
-.card button:hover {
+
+.card a button:hover,
+.description a button:hover {
   background-color: red;
+  border: none;
 }
 .groupTag {
   flex-wrap: wrap;

@@ -19,6 +19,7 @@ export default function JobdescriptionCard({ content }) {
           .job-description a {
             margin: auto;
             display: flex;
+            justify-content: center;
           }
 
           .job-description h4 {

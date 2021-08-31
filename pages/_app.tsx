@@ -33,7 +33,8 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
-      {loading ? <Loading /> : <Component {...pageProps} />}
+      {loading && <Loading />}
+      <Component {...pageProps} />
     </Provider>
   );
 }
