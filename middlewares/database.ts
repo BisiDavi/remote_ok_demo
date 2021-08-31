@@ -31,11 +31,7 @@ export default async function connectToDatabase() {
     const options = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      bufferCommands: false,
       autoCreate: false,
-      bufferMaxEntries: 0,
-      useFindAndModify: false,
-      useCreateIndex: true,
     };
 
     cached.promise = await mongoose.connect(NEXT_MONGODB_URI, options);

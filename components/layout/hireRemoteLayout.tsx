@@ -1,15 +1,15 @@
-/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import { PropsWithChildren } from "react";
 import { useSelector } from "react-redux";
+import dynamic from "next/dynamic";
 import Button from "@components/Buttons";
 import Logo from "@components/Logo";
 import useTheme from "@hooks/useTheme";
 import ThemeButton from "@components/Buttons/ThemeButton";
-import companyLogos from "@json/remote-companies.json";
 import styles from "./hireRemotelayout.module.css";
-import PreviewCard from "@components/Cards/PreviewCard";
 import colors from "@utils/colors";
+
+const PreviewCard = dynamic(() => import("../Cards/PreviewCard"));
 
 export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
   const { jobDetails } = useSelector((state) => state.postJob);
@@ -68,9 +68,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
                 by millions of remote workers and leading remote companies like
               </h3>
               <div className="companyLogos my-3">
-                {companyLogos.map((logo, index) => (
-                  <img src={`${logo}.webp`} alt={logo} key={index} />
-                ))}
+                <Logo color="black" />
               </div>
               <div className="reach-me my-3">
                 <h6>Reach me via:</h6>
