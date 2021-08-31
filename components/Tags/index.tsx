@@ -24,13 +24,16 @@ export default function Tags({ tags }) {
             color: colors.white;
             border: 2px solid ${colors.white};
           }
+          .skilltag:hover {
+            color: gray;
+          }
           .skilltag {
             margin: 5px 5px;
             font-size: 12px;
             padding: 8px;
             font-family: "Nunito", sans-serif;
             border-radius: 5px;
-            list-style:none;
+            list-style: none;
           }
         `}</style>
       </>

@@ -6,7 +6,7 @@ export default function Logo({ color = "white" }: LogoProps) {
       <Link href="/" passHref>
         <a>
           <div className="logo mt-3 mb-3 flex-col flex">
-            <span className="flex align-items-center">
+            <span className="logo-text">
               <h3 className="mb-0">remote</h3>
               <span className="divider mx-2"> | </span>
               <h3 className="mb-0">demo®</h3>
@@ -26,6 +26,14 @@ export default function Logo({ color = "white" }: LogoProps) {
             font-family: "Pacifico", san-serif, helevetica;
             color: ${color};
             font-weight: 500;
+          }
+          .logo-text {
+            display: flex;
+            align-items: center;
+            width: 100px;
+          }
+          .motto: {
+            color: ${color};
           }
           .divider {
             color: ${color};

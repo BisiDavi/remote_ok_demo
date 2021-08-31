@@ -4,17 +4,34 @@ import MarkdownFormatter from "./MarkdownFormatter";
 
 export default function JobdescriptionCard({ content }) {
   return (
-    <div className={`${styles.description} container px-5 py-3 bg-white`}>
-      <h4 className="text-left font-weight-bold my-3">
-        Hire a Remote {content.position} at {content.company}{" "}
-      </h4>
-      <MarkdownFormatter content={content.description} />
-      <a rel="noreferrer" href={content.apply_url} target="_blank">
-        <Button
-          text="apply"
-          btnClassName="w-75 mx-auto flex justify-content-center btn-danger text-white font-weight-bold"
-        />
-      </a>
-    </div>
+    <>
+      <div className={`${styles.description} job-description`}>
+        <h4>
+          Hire a Remote {content.position} at {content.company}{" "}
+        </h4>
+        <MarkdownFormatter content={content.description} />
+        <a rel="noreferrer" href={content.apply_url} target="_blank">
+          <Button text="apply" />
+        </a>
+      </div>
+      <style jsx>
+        {`
+          .job-description a {
+            margin: auto;
+            display: flex;
+          }
+
+          .job-description h4 {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+          }
+          .job-description {
+            background-color: white;
+            padding: 20px;
+          }
+        `}
+      </style>
+    </>
   );
 }

@@ -7,20 +7,15 @@ interface AppProps {
   disabled?: boolean;
 }
 
-export default function Button({
-  type,
-  text,
-  btnClassName,
-  ...props
-}: AppProps) {
+export default function Button({ type, text, ...props }: AppProps) {
   return (
     <>
-      <button {...props} type={type}>
+      <button className="button" {...props} type={type}>
         {text}
       </button>
       <style jsx>
         {`
-          button {
+          button.button {
             border: none;
             border-radius: 5px;
             padding: 10px 20px;

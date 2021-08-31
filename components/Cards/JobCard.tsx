@@ -128,7 +128,7 @@ const JobCard = ({ data }: IJobCardProps) => {
             padding: 10px;
             border-radius: 5px;
             width: auto;
-            max-width: auto;
+            max-width: 100%;
           }
           .location h6 {
             font-weight: 1000;

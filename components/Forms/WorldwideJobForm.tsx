@@ -12,12 +12,14 @@ function WorldwideJobForm() {
     <>
       <div className="worldwideJobs">
         <h6 className="font-weight-bold">Remote jobs</h6>
-        <label>Only show worldwide jobs</label>
-        <input
-          onClick={displayWorldWideJobs}
-          type="checkbox"
-          className="font-weight-bold"
-        />
+        <span>
+          <label>Only show worldwide jobs</label>
+          <input
+            onClick={displayWorldWideJobs}
+            type="checkbox"
+            className="font-weight-bold"
+          />
+        </span>
       </div>
       <style jsx>
         {`

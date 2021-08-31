@@ -54,19 +54,21 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
             display: flex;
             justify-content: center;
           }
-          .content {
+          main .content {
             margin: auto;
             display: flex;
             flex-direction: column;
             width: 65%;
           }
+
           .light {
             background-color: #f9f9f9;
           }
+
           .dark {
             background-color: ${colors.grayish};
           }
-         
+
           footer.footer {
             position: absolute;
             bottom: 0px;
