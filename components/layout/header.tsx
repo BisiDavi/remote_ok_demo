@@ -26,7 +26,7 @@ export default function Header() {
         </div>
         <div className="content">
           <div className={`${styles.logo}`}>
-            <Logo />
+            <Logo color="white" />
           </div>
           <div className={`${styles.Searchform} ${cardStyle} Searchform`}>
             <h1>Hire a 🔥 skilled Remote</h1>

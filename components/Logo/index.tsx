@@ -28,14 +28,22 @@ export default function Logo({ color = "white" }: LogoProps) {
           .logo-text {
             display: flex;
             align-items: center;
-            width: 100px;
+            width: auto;
           }
           .logo-text h3,
           .logo p {
             margin: 0px;
           }
+          .logo {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+            font-family: "Pacifico", san-serif, helevetica;
+          }
           .motto: {
-            color: ${color};
+            color: white;
           }
           .divider {
             color: ${color};

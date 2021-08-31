@@ -41,6 +41,9 @@ export function NavMenu(): JSX.Element {
         {`
           .nav-menu {
             position: relative;
+            display: flex;
+            align-items: center;
+            margin: auto;
           }
           .menu-light: {
             color: ${colors.black};
