@@ -5,6 +5,7 @@ import { PostJobAction } from "@stores/postJobAction";
 import FormCard from "./FormCard";
 import PreviewPost from "@components/Post/PreviewPost";
 import hireRemoteForm from "@json/hire-remote-form.json";
+import hireFormSchema from "./hireFormSchema";
 
 export default function HireForm() {
   const dispatch = useDispatch();
@@ -27,10 +28,11 @@ export default function HireForm() {
             annualSalary: "",
             description: "",
             howToApply: "",
-            apply_url: "",           
+            apply_url: "",
             companyEmail: "",
             feedback: "",
           }}
+          validationSchema={hireFormSchema}
           onSubmit={(values) => {
             console.log("values", values);
           }}
