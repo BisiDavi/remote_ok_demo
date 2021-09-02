@@ -93,6 +93,9 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
               margin-top: -60px;
               padding-top: 30px;
             }
+            main .content {
+              width: 95%;
+            }
           }
           @media (max-width: 1440px and min-width:1024px) {
             .hire-remote {

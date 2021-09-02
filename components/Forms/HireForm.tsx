@@ -27,10 +27,9 @@ export default function HireForm() {
             annualSalary: "",
             description: "",
             howToApply: "",
-            apply_url: "",
-            companyTwitter: "",
+            apply_url: "",           
             companyEmail: "",
-            feedbackBox: "",
+            feedback: "",
           }}
           onSubmit={(values) => {
             console.log("values", values);

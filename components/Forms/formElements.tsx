@@ -107,13 +107,19 @@ function TextArea({ content, ...props }: FormFieldProps) {
       </div>
       <style jsx>
         {`
+        .textarea{
+          display:flex;
+          align-items:center;
+          margin:15px 0px;
+
+        }
           .textarea textarea {
             width: 300px;
             height: 100px;
           }
 
           .textarea label {
-            margin: 0px 20p;
+            margin: 0px 20px;
             margin-right: 20px;
             width: 150px;
             font-weight: bold;

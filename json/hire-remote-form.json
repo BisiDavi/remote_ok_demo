@@ -198,7 +198,7 @@
       {
         "label": "FEEDBACK BOX",
         "form": "input",
-        "name": "feedbackBox",
+        "name": "feedback",
         "placeholder": "feedback box"
       }
     ]

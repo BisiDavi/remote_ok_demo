@@ -54,7 +54,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               <h3>
                 Remote OK is{" "}
                 <b>the most popular remote jobs board in the world</b> trusted
-                by millions of remote workers and leading remote companies like
+                by millions of remote workers and leading remote companies.
               </h3>
               <div className="reach-me">
                 <h6>Reach me via:</h6>
