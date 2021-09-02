@@ -9,7 +9,11 @@
 .inputGroup input {
   height: 40px;
 }
-
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: -5px;
+}
 .inputGroup input,
 .select select,
 .checkboxGroup input,

@@ -34,7 +34,7 @@ function Input({ content, ...props }: FormFieldProps) {
         placeholder={content.placeholder}
       />
       {props.errors[content.name] && props.touched[content.name] && (
-        <p>{props.errors[content.name]}</p>
+        <p className={styles.error}>{props.errors[content.name]}</p>
       )}
       {content.note && <p className={styles.note}>{content?.note}</p>}
     </div>
@@ -91,6 +91,9 @@ function SelectInput({ content, ...props }: FormFieldProps) {
           </option>
         ))}
       </select>
+      {props.errors[content.name] && props.touched[content.name] && (
+        <p className={styles.error}>{props.errors[content.name]}</p>
+      )}
     </div>
   );
 }
@@ -104,15 +107,17 @@ function TextArea({ content, ...props }: FormFieldProps) {
           onChange={props.handleChange(content.name)}
           value={props.values[content.name]}
         ></textarea>
+        {props.errors[content.name] && props.touched[content.name] && (
+          <p className={styles.error}>{props.errors[content.name]}</p>
+        )}
       </div>
       <style jsx>
         {`
-        .textarea{
-          display:flex;
-          align-items:center;
-          margin:15px 0px;
-
-        }
+          .textarea {
+            display: flex;
+            align-items: center;
+            margin: 15px 0px;
+          }
           .textarea textarea {
             width: 300px;
             height: 100px;
