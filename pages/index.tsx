@@ -34,6 +34,7 @@ const Home: NextPage<Props> = ({
 
   const postedJobs = JSON.parse(jobsFromDb);
   console.log("postedJobs", postedJobs);
+  console.log("availableJobs", availableJobs);  
 
   const themeClass = dark ? "dark" : "light";
 

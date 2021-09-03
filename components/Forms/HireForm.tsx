@@ -35,7 +35,7 @@ export default function HireForm() {
           company: "",
           position: "",
           primaryTag: "",
-          tags: "",
+          tags: [],
           location: "",
           showLogo: true,
           sendEmail: true,
@@ -81,6 +81,7 @@ export default function HireForm() {
           return (
             <>
               {loading && <Loading />}
+              {console.log("values", values)}
               <div className="hire-remotely-form">
                 <form className="remote-form">
                   <FormCard title={hireRemoteForm.start.title}>

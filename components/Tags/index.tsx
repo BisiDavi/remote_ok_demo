@@ -4,12 +4,28 @@ import colors from "@utils/colors";
 export default function Tags({ tags }) {
   const { dark } = useTheme();
   const tagStyle = dark ? "dark" : "light";
+  console.log("tags", tags);
 
   if (tags !== undefined && tags.length > 0) {
     const fourTags = tags.slice(0, 4);
-    return fourTags.map((tag, index) => (
-      <div key={`${tag}-${index}`}>
-        <li className={`skilltag ${tagStyle}`}>{tag}</li>
+    return (
+      <>
+        {typeof tags === "object"
+          ? fourTags.map((tag, index) => (
+              <div key={`${tag}-${index}`}>
+                <li className={`skilltag ${tagStyle}`}>{tag}</li>
+              </div>
+            ))
+          : tags
+              .split(",")
+              .slice(0, 3)
+              .map((item, index) => (
+                <>
+                  <div key={index} className={`role-tag ${tagStyle}`}>
+                    {item}
+                  </div>
+                </>
+              ))}
         <style jsx>{`
           .light: {
             color: colors.black;
@@ -30,9 +46,16 @@ export default function Tags({ tags }) {
             border-radius: 5px;
             list-style: none;
           }
+          .role-tag {
+            border: 2px solid #0f1115;
+            color: #0f1115;
+            margin: 0px 5px;
+            padding: 0.33em;
+            border-radius: 6px;
+          }
         `}</style>
-      </div>
-    ));
+      </>
+    );
   }
   return null;
 }

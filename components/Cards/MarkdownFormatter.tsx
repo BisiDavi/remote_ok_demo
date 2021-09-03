@@ -17,8 +17,20 @@ export default function MarkdownFormatter({ content }) {
         .replaceAll("âï¸", " ")
         .replaceAll("ð", " ")
         .replaceAll("â", " ")
+        .replaceAll("ð¡", " ")
+        .replaceAll("ðº", " ")
         .replaceAll("âï¸", " ")
-        .replaceAll("âï¸", " ")}
+        .replaceAll("âï¸", " ")
+        .replaceAll("ðï¸", " ")
+        .replaceAll("ð¸", " ")
+        .replaceAll("ð", " ")
+        .replaceAll("", " ")
+        .replaceAll("¢", " ")
+        .replaceAll("â", " ")
+        .replaceAll("ï", " ")
+        .replaceAll("ð", " ")}
     </ReactMarkdown>
   );
 }
+//
+//
