@@ -3,8 +3,6 @@ import JobCard from "@components/Cards/JobCard";
 import { showWorldWideJobs } from "@utils/filterJobs";
 
 export default function AvailableJobs({ availableJobs }) {
-  console.log("availableJobs", availableJobs);
-
   const worldwideJobsState = useSelector((state) => state.jobs);
 
   const worldwideJobs = showWorldWideJobs(availableJobs);

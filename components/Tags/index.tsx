@@ -1,8 +1,6 @@
 import useTheme from "@hooks/useTheme";
 import colors from "@utils/colors";
 
-let number = 0;
-
 export default function Tags({ tags }) {
   const { dark } = useTheme();
   const tagStyle = dark ? "dark" : "light";
@@ -10,13 +8,8 @@ export default function Tags({ tags }) {
   if (tags !== undefined && tags.length > 0) {
     const fourTags = tags.slice(0, 4);
     return fourTags.map((tag, index) => (
-      <>
-        <li
-          className={`skilltag ${tagStyle}`}
-          key={`${tag}-${index}}}`}
-        >
-          {tag}
-        </li>
+      <div key={`${tag}-${index}`}>
+        <li className={`skilltag ${tagStyle}`}>{tag}</li>
         <style jsx>{`
           .light: {
             color: colors.black;
@@ -38,7 +31,7 @@ export default function Tags({ tags }) {
             list-style: none;
           }
         `}</style>
-      </>
+      </div>
     ));
   }
   return null;

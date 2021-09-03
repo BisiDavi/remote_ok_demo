@@ -18,7 +18,7 @@
       "@components/*": ["components/*"],
       "@db/*": ["db/*"],
       "@imports/*": ["imports/*"],
-      "@middleware/*": ["middleware/*"],
+      "@middlewares/*": ["middlewares/*"],
       "@types/*": ["types/*"],
       "@utils/*": ["utils/*"],
       "@styles/*": ["styles/*"],

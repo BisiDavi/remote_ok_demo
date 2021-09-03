@@ -6,7 +6,7 @@ export default async function JobHandler(req, res) {
 
   await connectToDatabase()
     .then(() => console.log("connected to db"))
-    .catch((error) => console.error("error", error));
+    .catch((error) => console.error("cant connect, error", error));
 
   switch (method) {
     case "POST": {

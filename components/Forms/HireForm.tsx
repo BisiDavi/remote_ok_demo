@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
+import { useRouter } from "next/router";
 import useTheme from "@hooks/useTheme";
 import FormElement from "@components/Forms/formElements";
 import { PostJobAction } from "@stores/postJobAction";
@@ -17,6 +18,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function HireForm() {
   const dispatch = useDispatch();
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const { dark } = useTheme();
   const cardStyle = dark ? "dark" : "light";
@@ -59,6 +61,7 @@ export default function HireForm() {
               toast.success(
                 `job posted successfull, check the home page to view your job listing`
               );
+              router.push("/");
             })
             .catch((error) => {
               console.error("error", error);

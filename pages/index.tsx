@@ -11,9 +11,11 @@ import {
 import useTheme from "@hooks/useTheme";
 import colors from "@utils/colors";
 import AvailableJobs from "@components/Cards/AvailableJobs";
+import connectToDatabase from "@middlewares/database";
 
 interface Props {
   availableJobs: [];
+  jobsFromDb?: [];
 }
 
 const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
@@ -24,13 +26,12 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
   const hideCard = () => setHideCard(false);
   const hideEmail = () => setEmail(false);
 
+  // console.log("jobsFromDb", jobsFromDb);
+
   const themeClass = dark ? "dark" : "light";
 
   return (
-    <Layout
-      className="position-relative"
-      pageTitle="Remote Jobs in Programming, Design, Sales and More"
-    >
+    <Layout pageTitle="Remote Jobs in Programming, Design, Sales and More">
       <NavMenu />
       <main className={`main ${themeClass}`}>
         <div className="content">
@@ -109,10 +110,21 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
 };
 
 export async function getServerSideProps(): Promise<any> {
-  let result;
+  let result, jobsFromDb;
+  await connectToDatabase();
+  await axios
+    .get("/api/job")
+    .then((response) => {
+      // jobsFromDb = response.data;
+      console.log("response", response.data);
+    })
+    .catch((error) => {
+      console.log("error", error);
+    });
   await axios.get("https://remoteok.io/api").then((response) => {
     result = response.data;
   });
+
   const availableJobs = result.filter((job) => job.slug);
   return {
     props: { availableJobs },
