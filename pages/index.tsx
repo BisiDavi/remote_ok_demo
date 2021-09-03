@@ -18,7 +18,7 @@ import Jobs from "@model/jobSchema";
 
 interface Props {
   availableJobs: [];
-  jobsFromDb?: string
+  jobsFromDb?: string;
 }
 
 const Home: NextPage<Props> = ({
@@ -33,7 +33,7 @@ const Home: NextPage<Props> = ({
   const hideEmail = () => setEmail(false);
 
   const postedJobs = JSON.parse(jobsFromDb);
-  
+
   const themeClass = dark ? "dark" : "light";
 
   return (
@@ -88,14 +88,6 @@ const Home: NextPage<Props> = ({
             margin-top: 16px;
             padding: 15px;
           }
-          @media (max-width: 480px) {
-            .main {
-              padding-top: 10px;
-            }
-            .footer {
-              position: inherit;
-            }
-          }
           @media (max-width: 1024px) {
             .hire-remote {
               margin-top: -30px;
@@ -108,6 +100,15 @@ const Home: NextPage<Props> = ({
           @media (max-width: 1440px and min-width:1024px) {
             .hire-remote {
               margin-top: -30px;
+            }
+          }
+          @media (max-width: 500px) {
+            main.main {
+              padding-top: 10px;
+              top: 70px;
+            }
+            .footer {
+              position: inherit;
             }
           }
         `}

@@ -78,7 +78,7 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
           font-weight: bold;
         }
         .textmobile {
-          margin-bottom: 0px;
+          margin: 0px;
           font-weight: bold;
         }
 

@@ -11,7 +11,7 @@ function WorldwideJobForm() {
   return (
     <>
       <div className="worldwideJobs">
-        <h6 className="font-weight-bold">Remote jobs</h6>
+        <h6>Remote jobs</h6>
         <span>
           <label>Only show worldwide jobs</label>
           <input
@@ -34,6 +34,12 @@ function WorldwideJobForm() {
           }
           .worldwideJobs h6 {
             font-size: 20px;
+          }
+          @media (max-width: 500px) {
+            .worldwideJobs h6,
+            .worldwideJobs {
+              font-size: 15px;
+            }
           }
         `}
       </style>

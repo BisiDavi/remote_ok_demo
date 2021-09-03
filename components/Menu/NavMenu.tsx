@@ -83,7 +83,7 @@ export function NavMenu(): JSX.Element {
             margin: auto;
             display: flex;
             position: absolute;
-            z-index: 200;
+            z-index: 1000;
             justify-content: center;
             align-items: center;
             top: 0px;
@@ -135,6 +135,9 @@ export function NavMenu(): JSX.Element {
               width: 100%;
               z-index: 500;
               overflow-y: clip;
+            }
+            .nav-menu nav {
+              width: 100%;
             }
             .wave {
               top: -50px;

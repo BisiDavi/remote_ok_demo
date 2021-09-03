@@ -192,7 +192,8 @@ const JobCard = ({ data }: IJobCardProps) => {
               font-size: 12px;
             }
             h2.company {
-              font-size: 14px;
+              font-size: 16px;
+              font-weight: 1000;
             }
             .column-3 {
               width: 25%;
