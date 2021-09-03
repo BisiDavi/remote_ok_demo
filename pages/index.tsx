@@ -47,7 +47,7 @@ const Home: NextPage<Props> = ({
               hideCard={hideCard}
             />
           </div>
-          <WorldwideJobForm />
+          <WorldwideJobForm themeClass={themeClass} />
           <AvailableJobs availableJobs={postedJobs} />
           <AvailableJobs availableJobs={availableJobs} />
         </div>

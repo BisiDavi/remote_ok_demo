@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
 import { JobAction } from "@stores/jobAction";
+import colors from "@utils/colors";
 
-function WorldwideJobForm() {
+function WorldwideJobForm({ themeClass }) {
   const dispatch = useDispatch();
 
   function displayWorldWideJobs() {
@@ -10,7 +11,7 @@ function WorldwideJobForm() {
 
   return (
     <>
-      <div className="worldwideJobs">
+      <div className={`${themeClass} worldwideJobs `}>
         <h6>Remote jobs</h6>
         <span>
           <label>Only show worldwide jobs</label>
@@ -34,6 +35,12 @@ function WorldwideJobForm() {
           }
           .worldwideJobs h6 {
             font-size: 20px;
+          }
+          .light {
+            color: ${colors.black};
+          }
+          .dark {
+            color: ${colors.white};
           }
           @media (max-width: 500px) {
             .worldwideJobs h6,
