@@ -108,6 +108,9 @@ export function NavMenu(): JSX.Element {
             .wave {
               top: -180px;
             }
+            .nav-menu nav {
+              width: 80%;
+            }
           }
           @media (max-width: 1024px) {
             nav {
@@ -116,6 +119,9 @@ export function NavMenu(): JSX.Element {
             }
             .wave {
               top: -120px;
+            }
+            .nav-menu nav {
+              width: 80%;
             }
           }
           @media (max-width: 768px) {

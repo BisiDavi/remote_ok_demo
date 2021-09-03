@@ -46,7 +46,7 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
       </div>
       <style jsx>{`
         .light {
-          backgroundcolor: ${colors.white};
+          background-color: ${colors.white};
           color: ${colors.black};
         }
         .card {
@@ -90,7 +90,7 @@ export const HireInfoCard = ({ hideCard, hidePostJobCard }) => {
 
         .dark: {
           color: ${colors.white};
-          backgroundcolor: ${colors.brownish};
+          background-color: ${colors.brownish};
         }
       `}</style>
     </>

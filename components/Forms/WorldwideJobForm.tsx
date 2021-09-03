@@ -30,6 +30,7 @@ function WorldwideJobForm() {
             justify-content: space-between;
             margin: 10px 0px;
             font-size: 20px;
+            height: 20px;
           }
           .worldwideJobs h6 {
             font-size: 20px;

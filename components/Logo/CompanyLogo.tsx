@@ -34,7 +34,7 @@ export default function CompanyLogo({ logo }) {
           }
           @media screen and (max-width: 1024px) {
             .companyLogo {
-              height: 100px;
+              height: 100%;
               width: 70px;
             }
           }

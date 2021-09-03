@@ -90,7 +90,7 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
           }
           @media (max-width: 1024px) {
             .hire-remote {
-              margin-top: -60px;
+              margin-top: -30px;
               padding-top: 30px;
             }
             main .content {
