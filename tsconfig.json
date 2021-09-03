@@ -19,6 +19,7 @@
       "@db/*": ["db/*"],
       "@imports/*": ["imports/*"],
       "@middlewares/*": ["middlewares/*"],
+      "@model/*": ["model/*"],
       "@types/*": ["types/*"],
       "@utils/*": ["utils/*"],
       "@styles/*": ["styles/*"],

@@ -10,15 +10,21 @@ import {
 } from "@imports/.";
 import useTheme from "@hooks/useTheme";
 import colors from "@utils/colors";
-import AvailableJobs from "@components/Cards/AvailableJobs";
+import AvailableJobs, {
+  displayJobCards,
+} from "@components/Cards/AvailableJobs";
 import connectToDatabase from "@middlewares/database";
+import Jobs from "@model/jobSchema";
 
 interface Props {
   availableJobs: [];
-  jobsFromDb?: [];
+  jobsFromDb?: string
 }
 
-const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
+const Home: NextPage<Props> = ({
+  availableJobs,
+  jobsFromDb,
+}: Props): JSX.Element => {
   const { dark } = useTheme();
   const [showEmail, setEmail] = useState<boolean>(true);
   const [hidePostJobCard, setHideCard] = useState<boolean>(true);
@@ -26,7 +32,8 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
   const hideCard = () => setHideCard(false);
   const hideEmail = () => setEmail(false);
 
-  // console.log("jobsFromDb", jobsFromDb);
+  const postedJobs = JSON.parse(jobsFromDb);
+  console.log("postedJobs", postedJobs);
 
   const themeClass = dark ? "dark" : "light";
 
@@ -42,6 +49,7 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
             />
           </div>
           <WorldwideJobForm />
+          <AvailableJobs availableJobs={postedJobs} />
           <AvailableJobs availableJobs={availableJobs} />
         </div>
       </main>
@@ -112,22 +120,18 @@ const Home: NextPage<Props> = ({ availableJobs }: Props): JSX.Element => {
 export async function getServerSideProps(): Promise<any> {
   let result, jobsFromDb;
   await connectToDatabase();
-  await axios
-    .get("/api/job")
-    .then((response) => {
-      // jobsFromDb = response.data;
-      console.log("response", response.data);
-    })
-    .catch((error) => {
-      console.log("error", error);
-    });
+  await Jobs.find().then((job) => {
+    console.log("job", job);
+    jobsFromDb = JSON.stringify(job);
+  });
+
   await axios.get("https://remoteok.io/api").then((response) => {
     result = response.data;
   });
 
   const availableJobs = result.filter((job) => job.slug);
   return {
-    props: { availableJobs },
+    props: { availableJobs, jobsFromDb },
   };
 }
 

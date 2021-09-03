@@ -16,8 +16,17 @@ const JobCard = ({ data }: IJobCardProps) => {
   const { dark } = useTheme();
   const cardStyle = dark ? "dark" : "light";
 
-  const { slug, logo, company, position, location, tags, date, apply_url } =
-    data;
+  const {
+    slug,
+    logo,
+    company,
+    position,
+    location,
+    tags,
+    date,
+    apply_url,
+    createdAt,
+  } = data;
 
   function displayJobDescription() {
     setJobDescription(!showJobDescription);
@@ -69,7 +78,13 @@ const JobCard = ({ data }: IJobCardProps) => {
             </div>
           </div>
           <div className={`${styles.column3} column-3`}>
-            <div className={`${styles.duration} date`}>{PostJobAt(date)}</div>
+            {date ? (
+              <div className={`${styles.duration} date`}>{PostJobAt(date)}</div>
+            ) : (
+              <div className={`${styles.duration} date`}>
+                {PostJobAt(createdAt)}
+              </div>
+            )}
             <div className="applyButton">
               {showApplyButton ? (
                 <a target="_blank" rel="noreferrer" href={apply_url}>
@@ -186,6 +201,7 @@ export interface IJobCardProps {
     location: string;
     tags: string[];
     date: string;
+    createdAt?: string;
     apply_url: string;
   };
 }
