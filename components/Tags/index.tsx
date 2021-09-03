@@ -12,7 +12,7 @@ export default function Tags({ tags }) {
     return fourTags.map((tag, index) => (
       <>
         <li
-          className={`skilltag ${tagStyle} list-unstyled m-2 btn btn-outline-dark h-25`}
+          className={`skilltag ${tagStyle}`}
           key={`${tag}-${index}}}`}
         >
           {tag}

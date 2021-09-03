@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Formik } from "formik";
+import { toast, ToastContainer } from "react-toastify";
+import axios from "axios";
 import { Button } from "@imports/.";
 import styles from "./forms.module.css";
 import subscriberSchema from "./subscriberSchema";
 import FormElement from "./formElements";
 import Loading from "@components/Lazyload/loading";
-import { toast } from "react-toastify";
-import axios from "axios";
 
 export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
   const [loading, setLoading] = useState(false);
@@ -60,6 +60,12 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
         return (
           <>
             {loading && <Loading />}
+            <ToastContainer
+              position="top-left"
+              closeOnClick
+              draggable
+              pauseOnHover
+            />
             <form className={styles.EmailForm} onSubmit={handleSubmit}>
               <span className={styles.Newsletter}>
                 <p>Get a </p>

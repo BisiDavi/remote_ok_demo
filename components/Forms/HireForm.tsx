@@ -69,7 +69,7 @@ export default function HireForm() {
             <>
               {loading && <Loading />}
               <div className="hire-remotely-form">
-                <form className="remote-form">
+                <form onSubmit={handleSubmit} className="remote-form">
                   <FormCard title={hireRemoteForm.start.title}>
                     {hireRemoteForm.start.contents.map((content, index) => (
                       <FormElement
@@ -203,9 +203,7 @@ export default function HireForm() {
                   </div>
                 </div>
                 <div className="post-job">
-                  <button type="submit" onClick={handleSubmit}>
-                    Post your demo job - Free
-                  </button>
+                  <button type="submit">Post your demo job - Free</button>
                   <p>Any posted job, shows only on this platform.</p>
                 </div>
               </aside>
