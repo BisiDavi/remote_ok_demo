@@ -18,7 +18,6 @@ const JobCard = ({ data }: IJobCardProps) => {
 
   const { slug, logo, company, position, location, tags, date, apply_url } =
     data;
-  console.log("datat", data);
 
   function displayJobDescription() {
     setJobDescription(!showJobDescription);

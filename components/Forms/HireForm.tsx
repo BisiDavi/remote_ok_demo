@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
+import { toast, ToastContainer } from "react-toastify";
 import useTheme from "@hooks/useTheme";
 import FormElement from "@components/Forms/formElements";
 import { PostJobAction } from "@stores/postJobAction";
@@ -12,6 +13,7 @@ import hireRemoteForm from "@json/hire-remote-form.json";
 import hireFormSchema from "./hireFormSchema";
 import colors from "@utils/colors";
 import Loading from "@components/Lazyload/loading";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function HireForm() {
   const dispatch = useDispatch();
@@ -19,8 +21,13 @@ export default function HireForm() {
   const { dark } = useTheme();
   const cardStyle = dark ? "dark" : "light";
 
+  function submitForm(handleSubmit) {
+    handleSubmit();
+  }
+
   return (
     <>
+      <ToastContainer position="top-left" closeOnClick draggable pauseOnHover />
       <Formik
         initialValues={{
           company: "",
@@ -49,6 +56,9 @@ export default function HireForm() {
             .then((response) => {
               console.log("response", response);
               setLoading(false);
+              toast.success(
+                `job posted successfull, check the home page to view your job listing`
+              );
             })
             .catch((error) => {
               console.error("error", error);
@@ -69,7 +79,7 @@ export default function HireForm() {
             <>
               {loading && <Loading />}
               <div className="hire-remotely-form">
-                <form onSubmit={handleSubmit} className="remote-form">
+                <form className="remote-form">
                   <FormCard title={hireRemoteForm.start.title}>
                     {hireRemoteForm.start.contents.map((content, index) => (
                       <FormElement
@@ -203,7 +213,12 @@ export default function HireForm() {
                   </div>
                 </div>
                 <div className="post-job">
-                  <button type="submit">Post your demo job - Free</button>
+                  <button
+                    type="submit"
+                    onClick={() => submitForm(handleSubmit)}
+                  >
+                    Post your demo job - Free
+                  </button>
                   <p>Any posted job, shows only on this platform.</p>
                 </div>
               </aside>
@@ -221,7 +236,7 @@ export default function HireForm() {
             align-items: center;
           }
           .preview-post {
-            margin-bottom: 20%;
+            margin-bottom: 10%;
           }
           .checkbox-group .tag {
             margin: 0px 10px;

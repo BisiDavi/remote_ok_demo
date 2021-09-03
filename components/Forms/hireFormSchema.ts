@@ -8,7 +8,7 @@ const hireFormSchema = yup.object().shape({
   location: yup.string().required("location is required"),
   annualSalary: yup.string().required("annual salary required"),
   description: yup.string().required("job description is required"),
-  copanyEmail: yup
+  companyEmail: yup
     .string()
     .email("Please enter a valid email address")
     .required("Company email address is required"),

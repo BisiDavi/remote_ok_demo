@@ -7,6 +7,7 @@ import styles from "./forms.module.css";
 import subscriberSchema from "./subscriberSchema";
 import FormElement from "./formElements";
 import Loading from "@components/Lazyload/loading";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
   const [loading, setLoading] = useState(false);

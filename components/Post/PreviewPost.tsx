@@ -15,20 +15,15 @@ export default function PreviewPost() {
         <div className="body">
           <div className="content">
             {jobDetails?.company && (
-              <h1 className="text-center">
+              <h1>
                 {jobDetails?.company} is hiring a Remote {jobDetails?.position}{" "}
               </h1>
             )}
             {jobDetails?.howToApply && <p>{jobDetails?.description}</p>}
             <div className="toApply">
-              <h3 className="text-center">How do you apply?</h3>
+              <h3>How do you apply?</h3>
               {jobDetails?.howToApply && <p>{jobDetails?.howToApply}</p>}
-              <a
-                target="_blank"
-                className={styles.appyUrl}
-                rel="noreferrer"
-                href={jobDetails?.apply_url}
-              >
+              <a className={styles.appyUrl}>
                 <Button disabled text="Apply for this job" />
               </a>
             </div>
@@ -37,6 +32,9 @@ export default function PreviewPost() {
       </div>
       <style jsx>
         {`
+          .content p {
+            text-align: center;
+          }
           .previewpost {
             font-family: "Nunito", sans-serif;
           }
