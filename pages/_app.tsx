@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Provider } from "react-redux";
 import NProgress from "nprogress";
+import { ToastContainer } from "react-toastify";
 import Router from "next/router";
 import store from "@stores/store";
 import Loading from "@components/Lazyload/loading";
@@ -35,6 +36,7 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       {loading && <Loading />}
       <Component {...pageProps} />
+      <ToastContainer position="top-left" closeOnClick draggable pauseOnHover />
     </Provider>
   );
 }
