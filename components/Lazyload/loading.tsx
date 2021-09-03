@@ -44,6 +44,17 @@ export default function Loading() {
               flex-direction: column;
             }
           }
+          @media (max-width: 500px) {
+            .loading h3 {
+              font-size: 16px;
+              display: flex;
+              align-items: center;
+              flex-direction: row;
+            }
+            .loading h3 b {
+              margin: 0px 4px;
+            }
+          }
         `}
       </style>
     </>

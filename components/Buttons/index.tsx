@@ -37,6 +37,7 @@ export default function Button({ type, text, ...props }: AppProps) {
             button.button {
               font-size: 14px;
               padding: 8px 15px;
+              width: 100px;
             }
           }
         `}
