@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { Formik } from "formik";
-import { useDispatch } from "react-redux";
 import { Button } from "@imports/.";
-import { subscriberAction } from "@stores/subscriberAction";
 import styles from "./forms.module.css";
 import subscriberSchema from "./subscriberSchema";
 import FormElement from "./formElements";
 import Loading from "@components/Lazyload/loading";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
-  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
 
   const formContent = {
@@ -31,13 +29,23 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
     <Formik
       initialValues={{ duration: "", email: "" }}
       validationSchema={subscriberSchema}
-      onSubmit={(values) => {
+      onSubmit={async (values) => {
         setLoading(true);
         console.log(values);
-        toast.success(
-          `${values.email} thanks for subscribing to ${values.duration} email`
-        );
-        // dispatch(subscriberAction(values));
+        await axios
+          .post("/api/email-subscriber", values)
+          .then((response) => {
+            console.log("response", response);
+            setLoading(false);
+            toast.success(
+              `${values.email} thanks for subscribing to ${values.duration} email`
+            );
+          })
+          .catch((error) => {
+            console.log("error", error);
+            setLoading(false);
+            toast.error(`Oops, unable to subscribe`);
+          });
       }}
     >
       {({

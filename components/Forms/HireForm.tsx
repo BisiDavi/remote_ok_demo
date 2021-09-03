@@ -45,7 +45,7 @@ export default function HireForm() {
           console.log("form submitted", values);
           setLoading(true);
           await axios
-            .post("/job", values)
+            .post("/api/job", values)
             .then((response) => {
               console.log("response", response);
               setLoading(false);
