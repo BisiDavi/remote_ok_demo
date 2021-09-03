@@ -1,5 +1,4 @@
 import styles from "./formElements.module.css";
-// import MarkdownEditor from "./MarkdownEditor";
 
 export default function FormElement({ content, ...props }) {
   switch (content.form) {
@@ -129,6 +128,11 @@ function TextArea({ content, ...props }: FormFieldProps) {
             width: 150px;
             font-weight: bold;
             font-size: 16px;
+          }
+          @media (max-width: 1024px) {
+            .textarea label {
+              font-size: 14px;
+            }
           }
         `}
       </style>

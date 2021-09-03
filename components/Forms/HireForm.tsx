@@ -337,6 +337,27 @@ export default function HireForm() {
             margin: 0px 5px;
           }
 
+          @media (max-width: 1024px) {
+            .aside h3 {
+              font-size: 15px;
+            }
+            .post-job button {
+              font-size: 17px;
+            }
+            .reach-me {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+            .reach-me h6 {
+              font-size: 15px;
+              margin: 5px 0px;
+            }
+            .checkbox-group .tag {
+              font-size: 9px;
+            }
+          }
+
           @media (max-width: 768px) {
             .companyLogos {
               width: 100%;

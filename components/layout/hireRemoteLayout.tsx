@@ -112,15 +112,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           @media (max-width: 1024px) {
             .companyLogos {
               grid-gap: 5px;
-            }
-            .aside h3 {
-              font-size: 15px;
-              letter-spacing: normal;
-              line-height: 18px;
-            }
-            aside.aside button {
-              font-size: 14px;
-            }
+            }           
           }
           @media (max-width: 768px) {
             .row.hire-now {
@@ -143,15 +135,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             }
             main.main {
               flex-direction: column;
-            }
-            aside.aside {
-              position: unset;
-            }
-            aside.aside h3 {
-              font-size: 16px;
-              line-height: 20px;
-              letter-spacing: normal;
-            }
+            }           
             .companyLogos {
               grid-gap: 5px;
             }

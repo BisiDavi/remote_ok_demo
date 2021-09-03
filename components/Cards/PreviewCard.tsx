@@ -13,7 +13,10 @@ export default function PreviewCard({ dark, data }) {
         <div className="logoContainer">
           {data?.company ? (
             <div className="letter-logo">
-              <FallBackImage companyName={data?.company} />
+              <FallBackImage
+                themeStyle={tagStyle}
+                companyName={data?.company}
+              />
             </div>
           ) : (
             <Logo color={themeState} />
@@ -21,7 +24,7 @@ export default function PreviewCard({ dark, data }) {
         </div>
         <div className="company">
           <div className="text">
-            <h3>{data?.company.length > 0 ? data?.company : "Company"}</h3>
+            <h2>{data?.company.length > 0 ? data?.company : "Company"}</h2>
             <h3 className="position">
               {data?.position.length > 0 ? data?.position : "Position"}
             </h3>
@@ -53,17 +56,16 @@ export default function PreviewCard({ dark, data }) {
       </div>
       <style jsx>{`
           .role-tag {
-            border: 2px solid #0f1115;
             color: #0f1115;
             margin: 0px 5px;
             padding: 0.33em;
             border-radius: 6px;
           }
-          .light: {
+          .light {
             color: ${colors.black};
             border: 2px solid ${colors.black};
           }
-          .dark: {
+          .dark {
             color: ${colors.white};
             border: 2px solid ${colors.white};
           }
@@ -94,10 +96,11 @@ export default function PreviewCard({ dark, data }) {
         .company {
           align-items: center;
         }
-        .company h3 {
-          font-size: 20px;
+         .company h2 {
+          font-size: 25px;
         }
-        .company h4 {
+      
+        .company h4 ,.company h3{
           font-size: 20px;
         }
         .company .location span {
@@ -107,6 +110,19 @@ export default function PreviewCard({ dark, data }) {
           padding: 5px;
           font-size: 16px;
           font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {         
+          .company h3 {
+              font-size: 14px;
+          }
+          .company h2 {
+              font-size: 16px;
+          }
+
+          .role-tag {
+              font-size: 12px;
+          } 
         }
 
         @media (max-width: 500px) {

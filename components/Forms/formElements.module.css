@@ -100,6 +100,15 @@
   color: #888;
 }
 
+@media (max-width: 1024px) {
+  .inputGroup label,
+  .checkboxGroup label,
+  .select label,
+  .radio label {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 768px) {
   .note,
   .checkbox-group label {

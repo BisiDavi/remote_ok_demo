@@ -26,12 +26,12 @@ export default function Tags({ tags }) {
                 </>
               ))}
         <style jsx>{`
-          .light: {
-            color: colors.black;
+          .light {
+            color: ${colors.black};
             border: 2px solid ${colors.black};
           }
-          .dark: {
-            color: colors.white;
+          .dark {
+            color: ${colors.white};
             border: 2px solid ${colors.white};
           }
           .skilltag:hover {

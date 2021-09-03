@@ -46,6 +46,12 @@ export default function PreviewPost() {
             font-size: 20px;
             margin: 10px auto;
           }
+          @media (max-width: 1024px) {
+            .previewpost h1 {
+              font-size: 20px;
+              font-weight: 1000;
+            }
+          }
         `}
       </style>
     </>

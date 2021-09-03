@@ -46,7 +46,7 @@ export default function FallBackImage({
           margin: 0px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .company-logo-letter {
             width: 70px;
             height: 60px;
