@@ -48,6 +48,7 @@ export function NavMenu(): JSX.Element {
           }
           .nav-menu nav {
             width: 65%;
+            background-color: ${waveStyle};
           }
           .menu-light {
             color: ${colors.black};

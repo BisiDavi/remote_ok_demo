@@ -35,7 +35,7 @@ const JobCard = ({ data }: IJobCardProps) => {
   const displayCompanyLogo = logo ? (
     <CompanyLogo data={data} />
   ) : company ? (
-    <FallBackImage companyName={company} />
+    <FallBackImage themeStyle={cardStyle} companyName={company} />
   ) : (
     <FallBackImage companyName={company} />
   );
@@ -162,11 +162,11 @@ const JobCard = ({ data }: IJobCardProps) => {
             margin: 0;
             font-size: 12px;
           }
-          .light: {
+          .light {
             background-color: ${colors.white};
             color: ${colors.black};
           }
-          .dark: {
+          .dark {
             color: ${colors.white};
             background-color: ${colors.brownish};
           }

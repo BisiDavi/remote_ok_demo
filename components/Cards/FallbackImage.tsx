@@ -1,9 +1,18 @@
-export default function FallBackImage({ companyName }) {
+import colors from "@utils/colors";
+interface FallBackImageProps {
+  themeStyle?: string;
+  companyName: string;
+}
+
+export default function FallBackImage({
+  companyName,
+  themeStyle,
+}: FallBackImageProps) {
   const companyNameArr = companyName.split("");
   const firstLetter = companyNameArr[0];
   return (
     <div className="fallbackImage">
-      <div className="company-logo-letter">
+      <div className={`${themeStyle} company-logo-letter`}>
         <h4>{firstLetter}</h4>
       </div>
       <style jsx>{`
@@ -20,6 +29,14 @@ export default function FallBackImage({ companyName }) {
         }
         .fallbackImage h4 {
           margin: 0px;
+        }
+        .light {
+          border: 2px solid ${colors.black};
+          color: ${colors.black};
+        }
+        .dark {
+          border: 2px solid ${colors.white};
+          color: ${colors.white};
         }
         .company-logo-letter h4 {
           font-family: "Nunito", sans-serif;
