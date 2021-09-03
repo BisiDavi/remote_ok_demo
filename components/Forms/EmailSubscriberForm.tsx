@@ -32,18 +32,15 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
       validationSchema={subscriberSchema}
       onSubmit={async (values) => {
         setLoading(true);
-        console.log(values);
         await axios
           .post("/api/email-subscriber", values)
-          .then((response) => {
-            console.log("response", response);
+          .then(() => {
             setLoading(false);
             toast.success(
               `${values.email} thanks for subscribing to ${values.duration} email`
             );
           })
-          .catch((error) => {
-            console.log("error", error);
+          .catch(() => {
             setLoading(false);
             toast.error(`Oops, unable to subscribe`);
           });

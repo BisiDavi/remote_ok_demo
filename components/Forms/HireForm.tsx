@@ -51,12 +51,10 @@ export default function HireForm() {
         }}
         validationSchema={hireFormSchema}
         onSubmit={async (values) => {
-          console.log("form submitted", values);
           setLoading(true);
           await axios
             .post("/api/job", values)
             .then((response) => {
-              console.log("response", response);
               setLoading(false);
               toast.success(
                 `job posted successfull, check the home page to view your job listing`
@@ -81,7 +79,6 @@ export default function HireForm() {
           return (
             <>
               {loading && <Loading />}
-              {console.log("values", values)}
               <div className="hire-remotely-form">
                 <form className="remote-form">
                   <FormCard title={hireRemoteForm.start.title}>

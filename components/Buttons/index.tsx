@@ -1,5 +1,5 @@
 interface AppProps {
-  text: string;    
+  text: string;
   type?: "submit" | "reset" | "button";
   onClick?: () => void;
   disabled?: boolean;
@@ -20,7 +20,6 @@ export default function Button({ type, text, ...props }: AppProps) {
             background-color: red;
             font-weight: bold;
             color: white;
-            width: 150px;
             font-size: 20px;
             cursor: pointer;
           }
@@ -28,6 +27,17 @@ export default function Button({ type, text, ...props }: AppProps) {
             background-color: transparent;
             border: 2px solid red;
             color: red;
+          }
+          @media (max-width: 768px) {
+            button.button {
+              font-size: 14px;
+            }
+          }
+          @media (max-width: 480px) {
+            button.button {
+              font-size: 14px;
+              padding: 8px 15px;
+            }
           }
         `}
       </style>

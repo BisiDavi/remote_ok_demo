@@ -33,9 +33,7 @@ const Home: NextPage<Props> = ({
   const hideEmail = () => setEmail(false);
 
   const postedJobs = JSON.parse(jobsFromDb);
-  console.log("postedJobs", postedJobs);
-  console.log("availableJobs", availableJobs);  
-
+  
   const themeClass = dark ? "dark" : "light";
 
   return (
@@ -122,7 +120,6 @@ export async function getServerSideProps(): Promise<any> {
   let result, jobsFromDb;
   await connectToDatabase();
   await Jobs.find().then((job) => {
-    console.log("job", job);
     jobsFromDb = JSON.stringify(job);
   });
 

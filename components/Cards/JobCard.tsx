@@ -33,7 +33,7 @@ const JobCard = ({ data }: IJobCardProps) => {
   }
 
   const displayCompanyLogo = logo ? (
-    <CompanyLogo logo={logo} />
+    <CompanyLogo data={data} />
   ) : company ? (
     <FallBackImage companyName={company} />
   ) : (
@@ -135,6 +135,7 @@ const JobCard = ({ data }: IJobCardProps) => {
           .group-tag {
             display: flex;
             align-items: center;
+            padding: 0px;
           }
           .applyButton {
             width: 100px;
@@ -178,9 +179,38 @@ const JobCard = ({ data }: IJobCardProps) => {
             }
           }
 
+          @media (max-width: 768px) {
+            .location h6 {
+              font-size: 8px;
+              padding: 0px;
+              font-weight: bold;
+            }
+            .location {
+              padding: 8px;
+            }
+            h3 {
+              font-size: 12px;
+            }
+            h2.company {
+              font-size: 14px;
+            }
+            .column-3 {
+              width: 25%;
+            }
+          }
+
           @media (max-width: 500px) {
             .applyButton {
               display: none;
+            }
+            .cardText {
+              width: 80%;
+            }
+            .column-3 {
+              width: fit-content;
+            }
+            .location {
+              width: fit-content;
             }
           }
         `}

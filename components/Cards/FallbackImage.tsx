@@ -18,9 +18,9 @@ export default function FallBackImage({ companyName }) {
           justify-content: center;
           margin: 10px;
         }
-        .fallbackImage h4{
+        .fallbackImage h4 {
           margin: 0px;
-        } 
+        }
         .company-logo-letter h4 {
           font-family: "Nunito", sans-serif;
           font-weight: 700;
@@ -36,6 +36,30 @@ export default function FallBackImage({ companyName }) {
           }
           .company-logo-letter h4 {
             font-size: 25px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .company-logo-letter h4 {
+            font-size: 20px;
+            padding: 0px;
+          }
+
+          .company-logo-letter {
+            width: 60px;
+            height: 50px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .company-logo-letter h4 {
+            font-size: 16px;
+            padding: 0px;
+          }
+
+          .company-logo-letter {
+            width: 50px;
+            height: 40px;
           }
         }
       `}</style>

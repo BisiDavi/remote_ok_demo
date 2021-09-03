@@ -117,6 +117,20 @@ span.formSubscribe span p {
   }
 }
 
+@media (max-width: 768px) {
+  .EmailForm p {
+    font-size: 14px;
+  }
+  .cancelEmailForm {
+    right: 5px;
+    top: 5px;
+    font-size: 15px;
+    padding: 0px;
+    height: 25px;
+    width: 25px;
+  }
+}
+
 @media (max-width: 480px) {
   .SearchIcon span {
     border-radius: 0px;

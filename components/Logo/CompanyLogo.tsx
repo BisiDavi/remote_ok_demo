@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 
-export default function CompanyLogo({ logo }) {
+export default function CompanyLogo({ data }) {
   return (
     <>
       <div className="logo">
-        {logo ? (
-          <img src={logo} className="companyLogo" alt={logo} />
+        {data.logo ? (
+          <img src={data.logo} className="companyLogo" alt={data.company} />
         ) : (
           <div className="loader" />
         )}
@@ -37,6 +37,8 @@ export default function CompanyLogo({ logo }) {
               height: 100%;
               width: 70px;
             }
+          }
+          @media screen and (max-width: 768px) {
           }
           @media screen and (max-width: 480px) {
             .companyLogo {

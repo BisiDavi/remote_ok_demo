@@ -4,7 +4,6 @@ import colors from "@utils/colors";
 export default function Tags({ tags }) {
   const { dark } = useTheme();
   const tagStyle = dark ? "dark" : "light";
-  console.log("tags", tags);
 
   if (tags !== undefined && tags.length > 0) {
     const fourTags = tags.slice(0, 4);
@@ -52,6 +51,12 @@ export default function Tags({ tags }) {
             margin: 0px 5px;
             padding: 0.33em;
             border-radius: 6px;
+          }
+          @media (max-width: 768px) {
+            .skilltag {
+              font-size: 9px;
+              padding: 5px;
+            }
           }
         `}</style>
       </>
