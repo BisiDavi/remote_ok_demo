@@ -55,31 +55,31 @@ export default function PreviewCard({ dark, data }) {
         )}
       </div>
       <style jsx>{`
-          .role-tag {
-            color: #0f1115;
-            margin: 0px 5px;
-            padding: 0.33em;
-            border-radius: 6px;
-          }
-          .light {
-            color: ${colors.black};
-            border: 2px solid ${colors.black};
-          }
-          .dark {
-            color: ${colors.white};
-            border: 2px solid ${colors.white};
-          }
-          .company {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            width: 60%;
-            margin-left: 30px;
-          }        
-          .tag-group {
-            display: flex;
-            align-items: center;
-          }
+        .role-tag {
+          color: #0f1115;
+          margin: 0px 5px;
+          padding: 0.33em;
+          border-radius: 6px;
+        }
+        .light {
+          color: ${colors.black};
+          border: 2px solid ${colors.black};
+        }
+        .dark {
+          color: ${colors.white};
+          border: 2px solid ${colors.white};
+        }
+        .company {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          width: 60%;
+          margin-left: 30px;
+        }        
+        .tag-group {
+          display: flex;
+          align-items: center;
+        }
 
         .highlight.content {
           background-color: #c13a3a;
@@ -144,15 +144,16 @@ export default function PreviewCard({ dark, data }) {
             display: flex;
             align-items: flex-start;
           }
-
-        .content {
-              flex-direction: column;
-              padding: 0px;
-              display: flex;
-              align-items: flex-start;
-              justify-content: flex-start;
-              margin: 0px;
+          .content {
+            flex-direction: column;
+            padding: 0px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin: 0px;
+            margin-left: 30px;
           }
+
          .logoContainer{
             height: fit-content;
             margin-bottom: 0px;
@@ -168,8 +169,9 @@ export default function PreviewCard({ dark, data }) {
             width: 100%;
             height:unset;
           }
-          .company h4, .company h3 {
-              margin: 10px 0px;
+          .company h4, 
+          .company h3 {
+            margin: 10px 0px;
           }
           .role-tag {
             justify-content: center;
