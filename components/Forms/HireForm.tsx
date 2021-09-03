@@ -35,7 +35,7 @@ export default function HireForm() {
           company: "",
           position: "",
           primaryTag: "",
-          tags: [],
+          tags: "",
           location: "",
           showLogo: true,
           sendEmail: true,
