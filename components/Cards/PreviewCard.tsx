@@ -89,7 +89,7 @@ export default function PreviewCard({ dark, data }) {
           display: flex;
           align-items: center;
           padding: 0px 40px;
-          border-radius: 10px;
+          border-radius: 0px;
           align-items-center;
         }
         
@@ -124,26 +124,52 @@ export default function PreviewCard({ dark, data }) {
               font-size: 12px;
           } 
         }
+        @media (max-width: 768px) {
+          .company {
+              width: 65%;
+          }
 
+          .highlight.content {
+              width: 100%;
+              padding: 0px 10px;
+          }
+        }
         @media (max-width: 500px) {
           .company {
             flex-direction: column;
             margin-bottom: 10px;
+            padding: 0px;
+            width: 100%;
+            margin: 0px;
+            display: flex;
             align-items: flex-start;
-            margin: auto;
-            align-items: center;
+          }
+
+        .content {
+              flex-direction: column;
+              padding: 0px;
+              display: flex;
+              align-items: flex-start;
+              justify-content: flex-start;
+              margin: 0px;
           }
          .logoContainer{
-            height: 60px;
-            margin-bottom: 20px;
-            margin-top: -15px;
-         }
-         .text{
-           height:60px;
-         }
+            height: fit-content;
+            margin-bottom: 0px;
+            margin-top: 10px;
+         }        
          .tag-group {
-            flex-flow: inherit;
-            margin-top: 0px;
+            display: flex;
+            flex-direction: row;
+            margin: 5px 0px;
+            padding: 0px;
+          }
+          .text {
+            width: 100%;
+            height:unset;
+          }
+          .company h4, .company h3 {
+              margin: 10px 0px;
           }
           .role-tag {
             justify-content: center;

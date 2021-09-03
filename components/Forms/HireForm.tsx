@@ -237,7 +237,7 @@ export default function HireForm() {
             align-items: center;
           }
           .preview-post {
-            margin-bottom: 10%;
+            margin-bottom: 20%;
           }
           .checkbox-group .tag {
             margin: 0px 10px;
@@ -375,6 +375,12 @@ export default function HireForm() {
               flex-direction: column;
               align-items: flex-start;
               margin: 5px 0;
+            }
+            aside.aside {
+              display: none;
+            }
+            .hire-remotely-form {
+              width: 100%;
             }
           }
 

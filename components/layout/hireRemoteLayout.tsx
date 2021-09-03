@@ -112,7 +112,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           @media (max-width: 1024px) {
             .companyLogos {
               grid-gap: 5px;
-            }           
+            }
           }
           @media (max-width: 768px) {
             .row.hire-now {
@@ -135,7 +135,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             }
             main.main {
               flex-direction: column;
-            }           
+            }
             .companyLogos {
               grid-gap: 5px;
             }
@@ -143,6 +143,26 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               display: flex;
               flex-direction: column;
               text-align: center;
+            }
+
+            footer.footer {
+              width: 100%;
+            }
+
+            footer button {
+              border: none;
+              border-radius: 5px;
+              padding: 10px 20px;
+              background-color: red;
+              font-weight: bold;
+              color: white;
+              font-size: 20px;
+              width: 300px;
+              font-size: 18px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 15px auto 0px;
             }
           }
           @media (max-width: 500px) {
@@ -158,7 +178,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               height: 40px;
               font-size: 20px;
               width: 80%;
-              margin: 10px auto 20px auto;
+              margin: 10px auto 0px;
             }
           }
         `}

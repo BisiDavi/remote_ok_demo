@@ -67,6 +67,11 @@ export default function Logo({ color = "white" }: LogoProps) {
               line-height: 22px;
               font-size: 20px;
             }
+            .logo {
+              height: 0px;
+              margin: 0px;
+              line-height: 0px;
+            }
           }
         `}
       </style>

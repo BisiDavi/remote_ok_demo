@@ -134,6 +134,20 @@ function TextArea({ content, ...props }: FormFieldProps) {
               font-size: 14px;
             }
           }
+          @media (max-width: 500px) {
+            .textarea textarea {
+              width: 100%;
+              height: 100px;
+            }
+            .textarea label {
+              margin: 10px 0px;
+            }
+            .textarea {
+              flex-direction: column;
+              align-items: flex-start;
+              width: 100%;
+            }
+          }
         `}
       </style>
     </>
