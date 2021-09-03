@@ -1,12 +1,8 @@
 import { useSelector } from "react-redux";
-import dynamic from "next/dynamic";
-
 import PreviewCard from "@components/Cards/PreviewCard";
 import useTheme from "@hooks/useTheme";
 import Button from "@components/Buttons";
 import styles from "./PreviewPost.module.css";
-
-const MarkdownFormatter = dynamic(() => import("../Cards/MarkdownFormatter"));
 
 export default function PreviewPost() {
   const { jobDetails } = useSelector((state) => state.postJob);
@@ -23,14 +19,10 @@ export default function PreviewPost() {
                 {jobDetails?.company} is hiring a Remote {jobDetails?.position}{" "}
               </h1>
             )}
-            {jobDetails?.howToApply && (
-              <MarkdownFormatter content={jobDetails?.description} />
-            )}
+            {jobDetails?.howToApply && <p>{jobDetails?.description}</p>}
             <div className="toApply">
               <h3 className="text-center">How do you apply?</h3>
-              {jobDetails?.howToApply && (
-                <MarkdownFormatter content={jobDetails?.howToApply} />
-              )}
+              {jobDetails?.howToApply && <p>{jobDetails?.howToApply}</p>}
               <a
                 target="_blank"
                 className={styles.appyUrl}

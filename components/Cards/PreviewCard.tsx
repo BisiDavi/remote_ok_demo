@@ -4,10 +4,7 @@ import Logo from "@components/Logo";
 
 export default function PreviewCard({ dark, data }) {
   const highlightPost = data?.highlightPost ? "highlight" : "";
-  console.log("data", data);
-
   const themeState = dark ? "#fff" : "black";
-
   const tagStyle = dark ? "dark" : "light";
 
   return (

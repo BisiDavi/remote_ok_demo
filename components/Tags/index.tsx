@@ -1,6 +1,8 @@
 import useTheme from "@hooks/useTheme";
 import colors from "@utils/colors";
 
+let number = 0;
+
 export default function Tags({ tags }) {
   const { dark } = useTheme();
   const tagStyle = dark ? "dark" : "light";
@@ -11,7 +13,7 @@ export default function Tags({ tags }) {
       <>
         <li
           className={`skilltag ${tagStyle} list-unstyled m-2 btn btn-outline-dark h-25`}
-          key={`${tag}-${index}}`}
+          key={`${tag}-${index}}}`}
         >
           {tag}
         </li>

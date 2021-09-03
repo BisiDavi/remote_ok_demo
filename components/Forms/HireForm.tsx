@@ -1,17 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
+import { useState } from "react";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import useTheme from "@hooks/useTheme";
 import FormElement from "@components/Forms/formElements";
 import { PostJobAction } from "@stores/postJobAction";
+import axios from "axios";
 import FormCard from "./FormCard";
 import PreviewPost from "@components/Post/PreviewPost";
 import hireRemoteForm from "@json/hire-remote-form.json";
 import hireFormSchema from "./hireFormSchema";
 import colors from "@utils/colors";
+import Loading from "@components/Lazyload/loading";
 
 export default function HireForm() {
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
   const { dark } = useTheme();
   const cardStyle = dark ? "dark" : "light";
 
@@ -37,8 +41,19 @@ export default function HireForm() {
           feedback: "",
         }}
         validationSchema={hireFormSchema}
-        onSubmit={(values) => {
+        onSubmit={async (values) => {
           console.log("form submitted", values);
+          setLoading(true);
+          await axios
+            .post("/job", values)
+            .then((response) => {
+              console.log("response", response);
+              setLoading(false);
+            })
+            .catch((error) => {
+              console.error("error", error);
+              setLoading(false);
+            });
         }}
       >
         {({
@@ -52,6 +67,7 @@ export default function HireForm() {
           dispatch(PostJobAction(values));
           return (
             <>
+              {loading && <Loading />}
               <div className="hire-remotely-form">
                 <form className="remote-form">
                   <FormCard title={hireRemoteForm.start.title}>
@@ -187,7 +203,7 @@ export default function HireForm() {
                   </div>
                 </div>
                 <div className="post-job">
-                  <button onClick={handleSubmit}>
+                  <button type="submit" onClick={handleSubmit}>
                     Post your demo job - Free
                   </button>
                   <p>Any posted job, shows only on this platform.</p>

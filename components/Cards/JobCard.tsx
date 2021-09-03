@@ -69,12 +69,12 @@ const JobCard = ({ data }: IJobCardProps) => {
               </ul>
             </div>
           </div>
-          <div className="column-3">
+          <div className={`${styles.column3} column-3`}>
             <div className={`${styles.duration} date`}>{PostJobAt(date)}</div>
             <div className="applyButton">
               {showApplyButton ? (
                 <a target="_blank" rel="noreferrer" href={apply_url}>
-                  <Button btnClassName={styles.applyBtn} text="Apply" />
+                  <Button text="Apply" />
                 </a>
               ) : null}
             </div>

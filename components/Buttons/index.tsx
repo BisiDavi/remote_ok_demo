@@ -1,7 +1,5 @@
 interface AppProps {
-  text: string;
-  btnClassName?: string;
-  buttonColor?: string;
+  text: string;    
   type?: "submit" | "reset" | "button";
   onClick?: () => void;
   disabled?: boolean;

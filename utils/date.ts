@@ -14,10 +14,6 @@ export function PostJobAt(date) {
   const diffMonths = diffTimeFn(diffTime, 24 * 30);
   const diffYears = diffTimeFn(diffTime, 24 * 30 * 12);
 
-  console.log("diff days", diffDays);
-  console.log("diff weeks", diffWeeks);
-  console.log("diff months", diffMonths);
-
   if (diffDays < 2) {
     result = diffHours;
     return `${result} h`;
