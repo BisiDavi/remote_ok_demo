@@ -59,6 +59,14 @@ export default function Logo({ color = "white" }: LogoProps) {
               position: absolute;
               z-index: 400;
             }
+            .logo-text h3 {
+              font-size: 25px;
+              line-height: 27px;
+            }
+            .logo p.motto {
+              line-height: 22px;
+              font-size: 20px;
+            }
           }
         `}
       </style>

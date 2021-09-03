@@ -116,6 +116,12 @@ export default function Header() {
               font-size: 12px;
               position: unset;
             }
+
+            .content {
+              align-items: center;
+              margin: auto;
+              justify-content: center;
+            }
           }
         `}
       </style>
