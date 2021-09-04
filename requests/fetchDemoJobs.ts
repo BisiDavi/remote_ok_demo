@@ -1,5 +1,5 @@
-import axios from 'axios'
+import axios from "axios";
 
-export default async function fetchDemoJobs(){
-    await axios.get("/api/job")
+export default async function fetchDemoJobs() {
+  return await axios.get("/api/job");
 }
