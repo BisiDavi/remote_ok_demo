@@ -21,10 +21,12 @@ interface Props {
   jobsFromDb?: string;
 }
 
-const Home: NextPage<Props> = ({
-  availableJobs,
-  jobsFromDb,
-}: Props): JSX.Element => {
+// {
+//   availableJobs,
+//   jobsFromDb,
+// }: Props
+
+const Home: NextPage<Props> = (): JSX.Element => {
   const { dark } = useTheme();
   const [showEmail, setEmail] = useState<boolean>(true);
   const [hidePostJobCard, setHideCard] = useState<boolean>(true);
@@ -32,7 +34,7 @@ const Home: NextPage<Props> = ({
   const hideCard = () => setHideCard(false);
   const hideEmail = () => setEmail(false);
 
-  const postedJobs = JSON.parse(jobsFromDb);
+  // const postedJobs = JSON.parse(jobsFromDb);
 
   const themeClass = dark ? "dark" : "light";
 
@@ -48,8 +50,8 @@ const Home: NextPage<Props> = ({
             />
           </div>
           <WorldwideJobForm themeClass={themeClass} />
-          <AvailableJobs availableJobs={postedJobs} />
-          <AvailableJobs availableJobs={availableJobs} />
+          {/* <AvailableJobs availableJobs={postedJobs} />
+          <AvailableJobs availableJobs={availableJobs} /> */}
         </div>
       </main>
       <EmailSubscriberForm showEmail={showEmail} cancelEmail={hideEmail} />
@@ -117,21 +119,21 @@ const Home: NextPage<Props> = ({
   );
 };
 
-export async function getServerSideProps(): Promise<any> {
-  let result, jobsFromDb;
-  await connectToDatabase();
-  await Jobs.find().then((job) => {
-    jobsFromDb = JSON.stringify(job);
-  });
+// export async function getServerSideProps(): Promise<any> {
+//   let result, jobsFromDb;
+//   await connectToDatabase();
+//   await Jobs.find().then((job) => {
+//     jobsFromDb = JSON.stringify(job);
+//   });
 
-  await axios.get("https://remoteok.io/api").then((response) => {
-    result = response.data;
-  });
+//   await axios.get("https://remoteok.io/api").then((response) => {
+//     result = response.data;
+//   });
 
-  const availableJobs = result.filter((job) => job.slug);
-  return {
-    props: { availableJobs, jobsFromDb },
-  };
-}
+//   const availableJobs = result.filter((job) => job.slug);
+//   return {
+//     props: { availableJobs, jobsFromDb },
+//   };
+// }
 
 export default Home;

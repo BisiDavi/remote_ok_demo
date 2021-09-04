@@ -24,6 +24,7 @@
       "@utils/*": ["utils/*"],
       "@styles/*": ["styles/*"],
       "@stores/*": ["stores/*"],
+      "@requests/*": ["requests/*"],
       "@json/*": ["json/*"],
       "@hooks/*": ["hooks/*"]
     }
