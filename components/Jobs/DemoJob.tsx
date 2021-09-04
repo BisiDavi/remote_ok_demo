@@ -23,9 +23,8 @@ export default function Demojobs({ theme }) {
       });
   }, []);
 
-  console.log("jobs.demoJobs", jobs);
   function fetchMoreData() {
-    if (jobs.demoJobs !== null && jobs.demoJobs.length > 1) {
+    if (jobs.demoJobs.length >= 1) {
       setJobs({ ...jobs, hasMore: false });
       return;
     }
@@ -36,7 +35,7 @@ export default function Demojobs({ theme }) {
       next={fetchMoreData}
       hasMore={jobs.hasMore}
       loader={<JobLoader theme={theme} />}
-      endMessage={<p>End</p>}
+      endMessage={<p></p>}
     >
       <AvailableJobs availableJobs={jobs.demoJobs} />
     </InfiniteScroll>

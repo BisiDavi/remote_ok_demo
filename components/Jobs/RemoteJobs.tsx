@@ -13,7 +13,8 @@ export default function Remotejobs({ theme }) {
   useEffect(() => {
     fetchRemoteJobs()
       .then((response) => {
-        setJobs({ ...jobs, remoteJobs: response.data });
+        const mainJobs = response.data.filter((job) => job.company);
+        setJobs({ ...jobs, remoteJobs: mainJobs });
         return response.data;
       })
       .catch((error) => {
