@@ -8,8 +8,6 @@ import {
 } from "@imports/.";
 import useTheme from "@hooks/useTheme";
 import colors from "@utils/colors";
-import fetchRemoteJobs from "@requests/fetchRemoteJobs";
-import fetchDemoJobs from "@requests/fetchDemoJobs";
 import Demojobs from "@components/Jobs/DemoJob";
 import Remotejobs from "@components/Jobs/RemoteJobs";
 

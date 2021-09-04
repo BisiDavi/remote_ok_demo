@@ -9,10 +9,8 @@ export default function Remotejobs() {
     remoteJobs: null,
     hasMore: true,
   });
+  console.log("jobs", jobs);
   function fetchMoreData() {
-    if (jobs.remoteJobs.length >= 95) {
-      setJobs({ ...jobs, hasMore: false });
-    }
     fetchRemoteJobs()
       .then((response) => {
         setJobs({ ...jobs, remoteJobs: response.data });
@@ -22,6 +20,9 @@ export default function Remotejobs() {
         console.error("error", error);
         return error;
       });
+    if (jobs.remoteJobs?.length >= 95) {
+      setJobs({ ...jobs, hasMore: false });
+    }
   }
   return (
     <InfiniteScroll

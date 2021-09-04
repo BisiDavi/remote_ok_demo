@@ -34,10 +34,8 @@ const JobCard = ({ data }: IJobCardProps) => {
 
   const displayCompanyLogo = logo ? (
     <CompanyLogo data={data} />
-  ) : company ? (
-    <FallBackImage themeStyle={cardStyle} companyName={company} />
   ) : (
-    <FallBackImage companyName={company} />
+    company && <FallBackImage themeStyle={cardStyle} companyName={company} />
   );
 
   const Checkworldwide = (location) => {
@@ -64,7 +62,7 @@ const JobCard = ({ data }: IJobCardProps) => {
               <span className={`${styles.mobileRow} mobileRow`}>
                 <h2 className="company">{company}</h2>
                 <h3>{position}</h3>
-                {location.length > 2 ? (
+                {location?.length > 2 ? (
                   <div className={`${styles.location} location`}>
                     <h6>{Checkworldwide(location)}</h6>
                   </div>

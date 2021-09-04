@@ -4,15 +4,12 @@ import AvailableJobs from "@components/Cards/AvailableJobs";
 import fetchDemoJobs from "@requests/fetchDemoJobs";
 
 export default function Demojobs() {
-  const [jobs, setJobs] = useState({
+  const [jobs, setJobs] = useState<jobState>({
     number: 1,
     demoJobs: null,
     hasMore: true,
   });
   function fetchMoreData() {
-    if (jobs.demoJobs.length >= 1) {
-      setJobs({ ...jobs, hasMore: false });
-    }
     fetchDemoJobs()
       .then((response) => {
         setJobs({ ...jobs, demoJobs: response.data.result });
@@ -22,6 +19,9 @@ export default function Demojobs() {
         console.error("error", error);
         return error;
       });
+    if (jobs.demoJobs?.length >= 1) {
+      setJobs({ ...jobs, hasMore: false });
+    }
   }
   return (
     <InfiniteScroll
@@ -34,3 +34,9 @@ export default function Demojobs() {
     </InfiniteScroll>
   );
 }
+
+type jobState = {
+  number: number;
+  demoJobs: null | [];
+  hasMore: boolean;
+};
