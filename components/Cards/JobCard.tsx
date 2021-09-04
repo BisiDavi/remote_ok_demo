@@ -10,7 +10,7 @@ import Tags from "@components/Tags";
 
 const DynamicJobDescription = dynamic(() => import("./JobdescriptionCard"));
 
-const JobCard = ({ data }: IJobCardProps) => {
+const JobCard = ({ data, demo }: IJobCardProps) => {
   const [showApplyButton, setShowApplyButton] = useState(false);
   const [showJobDescription, setJobDescription] = useState(false);
   const { dark } = useTheme();
@@ -56,6 +56,7 @@ const JobCard = ({ data }: IJobCardProps) => {
         className={`${styles.card} ${cardStyle} card`}
       >
         <div className={`${styles.row} content`}>
+          {demo && <div className="demo">Demo Job</div>}
           <div className="logo">{displayCompanyLogo}</div>
           <div className={`${styles.companyprofile} companyprofile`}>
             <div className={`${styles.cardText} cardText`}>
@@ -96,6 +97,16 @@ const JobCard = ({ data }: IJobCardProps) => {
       {showJobDescription && <DynamicJobDescription content={data} />}
       <style jsx>
         {`
+          .demo {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            padding: 2px 10px;
+            font-family: "Pacifico";
+          }
           .card {
             border: 1px solid gray;
             display: flex;
@@ -124,6 +135,7 @@ const JobCard = ({ data }: IJobCardProps) => {
             margin: 1px 0px;
           }
           .card .content {
+            position: relative;
             padding: 10px 20px;
             display: flex;
             align-items: center;
@@ -233,4 +245,5 @@ export interface IJobCardProps {
     createdAt?: string;
     apply_url: string;
   };
+  demo?: boolean;
 }

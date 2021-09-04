@@ -37,7 +37,7 @@ export default function Demojobs({ theme }) {
       loader={<JobLoader theme={theme} />}
       endMessage={<p></p>}
     >
-      <AvailableJobs availableJobs={jobs.demoJobs} />
+      <AvailableJobs availableJobs={jobs.demoJobs}  demo/>
     </InfiniteScroll>
   ) : (
     <JobLoader theme={theme} />
