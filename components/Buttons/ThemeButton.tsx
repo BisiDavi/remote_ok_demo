@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import toggleThemeAction from "@stores/toggleThemeAction";
 import useTheme from "@hooks/useTheme";

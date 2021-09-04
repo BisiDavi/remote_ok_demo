@@ -1,5 +1,4 @@
-import { setStorage } from "../utils/localStorage";
-import { PERSIST_THEME, TOGGLE_THEME } from "./constants";
+import {  TOGGLE_THEME } from "./constants";
 
 export default function ThemeReducer(
   state = {
@@ -14,10 +13,6 @@ export default function ThemeReducer(
         ...state,
         dark: !state.dark,
       };
-    }
-    case PERSIST_THEME: {
-      setStorage(state.dark);
-      return state;
     }
     default:
       return state;
