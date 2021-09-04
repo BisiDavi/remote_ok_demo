@@ -1,20 +1,16 @@
-import { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import AvailableJobs from "@components/Cards/AvailableJobs";
 import fetchRemoteJobs from "@requests/fetchRemoteJobs";
 import JobLoader from "@components/Loading/JobLoader";
 
 export default function Remotejobs({ theme }) {
-  const [jobs, setJobs] = useState({
-    number: 20,
+  const [jobs, setJobs] = useState<jobState>({
     remoteJobs: null,
     hasMore: true,
   });
-  console.log("jobs", jobs);
-  function fetchMoreData() {
-    if (jobs.remoteJobs?.length >= 90) {
-      setJobs({ ...jobs, hasMore: false });
-    }
+  useEffect(() => {
     fetchRemoteJobs()
       .then((response) => {
         setJobs({ ...jobs, remoteJobs: response.data });
@@ -24,10 +20,19 @@ export default function Remotejobs({ theme }) {
         console.error("error", error);
         return error;
       });
+  }, []);
+
+  console.log("jobs", jobs);
+
+  function fetchMoreData() {
+    if (jobs.remoteJobs.length >= 90) {
+      setJobs({ ...jobs, hasMore: false });
+      return;
+    }
   }
-  return (
+  return jobs.remoteJobs ? (
     <InfiniteScroll
-      dataLength={10}
+      dataLength={jobs.remoteJobs.length}
       next={fetchMoreData}
       hasMore={jobs.hasMore}
       loader={<JobLoader theme={theme} />}
@@ -35,5 +40,12 @@ export default function Remotejobs({ theme }) {
     >
       <AvailableJobs availableJobs={jobs.remoteJobs} />
     </InfiniteScroll>
+  ) : (
+    <JobLoader theme={theme} />
   );
 }
+
+type jobState = {
+  remoteJobs: null | [];
+  hasMore: boolean;
+};

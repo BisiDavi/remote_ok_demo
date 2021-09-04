@@ -21,13 +21,6 @@ export default function AvailableJobs({ availableJobs }) {
       <div className="available-jobs">
         {(availableJobs || worldwideJobs) && displayJobs()}
       </div>
-      <style jsx>
-        {`
-          .available-jobs {
-            padding-bottom: 5%;
-          }
-        `}
-      </style>
     </>
   );
 }

@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import AvailableJobs from "@components/Cards/AvailableJobs";
 import fetchDemoJobs from "@requests/fetchDemoJobs";
 import JobLoader from "@components/Loading/JobLoader";
 
-export default function Demojobs({theme}) {
+export default function Demojobs({ theme }) {
   const [jobs, setJobs] = useState<jobState>({
-    number: 1,
     demoJobs: null,
     hasMore: true,
   });
-  function fetchMoreData() {
-    if (jobs.demoJobs?.length > 1) {
-      setJobs({ ...jobs, hasMore: false });
-    }
+
+  useEffect(() => {
     fetchDemoJobs()
       .then((response) => {
         setJobs({ ...jobs, demoJobs: response.data.result });
@@ -23,21 +21,31 @@ export default function Demojobs({theme}) {
         console.error("error", error);
         return error;
       });
+  }, []);
+
+  console.log("jobs.demoJobs", jobs);
+  function fetchMoreData() {
+    if (jobs.demoJobs !== null && jobs.demoJobs.length > 1) {
+      setJobs({ ...jobs, hasMore: false });
+      return;
+    }
   }
-  return (
+  return jobs.demoJobs ? (
     <InfiniteScroll
-      dataLength={10}
+      dataLength={jobs.demoJobs.length}
       next={fetchMoreData}
       hasMore={jobs.hasMore}
       loader={<JobLoader theme={theme} />}
+      endMessage={<p>End</p>}
     >
       <AvailableJobs availableJobs={jobs.demoJobs} />
     </InfiniteScroll>
+  ) : (
+    <JobLoader theme={theme} />
   );
 }
 
 type jobState = {
-  number: number;
   demoJobs: null | [];
   hasMore: boolean;
 };
