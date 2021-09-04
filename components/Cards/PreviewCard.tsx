@@ -151,7 +151,7 @@ export default function PreviewCard({ dark, data }) {
             align-items: flex-start;
             justify-content: flex-start;
             margin: 0px;
-            margin-left: 30px;
+            padding:15px;
           }
 
          .logoContainer{

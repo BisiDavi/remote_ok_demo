@@ -158,6 +158,13 @@ export default function HireForm() {
                       />
                     ))}
                   </FormCard>
+                  <button
+                    type="submit"
+                    className="showOnlyMobile"
+                    onClick={() => submitForm(handleSubmit)}
+                  >
+                    Post your demo job - Free
+                  </button>
                 </form>
                 <div className="preview-post">
                   <FormCard title={hireRemoteForm.preview.title}>
@@ -311,7 +318,8 @@ export default function HireForm() {
           .yellow.content {
             background-color: #fff9c9;
           }
-          .post-job button {
+          .post-job button,
+          .showOnlyMobile {
             width: 100%;
             background-color: #ff4742;
             border: none;
@@ -324,6 +332,14 @@ export default function HireForm() {
             cursor: pointer;
           }
 
+          button.showOnlyMobile {
+            width: 70%;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+          }
           .links {
             display: flex;
             align-items: center;
@@ -384,6 +400,20 @@ export default function HireForm() {
             }
           }
 
+          @media (min-width: 500px) {
+            .showOnlyMobile {
+              display: none;
+            }
+          }
+
+          @media (max-width: 500px) {
+            .showOnlyMobile {
+              display: flex;
+            }
+            .remote-form {
+              position: relative;
+            }
+          }
           @media (max-width: 768px) and (min-width: 480px) {
             .checkbox-group .tag {
               font-size: 11px;

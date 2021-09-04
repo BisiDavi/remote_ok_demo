@@ -39,7 +39,6 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
           </main>
           <footer className={`footer ${cardStyle}`}>
             <div className="post-job mobile-only">
-              <button>Post your demo job - Free</button>
               <p className="mb-0">
                 Any posted job, shows only on this platform.
               </p>
@@ -101,6 +100,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             bottom: 0;
             background-color: white;
             width: 75%;
+            z-index: 1000;
           }
 
           .vistLink {
@@ -170,7 +170,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
               display: none;
             }
             footer {
-              height: 250px;
+              height: 200px;
               overflow-y: scroll;
               z-index: 100;
             }

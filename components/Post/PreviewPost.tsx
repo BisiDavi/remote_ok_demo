@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import PreviewCard from "@components/Cards/PreviewCard";
 import useTheme from "@hooks/useTheme";
-import Button from "@components/Buttons";
 import styles from "./PreviewPost.module.css";
 
 export default function PreviewPost() {
@@ -23,9 +22,6 @@ export default function PreviewPost() {
             <div className="toApply">
               <h3>How do you apply?</h3>
               {jobDetails?.howToApply && <p>{jobDetails?.howToApply}</p>}
-              <a className={styles.appyUrl}>
-                <Button disabled text="Apply for this job" />
-              </a>
             </div>
           </div>
         </div>
