@@ -1,3 +1,7 @@
+.jobLoader {
+  margin-top: -4%;
+}
+
 @media (max-width: 768px) {
   .loading a {
     height: 100px;
@@ -9,5 +13,11 @@
 
   .loading span {
     margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .jobLoader {
+    margin-top: -10%;
   }
 }

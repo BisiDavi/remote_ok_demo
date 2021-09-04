@@ -1,5 +1,10 @@
-import { TOGGLE_THEME } from "./constants";
+import { TOGGLE_THEME,PERSIST_THEME } from "./constants";
 
-const toggleThemeAction = () => (dispatch) => dispatch({ type: TOGGLE_THEME });
+const toggleThemeAction = () => (dispatch) => {
+    dispatch({ type: TOGGLE_THEME })
+    dispatch({ type: PERSIST_THEME })
+
+}
+    ;
 
 export default toggleThemeAction;

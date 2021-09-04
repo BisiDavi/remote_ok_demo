@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import toggleThemeAction from "@stores/toggleThemeAction";
 import useTheme from "@hooks/useTheme";
@@ -6,7 +7,7 @@ import useTheme from "@hooks/useTheme";
 export default function ThemeButton() {
   const { dark } = useTheme();
   const dispatch = useDispatch();
-
+  
   const themeState = dark ? "/moon.png" : "/sun.svg";
 
   function themeHandler() {

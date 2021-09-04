@@ -61,16 +61,16 @@ export default function Logo({ color = "white" }: LogoProps) {
             }
             .logo-text h3 {
               font-size: 25px;
-              line-height: 27px;
+              line-height: 30px;
             }
             .logo p.motto {
-              line-height: 22px;
+              line-height: 30px;
               font-size: 20px;
             }
             .logo {
               height: 0px;
               margin: 0px;
-              line-height: 0px;
+              line-height: 30px;
             }
           }
         `}

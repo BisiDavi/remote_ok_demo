@@ -109,7 +109,7 @@ const JobCard = ({ data, demo }: IJobCardProps) => {
             font-family: "Pacifico";
           }
           .card {
-            border: 1px solid gray;
+            border: 1px solid #dddddd;
             display: flex;
             align-items: center;
             margin: 15px 0px;
@@ -141,6 +141,7 @@ const JobCard = ({ data, demo }: IJobCardProps) => {
             display: flex;
             align-items: center;
             justify-content: space-around;
+            border: 1px solid #dddddd;
             width: 100%;
           }
           .group-tag {
@@ -212,7 +213,7 @@ const JobCard = ({ data, demo }: IJobCardProps) => {
           }
 
           @media (max-width: 500px) {
-            .demo{
+            .demo {
               font-size: 13px;
             }
             .applyButton {
