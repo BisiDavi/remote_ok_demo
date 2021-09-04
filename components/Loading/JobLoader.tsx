@@ -8,7 +8,7 @@ export default function JobLoader({ theme }) {
       foregroundColor={"#999"}
       height="100%"
       width="100%"
-      style={{ marginTop: "-4%" }}
+      style={{ marginTop: "-10%" }}
       speed={1}
     >
       <rect y="50" width="100%" height="100%" />

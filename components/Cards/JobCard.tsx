@@ -105,6 +105,7 @@ const JobCard = ({ data, demo }: IJobCardProps) => {
             right: 0px;
             top: 0px;
             padding: 2px 10px;
+            font-size: 16px;
             font-family: "Pacifico";
           }
           .card {
@@ -211,6 +212,9 @@ const JobCard = ({ data, demo }: IJobCardProps) => {
           }
 
           @media (max-width: 500px) {
+            .demo{
+              font-size: 13px;
+            }
             .applyButton {
               display: none;
             }
