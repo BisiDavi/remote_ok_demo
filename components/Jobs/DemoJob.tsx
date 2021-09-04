@@ -1,15 +1,19 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import AvailableJobs from "@components/Cards/AvailableJobs";
 import fetchDemoJobs from "@requests/fetchDemoJobs";
+import JobLoader from "@components/Loading/JobLoader";
 
-export default function Demojobs() {
+export default function Demojobs({theme}) {
   const [jobs, setJobs] = useState<jobState>({
     number: 1,
     demoJobs: null,
     hasMore: true,
   });
   function fetchMoreData() {
+    if (jobs.demoJobs?.length > 1) {
+      setJobs({ ...jobs, hasMore: false });
+    }
     fetchDemoJobs()
       .then((response) => {
         setJobs({ ...jobs, demoJobs: response.data.result });
@@ -19,16 +23,13 @@ export default function Demojobs() {
         console.error("error", error);
         return error;
       });
-    if (jobs.demoJobs?.length >= 1) {
-      setJobs({ ...jobs, hasMore: false });
-    }
   }
   return (
     <InfiniteScroll
       dataLength={10}
       next={fetchMoreData}
       hasMore={jobs.hasMore}
-      loader={<h4>Loading ...</h4>}
+      loader={<JobLoader theme={theme} />}
     >
       <AvailableJobs availableJobs={jobs.demoJobs} />
     </InfiniteScroll>

@@ -13,7 +13,7 @@ import PreviewPost from "@components/Post/PreviewPost";
 import hireRemoteForm from "@json/hire-remote-form.json";
 import hireFormSchema from "./hireFormSchema";
 import colors from "@utils/colors";
-import Loading from "@components/Lazyload/loading";
+import Loading from "@components/Loading/loading";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function HireForm() {

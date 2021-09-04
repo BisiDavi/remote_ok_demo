@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Layout,
   NavMenu,
@@ -10,7 +10,7 @@ import useTheme from "@hooks/useTheme";
 import colors from "@utils/colors";
 import Demojobs from "@components/Jobs/DemoJob";
 import Remotejobs from "@components/Jobs/RemoteJobs";
-
+import JobLoader from "@components/Loading/JobLoader";
 
 export default function Home(): JSX.Element {
   const { dark } = useTheme();
@@ -34,8 +34,8 @@ export default function Home(): JSX.Element {
             />
           </div>
           <WorldwideJobForm themeClass={themeClass} />
-          <Demojobs />
-          <Remotejobs />
+          <Demojobs theme={themeClass} />
+          <Remotejobs theme={themeClass}/>
         </div>
       </main>
       <EmailSubscriberForm showEmail={showEmail} cancelEmail={hideEmail} />

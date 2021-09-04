@@ -6,7 +6,7 @@ import { Button } from "@imports/.";
 import styles from "./forms.module.css";
 import subscriberSchema from "./subscriberSchema";
 import FormElement from "./formElements";
-import Loading from "@components/Lazyload/loading";
+import Loading from "@components/Loading/loading";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function EmailSubscriberForm({ showEmail, cancelEmail }) {

@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import NProgress from "nprogress";
 import Router from "next/router";
 import store from "@stores/store";
-import Loading from "@components/Lazyload/loading";
+import Loading from "@components/Loading/loading";
 import "nprogress/nprogress.css";
 import "../styles/globals.css";
 
