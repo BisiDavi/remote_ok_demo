@@ -46,8 +46,6 @@ export default function Tags({ tags }) {
             list-style: none;
           }
           .role-tag {
-            border: 2px solid #0f1115;
-            color: #0f1115;
             margin: 0px 5px;
             padding: 0.33em;
             border-radius: 6px;

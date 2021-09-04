@@ -23,8 +23,6 @@ export default function Remotejobs({ theme }) {
       });
   }, []);
 
-  console.log("jobs", jobs);
-
   function fetchMoreData() {
     if (jobs.remoteJobs.length >= 90) {
       setJobs({ ...jobs, hasMore: false });
