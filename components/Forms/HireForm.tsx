@@ -288,7 +288,7 @@ export default function HireForm() {
             height: 100%;
             padding: 10px 20px;
             background-color: white;
-            z-index: 1;
+            z-index: 10;
           }
           .aside.light {
             background-color: ${colors.white};
@@ -402,7 +402,7 @@ export default function HireForm() {
           }
 
           @media (min-width: 500px) {
-            .showOnlyMobile {
+            button.showOnlyMobile {
               display: none;
             }
           }

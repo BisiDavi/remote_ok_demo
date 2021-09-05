@@ -100,7 +100,7 @@ export default function HireRemoteLayout({ children }: PropsWithChildren<{}>) {
             bottom: 0;
             background-color: white;
             width: 75%;
-            z-index: 1000;
+            z-index: 2;
           }
 
           .vistLink {
