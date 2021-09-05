@@ -23,9 +23,10 @@ export default function HireForm() {
   const { dark } = useTheme();
   const cardStyle = dark ? "dark" : "light";
 
-  function submitForm(handleSubmit) {
+  const submitForm = (e) => (handleSubmit) => {
+    e.preventDefault();
     handleSubmit();
-  }
+  };
 
   return (
     <>
