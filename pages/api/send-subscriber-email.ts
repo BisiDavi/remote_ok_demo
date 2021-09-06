@@ -6,8 +6,8 @@ export default function SendSubscriberEmail(req, res) {
     case "POST": {
       try {
         mailjet.connect(
-          process.env.MAIL_JET_API_PRIMARY,
-          process.env.MAIL_JET_API_SECONDARY
+          "bcb48fa229fa4a413134dab4bc534daf",
+          "319d07f39d9a96e41a5b29cb2e5fcd42"
         );
         const request = mailjet.post("send", { version: "v3.1" }).request({
           Messages: [
@@ -44,7 +44,7 @@ export default function SendSubscriberEmail(req, res) {
           result: mailResult,
         });
       } catch (error) {
-        return res.status(400).json({ error, message: "unable to send email" });
+        return res.send.json({ error, message: "unable to send email" });
       }
     }
     default:

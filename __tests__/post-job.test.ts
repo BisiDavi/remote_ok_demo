@@ -1,3 +1,4 @@
+export {};
 /// <reference types="cypress" />
 
 // 1. user enters all required field.
@@ -10,6 +11,6 @@ describe("post demo job", () => {
   });
 
   it("user should enter required fields to post job", () => {
-    cy.get("[data-testId=]").type("{enter}");
+    cy.get("[data-testid=]").type("{enter}");
   });
 });

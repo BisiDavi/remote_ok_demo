@@ -1,9 +1,10 @@
+export {};
 /// <reference types="cypress" />
 
 context("Navigate to post job page", () => {
   beforeEach(() => {
     cy.visit("https://remote-ok-demo.vercel.app");
-    cy.get('[data-testId="Post-Job"]').contains("Post a Job").click();
+    cy.get('[data-testid="Post-Job"]').contains("Post a Job").click();
   });
 
   it("expect the url location to change", () => {

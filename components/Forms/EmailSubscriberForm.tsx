@@ -61,9 +61,9 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
       }) => {
         return (
           <>
-            {loading && <Loading data-testId="loading" />}
+            {loading && <Loading data-testid="loading" />}
             <ToastContainer
-              data-testId="email-notification"
+              data-testid="email-notification"
               position="top-left"
               closeOnClick
               draggable
@@ -96,7 +96,7 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
                 </span>
                 <Button
                   text="Subscribe"
-                  data-testId="subscribe"
+                  data-testid="subscribe"
                   type="submit"
                   disabled={!isValid}
                 />

@@ -19,11 +19,9 @@ export default function Tags({ tags }) {
               .split(",")
               .slice(0, 3)
               .map((item, index) => (
-                <>
-                  <div key={index} className={`role-tag ${tagStyle}`}>
-                    {item}
-                  </div>
-                </>
+                <div key={index} className={`role-tag ${tagStyle}`}>
+                  {item}
+                </div>
               ))}
         <style jsx>{`
           .light {
