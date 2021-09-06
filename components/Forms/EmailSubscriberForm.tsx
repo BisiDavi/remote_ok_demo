@@ -44,6 +44,10 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
             setLoading(false);
             toast.error(`Oops, unable to subscribe`);
           });
+        await axios
+          .post("/api/send-subscriber-email", values)
+          .then((response) => console.log("response", response))
+          .catch((error) => console.error("error", error));
       }}
     >
       {({
