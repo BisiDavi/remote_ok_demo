@@ -57,7 +57,7 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
       }) => {
         return (
           <>
-            {loading && <Loading />}
+            {loading && <Loading data-testId="loading" />}
             <ToastContainer
               data-testId="email-notification"
               position="top-left"

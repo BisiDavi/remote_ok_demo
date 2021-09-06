@@ -26,5 +26,14 @@ describe("email subscriber test", () => {
     cy.get('[data-testId="subscribe"]').click();
   });
 
-  it("expect email notification", () => {});
+  it("show loading component", () => {
+    cy.get("[data-testId=loading]").should("be.called");
+  });
+
+  it("expect email-notification, to be displayed", () => {
+    cy.get("[data-testId=email-notification]").should(
+      "have.value",
+      "jobseeker@gmail.com thanks for subscribing to daily email"
+    );
+  });
 });
