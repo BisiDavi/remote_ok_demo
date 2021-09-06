@@ -1,3 +1,4 @@
+export {};
 /// <reference types="cypress" />
 
 // 1. user selects email duration
