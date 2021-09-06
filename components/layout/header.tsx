@@ -20,7 +20,7 @@ export default function Header() {
         <div className={`${styles.Redbutton} redbutton`}>
           <Link href="/hire-remotely" passHref>
             <a>
-              <Button text="Post a job" />
+              <Button data-testId="Post-Job" text="Post a job" />
             </a>
           </Link>
         </div>

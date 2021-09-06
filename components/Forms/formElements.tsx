@@ -31,6 +31,7 @@ function Input({ content, ...props }: FormFieldProps) {
         onBlur={props.handleBlur(content.name)}
         onChange={props.handleChange(content.name)}
         placeholder={content.placeholder}
+        data-testId={content.name}
       />
       {props.errors[content.name] && props.touched[content.name] && (
         <p className={styles.error}>{props.errors[content.name]}</p>
@@ -48,6 +49,7 @@ function Checkbox({ content, ...props }: FormFieldProps) {
           <input
             name={content.name}
             type="checkbox"
+            data-testId={content.name}
             onChange={props.handleChange(content.name)}
             checked={props.values[content.name]}
           />
@@ -65,6 +67,7 @@ function Radio({ content, ...props }: FormFieldProps) {
         <label htmlFor={content.name}>
           <input
             name={content.name}
+            data-testId={content.name}
             type="radio"
             value={content.value}
             onChange={props.handleChange(content.name)}
@@ -82,6 +85,7 @@ function SelectInput({ content, ...props }: FormFieldProps) {
       {content.label && <label htmlFor={content.name}>{content.label}</label>}
       <select
         value={props.values[content.name]}
+        data-testId={content.name}
         onChange={props.handleChange(content.name)}
       >
         {content.options.map((option, index) => (
@@ -104,6 +108,7 @@ function TextArea({ content, ...props }: FormFieldProps) {
         {content.label && <label htmlFor={content.name}>{content.label}</label>}
         <textarea
           onChange={props.handleChange(content.name)}
+          data-testId={content.name}
           value={props.values[content.name]}
         ></textarea>
         {props.errors[content.name] && props.touched[content.name] && (

@@ -59,6 +59,7 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
           <>
             {loading && <Loading />}
             <ToastContainer
+              data-testId="email-notification"
               position="top-left"
               closeOnClick
               draggable
@@ -89,7 +90,12 @@ export default function EmailSubscriberForm({ showEmail, cancelEmail }) {
                     touched={touched}
                   />
                 </span>
-                <Button text="Subscribe" type="submit" disabled={!isValid} />
+                <Button
+                  text="Subscribe"
+                  data-testId="subscribe"
+                  type="submit"
+                  disabled={!isValid}
+                />
               </span>
               <span onClick={cancelEmail} className={styles.cancelEmailForm}>
                 X
